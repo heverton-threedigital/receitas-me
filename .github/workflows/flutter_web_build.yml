@@ -30,13 +30,31 @@ jobs:
           mkdir build_web
           cp -r build/web/* build_web/
 
-      - name: Commit and push build_web
+      - name: Create Dockerfile and nginx.conf
+        run: |
+          echo "FROM nginx:alpine
+          COPY build_web/ /usr/share/nginx/html
+          COPY nginx.conf /etc/nginx/conf.d/default.conf" > Dockerfile
+
+          echo "server {
+            listen 80;
+            server_name localhost;
+
+            root /usr/share/nginx/html;
+            index index.html;
+
+            location / {
+              try_files \$uri \$uri/ /index.html;
+            }
+          }" > nginx.conf
+
+      - name: Commit and push build_web + Dockerfile
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          echo '/*    /index.html   200' > build_web/_redirects
-          git add build_web
-          git commit -m "Atualiza pasta build_web com novo build"
+          git add build_web Dockerfile nginx.conf
+          git commit -m "Atualiza build_web e arquivos de deploy"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
