@@ -1,4 +1,4 @@
-name: Build and Deploy Flutter Web to Firebase
+name: Build and Deploy Flutter Web
  
 on:
   push:
