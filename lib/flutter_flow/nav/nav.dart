@@ -100,6 +100,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: Home22DashboardResponsiveWidget.routeName,
           path: Home22DashboardResponsiveWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => Home22DashboardResponsiveWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

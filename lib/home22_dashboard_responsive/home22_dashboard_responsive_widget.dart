@@ -14,7 +14,7 @@ class Home22DashboardResponsiveWidget extends StatefulWidget {
   const Home22DashboardResponsiveWidget({super.key});
 
   static String routeName = 'Home22DashboardResponsive';
-  static String routePath = '/home22DashboardResponsive';
+  static String routePath = '/home2';
 
   @override
   State<Home22DashboardResponsiveWidget> createState() =>
