@@ -58,3 +58,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Trigger deploy on EasyPanel
+        run: curl -X POST ${{ secrets.EASYPANEL_WEBHOOK_URL }}
+
+
