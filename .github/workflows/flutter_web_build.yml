@@ -60,5 +60,3 @@ jobs:
 
       - name: Trigger deploy on EasyPanel
         run: curl -X POST ${{ secrets.EASYPANEL_WEBHOOK_URL }}
-
-
