@@ -50,7 +50,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
           width: double.infinity,
           height: 80.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: FlutterFlowTheme.of(context).primaryBackground,
             boxShadow: [
               BoxShadow(
                 blurRadius: 4.0,
@@ -91,7 +91,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                             height: 50.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
+                                  .secondaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
                             ),
@@ -134,7 +134,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                             height: 50.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                                  .primaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
                             ),
