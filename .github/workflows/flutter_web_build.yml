@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Flutter Web
-        run: flutter build web --web-renderer html --release
+        run: flutter build web --web-renderer auto --release
 
       - name: Copy build to build_web/
         run: |
