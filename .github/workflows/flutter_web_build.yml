@@ -34,6 +34,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          echo '/*    /index.html   200' > build_web/_redirects
           git add build_web
           git commit -m "Atualiza pasta build_web com novo build"
           git push
