@@ -76,16 +76,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? Home22DashboardResponsiveWidget()
-          : InicioWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? LoginWidget() : InicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => appStateNotifier.loggedIn
-              ? Home22DashboardResponsiveWidget()
-              : InicioWidget(),
+          builder: (context, _) =>
+              appStateNotifier.loggedIn ? LoginWidget() : InicioWidget(),
         ),
         FFRoute(
           name: InicioWidget.routeName,
@@ -96,12 +94,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
-        ),
-        FFRoute(
-          name: Home22DashboardResponsiveWidget.routeName,
-          path: Home22DashboardResponsiveWidget.routePath,
-          requireAuth: true,
-          builder: (context, params) => Home22DashboardResponsiveWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -2,7 +2,6 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login_model.dart';
@@ -336,8 +335,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           }
 
                                           context.goNamedAuth(
-                                              Home22DashboardResponsiveWidget
-                                                  .routeName,
+                                              LoginWidget.routeName,
                                               context.mounted);
                                         },
                                         text: 'Entrar',
