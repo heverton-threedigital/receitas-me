@@ -94,6 +94,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: PainelWidget.routeName,
           path: PainelWidget.routePath,
           builder: (context, params) => PainelWidget(),
+        ),
+        FFRoute(
+          name: CriarReceitaWidget.routeName,
+          path: CriarReceitaWidget.routePath,
+          requireAuth: true,
+          builder: (context, params) => CriarReceitaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
