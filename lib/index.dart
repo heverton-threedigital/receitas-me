@@ -1,3 +1,3 @@
 // Export pages
-export '/pages/inicio/inicio_widget.dart' show InicioWidget;
-export '/login/login_widget.dart' show LoginWidget;
+export '/inicio/inicio_widget.dart' show InicioWidget;
+export '/painel/painel_widget.dart' show PainelWidget;
