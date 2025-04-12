@@ -122,21 +122,22 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
-                    Container(
-                      width: 40.0,
-                      height: 40.0,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: Image.network(
-                        valueOrDefault<String>(
-                          rowPerfisRow?.avatarUrl,
-                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                    if (!loggedIn)
+                      Container(
+                        width: 40.0,
+                        height: 40.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
                         ),
-                        fit: BoxFit.contain,
+                        child: Image.network(
+                          valueOrDefault<String>(
+                            rowPerfisRow?.avatarUrl,
+                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                          ),
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                    ),
                     FFButtonWidget(
                       onPressed: () {
                         print('Button pressed ...');
