@@ -122,7 +122,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
-                    if (!loggedIn)
+                    if (loggedIn)
                       Container(
                         width: 40.0,
                         height: 40.0,
