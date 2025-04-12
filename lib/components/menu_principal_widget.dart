@@ -56,7 +56,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
               borderRadius: BorderRadius.circular(8.0),
               child: SvgPicture.asset(
                 'assets/images/Receitas.me.svg',
-                width: 180.0,
+                width: 150.0,
                 fit: BoxFit.fitWidth,
               ),
             ),
