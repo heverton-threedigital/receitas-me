@@ -281,8 +281,8 @@ class FFRoute {
                   child: Center(
                     child: Image.asset(
                       'assets/images/Initial_splash_Image_receitas.me.gif',
-                      width: 300.0,
-                      fit: BoxFit.contain,
+                      width: 250.0,
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                 )
@@ -328,7 +328,11 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(
+        hasTransition: true,
+        transitionType: PageTransitionType.fade,
+        duration: Duration(milliseconds: 0),
+      );
 }
 
 class RootPageContext {

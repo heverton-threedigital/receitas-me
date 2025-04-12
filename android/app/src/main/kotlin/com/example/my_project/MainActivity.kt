@@ -1,4 +1,4 @@
-package com.mycompany.receitasme
+package com.receitas.me
 
 import io.flutter.embedding.android.FlutterActivity
 

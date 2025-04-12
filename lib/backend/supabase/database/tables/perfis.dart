@@ -32,4 +32,10 @@ class PerfisRow extends SupabaseDataRow {
   DateTime? get atualizadoEm => getField<DateTime>('atualizado_em');
   set atualizadoEm(DateTime? value) =>
       setField<DateTime>('atualizado_em', value);
+
+  bool get isAdmin => getField<bool>('is_admin')!;
+  set isAdmin(bool value) => setField<bool>('is_admin', value);
+
+  String? get email => getField<String>('email');
+  set email(String? value) => setField<String>('email', value);
 }
