@@ -245,6 +245,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      // Fazer login
                       GoRouter.of(context).prepareAuthEvent();
 
                       final user = await authManager.signInWithEmail(

@@ -52,11 +52,23 @@ class _InicioWidgetState extends State<InicioWidget> {
               top: true,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  wrapWithModel(
-                    model: _model.menuPrincipalModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: MenuPrincipalWidget(),
+                  Flexible(
+                    child: Align(
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 1.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                        ),
+                        child: wrapWithModel(
+                          model: _model.menuPrincipalModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: MenuPrincipalWidget(),
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
