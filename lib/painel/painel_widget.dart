@@ -1,3 +1,4 @@
+import '/components/membros_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -57,6 +58,11 @@ class _PainelWidgetState extends State<PainelWidget> {
                     model: _model.menuPrincipalModel,
                     updateCallback: () => safeSetState(() {}),
                     child: MenuPrincipalWidget(),
+                  ),
+                  wrapWithModel(
+                    model: _model.membrosModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MembrosWidget(),
                   ),
                 ],
               ),
