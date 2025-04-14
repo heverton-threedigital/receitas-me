@@ -44,15 +44,17 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
-      height: 80.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
       child: Column(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             width: MediaQuery.sizeOf(context).width * 0.9,
+            height: 80.0,
             constraints: BoxConstraints(
               maxWidth: 1200.0,
             ),
@@ -207,6 +209,13 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                   ),
                 ],
               ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 1.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).alternate,
             ),
           ),
         ],
