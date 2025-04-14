@@ -61,7 +61,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
             ),
             decoration: BoxDecoration(),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -221,12 +221,9 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
               ),
             ),
           ),
-          Container(
-            width: double.infinity,
+          Divider(
             height: 1.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).alternate,
-            ),
+            color: FlutterFlowTheme.of(context).alternate,
           ),
         ],
       ),

@@ -97,10 +97,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => PainelWidget(),
         ),
         FFRoute(
-          name: CriarReceitaWidget.routeName,
-          path: CriarReceitaWidget.routePath,
+          name: NovaReceitaWidget.routeName,
+          path: NovaReceitaWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => CriarReceitaWidget(),
+          builder: (context, params) => NovaReceitaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
