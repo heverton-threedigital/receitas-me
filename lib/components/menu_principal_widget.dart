@@ -4,6 +4,7 @@ import '/components/login_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'menu_principal_model.dart';
@@ -65,12 +66,21 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: SvgPicture.asset(
-                      'assets/images/Receitas.me.svg',
-                      width: 150.0,
-                      fit: BoxFit.fitWidth,
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed(InicioWidget.routeName);
+                    },
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: SvgPicture.asset(
+                        'assets/images/Receitas.me.svg',
+                        width: 150.0,
+                        fit: BoxFit.fitWidth,
+                      ),
                     ),
                   ),
                   FutureBuilder<List<PerfisRow>>(

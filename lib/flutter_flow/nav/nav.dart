@@ -93,6 +93,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: PainelWidget.routeName,
           path: PainelWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => PainelWidget(),
         ),
         FFRoute(
