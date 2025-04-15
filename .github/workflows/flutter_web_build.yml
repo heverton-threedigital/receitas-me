@@ -24,6 +24,11 @@ jobs:
       - name: Build Flutter Web
         run: flutter build web --web-renderer canvaskit --release
 
+      - name: Checkout main branch
+        run: |
+          git fetch origin main
+          git checkout main
+
       - name: Copy build to build_web/
         run: |
           rm -rf build_web
