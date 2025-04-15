@@ -1,4 +1,5 @@
 import '/components/menu_principal_widget.dart';
+import '/components/receitas_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -50,27 +51,50 @@ class _InicioWidgetState extends State<InicioWidget> {
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             body: SafeArea(
               top: true,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Flexible(
-                    child: Align(
-                      alignment: AlignmentDirectional(0.0, -1.0),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 1.0,
-                        decoration: BoxDecoration(
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                        ),
-                        child: wrapWithModel(
-                          model: _model.menuPrincipalModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: MenuPrincipalWidget(),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Flexible(
+                      child: Align(
+                        alignment: AlignmentDirectional(0.0, -1.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 1.0,
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                          child: wrapWithModel(
+                            model: _model.menuPrincipalModel,
+                            updateCallback: () => safeSetState(() {}),
+                            child: MenuPrincipalWidget(),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                    Align(
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.9,
+                        constraints: BoxConstraints(
+                          maxWidth: 1100.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: wrapWithModel(
+                          model: _model.receitasModel,
+                          updateCallback: () => safeSetState(() {}),
+                          updateOnChange: true,
+                          child: ReceitasWidget(),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
