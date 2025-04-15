@@ -10,7 +10,7 @@ class PainelWidget extends StatefulWidget {
   const PainelWidget({super.key});
 
   static String routeName = 'Painel';
-  static String routePath = '/painel';
+  static String routePath = 'painel';
 
   @override
   State<PainelWidget> createState() => _PainelWidgetState();

@@ -1,11 +1,11 @@
-import '/auth/supabase_auth/auth_util.dart';
-import '/backend/supabase/supabase.dart';
+import '/auth/base_auth_user_provider.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'menu_principal_model.dart';
 export 'menu_principal_model.dart';
 
@@ -42,6 +42,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       width: MediaQuery.sizeOf(context).width * 1.0,
       decoration: BoxDecoration(
@@ -82,121 +84,88 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                       ),
                     ),
                   ),
-                  FutureBuilder<List<PerfisRow>>(
-                    future: PerfisTable().querySingleRow(
-                      queryFn: (q) => q.eqOrNull(
-                        'id',
-                        currentUserUid,
-                      ),
-                    ),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
-                            ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      if (!loggedIn)
+                        FFButtonWidget(
+                          onPressed: () async {
+                            context.pushNamed(LoginWidget.routeName);
+                          },
+                          text: 'Login',
+                          icon: Icon(
+                            Icons.login_rounded,
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 15.0,
                           ),
-                        );
-                      }
-                      List<PerfisRow> rowPerfisRowList = snapshot.data!;
-
-                      final rowPerfisRow = rowPerfisRowList.isNotEmpty
-                          ? rowPerfisRowList.first
-                          : null;
-
-                      return Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          if (!loggedIn)
-                            FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed(LoginWidget.routeName);
-                              },
-                              text: 'Login',
-                              icon: Icon(
-                                Icons.login_rounded,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 15.0,
-                              ),
-                              options: FFButtonOptions(
-                                height: 36.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Noto Sans',
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
+                          options: FFButtonOptions(
+                            height: 36.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 0.0, 16.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Noto Sans',
                                   color: FlutterFlowTheme.of(context).primary,
-                                  width: 1.0,
+                                  letterSpacing: 0.0,
                                 ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                            ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              context.pushNamed(NovaReceitaWidget.routeName);
-                            },
-                            text: 'Nova receita',
-                            icon: Icon(
-                              Icons.create_outlined,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              height: 38.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconAlignment: IconAlignment.start,
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed(NovaReceitaWidget.routeName);
+                        },
+                        text: 'Nova receita',
+                        icon: Icon(
+                          Icons.create_outlined,
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          size: 15.0,
+                        ),
+                        options: FFButtonOptions(
+                          height: 38.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 0.0),
+                          iconAlignment: IconAlignment.start,
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Noto Sans',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
-                              elevation: 0.0,
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
+                          elevation: 0.0,
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                      if (loggedIn)
+                        Container(
+                          width: 38.0,
+                          height: 38.0,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
                           ),
-                          if (loggedIn)
-                            Container(
-                              width: 38.0,
-                              height: 38.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.network(
-                                valueOrDefault<String>(
-                                  rowPerfisRow?.avatarUrl,
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                ),
-                                fit: BoxFit.contain,
-                              ),
+                          child: Image.network(
+                            valueOrDefault<String>(
+                              FFAppState().imagemPerfil,
+                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                             ),
-                        ].divide(SizedBox(width: 8.0)),
-                      );
-                    },
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                 ],
               ),

@@ -13,7 +13,7 @@ class NovaReceitaWidget extends StatefulWidget {
   const NovaReceitaWidget({super.key});
 
   static String routeName = 'NovaReceita';
-  static String routePath = '/nova-receita';
+  static String routePath = 'nova-receita';
 
   @override
   State<NovaReceitaWidget> createState() => _NovaReceitaWidgetState();

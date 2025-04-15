@@ -12,7 +12,7 @@ class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});
 
   static String routeName = 'Login';
-  static String routePath = '/login';
+  static String routePath = 'login';
 
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
@@ -299,7 +299,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       return;
                                     }
 
-                                    context.goNamedAuth(InicioWidget.routeName,
+                                    context.goNamedAuth(PainelWidget.routeName,
                                         context.mounted);
                                   },
                                   text: 'Entrar',
