@@ -141,6 +141,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                             ),
                             borderRadius: BorderRadius.circular(8.0),
                           ),
+                          showLoadingIndicator: false,
                         ),
                       FFButtonWidget(
                         onPressed: () async {
@@ -169,6 +170,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           elevation: 0.0,
                           borderRadius: BorderRadius.circular(8.0),
                         ),
+                        showLoadingIndicator: false,
                       ),
                       if (loggedIn)
                         Container(
