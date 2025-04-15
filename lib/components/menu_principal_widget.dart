@@ -1,9 +1,11 @@
-import '/auth/base_auth_user_provider.dart';
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'menu_principal_model.dart';
@@ -29,6 +31,25 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MenuPrincipalModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (loggedIn) {
+        if (!(FFAppState().imagemPerfil != '')) {
+          _model.perfilLogado = await PerfisTable().queryRows(
+            queryFn: (q) => q.eqOrNull(
+              'id',
+              currentUserUid,
+            ),
+          );
+          FFAppState().imagemPerfil = valueOrDefault<String>(
+            _model.perfilLogado?.firstOrNull?.avatarUrl,
+            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+          );
+          safeSetState(() {});
+        }
+      }
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
