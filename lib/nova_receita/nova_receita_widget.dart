@@ -102,6 +102,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .primaryBackground,
+                                      borderRadius: BorderRadius.circular(16.0),
                                     ),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(

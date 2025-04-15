@@ -168,8 +168,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                               ),
                             ),
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              context.pushNamed(NovaReceitaWidget.routeName);
                             },
                             text: 'Nova receita',
                             icon: Icon(
