@@ -9,7 +9,12 @@ import 'login_model.dart';
 export 'login_model.dart';
 
 class LoginWidget extends StatefulWidget {
-  const LoginWidget({super.key});
+  const LoginWidget({
+    super.key,
+    required this.redirecionar,
+  });
+
+  final Future Function()? redirecionar;
 
   @override
   State<LoginWidget> createState() => _LoginWidgetState();
@@ -255,8 +260,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         return;
                       }
 
-                      context.goNamedAuth(
-                          PainelWidget.routeName, context.mounted);
+                      await widget.redirecionar?.call();
                     },
                     text: 'Entrar',
                     options: FFButtonOptions(

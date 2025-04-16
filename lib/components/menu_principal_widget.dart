@@ -122,7 +122,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     backgroundColor: Colors.transparent,
                                     alignment: AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
-                                    child: LoginWidget(),
+                                    child: LoginWidget(
+                                      redirecionar: () async {
+                                        context
+                                            .pushNamed(InicioWidget.routeName);
+                                      },
+                                    ),
                                   );
                                 },
                               );
@@ -174,7 +179,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     backgroundColor: Colors.transparent,
                                     alignment: AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
-                                    child: LoginWidget(),
+                                    child: LoginWidget(
+                                      redirecionar: () async {
+                                        context.pushNamed(
+                                            NovaReceitaWidget.routeName);
+                                      },
+                                    ),
                                   );
                                 },
                               );
