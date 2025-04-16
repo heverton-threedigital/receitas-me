@@ -77,13 +77,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? InicioWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? PainelWidget() : InicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? InicioWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? PainelWidget() : InicioWidget(),
           routes: [
             FFRoute(
               name: InicioWidget.routeName,
@@ -103,9 +103,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NovaReceitaWidget(),
             ),
             FFRoute(
-              name: LoginWidget.routeName,
-              path: LoginWidget.routePath,
-              builder: (context, params) => LoginWidget(),
+              name: ResgistrarWidget.routeName,
+              path: ResgistrarWidget.routePath,
+              builder: (context, params) => ResgistrarWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -276,7 +276,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/Inicio';
           }
           return null;
         },
