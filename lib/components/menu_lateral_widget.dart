@@ -1,6 +1,9 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:provider/provider.dart';
 import 'menu_lateral_model.dart';
 export 'menu_lateral_model.dart';
 
@@ -25,6 +28,21 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
     super.initState();
     _model = createModel(context, () => MenuLateralModel());
 
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (!(FFAppState().categorias.isNotEmpty)) {
+        _model.resultadoCategorias = await CategoriasTable().queryRows(
+          queryFn: (q) => q,
+        );
+        FFAppState().categorias = _model.resultadoCategorias!
+            .map((e) => e.nome)
+            .toList()
+            .toList()
+            .cast<String>();
+        safeSetState(() {});
+      }
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -37,6 +55,8 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Visibility(
       visible: responsiveVisibility(
         context: context,
@@ -44,7 +64,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
         tablet: false,
       ),
       child: Container(
-        width: 230.0,
+        width: 287.11,
         height: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
@@ -69,10 +89,10 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 12.0),
+                              16.0, 0.0, 16.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -85,37 +105,22 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 12.0, 12.0),
-                                    child: Container(
-                                      width: 4.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                    ),
-                                  ),
                                   Icon(
-                                    Icons.home_filled,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryText,
-                                    size: 28.0,
+                                    Icons.home_rounded,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Home',
+                                      'Página incial',
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Noto Sans',
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryText,
+                                                .primary,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -127,18 +132,15 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 12.0),
+                              16.0, 0.0, 16.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -146,31 +148,17 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 12.0, 12.0),
-                                    child: Container(
-                                      width: 4.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                    ),
-                                  ),
                                   Icon(
-                                    Icons.forum_rounded,
+                                    Icons.notifications_none_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 28.0,
+                                    size: 24.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Chats',
+                                      'Notificações',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -186,18 +174,15 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 12.0),
+                              16.0, 0.0, 16.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -205,31 +190,17 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 12.0, 12.0),
-                                    child: Container(
-                                      width: 4.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                    ),
-                                  ),
                                   Icon(
-                                    Icons.grain,
+                                    Icons.auto_awesome_motion_outlined,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 28.0,
+                                    size: 24.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Projects',
+                                      'Suas receitas',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -245,18 +216,15 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 0.0, 16.0, 12.0),
+                              16.0, 0.0, 16.0, 8.0),
                           child: Container(
                             width: double.infinity,
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               borderRadius: BorderRadius.circular(12.0),
                               shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -264,43 +232,147 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 12.0, 12.0),
-                                    child: Container(
-                                      width: 4.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                      ),
-                                    ),
-                                  ),
                                   Icon(
-                                    Icons.wifi_tethering_rounded,
+                                    Icons.bookmark_border_rounded,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 28.0,
+                                    size: 24.0,
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Explore',
+                                      'Salvos',
                                       style: FlutterFlowTheme.of(context)
-                                          .titleSmall
+                                          .labelMedium
                                           .override(
                                             fontFamily: 'Noto Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
                                             letterSpacing: 0.0,
                                           ),
                                     ),
                                   ),
                                 ],
                               ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 0.0, 16.0, 8.0),
+                          child: Container(
+                            width: double.infinity,
+                            height: 40.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              borderRadius: BorderRadius.circular(12.0),
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12.0, 0.0, 12.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Icon(
+                                    Icons.addchart_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Painel',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Noto Sans',
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 24.0, 24.0, 0.0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 1.0,
+                            decoration: BoxDecoration(),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 8.0),
+                                  child: Text(
+                                    'Categorias',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Noto Sans',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Builder(
+                                  builder: (context) {
+                                    final categorias = FFAppState()
+                                        .categorias
+                                        .map((e) => e)
+                                        .toList();
+
+                                    return Wrap(
+                                      spacing: 8.0,
+                                      runSpacing: 8.0,
+                                      alignment: WrapAlignment.start,
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.start,
+                                      direction: Axis.horizontal,
+                                      runAlignment: WrapAlignment.start,
+                                      verticalDirection: VerticalDirection.down,
+                                      clipBehavior: Clip.none,
+                                      children: List.generate(categorias.length,
+                                          (categoriasIndex) {
+                                        final categoriasItem =
+                                            categorias[categoriasIndex];
+                                        return Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 4.0, 8.0, 4.0),
+                                            child: Text(
+                                              'Sobremesa',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Noto Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        );
+                                      }),
+                                    );
+                                  },
+                                ),
+                              ],
                             ),
                           ),
                         ),

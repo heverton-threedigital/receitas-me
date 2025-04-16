@@ -299,7 +299,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       return;
                                     }
 
-                                    context.goNamedAuth(PainelWidget.routeName,
+                                    context.goNamedAuth(InicioWidget.routeName,
                                         context.mounted);
                                   },
                                   text: 'Entrar',

@@ -77,13 +77,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
         children: [
           Container(
             width: MediaQuery.sizeOf(context).width * 0.9,
-            height: 80.0,
             constraints: BoxConstraints(
               maxWidth: 1200.0,
             ),
             decoration: BoxDecoration(),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
