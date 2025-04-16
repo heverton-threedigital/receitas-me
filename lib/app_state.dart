@@ -19,9 +19,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _imagemPerfil = prefs.getString('ff_imagemPerfil') ?? _imagemPerfil;
     });
-    _safeInit(() {
-      _categorias = prefs.getStringList('ff_categorias') ?? _categorias;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -36,41 +33,6 @@ class FFAppState extends ChangeNotifier {
   set imagemPerfil(String value) {
     _imagemPerfil = value;
     prefs.setString('ff_imagemPerfil', value);
-  }
-
-  List<String> _categorias = [];
-  List<String> get categorias => _categorias;
-  set categorias(List<String> value) {
-    _categorias = value;
-    prefs.setStringList('ff_categorias', value);
-  }
-
-  void addToCategorias(String value) {
-    categorias.add(value);
-    prefs.setStringList('ff_categorias', _categorias);
-  }
-
-  void removeFromCategorias(String value) {
-    categorias.remove(value);
-    prefs.setStringList('ff_categorias', _categorias);
-  }
-
-  void removeAtIndexFromCategorias(int index) {
-    categorias.removeAt(index);
-    prefs.setStringList('ff_categorias', _categorias);
-  }
-
-  void updateCategoriasAtIndex(
-    int index,
-    String Function(String) updateFn,
-  ) {
-    categorias[index] = updateFn(_categorias[index]);
-    prefs.setStringList('ff_categorias', _categorias);
-  }
-
-  void insertAtIndexInCategorias(int index, String value) {
-    categorias.insert(index, value);
-    prefs.setStringList('ff_categorias', _categorias);
   }
 }
 

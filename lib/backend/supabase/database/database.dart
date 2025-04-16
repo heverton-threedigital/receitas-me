@@ -8,7 +8,6 @@ export 'table.dart';
 export 'tables/receitas_tags.dart';
 export 'tables/receitas.dart';
 export 'tables/perfis.dart';
-export 'tables/categorias_regionais.dart';
 export 'tables/ingredientes.dart';
 export 'tables/favoritos.dart';
 export 'tables/categorias.dart';
