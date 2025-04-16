@@ -106,6 +106,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: ResgistrarWidget.routeName,
               path: ResgistrarWidget.routePath,
               builder: (context, params) => ResgistrarWidget(),
+            ),
+            FFRoute(
+              name: NoticacoesWidget.routeName,
+              path: NoticacoesWidget.routePath,
+              builder: (context, params) => NoticacoesWidget(),
+            ),
+            FFRoute(
+              name: MinhasReceitasWidget.routeName,
+              path: MinhasReceitasWidget.routePath,
+              builder: (context, params) => MinhasReceitasWidget(),
+            ),
+            FFRoute(
+              name: ReceitasSalvasWidget.routeName,
+              path: ReceitasSalvasWidget.routePath,
+              builder: (context, params) => ReceitasSalvasWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

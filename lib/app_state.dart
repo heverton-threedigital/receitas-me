@@ -19,7 +19,7 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
-      _imagemPerfil = prefs.getString('ff_imagemPerfil') ?? _imagemPerfil;
+      _fotoPerfil = prefs.getString('ff_fotoPerfil') ?? _fotoPerfil;
     });
   }
 
@@ -30,11 +30,11 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  String _imagemPerfil = '';
-  String get imagemPerfil => _imagemPerfil;
-  set imagemPerfil(String value) {
-    _imagemPerfil = value;
-    prefs.setString('ff_imagemPerfil', value);
+  String _fotoPerfil = '';
+  String get fotoPerfil => _fotoPerfil;
+  set fotoPerfil(String value) {
+    _fotoPerfil = value;
+    prefs.setString('ff_fotoPerfil', value);
   }
 
   final _categoriasManager = FutureRequestManager<List<CategoriasRow>>();

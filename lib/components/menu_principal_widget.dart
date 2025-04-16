@@ -36,17 +36,15 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
-        if (!(FFAppState().imagemPerfil != '')) {
+        if (!(FFAppState().fotoPerfil != '')) {
           _model.perfilLogado = await PerfisTable().queryRows(
             queryFn: (q) => q.eqOrNull(
               'id',
               currentUserUid,
             ),
           );
-          FFAppState().imagemPerfil = valueOrDefault<String>(
-            _model.perfilLogado?.firstOrNull?.avatarUrl,
-            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-          );
+          FFAppState().fotoPerfil =
+              _model.perfilLogado!.firstOrNull!.avatarUrl!;
           safeSetState(() {});
         }
       }
@@ -228,7 +226,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           ),
                           child: Image.network(
                             valueOrDefault<String>(
-                              FFAppState().imagemPerfil,
+                              FFAppState().fotoPerfil,
                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                             ),
                             fit: BoxFit.contain,
