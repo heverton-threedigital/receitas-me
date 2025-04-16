@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'menu_lateral_model.dart';
 export 'menu_lateral_model.dart';
 
@@ -26,18 +25,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MenuLateralModel());
-
-    // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (_model.categorias.isNotEmpty) {
-        _model.resultadoCategorias = await CategoriasTable().queryRows(
-          queryFn: (q) => q,
-        );
-        _model.categorias =
-            _model.resultadoCategorias!.toList().cast<CategoriasRow>();
-        safeSetState(() {});
-      }
-    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -194,7 +181,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Suas receitas',
+                                      'Minhas receitas',
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -315,40 +302,77 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                         ),
                                   ),
                                 ),
-                                Wrap(
-                                  spacing: 8.0,
-                                  runSpacing: 8.0,
-                                  alignment: WrapAlignment.start,
-                                  crossAxisAlignment: WrapCrossAlignment.start,
-                                  direction: Axis.horizontal,
-                                  runAlignment: WrapAlignment.start,
-                                  verticalDirection: VerticalDirection.down,
-                                  clipBehavior: Clip.none,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
+                                FutureBuilder<List<CategoriasRow>>(
+                                  future: CategoriasTable().queryRows(
+                                    queryFn: (q) => q,
+                                  ),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 4.0, 8.0, 4.0),
-                                        child: Text(
-                                          'Sobremesa',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans',
-                                                letterSpacing: 0.0,
+                                      );
+                                    }
+                                    List<CategoriasRow> wrapCategoriasRowList =
+                                        snapshot.data!;
+
+                                    return Wrap(
+                                      spacing: 8.0,
+                                      runSpacing: 8.0,
+                                      alignment: WrapAlignment.start,
+                                      crossAxisAlignment:
+                                          WrapCrossAlignment.start,
+                                      direction: Axis.horizontal,
+                                      runAlignment: WrapAlignment.start,
+                                      verticalDirection: VerticalDirection.down,
+                                      clipBehavior: Clip.none,
+                                      children: List.generate(
+                                          wrapCategoriasRowList.length,
+                                          (wrapIndex) {
+                                        final wrapCategoriasRow =
+                                            wrapCategoriasRowList[wrapIndex];
+                                        return Container(
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 4.0, 8.0, 4.0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                wrapCategoriasRow.nome,
+                                                '-',
                                               ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Noto Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        );
+                                      }),
+                                    );
+                                  },
                                 ),
                               ],
                             ),

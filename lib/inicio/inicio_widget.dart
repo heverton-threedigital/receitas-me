@@ -10,7 +10,7 @@ class InicioWidget extends StatefulWidget {
   const InicioWidget({super.key});
 
   static String routeName = 'Inicio';
-  static String routePath = 'inicio';
+  static String routePath = 'Inicio';
 
   @override
   State<InicioWidget> createState() => _InicioWidgetState();
