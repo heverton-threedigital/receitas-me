@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/categoria_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -281,7 +282,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 24.0, 24.0, 0.0),
+                              0.0, 24.0, 24.0, 0.0),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             decoration: BoxDecoration(),
@@ -306,7 +307,8 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   future: FFAppState().categorias(
                                     requestFn: () =>
                                         CategoriasTable().queryRows(
-                                      queryFn: (q) => q,
+                                      queryFn: (q) =>
+                                          q.order('nome', ascending: true),
                                     ),
                                   ),
                                   builder: (context, snapshot) {
@@ -344,34 +346,10 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                           (wrapIndex) {
                                         final wrapCategoriasRow =
                                             wrapCategoriasRowList[wrapIndex];
-                                        return Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 4.0, 8.0, 4.0),
-                                            child: Text(
-                                              valueOrDefault<String>(
-                                                wrapCategoriasRow.nome,
-                                                '-',
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Noto Sans',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ),
+                                        return CategoriaWidget(
+                                          key: Key(
+                                              'Keyo26_${wrapIndex}_of_${wrapCategoriasRowList.length}'),
+                                          categorias: wrapCategoriasRow,
                                         );
                                       }),
                                     );
