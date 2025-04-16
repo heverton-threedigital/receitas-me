@@ -303,8 +303,11 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   ),
                                 ),
                                 FutureBuilder<List<CategoriasRow>>(
-                                  future: CategoriasTable().queryRows(
-                                    queryFn: (q) => q,
+                                  future: FFAppState().categorias(
+                                    requestFn: () =>
+                                        CategoriasTable().queryRows(
+                                      queryFn: (q) => q,
+                                    ),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.

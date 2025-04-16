@@ -11,6 +11,14 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   late MenuPrincipalModel menuPrincipalModel;
   // Model for MenuLateral component.
   late MenuLateralModel menuLateralModel;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
+  TextEditingController? textController2;
+  String? Function(BuildContext, String?)? textController2Validator;
 
   @override
   void initState(BuildContext context) {
@@ -22,5 +30,10 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   void dispose() {
     menuPrincipalModel.dispose();
     menuLateralModel.dispose();
+    textFieldFocusNode1?.dispose();
+    textController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
+    textController2?.dispose();
   }
 }

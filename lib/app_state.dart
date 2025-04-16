@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
+import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -34,6 +36,21 @@ class FFAppState extends ChangeNotifier {
     _imagemPerfil = value;
     prefs.setString('ff_imagemPerfil', value);
   }
+
+  final _categoriasManager = FutureRequestManager<List<CategoriasRow>>();
+  Future<List<CategoriasRow>> categorias({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<CategoriasRow>> Function() requestFn,
+  }) =>
+      _categoriasManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearCategoriasCache() => _categoriasManager.clear();
+  void clearCategoriasCacheKey(String? uniqueKey) =>
+      _categoriasManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {
