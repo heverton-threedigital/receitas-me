@@ -10,7 +10,7 @@ class MinhasReceitasWidget extends StatefulWidget {
   const MinhasReceitasWidget({super.key});
 
   static String routeName = 'MinhasReceitas';
-  static String routePath = 'minhasReceitas';
+  static String routePath = 'minhas-receitas';
 
   @override
   State<MinhasReceitasWidget> createState() => _MinhasReceitasWidgetState();

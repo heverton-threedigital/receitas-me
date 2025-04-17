@@ -286,7 +286,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/Inicio';
+            return '/inicio';
           }
           return null;
         },
