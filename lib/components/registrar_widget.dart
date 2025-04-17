@@ -532,6 +532,7 @@ class _RegistrarWidgetState extends State<RegistrarWidget> {
                                 mouseCursor: SystemMouseCursors.click,
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () async {
+                                    Navigator.pop(context);
                                     await showDialog(
                                       context: context,
                                       builder: (dialogContext) {

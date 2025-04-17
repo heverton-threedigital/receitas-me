@@ -328,6 +328,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           mouseCursor: SystemMouseCursors.click,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
+                              Navigator.pop(context);
                               await showDialog(
                                 barrierColor: Color(0xCC000000),
                                 context: context,
