@@ -1,9 +1,11 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/components/registrar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'login_model.dart';
@@ -323,6 +325,29 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                   ),
+                          mouseCursor: SystemMouseCursors.click,
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () async {
+                              await showDialog(
+                                barrierColor: Color(0xCC000000),
+                                context: context,
+                                builder: (dialogContext) {
+                                  return Dialog(
+                                    elevation: 0,
+                                    insetPadding: EdgeInsets.zero,
+                                    backgroundColor: Colors.transparent,
+                                    alignment: AlignmentDirectional(0.0, 0.0)
+                                        .resolve(Directionality.of(context)),
+                                    child: RegistrarWidget(
+                                      redirecionar: () async {
+                                        context
+                                            .pushNamed(InicioWidget.routeName);
+                                      },
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                         )
                       ],
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
