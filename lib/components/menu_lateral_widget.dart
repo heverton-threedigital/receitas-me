@@ -217,7 +217,8 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                       Icon(
                                         Icons.notifications_none_rounded,
                                         color: () {
-                                          if (widget.pagina == 'notificacao') {
+                                          if (widget.pagina ==
+                                              'notificacoes') {
                                             return FlutterFlowTheme.of(context)
                                                 .primary;
                                           } else if (_model
@@ -242,7 +243,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                                 fontFamily: 'Noto Sans',
                                                 color: () {
                                                   if (widget.pagina ==
-                                                      'notificacao') {
+                                                      'notificacoes') {
                                                     return FlutterFlowTheme.of(
                                                             context)
                                                         .primary;
@@ -419,8 +420,20 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     children: [
                                       Icon(
                                         Icons.bookmark_border_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: () {
+                                          if (widget.pagina ==
+                                              'receitassalvas') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (_model
+                                              .mouseRegionHovered4) {
+                                            return FlutterFlowTheme.of(context)
+                                                .primaryText;
+                                          } else {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          }
+                                        }(),
                                         size: 24.0,
                                       ),
                                       Padding(
@@ -508,8 +521,19 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     children: [
                                       Icon(
                                         Icons.addchart_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
+                                        color: () {
+                                          if (widget.pagina == 'painel') {
+                                            return FlutterFlowTheme.of(context)
+                                                .primary;
+                                          } else if (_model
+                                              .mouseRegionHovered5) {
+                                            return FlutterFlowTheme.of(context)
+                                                .primaryText;
+                                          } else {
+                                            return FlutterFlowTheme.of(context)
+                                                .secondaryText;
+                                          }
+                                        }(),
                                         size: 24.0,
                                       ),
                                       Padding(

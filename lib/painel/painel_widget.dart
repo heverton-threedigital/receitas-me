@@ -89,7 +89,7 @@ class _PainelWidgetState extends State<PainelWidget> {
                                 model: _model.menuLateralModel,
                                 updateCallback: () => safeSetState(() {}),
                                 child: MenuLateralWidget(
-                                  pagina: 'inicio',
+                                  pagina: 'painel',
                                 ),
                               ),
                             ),
