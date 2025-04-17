@@ -5,9 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:ui';
 import '/index.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -45,9 +43,6 @@ class _RegistrarWidgetState extends State<RegistrarWidget> {
 
     _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
-
-    _model.dataNascimentoTextController ??= TextEditingController();
-    _model.dataNascimentoFocusNode ??= FocusNode();
 
     _model.senhaTextController ??= TextEditingController();
     _model.senhaFocusNode ??= FocusNode();
@@ -287,184 +282,6 @@ class _RegistrarWidgetState extends State<RegistrarWidget> {
                           cursorColor: FlutterFlowTheme.of(context).primaryText,
                           validator: _model.emailTextControllerValidator
                               .asValidator(context),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'Data de nascimento',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Noto Sans',
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                      child: Text(
-                        'Isso não será exibido publicamente.',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Noto Sans',
-                              color: FlutterFlowTheme.of(context).secondaryText,
-                              fontSize: 11.0,
-                              letterSpacing: 0.0,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
-                    ),
-                    InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        await showModalBottomSheet<bool>(
-                            context: context,
-                            builder: (context) {
-                              final _datePickedCupertinoTheme =
-                                  CupertinoTheme.of(context);
-                              return ScrollConfiguration(
-                                behavior:
-                                    const MaterialScrollBehavior().copyWith(
-                                  dragDevices: {
-                                    PointerDeviceKind.mouse,
-                                    PointerDeviceKind.touch,
-                                    PointerDeviceKind.stylus,
-                                    PointerDeviceKind.unknown
-                                  },
-                                ),
-                                child: Container(
-                                  height:
-                                      MediaQuery.of(context).size.height / 3,
-                                  width: MediaQuery.of(context).size.width,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  child: CupertinoTheme(
-                                    data: _datePickedCupertinoTheme.copyWith(
-                                      textTheme: _datePickedCupertinoTheme
-                                          .textTheme
-                                          .copyWith(
-                                        dateTimePickerTextStyle:
-                                            FlutterFlowTheme.of(context)
-                                                .headlineMedium
-                                                .override(
-                                                  fontFamily: 'Noto Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryText,
-                                                  letterSpacing: 0.0,
-                                                ),
-                                      ),
-                                    ),
-                                    child: CupertinoDatePicker(
-                                      mode: CupertinoDatePickerMode.date,
-                                      minimumDate: DateTime(1900),
-                                      initialDateTime: getCurrentTimestamp,
-                                      maximumDate: (getCurrentTimestamp ??
-                                          DateTime(2050)),
-                                      backgroundColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                      use24hFormat: false,
-                                      onDateTimeChanged: (newDateTime) =>
-                                          safeSetState(() {
-                                        _model.datePicked = newDateTime;
-                                      }),
-                                    ),
-                                  ),
-                                ),
-                              );
-                            });
-                        safeSetState(() {
-                          _model.dataNascimentoTextController?.text =
-                              dateTimeFormat(
-                            "dd/MM/y",
-                            _model.datePicked,
-                            locale: FFLocalizations.of(context).languageCode,
-                          );
-                          _model.dataNascimentoMask.updateMask(
-                            newValue: TextEditingValue(
-                              text: _model.dataNascimentoTextController!.text,
-                            ),
-                          );
-                        });
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 16.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            child: TextFormField(
-                              controller: _model.dataNascimentoTextController,
-                              focusNode: _model.dataNascimentoFocusNode,
-                              autofocus: false,
-                              readOnly: true,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                isDense: false,
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Noto Sans',
-                                      letterSpacing: 0.0,
-                                    ),
-                                hintText: 'DD/MM/AAAA',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .override(
-                                      fontFamily: 'Noto Sans',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 1.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .primaryBackground,
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    letterSpacing: 0.0,
-                                  ),
-                              keyboardType: TextInputType.datetime,
-                              cursorColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              validator: _model
-                                  .dataNascimentoTextControllerValidator
-                                  .asValidator(context),
-                              inputFormatters: [_model.dataNascimentoMask],
-                            ),
-                          ),
                         ),
                       ),
                     ),

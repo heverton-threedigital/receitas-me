@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registrar_widget.dart' show RegistrarWidget;
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class RegistrarModel extends FlutterFlowModel<RegistrarWidget> {
   ///  State fields for stateful widgets in this component.
@@ -15,13 +13,6 @@ class RegistrarModel extends FlutterFlowModel<RegistrarWidget> {
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
-  DateTime? datePicked;
-  // State field(s) for dataNascimento widget.
-  FocusNode? dataNascimentoFocusNode;
-  TextEditingController? dataNascimentoTextController;
-  final dataNascimentoMask = MaskTextInputFormatter(mask: '##/##/####');
-  String? Function(BuildContext, String?)?
-      dataNascimentoTextControllerValidator;
   // State field(s) for Senha widget.
   FocusNode? senhaFocusNode;
   TextEditingController? senhaTextController;
@@ -46,9 +37,6 @@ class RegistrarModel extends FlutterFlowModel<RegistrarWidget> {
 
     emailFocusNode?.dispose();
     emailTextController?.dispose();
-
-    dataNascimentoFocusNode?.dispose();
-    dataNascimentoTextController?.dispose();
 
     senhaFocusNode?.dispose();
     senhaTextController?.dispose();
