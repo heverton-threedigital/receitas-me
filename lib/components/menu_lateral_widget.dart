@@ -1,3 +1,4 @@
+import '/auth/base_auth_user_provider.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/categoria_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -280,91 +281,98 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         MouseRegion(
                           opaque: false,
                           cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 16.0, 8.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context
-                                    .pushNamed(MinhasReceitasWidget.routeName);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: () {
-                                    if (widget.pagina == 'minhasreceitas') {
-                                      return FlutterFlowTheme.of(context)
-                                          .secondaryBackground;
-                                    } else if (_model.mouseRegionHovered3) {
-                                      return FlutterFlowTheme.of(context)
-                                          .secondaryBackground;
-                                    } else {
-                                      return Color(0x00000000);
-                                    }
-                                  }(),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.auto_awesome_motion_outlined,
-                                        color: () {
-                                          if (widget.pagina ==
-                                              'minhasreceitas') {
-                                            return FlutterFlowTheme.of(context)
-                                                .primary;
-                                          } else if (_model
-                                              .mouseRegionHovered3) {
-                                            return FlutterFlowTheme.of(context)
-                                                .primaryText;
-                                          } else {
-                                            return FlutterFlowTheme.of(context)
-                                                .secondaryText;
-                                          }
-                                        }(),
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Minhas receitas',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans',
-                                                color: () {
-                                                  if (widget.pagina ==
-                                                      'minhasreceitas') {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary;
-                                                  } else if (_model
-                                                      .mouseRegionHovered3) {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText;
-                                                  } else {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText;
-                                                  }
-                                                }(),
-                                                letterSpacing: 0.0,
-                                              ),
+                          child: Visibility(
+                            visible: loggedIn,
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 16.0, 8.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(
+                                      MinhasReceitasWidget.routeName);
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 40.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
+                                      if (widget.pagina == 'minhasreceitas') {
+                                        return FlutterFlowTheme.of(context)
+                                            .secondaryBackground;
+                                      } else if (_model.mouseRegionHovered3) {
+                                        return FlutterFlowTheme.of(context)
+                                            .secondaryBackground;
+                                      } else {
+                                        return Color(0x00000000);
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.auto_awesome_motion_outlined,
+                                          color: () {
+                                            if (widget.pagina ==
+                                                'minhasreceitas') {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .primary;
+                                            } else if (_model
+                                                .mouseRegionHovered3) {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .primaryText;
+                                            } else {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .secondaryText;
+                                            }
+                                          }(),
+                                          size: 24.0,
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Minhas receitas',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans',
+                                                  color: () {
+                                                    if (widget.pagina ==
+                                                        'minhasreceitas') {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .primary;
+                                                    } else if (_model
+                                                        .mouseRegionHovered3) {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryText;
+                                                    } else {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryText;
+                                                    }
+                                                  }(),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -484,89 +492,96 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                         MouseRegion(
                           opaque: false,
                           cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 16.0, 8.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(PainelWidget.routeName);
-                              },
-                              child: Container(
-                                width: double.infinity,
-                                height: 40.0,
-                                decoration: BoxDecoration(
-                                  color: () {
-                                    if (widget.pagina == 'painel') {
-                                      return FlutterFlowTheme.of(context)
-                                          .secondaryBackground;
-                                    } else if (_model.mouseRegionHovered5) {
-                                      return FlutterFlowTheme.of(context)
-                                          .secondaryBackground;
-                                    } else {
-                                      return Color(0x00000000);
-                                    }
-                                  }(),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 12.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.addchart_rounded,
-                                        color: () {
-                                          if (widget.pagina == 'painel') {
-                                            return FlutterFlowTheme.of(context)
-                                                .primary;
-                                          } else if (_model
-                                              .mouseRegionHovered5) {
-                                            return FlutterFlowTheme.of(context)
-                                                .primaryText;
-                                          } else {
-                                            return FlutterFlowTheme.of(context)
-                                                .secondaryText;
-                                          }
-                                        }(),
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Painel',
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans',
-                                                color: () {
-                                                  if (widget.pagina ==
-                                                      'painel') {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary;
-                                                  } else if (_model
-                                                      .mouseRegionHovered5) {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText;
-                                                  } else {
-                                                    return FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryText;
-                                                  }
-                                                }(),
-                                                letterSpacing: 0.0,
-                                              ),
+                          child: Visibility(
+                            visible: loggedIn,
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 16.0, 8.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(PainelWidget.routeName);
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 40.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
+                                      if (widget.pagina == 'painel') {
+                                        return FlutterFlowTheme.of(context)
+                                            .secondaryBackground;
+                                      } else if (_model.mouseRegionHovered5) {
+                                        return FlutterFlowTheme.of(context)
+                                            .secondaryBackground;
+                                      } else {
+                                        return Color(0x00000000);
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 0.0, 12.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.addchart_rounded,
+                                          color: () {
+                                            if (widget.pagina == 'painel') {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .primary;
+                                            } else if (_model
+                                                .mouseRegionHovered5) {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .primaryText;
+                                            } else {
+                                              return FlutterFlowTheme.of(
+                                                      context)
+                                                  .secondaryText;
+                                            }
+                                          }(),
+                                          size: 24.0,
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Painel',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans',
+                                                  color: () {
+                                                    if (widget.pagina ==
+                                                        'painel') {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .primary;
+                                                    } else if (_model
+                                                        .mouseRegionHovered5) {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryText;
+                                                    } else {
+                                                      return FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryText;
+                                                    }
+                                                  }(),
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
