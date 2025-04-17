@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'registrar_widget.dart' show RegistrarWidget;
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
@@ -14,15 +15,29 @@ class RegistrarModel extends FlutterFlowModel<RegistrarWidget> {
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
   String? Function(BuildContext, String?)? emailTextControllerValidator;
+  DateTime? datePicked;
   // State field(s) for dataNascimento widget.
   FocusNode? dataNascimentoFocusNode;
   TextEditingController? dataNascimentoTextController;
   final dataNascimentoMask = MaskTextInputFormatter(mask: '##/##/####');
   String? Function(BuildContext, String?)?
       dataNascimentoTextControllerValidator;
+  // State field(s) for Senha widget.
+  FocusNode? senhaFocusNode;
+  TextEditingController? senhaTextController;
+  late bool senhaVisibility;
+  String? Function(BuildContext, String?)? senhaTextControllerValidator;
+  // State field(s) for ConfirmeSenha widget.
+  FocusNode? confirmeSenhaFocusNode;
+  TextEditingController? confirmeSenhaTextController;
+  late bool confirmeSenhaVisibility;
+  String? Function(BuildContext, String?)? confirmeSenhaTextControllerValidator;
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    senhaVisibility = false;
+    confirmeSenhaVisibility = false;
+  }
 
   @override
   void dispose() {
@@ -34,5 +49,11 @@ class RegistrarModel extends FlutterFlowModel<RegistrarWidget> {
 
     dataNascimentoFocusNode?.dispose();
     dataNascimentoTextController?.dispose();
+
+    senhaFocusNode?.dispose();
+    senhaTextController?.dispose();
+
+    confirmeSenhaFocusNode?.dispose();
+    confirmeSenhaTextController?.dispose();
   }
 }
