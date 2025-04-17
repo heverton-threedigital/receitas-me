@@ -161,61 +161,66 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                             showLoadingIndicator: false,
                           ),
                         ),
-                      Builder(
-                        builder: (context) => FFButtonWidget(
-                          onPressed: () async {
-                            if (loggedIn) {
-                              context.pushNamed(NovaReceitaWidget.routeName);
-                            } else {
-                              await showDialog(
-                                barrierColor: Color(0xCC000000),
-                                context: context,
-                                builder: (dialogContext) {
-                                  return Dialog(
-                                    elevation: 0,
-                                    insetPadding: EdgeInsets.zero,
-                                    backgroundColor: Colors.transparent,
-                                    alignment: AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    child: LoginWidget(
-                                      redirecionar: () async {
-                                        context.pushNamed(
-                                            NovaReceitaWidget.routeName);
-                                      },
-                                    ),
-                                  );
-                                },
-                              );
-                            }
-                          },
-                          text: 'Nova receita',
-                          icon: Icon(
-                            Icons.create_outlined,
-                            color:
-                                FlutterFlowTheme.of(context).primaryBackground,
-                            size: 15.0,
+                      if (responsiveVisibility(
+                        context: context,
+                        phone: false,
+                        tablet: false,
+                      ))
+                        Builder(
+                          builder: (context) => FFButtonWidget(
+                            onPressed: () async {
+                              if (loggedIn) {
+                                context.pushNamed(NovaReceitaWidget.routeName);
+                              } else {
+                                await showDialog(
+                                  barrierColor: Color(0xCC000000),
+                                  context: context,
+                                  builder: (dialogContext) {
+                                    return Dialog(
+                                      elevation: 0,
+                                      insetPadding: EdgeInsets.zero,
+                                      backgroundColor: Colors.transparent,
+                                      alignment: AlignmentDirectional(0.0, 0.0)
+                                          .resolve(Directionality.of(context)),
+                                      child: LoginWidget(
+                                        redirecionar: () async {
+                                          context.pushNamed(
+                                              NovaReceitaWidget.routeName);
+                                        },
+                                      ),
+                                    );
+                                  },
+                                );
+                              }
+                            },
+                            text: 'Nova receita',
+                            icon: Icon(
+                              Icons.create_outlined,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              size: 15.0,
+                            ),
+                            options: FFButtonOptions(
+                              height: 38.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              iconAlignment: IconAlignment.start,
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Noto Sans',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 0.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            showLoadingIndicator: false,
                           ),
-                          options: FFButtonOptions(
-                            height: 38.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            iconAlignment: IconAlignment.start,
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .titleSmall
-                                .override(
-                                  fontFamily: 'Noto Sans',
-                                  color: Colors.white,
-                                  letterSpacing: 0.0,
-                                ),
-                            elevation: 0.0,
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          showLoadingIndicator: false,
                         ),
-                      ),
                       if (loggedIn)
                         Container(
                           width: 38.0,
