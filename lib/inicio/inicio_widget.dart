@@ -88,7 +88,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                               child: wrapWithModel(
                                 model: _model.menuLateralModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: MenuLateralWidget(),
+                                child: MenuLateralWidget(
+                                  pagina: 'inicio',
+                                ),
                               ),
                             ),
                             Expanded(

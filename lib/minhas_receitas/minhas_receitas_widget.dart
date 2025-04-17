@@ -88,7 +88,9 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                               child: wrapWithModel(
                                 model: _model.menuLateralModel,
                                 updateCallback: () => safeSetState(() {}),
-                                child: MenuLateralWidget(),
+                                child: MenuLateralWidget(
+                                  pagina: 'minhasreceitas',
+                                ),
                               ),
                             ),
                             Expanded(

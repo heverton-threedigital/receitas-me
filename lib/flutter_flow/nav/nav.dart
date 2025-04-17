@@ -103,11 +103,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => NovaReceitaWidget(),
             ),
             FFRoute(
-              name: ResgistrarWidget.routeName,
-              path: ResgistrarWidget.routePath,
-              builder: (context, params) => ResgistrarWidget(),
-            ),
-            FFRoute(
               name: NoticacoesWidget.routeName,
               path: NoticacoesWidget.routePath,
               builder: (context, params) => NoticacoesWidget(),
