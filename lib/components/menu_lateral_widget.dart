@@ -187,14 +187,14 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(InicioWidget.routeName);
+                                context.pushNamed(PesquisarWidget.routeName);
                               },
                               child: Container(
                                 width: double.infinity,
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   color: () {
-                                    if (widget.pagina == 'inicio') {
+                                    if (widget.pagina == 'pesquisa') {
                                       return FlutterFlowTheme.of(context)
                                           .secondaryBackground;
                                     } else if (_model.mouseRegionHovered2) {

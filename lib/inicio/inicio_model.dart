@@ -16,8 +16,8 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   late MenuPrincipalModel menuPrincipalModel;
   // Model for MenuLateral component.
   late MenuLateralModel menuLateralModel;
-  Stream<List<CategoriasRow>>? rowSupabaseStream;
-  Stream<List<ReceitasRow>>? gridViewSupabaseStream;
+  Stream<List<CategoriasRow>>? rowSupabaseStream1;
+  Stream<List<ReceitasRow>>? rowSupabaseStream2;
 
   /// Query cache managers for this widget.
 
