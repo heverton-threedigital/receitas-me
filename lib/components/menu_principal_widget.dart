@@ -123,69 +123,44 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             if (!loggedIn)
-                              Builder(
-                                builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 0.0, 0.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      await showDialog(
-                                        barrierColor: Color(0xCC000000),
-                                        barrierDismissible: false,
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
-                                                    0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                            child: LoginWidget(
-                                              redirecionar: () async {
-                                                context.goNamed(
-                                                    InicioWidget.routeName);
-                                              },
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    },
-                                    text: 'Login',
-                                    icon: Icon(
-                                      Icons.login_rounded,
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    8.0, 0.0, 0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(Login1Widget.routeName);
+                                  },
+                                  text: 'Login',
+                                  icon: Icon(
+                                    Icons.login_rounded,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 15.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 36.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Noto Sans',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderSide: BorderSide(
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 15.0,
+                                      width: 1.0,
                                     ),
-                                    options: FFButtonOptions(
-                                      height: 36.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Noto Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    showLoadingIndicator: false,
+                                    borderRadius: BorderRadius.circular(8.0),
                                   ),
+                                  showLoadingIndicator: false,
                                 ),
                               ),
                             if (responsiveVisibility(
@@ -199,35 +174,27 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       8.0, 0.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      if (loggedIn) {
-                                        context.pushNamed(
-                                            NovaReceitaWidget.routeName);
-                                      } else {
-                                        await showDialog(
-                                          barrierColor: Color(0xCC000000),
-                                          context: context,
-                                          builder: (dialogContext) {
-                                            return Dialog(
-                                              elevation: 0,
-                                              insetPadding: EdgeInsets.zero,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              alignment:
-                                                  AlignmentDirectional(0.0, 0.0)
-                                                      .resolve(
-                                                          Directionality.of(
-                                                              context)),
-                                              child: LoginWidget(
-                                                redirecionar: () async {
-                                                  context.pushNamed(
-                                                      NovaReceitaWidget
-                                                          .routeName);
-                                                },
-                                              ),
-                                            );
-                                          },
-                                        );
-                                      }
+                                      await showDialog(
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: LoginWidget(
+                                              redirecionar: () async {
+                                                context.pushNamed(
+                                                    NovaReceitaWidget
+                                                        .routeName);
+                                              },
+                                            ),
+                                          );
+                                        },
+                                      );
                                     },
                                     text: 'Nova receita',
                                     icon: Icon(

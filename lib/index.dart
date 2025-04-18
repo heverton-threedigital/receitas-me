@@ -7,3 +7,4 @@ export '/minhas_receitas/minhas_receitas_widget.dart' show MinhasReceitasWidget;
 export '/receitas_salvas/receitas_salvas_widget.dart' show ReceitasSalvasWidget;
 export '/receita/receita_widget.dart' show ReceitaWidget;
 export '/pesquisar/pesquisar_widget.dart' show PesquisarWidget;
+export '/login1/login1_widget.dart' show Login1Widget;
