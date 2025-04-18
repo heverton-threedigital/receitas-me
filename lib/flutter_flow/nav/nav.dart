@@ -126,6 +126,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   'receita',
                   ParamType.SupabaseRow,
                 ),
+                receitaid: params.getParam(
+                  'receitaid',
+                  ParamType.String,
+                ),
               ),
             ),
             FFRoute(

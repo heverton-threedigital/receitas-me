@@ -101,7 +101,7 @@ class _PesquisarWidgetState extends State<PesquisarWidget> {
                               model: _model.menuLateralModel,
                               updateCallback: () => safeSetState(() {}),
                               child: MenuLateralWidget(
-                                pagina: 'inicio',
+                                pagina: 'pesquisa',
                               ),
                             ),
                             Expanded(

@@ -11,12 +11,14 @@ class ReceitaWidget extends StatefulWidget {
   const ReceitaWidget({
     super.key,
     required this.receita,
+    required this.receitaid,
   });
 
   final ReceitasRow? receita;
+  final String? receitaid;
 
   static String routeName = 'Receita';
-  static String routePath = 'receita/:receita';
+  static String routePath = 'receita/:receitaid';
 
   @override
   State<ReceitaWidget> createState() => _ReceitaWidgetState();
