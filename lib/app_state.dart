@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'flutter_flow/request_manager.dart';
-import 'backend/supabase/supabase.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -21,6 +19,10 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _fotoPerfil = prefs.getString('ff_fotoPerfil') ?? _fotoPerfil;
     });
+    _safeInit(() {
+      _categoriasReceitas =
+          prefs.getStringList('ff_categoriasReceitas') ?? _categoriasReceitas;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -37,20 +39,40 @@ class FFAppState extends ChangeNotifier {
     prefs.setString('ff_fotoPerfil', value);
   }
 
-  final _categoriasManager = FutureRequestManager<List<CategoriasRow>>();
-  Future<List<CategoriasRow>> categorias({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<List<CategoriasRow>> Function() requestFn,
-  }) =>
-      _categoriasManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearCategoriasCache() => _categoriasManager.clear();
-  void clearCategoriasCacheKey(String? uniqueKey) =>
-      _categoriasManager.clearRequest(uniqueKey);
+  List<String> _categoriasReceitas = [];
+  List<String> get categoriasReceitas => _categoriasReceitas;
+  set categoriasReceitas(List<String> value) {
+    _categoriasReceitas = value;
+    prefs.setStringList('ff_categoriasReceitas', value);
+  }
+
+  void addToCategoriasReceitas(String value) {
+    categoriasReceitas.add(value);
+    prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
+  }
+
+  void removeFromCategoriasReceitas(String value) {
+    categoriasReceitas.remove(value);
+    prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
+  }
+
+  void removeAtIndexFromCategoriasReceitas(int index) {
+    categoriasReceitas.removeAt(index);
+    prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
+  }
+
+  void updateCategoriasReceitasAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    categoriasReceitas[index] = updateFn(_categoriasReceitas[index]);
+    prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
+  }
+
+  void insertAtIndexInCategoriasReceitas(int index, String value) {
+    categoriasReceitas.insert(index, value);
+    prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
+  }
 }
 
 void _safeInit(Function() initializeField) {

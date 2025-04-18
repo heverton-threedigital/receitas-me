@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -7,10 +8,15 @@ import 'receita_model.dart';
 export 'receita_model.dart';
 
 class ReceitaWidget extends StatefulWidget {
-  const ReceitaWidget({super.key});
+  const ReceitaWidget({
+    super.key,
+    required this.receita,
+  });
+
+  final ReceitasRow? receita;
 
   static String routeName = 'Receita';
-  static String routePath = 'receita';
+  static String routePath = 'receita/:receita';
 
   @override
   State<ReceitaWidget> createState() => _ReceitaWidgetState();

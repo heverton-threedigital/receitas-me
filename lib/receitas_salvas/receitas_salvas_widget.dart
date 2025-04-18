@@ -39,7 +39,7 @@ class _ReceitasSalvasWidgetState extends State<ReceitasSalvasWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'ReceitasSalvas',
+        title: 'Receitas salvas',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {

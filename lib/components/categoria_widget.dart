@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,7 @@ class CategoriaWidget extends StatefulWidget {
     required this.categorias,
   });
 
-  final CategoriasRow? categorias;
+  final String? categorias;
 
   @override
   State<CategoriaWidget> createState() => _CategoriaWidgetState();
@@ -65,7 +64,7 @@ class _CategoriaWidgetState extends State<CategoriaWidget> {
           padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 4.0),
           child: Text(
             valueOrDefault<String>(
-              widget.categorias?.nome,
+              widget.categorias,
               '-',
             ),
             style: FlutterFlowTheme.of(context).bodyMedium.override(
