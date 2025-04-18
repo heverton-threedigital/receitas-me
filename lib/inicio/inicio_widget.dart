@@ -70,6 +70,23 @@ class _InicioWidgetState extends State<InicioWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            drawer: Container(
+              width: 250.0,
+              child: Drawer(
+                elevation: 16.0,
+                child: Container(
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: wrapWithModel(
+                    model: _model.menuLateralModel2,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MenuLateralWidget(),
+                  ),
+                ),
+              ),
+            ),
             body: SafeArea(
               top: true,
               child: Column(
@@ -82,7 +99,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                     child: wrapWithModel(
                       model: _model.menuPrincipalModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: MenuPrincipalWidget(),
+                      child: MenuPrincipalWidget(
+                        drawer: () async {
+                          scaffoldKey.currentState!.openDrawer();
+                        },
+                      ),
                     ),
                   ),
                   Flexible(
@@ -98,13 +119,19 @@ class _InicioWidgetState extends State<InicioWidget> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            wrapWithModel(
-                              model: _model.menuLateralModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: MenuLateralWidget(
-                                pagina: 'inicio',
+                            if (responsiveVisibility(
+                              context: context,
+                              phone: false,
+                              tablet: false,
+                              tabletLandscape: false,
+                            ))
+                              wrapWithModel(
+                                model: _model.menuLateralModel1,
+                                updateCallback: () => safeSetState(() {}),
+                                child: MenuLateralWidget(
+                                  pagina: 'inicio',
+                                ),
                               ),
-                            ),
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(

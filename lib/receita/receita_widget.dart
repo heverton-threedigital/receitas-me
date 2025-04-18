@@ -66,7 +66,9 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                     child: wrapWithModel(
                       model: _model.menuPrincipalModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: MenuPrincipalWidget(),
+                      child: MenuPrincipalWidget(
+                        drawer: () async {},
+                      ),
                     ),
                   ),
                   Flexible(

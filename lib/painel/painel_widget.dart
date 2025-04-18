@@ -59,7 +59,9 @@ class _PainelWidgetState extends State<PainelWidget> {
                   wrapWithModel(
                     model: _model.menuPrincipalModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: MenuPrincipalWidget(),
+                    child: MenuPrincipalWidget(
+                      drawer: () async {},
+                    ),
                   ),
                   Flexible(
                     child: Align(

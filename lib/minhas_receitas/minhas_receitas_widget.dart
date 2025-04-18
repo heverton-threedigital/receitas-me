@@ -59,7 +59,9 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                   wrapWithModel(
                     model: _model.menuPrincipalModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: MenuPrincipalWidget(),
+                    child: MenuPrincipalWidget(
+                      drawer: () async {},
+                    ),
                   ),
                   Flexible(
                     child: Align(

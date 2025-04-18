@@ -57,7 +57,9 @@ class _NoticacoesWidgetState extends State<NoticacoesWidget> {
                   wrapWithModel(
                     model: _model.menuPrincipalModel,
                     updateCallback: () => safeSetState(() {}),
-                    child: MenuPrincipalWidget(),
+                    child: MenuPrincipalWidget(
+                      drawer: () async {},
+                    ),
                   ),
                   Flexible(
                     child: Align(

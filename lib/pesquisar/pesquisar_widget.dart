@@ -81,7 +81,9 @@ class _PesquisarWidgetState extends State<PesquisarWidget> {
                     child: wrapWithModel(
                       model: _model.menuPrincipalModel,
                       updateCallback: () => safeSetState(() {}),
-                      child: MenuPrincipalWidget(),
+                      child: MenuPrincipalWidget(
+                        drawer: () async {},
+                      ),
                     ),
                   ),
                   Flexible(

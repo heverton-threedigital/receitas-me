@@ -1,12 +1,13 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/dropdown_usuario_widget.dart';
 import '/components/login_widget.dart';
-import '/components/menu_lateral_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +16,12 @@ import 'menu_principal_model.dart';
 export 'menu_principal_model.dart';
 
 class MenuPrincipalWidget extends StatefulWidget {
-  const MenuPrincipalWidget({super.key});
+  const MenuPrincipalWidget({
+    super.key,
+    this.drawer,
+  });
+
+  final Future Function()? drawer;
 
   @override
   State<MenuPrincipalWidget> createState() => _MenuPrincipalWidgetState();
@@ -260,22 +266,52 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   tabletLandscape: false,
                                   desktop: false,
                                 ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 0.0, 0.0),
-                                child: Container(
-                                  width: 38.0,
-                                  height: 38.0,
-                                  clipBehavior: Clip.antiAlias,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                  ),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      FFAppState().fotoPerfil,
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 0.0, 0.0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      await showAlignedDialog(
+                                        barrierColor: Color(0xCD000000),
+                                        context: context,
+                                        isGlobal: false,
+                                        avoidOverflow: true,
+                                        targetAnchor:
+                                            AlignmentDirectional(1.0, -1.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        followerAnchor:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        builder: (dialogContext) {
+                                          return Material(
+                                            color: Colors.transparent,
+                                            child: DropdownUsuarioWidget(),
+                                          );
+                                        },
+                                      );
+                                    },
+                                    child: Container(
+                                      width: 38.0,
+                                      height: 38.0,
+                                      clipBehavior: Clip.antiAlias,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Image.network(
+                                        valueOrDefault<String>(
+                                          FFAppState().fotoPerfil,
+                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                        ),
+                                        fit: BoxFit.contain,
+                                      ),
                                     ),
-                                    fit: BoxFit.contain,
                                   ),
                                 ),
                               ),
@@ -304,17 +340,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                               size: 24.0,
                             ),
                             onPressed: () async {
-                              await showModalBottomSheet(
-                                isScrollControlled: true,
-                                backgroundColor: Colors.transparent,
-                                context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: MediaQuery.viewInsetsOf(context),
-                                    child: MenuLateralWidget(),
-                                  );
-                                },
-                              ).then((value) => safeSetState(() {}));
+                              await widget.drawer?.call();
                             },
                           ),
                           Expanded(
