@@ -291,6 +291,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                               return;
                             }
 
+                            await widget.redirecionar?.call();
+
                             context.goNamedAuth(
                                 InicioWidget.routeName, context.mounted);
                           },

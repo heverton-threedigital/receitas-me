@@ -131,11 +131,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: PesquisarWidget.routeName,
               path: PesquisarWidget.routePath,
               builder: (context, params) => PesquisarWidget(),
-            ),
-            FFRoute(
-              name: Login1Widget.routeName,
-              path: Login1Widget.routePath,
-              builder: (context, params) => Login1Widget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
