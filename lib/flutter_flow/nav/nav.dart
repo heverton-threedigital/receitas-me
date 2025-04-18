@@ -116,6 +116,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: ReceitasSalvasWidget.routeName,
               path: ReceitasSalvasWidget.routePath,
               builder: (context, params) => ReceitasSalvasWidget(),
+            ),
+            FFRoute(
+              name: ReceitaWidget.routeName,
+              path: ReceitaWidget.routePath,
+              builder: (context, params) => ReceitaWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

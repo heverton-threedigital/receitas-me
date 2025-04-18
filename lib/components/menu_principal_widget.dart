@@ -74,106 +74,45 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            width: MediaQuery.sizeOf(context).width * 0.9,
-            constraints: BoxConstraints(
-              maxWidth: 1180.0,
-            ),
-            decoration: BoxDecoration(),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed(InicioWidget.routeName);
-                    },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: SvgPicture.asset(
-                        'assets/images/Receitas.me.svg',
-                        width: 150.0,
-                        fit: BoxFit.fitWidth,
+          Flexible(
+            child: Container(
+              width: MediaQuery.sizeOf(context).width * 0.9,
+              constraints: BoxConstraints(
+                maxWidth: 1104.0,
+              ),
+              decoration: BoxDecoration(),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        context.pushNamed(InicioWidget.routeName);
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: SvgPicture.asset(
+                          'assets/images/Receitas.me.svg',
+                          width: 150.0,
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                     ),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      if (!loggedIn)
-                        Builder(
-                          builder: (context) => FFButtonWidget(
-                            onPressed: () async {
-                              await showDialog(
-                                barrierColor: Color(0xC514181B),
-                                context: context,
-                                builder: (dialogContext) {
-                                  return Dialog(
-                                    elevation: 0,
-                                    insetPadding: EdgeInsets.zero,
-                                    backgroundColor: Colors.transparent,
-                                    alignment: AlignmentDirectional(0.0, 0.0)
-                                        .resolve(Directionality.of(context)),
-                                    child: LoginWidget(
-                                      redirecionar: () async {
-                                        context
-                                            .pushNamed(InicioWidget.routeName);
-                                      },
-                                    ),
-                                  );
-                                },
-                              );
-                            },
-                            text: 'Login',
-                            icon: Icon(
-                              Icons.login_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 15.0,
-                            ),
-                            options: FFButtonOptions(
-                              height: 36.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: FlutterFlowTheme.of(context).primary,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            showLoadingIndicator: false,
-                          ),
-                        ),
-                      if (responsiveVisibility(
-                        context: context,
-                        phone: false,
-                        tablet: false,
-                      ))
-                        Builder(
-                          builder: (context) => FFButtonWidget(
-                            onPressed: () async {
-                              if (loggedIn) {
-                                context.pushNamed(NovaReceitaWidget.routeName);
-                              } else {
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        if (!loggedIn)
+                          Builder(
+                            builder: (context) => FFButtonWidget(
+                              onPressed: () async {
                                 await showDialog(
-                                  barrierColor: Color(0xCC000000),
+                                  barrierColor: Color(0xC514181B),
                                   context: context,
                                   builder: (dialogContext) {
                                     return Dialog(
@@ -185,61 +124,128 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       child: LoginWidget(
                                         redirecionar: () async {
                                           context.pushNamed(
-                                              NovaReceitaWidget.routeName);
+                                              InicioWidget.routeName);
                                         },
                                       ),
                                     );
                                   },
                                 );
-                              }
-                            },
-                            text: 'Nova receita',
-                            icon: Icon(
-                              Icons.create_outlined,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 15.0,
+                              },
+                              text: 'Login',
+                              icon: Icon(
+                                Icons.login_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 15.0,
+                              ),
+                              options: FFButtonOptions(
+                                height: 36.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 0.0,
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              showLoadingIndicator: false,
                             ),
-                            options: FFButtonOptions(
-                              height: 38.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              iconAlignment: IconAlignment.start,
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Noto Sans',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                              elevation: 0.0,
-                              borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        if (responsiveVisibility(
+                          context: context,
+                          phone: false,
+                          tablet: false,
+                        ))
+                          Builder(
+                            builder: (context) => FFButtonWidget(
+                              onPressed: () async {
+                                if (loggedIn) {
+                                  context
+                                      .pushNamed(NovaReceitaWidget.routeName);
+                                } else {
+                                  await showDialog(
+                                    barrierColor: Color(0xCC000000),
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: LoginWidget(
+                                          redirecionar: () async {
+                                            context.pushNamed(
+                                                NovaReceitaWidget.routeName);
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  );
+                                }
+                              },
+                              text: 'Nova receita',
+                              icon: Icon(
+                                Icons.create_outlined,
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                                size: 15.0,
+                              ),
+                              options: FFButtonOptions(
+                                height: 38.0,
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 16.0, 0.0),
+                                iconAlignment: IconAlignment.start,
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).primary,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Noto Sans',
+                                      color: Colors.white,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 0.0,
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              showLoadingIndicator: false,
                             ),
-                            showLoadingIndicator: false,
                           ),
-                        ),
-                      if (loggedIn)
-                        Container(
-                          width: 38.0,
-                          height: 38.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.network(
-                            valueOrDefault<String>(
-                              FFAppState().fotoPerfil,
-                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                        if (loggedIn)
+                          Container(
+                            width: 38.0,
+                            height: 38.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
                             ),
-                            fit: BoxFit.contain,
+                            child: Image.network(
+                              valueOrDefault<String>(
+                                FFAppState().fotoPerfil,
+                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                              ),
+                              fit: BoxFit.contain,
+                            ),
                           ),
-                        ),
-                    ].divide(SizedBox(width: 8.0)),
-                  ),
-                ],
+                      ].divide(SizedBox(width: 8.0)),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

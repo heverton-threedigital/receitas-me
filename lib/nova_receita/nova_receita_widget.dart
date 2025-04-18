@@ -69,43 +69,61 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                     updateCallback: () => safeSetState(() {}),
                     child: MenuPrincipalWidget(),
                   ),
-                  Expanded(
+                  Flexible(
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         constraints: BoxConstraints(
-                          maxWidth: 1180.0,
+                          maxWidth: 1104.0,
                         ),
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: MediaQuery.sizeOf(context).height * 1.0,
-                              child: wrapWithModel(
-                                model: _model.menuLateralModel,
-                                updateCallback: () => safeSetState(() {}),
-                                child: MenuLateralWidget(),
-                              ),
+                            wrapWithModel(
+                              model: _model.menuLateralModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: MenuLateralWidget(),
                             ),
-                            Expanded(
-                              child: Stack(
-                                children: [
-                                  SingleChildScrollView(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          child: Column(
+                            Flexible(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    valueOrDefault<double>(
+                                      () {
+                                        if (MediaQuery.sizeOf(context).width <
+                                            kBreakpointSmall) {
+                                          return 0.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointMedium) {
+                                          return 0.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointLarge) {
+                                          return 24.0;
+                                        } else {
+                                          return 24.0;
+                                        }
+                                      }(),
+                                      0.0,
+                                    ),
+                                    0.0,
+                                    0.0,
+                                    0.0),
+                                child: Stack(
+                                  children: [
+                                    SingleChildScrollView(
+                                      primary: false,
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Row(
@@ -408,167 +426,172 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                               ),
                                             ],
                                           ),
-                                        ),
-                                      ]
-                                          .addToStart(SizedBox(height: 24.0))
-                                          .addToEnd(SizedBox(height: 24.0)),
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0.0, 1.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 16.0),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.sizeOf(context).width *
-                                                1.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                          border: Border.all(
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 1.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 16.0),
+                                        child: Container(
+                                          width:
+                                              MediaQuery.sizeOf(context).width *
+                                                  1.0,
+                                          decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate,
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
                                           ),
-                                        ),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 16.0, 16.0, 16.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text: 'Apagar',
-                                                icon: FaIcon(
-                                                  FontAwesomeIcons.trashAlt,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 15.0,
-                                                ),
-                                                options: FFButtonOptions(
-                                                  height: 36.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Noto Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderSide: BorderSide(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 16.0, 16.0, 16.0),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: [
+                                                FFButtonWidget(
+                                                  onPressed: () {
+                                                    print('Button pressed ...');
+                                                  },
+                                                  text: 'Apagar',
+                                                  icon: FaIcon(
+                                                    FontAwesomeIcons.trashAlt,
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    width: 1.0,
+                                                    size: 15.0,
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                  options: FFButtonOptions(
+                                                    height: 36.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
                                                 ),
-                                              ),
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text: 'Salvar e sair',
-                                                options: FFButtonOptions(
-                                                  height: 36.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBackground,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Noto Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderSide: BorderSide(
+                                                FFButtonWidget(
+                                                  onPressed: () {
+                                                    print('Button pressed ...');
+                                                  },
+                                                  text: 'Salvar e sair',
+                                                  options: FFButtonOptions(
+                                                    height: 36.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                                FFButtonWidget(
+                                                  onPressed: () {
+                                                    print('Button pressed ...');
+                                                  },
+                                                  text: 'Pubicar',
+                                                  options: FFButtonOptions(
+                                                    height: 38.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconAlignment:
+                                                        IconAlignment.start,
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    width: 1.0,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans',
+                                                          color: Colors.white,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
                                                 ),
-                                              ),
-                                              FFButtonWidget(
-                                                onPressed: () {
-                                                  print('Button pressed ...');
-                                                },
-                                                text: 'Pubicar',
-                                                options: FFButtonOptions(
-                                                  height: 38.0,
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
-                                                  iconAlignment:
-                                                      IconAlignment.start,
-                                                  iconPadding:
-                                                      EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  textStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily: 'Noto Sans',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                ),
-                                              ),
-                                            ].divide(SizedBox(width: 8.0)),
+                                              ].divide(SizedBox(width: 8.0)),
+                                            ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ],

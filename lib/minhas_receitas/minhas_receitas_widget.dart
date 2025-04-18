@@ -56,47 +56,56 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: AlignmentDirectional(0.0, -1.0),
-                    child: Container(
-                      width: MediaQuery.sizeOf(context).width * 1.0,
-                      decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                      ),
-                      child: wrapWithModel(
-                        model: _model.menuPrincipalModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: MenuPrincipalWidget(),
-                      ),
-                    ),
+                  wrapWithModel(
+                    model: _model.menuPrincipalModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MenuPrincipalWidget(),
                   ),
-                  Expanded(
+                  Flexible(
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         constraints: BoxConstraints(
-                          maxWidth: 1180.0,
+                          maxWidth: 1104.0,
                         ),
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              height: MediaQuery.sizeOf(context).height * 1.0,
-                              child: wrapWithModel(
-                                model: _model.menuLateralModel,
-                                updateCallback: () => safeSetState(() {}),
-                                child: MenuLateralWidget(
-                                  pagina: 'minhasreceitas',
-                                ),
+                            wrapWithModel(
+                              model: _model.menuLateralModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: MenuLateralWidget(
+                                pagina: 'minhasreceitas',
                               ),
                             ),
                             Expanded(
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
-                                decoration: BoxDecoration(),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    valueOrDefault<double>(
+                                      () {
+                                        if (MediaQuery.sizeOf(context).width <
+                                            kBreakpointSmall) {
+                                          return 0.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointMedium) {
+                                          return 0.0;
+                                        } else if (MediaQuery.sizeOf(context)
+                                                .width <
+                                            kBreakpointLarge) {
+                                          return 24.0;
+                                        } else {
+                                          return 24.0;
+                                        }
+                                      }(),
+                                      0.0,
+                                    ),
+                                    0.0,
+                                    0.0,
+                                    0.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [],
