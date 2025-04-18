@@ -401,15 +401,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             .String,
                                                                       ),
                                                                     }.withoutNulls,
-                                                                    queryParameters:
-                                                                        {
-                                                                      'receita':
-                                                                          serializeParam(
-                                                                        rowReceitasRow,
-                                                                        ParamType
-                                                                            .SupabaseRow,
-                                                                      ),
-                                                                    }.withoutNulls,
                                                                   );
                                                                 },
                                                                 child: Stack(

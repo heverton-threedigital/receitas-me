@@ -112,7 +112,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                             builder: (context) => FFButtonWidget(
                               onPressed: () async {
                                 await showDialog(
-                                  barrierColor: Color(0xC514181B),
+                                  barrierColor: Color(0xCC000000),
+                                  barrierDismissible: false,
                                   context: context,
                                   builder: (dialogContext) {
                                     return Dialog(
@@ -123,8 +124,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                           .resolve(Directionality.of(context)),
                                       child: LoginWidget(
                                         redirecionar: () async {
-                                          context.pushNamed(
-                                              InicioWidget.routeName);
+                                          context
+                                              .goNamed(InicioWidget.routeName);
                                         },
                                       ),
                                     );

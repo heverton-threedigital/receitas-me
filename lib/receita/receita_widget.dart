@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -10,11 +9,9 @@ export 'receita_model.dart';
 class ReceitaWidget extends StatefulWidget {
   const ReceitaWidget({
     super.key,
-    required this.receita,
     required this.receitaid,
   });
 
-  final ReceitasRow? receita;
   final String? receitaid;
 
   static String routeName = 'Receita';

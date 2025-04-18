@@ -12,6 +12,6 @@ export 'tables/ingredientes.dart';
 export 'tables/favoritos.dart';
 export 'tables/categorias.dart';
 export 'tables/instrucoes.dart';
-export 'tables/comentarios.dart';
+export 'tables/resposta_avaliacao.dart';
 export 'tables/tags.dart';
 export 'tables/avaliacoes.dart';

@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -122,10 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: ReceitaWidget.routeName,
               path: ReceitaWidget.routePath,
               builder: (context, params) => ReceitaWidget(
-                receita: params.getParam<ReceitasRow>(
-                  'receita',
-                  ParamType.SupabaseRow,
-                ),
                 receitaid: params.getParam(
                   'receitaid',
                   ParamType.String,

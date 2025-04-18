@@ -219,8 +219,8 @@ dynamic deserializeParam<T>(
             return CategoriasRow(data);
           case InstrucoesRow:
             return InstrucoesRow(data);
-          case ComentariosRow:
-            return ComentariosRow(data);
+          case RespostaAvaliacaoRow:
+            return RespostaAvaliacaoRow(data);
           case TagsRow:
             return TagsRow(data);
           case AvaliacoesRow:

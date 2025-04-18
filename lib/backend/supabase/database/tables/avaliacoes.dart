@@ -31,4 +31,10 @@ class AvaliacoesRow extends SupabaseDataRow {
 
   String? get comentario => getField<String>('comentario');
   set comentario(String? value) => setField<String>('comentario', value);
+
+  DateTime? get atualizado => getField<DateTime>('atualizado');
+  set atualizado(DateTime? value) => setField<DateTime>('atualizado', value);
+
+  String? get fotoAvaliacao => getField<String>('foto_avaliacao');
+  set fotoAvaliacao(String? value) => setField<String>('foto_avaliacao', value);
 }

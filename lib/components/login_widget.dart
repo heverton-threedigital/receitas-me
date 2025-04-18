@@ -328,7 +328,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                           mouseCursor: SystemMouseCursors.click,
                           recognizer: TapGestureRecognizer()
                             ..onTap = () async {
-                              Navigator.pop(context);
                               await showDialog(
                                 barrierColor: Color(0xCC000000),
                                 context: context,
@@ -341,8 +340,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         .resolve(Directionality.of(context)),
                                     child: RegistrarWidget(
                                       redirecionar: () async {
-                                        context
-                                            .pushNamed(InicioWidget.routeName);
+                                        context.goNamed(InicioWidget.routeName);
                                       },
                                     ),
                                   );
