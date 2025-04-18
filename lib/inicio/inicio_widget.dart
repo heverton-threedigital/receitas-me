@@ -347,11 +347,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                           rowReceitasRowList[
                                                               rowIndex];
                                                       return Container(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.18,
+                                                        width: 230.0,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
