@@ -197,27 +197,34 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       8.0, 0.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
-                                                    0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                            child: LoginWidget(
-                                              redirecionar: () async {
-                                                context.pushNamed(
-                                                    NovaReceitaWidget
-                                                        .routeName);
-                                              },
-                                            ),
-                                          );
-                                        },
-                                      );
+                                      if (loggedIn) {
+                                        context.pushNamed(
+                                            NovaReceitaWidget.routeName);
+                                      } else {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              alignment:
+                                                  AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: LoginWidget(
+                                                redirecionar: () async {
+                                                  context.pushNamed(
+                                                      NovaReceitaWidget
+                                                          .routeName);
+                                                },
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      }
                                     },
                                     text: 'Nova receita',
                                     icon: Icon(

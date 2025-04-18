@@ -69,7 +69,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
-        width: MediaQuery.sizeOf(context).width * 1.0,
+        width: MediaQuery.sizeOf(context).width * 0.9,
         constraints: BoxConstraints(
           minHeight: 400.0,
           maxWidth: 380.0,
@@ -292,9 +292,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                             }
 
                             await widget.redirecionar?.call();
-
-                            context.goNamedAuth(
-                                InicioWidget.routeName, context.mounted);
                           },
                           text: 'Entrar',
                           options: FFButtonOptions(
@@ -725,9 +722,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                               'email': currentUserEmail,
                             });
                             await widget.redirecionar?.call();
-
-                            context.goNamedAuth(
-                                InicioWidget.routeName, context.mounted);
                           },
                           text: 'Avançar',
                           options: FFButtonOptions(
