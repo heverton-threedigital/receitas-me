@@ -89,7 +89,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 0.95,
               constraints: BoxConstraints(
-                maxWidth: 1200.0,
+                maxWidth: 1080.0,
               ),
               decoration: BoxDecoration(),
               child: Column(

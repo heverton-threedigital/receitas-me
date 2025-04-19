@@ -45,17 +45,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: () {
-        if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
-          return 200.0;
-        } else if (MediaQuery.sizeOf(context).width < kBreakpointMedium) {
-          return 64.0;
-        } else if (MediaQuery.sizeOf(context).width < kBreakpointLarge) {
-          return 200.0;
-        } else {
-          return 200.0;
-        }
-      }(),
       height: double.infinity,
       constraints: BoxConstraints(
         maxWidth: 200.0,
@@ -72,7 +61,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
               child: Container(
-                width: MediaQuery.sizeOf(context).width * 1.0,
                 height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(),
                 child: Padding(
@@ -98,7 +86,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                 context.pushNamed(InicioWidget.routeName);
                               },
                               child: Container(
-                                width: double.infinity,
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   color: () {
@@ -119,7 +106,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(
                                         Icons.home_outlined,
@@ -145,7 +132,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
+                                                  12.0, 0.0, 14.0, 0.0),
                                           child: Text(
                                             'Página incial',
                                             style: FlutterFlowTheme.of(context)
@@ -204,7 +191,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                 context.pushNamed(NoticacoesWidget.routeName);
                               },
                               child: Container(
-                                width: double.infinity,
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   color: () {
@@ -225,7 +211,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(
                                         Icons.notifications_none_rounded,
@@ -252,7 +238,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
+                                                  12.0, 0.0, 28.0, 0.0),
                                           child: Text(
                                             'Notificações',
                                             style: FlutterFlowTheme.of(context)
@@ -313,7 +299,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                       MinhasReceitasWidget.routeName);
                                 },
                                 child: Container(
-                                  width: double.infinity,
                                   height: 40.0,
                                   decoration: BoxDecoration(
                                     color: () {
@@ -334,7 +319,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Row(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Icon(
                                           Icons.auto_awesome_motion_outlined,
@@ -364,7 +349,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
+                                                    12.0, 0.0, 6.0, 0.0),
                                             child: Text(
                                               'Minhas receitas',
                                               style:
@@ -425,7 +410,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     .pushNamed(ReceitasSalvasWidget.routeName);
                               },
                               child: Container(
-                                width: double.infinity,
                                 height: 40.0,
                                 decoration: BoxDecoration(
                                   color: () {
@@ -446,7 +430,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 12.0, 0.0),
                                   child: Row(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Icon(
                                         Icons.bookmark_border_rounded,
@@ -473,7 +457,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 0.0, 0.0),
+                                                  12.0, 0.0, 11.0, 0.0),
                                           child: Text(
                                             'Receitas salvas',
                                             style: FlutterFlowTheme.of(context)
@@ -533,7 +517,6 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                   context.pushNamed(PainelWidget.routeName);
                                 },
                                 child: Container(
-                                  width: double.infinity,
                                   height: 40.0,
                                   decoration: BoxDecoration(
                                     color: () {
@@ -554,7 +537,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Row(
-                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Icon(
                                           Icons.addchart_rounded,
@@ -583,7 +566,7 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
+                                                    12.0, 0.0, 69.0, 0.0),
                                             child: Text(
                                               'Painel',
                                               style:
