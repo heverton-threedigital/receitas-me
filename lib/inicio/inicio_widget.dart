@@ -120,6 +120,24 @@ class _InicioWidgetState extends State<InicioWidget> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            if (loggedIn &&
+                                responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                  tablet: false,
+                                  tabletLandscape: false,
+                                ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 24.0, 0.0),
+                                child: wrapWithModel(
+                                  model: _model.menuLateralModel1,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: MenuLateralWidget(
+                                    pagina: 'inicio',
+                                  ),
+                                ),
+                              ),
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -542,24 +560,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                 ),
                               ),
                             ),
-                            if (loggedIn &&
-                                responsiveVisibility(
-                                  context: context,
-                                  phone: false,
-                                  tablet: false,
-                                  tabletLandscape: false,
-                                ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 24.0, 0.0),
-                                child: wrapWithModel(
-                                  model: _model.menuLateralModel1,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralWidget(
-                                    pagina: 'inicio',
-                                  ),
-                                ),
-                              ),
                           ],
                         ),
                       ),

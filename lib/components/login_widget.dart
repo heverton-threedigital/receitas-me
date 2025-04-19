@@ -291,7 +291,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               return;
                             }
 
-                            await widget.redirecionar?.call();
+                            Navigator.pop(context);
                           },
                           text: 'Entrar',
                           options: FFButtonOptions(
