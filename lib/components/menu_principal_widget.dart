@@ -332,7 +332,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         );
                                       }
                                     },
-                                    text: 'Nova receita',
+                                    text: 'Criar',
                                     icon: Icon(
                                       Icons.add_rounded,
                                       color: FlutterFlowTheme.of(context)
@@ -363,61 +363,73 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   ),
                                 ),
                               ),
-                            if (loggedIn &&
-                                responsiveVisibility(
-                                  context: context,
-                                  tabletLandscape: false,
-                                  desktop: false,
-                                ))
-                              Builder(
-                                builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 0.0, 0.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      await showAlignedDialog(
-                                        barrierColor: Color(0xCD000000),
-                                        context: context,
-                                        isGlobal: false,
-                                        avoidOverflow: true,
-                                        targetAnchor:
-                                            AlignmentDirectional(1.0, -1.0)
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (loggedIn)
+                                  Builder(
+                                    builder: (context) => Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          8.0, 0.0, 0.0, 0.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          await showAlignedDialog(
+                                            barrierColor: Color(0xCD000000),
+                                            context: context,
+                                            isGlobal: false,
+                                            avoidOverflow: true,
+                                            targetAnchor: AlignmentDirectional(
+                                                    1.0, -1.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                        followerAnchor:
-                                            AlignmentDirectional(0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                        builder: (dialogContext) {
-                                          return Material(
-                                            color: Colors.transparent,
-                                            child: DropdownUsuarioWidget(),
+                                            followerAnchor:
+                                                AlignmentDirectional(0.0, 0.0)
+                                                    .resolve(Directionality.of(
+                                                        context)),
+                                            builder: (dialogContext) {
+                                              return Material(
+                                                color: Colors.transparent,
+                                                child: DropdownUsuarioWidget(),
+                                              );
+                                            },
                                           );
                                         },
-                                      );
-                                    },
-                                    child: Container(
-                                      width: 38.0,
-                                      height: 38.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        valueOrDefault<String>(
-                                          FFAppState().fotoPerfil,
-                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                        child: Container(
+                                          width: 38.0,
+                                          height: 38.0,
+                                          clipBehavior: Clip.antiAlias,
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Image.network(
+                                            valueOrDefault<String>(
+                                              FFAppState().fotoPerfil,
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                            ),
+                                            fit: BoxFit.contain,
+                                          ),
                                         ),
-                                        fit: BoxFit.contain,
                                       ),
                                     ),
                                   ),
+                                Text(
+                                  valueOrDefault<String>(
+                                    _model.perfilLogado?.firstOrNull?.nome,
+                                    '-',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Noto Sans',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
-                              ),
+                              ].divide(SizedBox(width: 8.0)),
+                            ),
                           ],
                         ),
                       ],
