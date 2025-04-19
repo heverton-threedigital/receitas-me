@@ -127,55 +127,27 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   tablet: false,
                                   tabletLandscape: false,
                                 ))
-                              wrapWithModel(
-                                model: _model.menuLateralModel1,
-                                updateCallback: () => safeSetState(() {}),
-                                child: MenuLateralWidget(
-                                  pagina: 'inicio',
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 24.0, 0.0),
+                                child: wrapWithModel(
+                                  model: _model.menuLateralModel1,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: MenuLateralWidget(
+                                    pagina: 'inicio',
+                                  ),
                                 ),
                               ),
                             Flexible(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    valueOrDefault<double>(
-                                      () {
-                                        if (MediaQuery.sizeOf(context).width <
-                                            kBreakpointSmall) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointMedium) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointLarge) {
-                                          return 24.0;
-                                        } else {
-                                          return 24.0;
-                                        }
-                                      }(),
-                                      0.0,
-                                    ),
-                                    24.0,
-                                    0.0,
-                                    0.0),
+                                    0.0, 24.0, 0.0, 0.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        'Navegue por categorias',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Noto Sans',
-                                              fontSize: 20.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                      ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
