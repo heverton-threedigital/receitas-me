@@ -111,9 +111,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.9,
+                        width: MediaQuery.sizeOf(context).width * 0.95,
                         constraints: BoxConstraints(
-                          maxWidth: 1104.0,
+                          maxWidth: 1200.0,
                         ),
                         decoration: BoxDecoration(),
                         child: Row(
@@ -125,7 +125,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   context: context,
                                   phone: false,
                                   tablet: false,
-                                  tabletLandscape: false,
                                 ))
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
