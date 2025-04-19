@@ -1,3 +1,4 @@
+import '/auth/base_auth_user_provider.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_widget.dart';
 import '/components/menu_principal_widget.dart';
@@ -119,12 +120,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (responsiveVisibility(
-                              context: context,
-                              phone: false,
-                              tablet: false,
-                              tabletLandscape: false,
-                            ))
+                            if (loggedIn &&
+                                responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                  tablet: false,
+                                  tabletLandscape: false,
+                                ))
                               wrapWithModel(
                                 model: _model.menuLateralModel1,
                                 updateCallback: () => safeSetState(() {}),
