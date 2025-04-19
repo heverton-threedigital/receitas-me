@@ -137,12 +137,14 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   context.pushNamed(PesquisarWidget.routeName);
                                 },
                                 child: Container(
-                                  width: 300.0,
+                                  width: 350.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
                                     borderRadius: BorderRadius.circular(40.0),
+                                    border: Border.all(
+                                      color: FlutterFlowTheme.of(context)
+                                          .alternate,
+                                    ),
                                   ),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -153,7 +155,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          'Hello World',
+                                          'Pesquise por receitas ou ingredientes...',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -164,23 +166,21 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 2.0, 0.0),
+                                            0.0, 0.0, 4.0, 0.0),
                                         child: Container(
+                                          width: 40.0,
+                                          height: 40.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             borderRadius:
                                                 BorderRadius.circular(40.0),
                                           ),
-                                          child: Padding(
-                                            padding: EdgeInsets.all(10.0),
-                                            child: Icon(
-                                              Icons.search_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              size: 24.0,
-                                            ),
+                                          child: Icon(
+                                            Icons.search_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            size: 24.0,
                                           ),
                                         ),
                                       ),
