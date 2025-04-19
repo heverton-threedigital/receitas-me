@@ -45,7 +45,17 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70.0,
+      width: () {
+        if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+          return 200.0;
+        } else if (MediaQuery.sizeOf(context).width < kBreakpointMedium) {
+          return 64.0;
+        } else if (MediaQuery.sizeOf(context).width < kBreakpointLarge) {
+          return 200.0;
+        } else {
+          return 200.0;
+        }
+      }(),
       height: double.infinity,
       constraints: BoxConstraints(
         maxWidth: 200.0,
