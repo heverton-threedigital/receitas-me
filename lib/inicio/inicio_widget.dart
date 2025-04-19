@@ -333,7 +333,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       .stream(
                                                           primaryKey: ['id'])
                                                       .order('criado_em')
-                                                      .limit(3)
+                                                      .limit(6)
                                                       .map((list) => list
                                                           .map((item) =>
                                                               ReceitasRow(item))
