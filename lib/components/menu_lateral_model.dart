@@ -15,8 +15,6 @@ class MenuLateralModel extends FlutterFlowModel<MenuLateralWidget> {
   bool mouseRegionHovered4 = false;
   // State field(s) for MouseRegion widget.
   bool mouseRegionHovered5 = false;
-  // State field(s) for MouseRegion widget.
-  bool mouseRegionHovered6 = false;
 
   @override
   void initState(BuildContext context) {}

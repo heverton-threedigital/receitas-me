@@ -140,11 +140,9 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   width: 350.0,
                                   height: 48.0,
                                   decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     borderRadius: BorderRadius.circular(40.0),
-                                    border: Border.all(
-                                      color: FlutterFlowTheme.of(context)
-                                          .alternate,
-                                    ),
                                   ),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -155,7 +153,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          'Pesquise por receitas ou ingredientes...',
+                                          'Pesquise por receita ou ingredientes...',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
