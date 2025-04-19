@@ -122,70 +122,107 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                 ),
                               ),
                             ),
-                            if (responsiveVisibility(
-                              context: context,
-                              phone: false,
-                              tablet: false,
-                              tabletLandscape: false,
-                            ))
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  context.pushNamed(PesquisarWidget.routeName);
-                                },
-                                child: Container(
-                                  width: 350.0,
-                                  height: 48.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(40.0),
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Pesquise por receita ou ingredientes...',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Noto Sans',
-                                                letterSpacing: 0.0,
-                                              ),
+                            MouseRegion(
+                              opaque: false,
+                              cursor: MouseCursor.defer ?? MouseCursor.defer,
+                              child: Visibility(
+                                visible: responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                  tablet: false,
+                                  tabletLandscape: false,
+                                ),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context
+                                        .pushNamed(PesquisarWidget.routeName);
+                                  },
+                                  child: Container(
+                                    width: 350.0,
+                                    height: 48.0,
+                                    decoration: BoxDecoration(
+                                      color: valueOrDefault<Color>(
+                                        _model.mouseRegionHovered
+                                            ? FlutterFlowTheme.of(context)
+                                                .primaryBackground
+                                            : FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                        FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      borderRadius: BorderRadius.circular(40.0),
+                                      border: Border.all(
+                                        color: valueOrDefault<Color>(
+                                          _model.mouseRegionHovered
+                                              ? FlutterFlowTheme.of(context)
+                                                  .alternate
+                                              : FlutterFlowTheme.of(context)
+                                                  .secondaryBackground,
+                                          FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 4.0, 0.0),
-                                        child: Container(
-                                          width: 40.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            borderRadius:
-                                                BorderRadius.circular(40.0),
-                                          ),
-                                          child: Icon(
-                                            Icons.search_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            size: 24.0,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Pesquise por receita ou ingredientes...',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Noto Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 4.0, 0.0),
+                                          child: Container(
+                                            width: 40.0,
+                                            height: 40.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              borderRadius:
+                                                  BorderRadius.circular(40.0),
+                                            ),
+                                            child: Icon(
+                                              Icons.search_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBackground,
+                                              size: 24.0,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
+                              onEnter: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = true);
+                              }),
+                              onExit: ((event) async {
+                                safeSetState(
+                                    () => _model.mouseRegionHovered = false);
+                              }),
+                            ),
                           ].divide(SizedBox(width: 16.0)),
                         ),
                         Row(

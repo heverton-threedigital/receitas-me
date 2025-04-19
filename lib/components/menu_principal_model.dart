@@ -8,6 +8,8 @@ class MenuPrincipalModel extends FlutterFlowModel<MenuPrincipalWidget> {
 
   // Stores action output result for [Backend Call - Query Rows] action in MenuPrincipal widget.
   List<PerfisRow>? perfilLogado;
+  // State field(s) for MouseRegion widget.
+  bool mouseRegionHovered = false;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
