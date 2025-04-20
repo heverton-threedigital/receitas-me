@@ -142,14 +142,15 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0x00000000),
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0x00000000),
+                          color: FlutterFlowTheme.of(context).primary,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
