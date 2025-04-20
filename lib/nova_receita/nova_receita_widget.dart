@@ -76,84 +76,83 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                         decoration: BoxDecoration(),
                         child: Stack(
                           children: [
-                            ScrollConfiguration(
-                              behavior:
-                                  ScrollConfiguration.of(context).copyWith(
-                                scrollbars: false,
-                                dragDevices: {
-                                  PointerDeviceKind.mouse,
-                                  PointerDeviceKind.touch,
-                                  PointerDeviceKind.stylus,
-                                  PointerDeviceKind.unknown,
-                                },
-                              ),
-                              child: Scrollbar(
-                                child: SingleChildScrollView(
-                                  primary: false,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Container(
-                                              width: 400.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                                border: Border.all(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
+                            SingleChildScrollView(
+                              primary: false,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Container(
+                                          width: 400.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
                                                       .alternate,
-                                                ),
-                                              ),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: [
-                                                  Text(
-                                                    'Informações gerais da receita',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Noto Sans',
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
                                             ),
-                                            Expanded(
-                                              child: Container(
-                                                width: 100.0,
-                                                height: 100.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 16.0, 16.0, 16.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Informações gerais da receita',
+                                                  style: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondaryBackground,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Noto Sans',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                                 ),
-                                              ),
+                                                Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          ].divide(SizedBox(width: 16.0)),
+                                          ),
                                         ),
-                                      ),
-                                    ]
-                                        .addToStart(SizedBox(height: 24.0))
-                                        .addToEnd(SizedBox(height: 32.0)),
+                                        Expanded(
+                                          child: Container(
+                                            width: 100.0,
+                                            height: 100.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
+                                            ),
+                                          ),
+                                        ),
+                                      ].divide(SizedBox(width: 16.0)),
+                                    ),
                                   ),
-                                ),
+                                ]
+                                    .addToStart(SizedBox(height: 24.0))
+                                    .addToEnd(SizedBox(height: 32.0)),
                               ),
                             ),
                             Align(
