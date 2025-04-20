@@ -808,14 +808,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           final ingredientesLocal =
                                                               _model
                                                                   .ingredientes
-                                                                  .map((e) => e)
-                                                                  .toList()
-                                                                  .sortedList(
-                                                                      keyOf:
-                                                                          (e) =>
-                                                                              e,
-                                                                      desc:
-                                                                          true)
                                                                   .toList();
 
                                                           return ListView
@@ -877,7 +869,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            ingredientesLocalIndex.toString(),
+                                                                            ingredientesLocalItem,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Raleway',
                                                                                   letterSpacing: 0.0,
