@@ -1200,25 +1200,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 decoration:
                                                                     InputDecoration(
                                                                   isDense: true,
-                                                                  labelText:
-                                                                      'Ingrediente',
-                                                                  labelStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Raleway',
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryText,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
-                                                                      ),
                                                                   alignLabelWithHint:
                                                                       false,
                                                                   hintText:
-                                                                      '250g de farinha de trigo',
+                                                                      'Misture a farinha de trigo com os ovos e o açucar...',
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
@@ -1312,7 +1297,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               ),
                                                             ),
                                                           ),
-                                                        ],
+                                                        ].divide(SizedBox(
+                                                            width: 8.0)),
                                                       ),
                                                       FFButtonWidget(
                                                         onPressed: () async {
