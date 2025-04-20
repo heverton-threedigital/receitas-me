@@ -1103,14 +1103,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         },
                                                         text:
                                                             'Adicionar ingrediente',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .plus_one_outlined,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          size: 15.0,
-                                                        ),
                                                         options:
                                                             FFButtonOptions(
                                                           width:
@@ -1135,7 +1127,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       0.0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primary,
+                                                              .primaryBackground,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1143,12 +1135,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Raleway',
-                                                                    color: Colors
-                                                                        .white,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
                                                           elevation: 0.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                          ),
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -1420,14 +1419,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         },
                                                         text:
                                                             'Adicionar ingrediente',
-                                                        icon: Icon(
-                                                          Icons
-                                                              .plus_one_outlined,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          size: 15.0,
-                                                        ),
                                                         options:
                                                             FFButtonOptions(
                                                           width:
@@ -1452,7 +1443,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       0.0),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primary,
+                                                              .primaryBackground,
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1460,8 +1451,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Raleway',
-                                                                    color: Colors
-                                                                        .white,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
