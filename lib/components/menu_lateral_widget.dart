@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'menu_lateral_model.dart';
 export 'menu_lateral_model.dart';
 
@@ -57,6 +58,21 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          if (responsiveVisibility(
+            context: context,
+            tablet: false,
+            tabletLandscape: false,
+            desktop: false,
+          ))
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+              child: Container(
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+              ),
+            ),
           Flexible(
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 16.0, 0.0),
@@ -71,6 +87,33 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        if (responsiveVisibility(
+                          context: context,
+                          tablet: false,
+                          tabletLandscape: false,
+                          desktop: false,
+                        ))
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 8.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(InicioWidget.routeName);
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8.0),
+                                child: SvgPicture.asset(
+                                  'assets/images/Receitas.me.svg',
+                                  width: 150.0,
+                                  fit: BoxFit.fitWidth,
+                                ),
+                              ),
+                            ),
+                          ),
                         MouseRegion(
                           opaque: false,
                           cursor: MouseCursor.defer ?? MouseCursor.defer,
@@ -618,11 +661,15 @@ class _MenuLateralWidgetState extends State<MenuLateralWidget> {
               ),
             ),
           ),
-          VerticalDivider(
-            width: 1.0,
-            thickness: 0.0,
-            color: FlutterFlowTheme.of(context).alternate,
-          ),
+          if (responsiveVisibility(
+            context: context,
+            phone: false,
+          ))
+            VerticalDivider(
+              width: 1.0,
+              thickness: 0.0,
+              color: FlutterFlowTheme.of(context).alternate,
+            ),
         ],
       ),
     );

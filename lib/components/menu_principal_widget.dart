@@ -87,7 +87,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
         children: [
           Flexible(
             child: Container(
-              width: MediaQuery.sizeOf(context).width * 0.95,
+              width: MediaQuery.sizeOf(context).width * 0.9,
               constraints: BoxConstraints(
                 maxWidth: 1080.0,
               ),
@@ -143,7 +143,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   },
                                   child: Container(
                                     width: 350.0,
-                                    height: 48.0,
+                                    height: 40.0,
                                     decoration: BoxDecoration(
                                       color: valueOrDefault<Color>(
                                         _model.mouseRegionHovered
@@ -191,8 +191,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 4.0, 0.0),
                                           child: Container(
-                                            width: 40.0,
-                                            height: 40.0,
+                                            width: 36.0,
+                                            height: 36.0,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -236,6 +236,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await showDialog(
+                                        barrierColor: Color(0xCC000000),
                                         context: context,
                                         builder: (dialogContext) {
                                           return Dialog(
@@ -246,11 +247,14 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                     0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                            child: LoginWidget(
-                                              redirecionar: () async {
-                                                context.goNamed(
-                                                    InicioWidget.routeName);
-                                              },
+                                            child: Container(
+                                              width: 380.0,
+                                              child: LoginWidget(
+                                                redirecionar: () async {
+                                                  context.goNamed(
+                                                      InicioWidget.routeName);
+                                                },
+                                              ),
                                             ),
                                           );
                                         },
@@ -308,6 +312,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                             NovaReceitaWidget.routeName);
                                       } else {
                                         await showDialog(
+                                          barrierColor: Color(0xCC000000),
                                           context: context,
                                           builder: (dialogContext) {
                                             return Dialog(
@@ -320,12 +325,15 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: LoginWidget(
-                                                redirecionar: () async {
-                                                  context.pushNamed(
-                                                      NovaReceitaWidget
-                                                          .routeName);
-                                                },
+                                              child: Container(
+                                                width: 380.0,
+                                                child: LoginWidget(
+                                                  redirecionar: () async {
+                                                    context.pushNamed(
+                                                        NovaReceitaWidget
+                                                            .routeName);
+                                                  },
+                                                ),
                                               ),
                                             );
                                           },

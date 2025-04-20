@@ -72,7 +72,7 @@ class _InicioWidgetState extends State<InicioWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             drawer: Container(
-              width: 250.0,
+              width: 220.0,
               child: Drawer(
                 elevation: 16.0,
                 child: Container(
@@ -111,7 +111,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.95,
+                        width: MediaQuery.sizeOf(context).width * 0.9,
                         constraints: BoxConstraints(
                           maxWidth: 1080.0,
                         ),
@@ -137,7 +137,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   ),
                                 ),
                               ),
-                            Flexible(
+                            Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 24.0, 0.0, 0.0),
@@ -200,67 +200,53 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                   final rowCategoriasRow =
                                                       rowCategoriasRowList[
                                                           rowIndex];
-                                                  return Card(
-                                                    clipBehavior: Clip
-                                                        .antiAliasWithSaveLayer,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    elevation: 0.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Container(
-                                                          width: 80.0,
-                                                          height: 80.0,
-                                                          clipBehavior:
-                                                              Clip.antiAlias,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            shape:
-                                                                BoxShape.circle,
-                                                          ),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              rowCategoriasRow
-                                                                  .imagemUrl,
-                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/99evf32skkdm/icon_receitas.me.png',
-                                                            ),
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Container(
+                                                        width: 80.0,
+                                                        height: 80.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
                                                         ),
-                                                        Text(
+                                                        child: Image.network(
                                                           valueOrDefault<
                                                               String>(
                                                             rowCategoriasRow
-                                                                .nome,
-                                                            'Sobremesa',
+                                                                .imagemUrl,
+                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/99evf32skkdm/icon_receitas.me.png',
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Noto Sans',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                              ),
+                                                          fit: BoxFit.cover,
                                                         ),
-                                                      ],
-                                                    ),
+                                                      ),
+                                                      Text(
+                                                        valueOrDefault<String>(
+                                                          rowCategoriasRow.nome,
+                                                          'Sobremesa',
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Noto Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                ),
+                                                      ),
+                                                    ],
                                                   );
-                                                }),
+                                                }).divide(
+                                                    SizedBox(width: 16.0)),
                                               ),
                                             );
                                           },
