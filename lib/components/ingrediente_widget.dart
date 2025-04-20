@@ -109,8 +109,9 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  FFAppState().removeFromIngredientes(widget.ingrediente!);
-                  safeSetState(() {});
+                  FFAppState()
+                      .removeAtIndexFromIngredientes(widget.indexIngrediente!);
+                  _model.updatePage(() {});
                 },
               ),
             ].divide(SizedBox(width: 8.0)),

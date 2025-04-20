@@ -1315,7 +1315,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         BorderSide(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .alternate,
+                                                                          .secondaryBackground,
                                                                       width:
                                                                           1.0,
                                                                     ),
@@ -1368,7 +1368,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   filled: true,
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryBackground,
+                                                                      .secondaryBackground,
                                                                   hoverColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,

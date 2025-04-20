@@ -2,7 +2,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'passos_model.dart';
 export 'passos_model.dart';
 
@@ -51,6 +53,8 @@ class _PassosWidgetState extends State<PassosWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
@@ -133,8 +137,27 @@ class _PassosWidgetState extends State<PassosWidget> {
                   size: 24.0,
                 ),
                 onPressed: () async {
-                  FFAppState().removeFromPassos(widget.passo!);
+                  FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
+                  FFAppState().numeroPassos = [];
                   safeSetState(() {});
+                  FFAppState().contador = -1;
+                  safeSetState(() {});
+                  _model.instantTimer = InstantTimer.periodic(
+                    duration: Duration(milliseconds: 1000),
+                    callback: (timer) async {
+                      while (FFAppState().contador <=
+                          FFAppState().numeroPassos.length) {
+                        FFAppState().contador = FFAppState().contador + 1;
+                        safeSetState(() {});
+                        FFAppState()
+                            .addToNumeroPassos((widget.indexPasso!) + 1);
+                        safeSetState(() {});
+                        break;
+                      }
+                      _model.instantTimer?.cancel();
+                    },
+                    startImmediately: true,
+                  );
                 },
               ),
             ].divide(SizedBox(width: 8.0)),
