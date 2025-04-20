@@ -304,8 +304,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .circular(
                                                                           8.0),
                                                               child:
-                                                                  Image.network(
-                                                                'https://picsum.photos/seed/481/600',
+                                                                  Image.memory(
+                                                                _model.uploadedLocalFile
+                                                                        .bytes ??
+                                                                    Uint8List
+                                                                        .fromList(
+                                                                            []),
                                                                 width: double
                                                                     .infinity,
                                                                 height: double
@@ -873,7 +877,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            'Hello World',
+                                                                            ingredientesLocalIndex.toString(),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Raleway',
                                                                                   letterSpacing: 0.0,
@@ -1131,7 +1135,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             .start,
                                                     children: [
                                                       Text(
-                                                        'Ingredientes',
+                                                        'Passo a passo',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1145,9 +1149,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       ),
                                                       Builder(
                                                         builder: (context) {
-                                                          final ingredientesLocal =
+                                                          final passoapasso =
                                                               _model
-                                                                  .ingredientes
+                                                                  .passos
                                                                   .map((e) => e)
                                                                   .toList()
                                                                   .sortedList(
@@ -1167,7 +1171,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             scrollDirection:
                                                                 Axis.vertical,
                                                             itemCount:
-                                                                ingredientesLocal
+                                                                passoapasso
                                                                     .length,
                                                             separatorBuilder:
                                                                 (_, __) =>
@@ -1175,10 +1179,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         height:
                                                                             8.0),
                                                             itemBuilder: (context,
-                                                                ingredientesLocalIndex) {
-                                                              final ingredientesLocalItem =
-                                                                  ingredientesLocal[
-                                                                      ingredientesLocalIndex];
+                                                                passoapassoIndex) {
+                                                              final passoapassoItem =
+                                                                  passoapasso[
+                                                                      passoapassoIndex];
                                                               return Row(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1244,7 +1248,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     onPressed:
                                                                         () async {
                                                                       _model.removeFromIngredientes(
-                                                                          ingredientesLocalItem);
+                                                                          passoapassoItem);
                                                                       safeSetState(
                                                                           () {});
                                                                     },

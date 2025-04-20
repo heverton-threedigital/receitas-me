@@ -17,6 +17,15 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   void updateIngredientesAtIndex(int index, Function(String) updateFn) =>
       ingredientes[index] = updateFn(ingredientes[index]);
 
+  List<String> passos = [];
+  void addToPassos(String item) => passos.add(item);
+  void removeFromPassos(String item) => passos.remove(item);
+  void removeAtIndexFromPassos(int index) => passos.removeAt(index);
+  void insertAtIndexInPassos(int index, String item) =>
+      passos.insert(index, item);
+  void updatePassosAtIndex(int index, Function(String) updateFn) =>
+      passos[index] = updateFn(passos[index]);
+
   ///  State fields for stateful widgets in this page.
 
   // Model for MenuPrincipal component.
