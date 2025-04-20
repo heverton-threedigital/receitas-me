@@ -1689,6 +1689,13 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             }
                                                             _model.instantTimer2
                                                                 ?.cancel();
+                                                            FFAppState()
+                                                                .ingredientes = [];
+                                                            FFAppState()
+                                                                .passos = [];
+                                                            FFAppState()
+                                                                .numeroPassos = [];
+                                                            safeSetState(() {});
 
                                                             context.pushNamed(
                                                               ReceitaWidget
