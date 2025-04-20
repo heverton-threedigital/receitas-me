@@ -236,7 +236,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                   );
                   safeSetState(() {});
                   _model.editar = false;
-                  safeSetState(() {});
+                  _model.updatePage(() {});
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(

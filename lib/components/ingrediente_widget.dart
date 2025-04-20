@@ -190,7 +190,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   );
                   safeSetState(() {});
                   _model.editar = false;
-                  safeSetState(() {});
+                  _model.updatePage(() {});
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(
