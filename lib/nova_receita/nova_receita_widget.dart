@@ -1231,9 +1231,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       'Keyif0_${passoLocalIndex}_of_${passoLocal.length}'),
                                                                   passo:
                                                                       passoLocalItem,
-                                                                  numeroPasso:
-                                                                      _model
-                                                                          .numeropasso,
+                                                                  numeroPasso: FFAppState()
+                                                                      .numeroPassos
+                                                                      .elementAtOrNull(
+                                                                          passoLocalIndex)!,
                                                                   indexPasso:
                                                                       passoLocalIndex,
                                                                 ),
