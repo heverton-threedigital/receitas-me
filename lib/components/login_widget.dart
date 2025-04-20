@@ -744,7 +744,24 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     'is_admin': false,
                                     'email': currentUserEmail,
                                   });
-                                  await widget.redirecionar?.call();
+                                  await showDialog(
+                                    context: context,
+                                    builder: (alertDialogContext) {
+                                      return AlertDialog(
+                                        title: Text('CONFIRME SEU EMAIL'),
+                                        content: Text(
+                                            'Clique no link que enviamos para seu email para confirmar sua conta!'),
+                                        actions: [
+                                          TextButton(
+                                            onPressed: () => Navigator.pop(
+                                                alertDialogContext),
+                                            child: Text('Ok, Já confirmei'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                  Navigator.pop(context);
                                 },
                                 text: 'Avançar',
                                 options: FFButtonOptions(
