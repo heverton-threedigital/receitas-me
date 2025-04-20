@@ -26,9 +26,6 @@ class ReceitasRow extends SupabaseDataRow {
   int get tempoPreparo => getField<int>('tempo_preparo')!;
   set tempoPreparo(int value) => setField<int>('tempo_preparo', value);
 
-  String get dificuldade => getField<String>('dificuldade')!;
-  set dificuldade(String value) => setField<String>('dificuldade', value);
-
   String? get imagemUrl => getField<String>('imagem_url');
   set imagemUrl(String? value) => setField<String>('imagem_url', value);
 

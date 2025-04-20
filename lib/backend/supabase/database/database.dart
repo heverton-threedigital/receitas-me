@@ -5,11 +5,11 @@ export '../supabase.dart';
 export 'row.dart';
 export 'table.dart';
 
+export 'tables/receitas_salvas.dart';
 export 'tables/receitas_tags.dart';
 export 'tables/receitas.dart';
 export 'tables/perfis.dart';
 export 'tables/ingredientes.dart';
-export 'tables/favoritos.dart';
 export 'tables/categorias.dart';
 export 'tables/instrucoes.dart';
 export 'tables/resposta_avaliacao.dart';

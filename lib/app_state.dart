@@ -73,6 +73,99 @@ class FFAppState extends ChangeNotifier {
     categoriasReceitas.insert(index, value);
     prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
   }
+
+  List<String> _ingredientes = [];
+  List<String> get ingredientes => _ingredientes;
+  set ingredientes(List<String> value) {
+    _ingredientes = value;
+  }
+
+  void addToIngredientes(String value) {
+    ingredientes.add(value);
+  }
+
+  void removeFromIngredientes(String value) {
+    ingredientes.remove(value);
+  }
+
+  void removeAtIndexFromIngredientes(int index) {
+    ingredientes.removeAt(index);
+  }
+
+  void updateIngredientesAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    ingredientes[index] = updateFn(_ingredientes[index]);
+  }
+
+  void insertAtIndexInIngredientes(int index, String value) {
+    ingredientes.insert(index, value);
+  }
+
+  List<String> _passos = [];
+  List<String> get passos => _passos;
+  set passos(List<String> value) {
+    _passos = value;
+  }
+
+  void addToPassos(String value) {
+    passos.add(value);
+  }
+
+  void removeFromPassos(String value) {
+    passos.remove(value);
+  }
+
+  void removeAtIndexFromPassos(int index) {
+    passos.removeAt(index);
+  }
+
+  void updatePassosAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    passos[index] = updateFn(_passos[index]);
+  }
+
+  void insertAtIndexInPassos(int index, String value) {
+    passos.insert(index, value);
+  }
+
+  int _contador = -1;
+  int get contador => _contador;
+  set contador(int value) {
+    _contador = value;
+  }
+
+  List<int> _numeroPassos = [];
+  List<int> get numeroPassos => _numeroPassos;
+  set numeroPassos(List<int> value) {
+    _numeroPassos = value;
+  }
+
+  void addToNumeroPassos(int value) {
+    numeroPassos.add(value);
+  }
+
+  void removeFromNumeroPassos(int value) {
+    numeroPassos.remove(value);
+  }
+
+  void removeAtIndexFromNumeroPassos(int index) {
+    numeroPassos.removeAt(index);
+  }
+
+  void updateNumeroPassosAtIndex(
+    int index,
+    int Function(int) updateFn,
+  ) {
+    numeroPassos[index] = updateFn(_numeroPassos[index]);
+  }
+
+  void insertAtIndexInNumeroPassos(int index, int value) {
+    numeroPassos.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

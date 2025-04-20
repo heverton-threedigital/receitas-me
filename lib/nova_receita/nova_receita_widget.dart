@@ -1,12 +1,18 @@
+import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/ingrediente_widget.dart';
 import '/components/menu_principal_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/components/passos_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'nova_receita_model.dart';
 export 'nova_receita_model.dart';
 
@@ -61,6 +67,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Title(
         title: 'Cadastrar receita',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -164,7 +172,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 m.storagePath,
                                                                 context))) {
                                                       safeSetState(() => _model
-                                                              .isDataUploading =
+                                                              .isDataUploading1 =
                                                           true);
                                                       var selectedUploadedFiles =
                                                           <FFUploadedFile>[];
@@ -192,7 +200,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     ))
                                                                 .toList();
                                                       } finally {
-                                                        _model.isDataUploading =
+                                                        _model.isDataUploading1 =
                                                             false;
                                                       }
                                                       if (selectedUploadedFiles
@@ -200,7 +208,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           selectedMedia
                                                               .length) {
                                                         safeSetState(() {
-                                                          _model.uploadedLocalFile =
+                                                          _model.uploadedLocalFile1 =
                                                               selectedUploadedFiles
                                                                   .first;
                                                         });
@@ -212,7 +220,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
 
                                                     _model.imagemReceita =
                                                         _model
-                                                            .uploadedLocalFile;
+                                                            .uploadedLocalFile1;
                                                     safeSetState(() {});
                                                   },
                                                   child: ClipRRect(
@@ -305,7 +313,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.memory(
-                                                                _model.uploadedLocalFile
+                                                                _model.uploadedLocalFile1
                                                                         .bytes ??
                                                                     Uint8List
                                                                         .fromList(
@@ -333,7 +341,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      isDense: false,
+                                                      isDense: true,
                                                       labelText:
                                                           'Nome da receita',
                                                       labelStyle:
@@ -415,6 +423,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBackground,
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -442,7 +454,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      isDense: false,
+                                                      isDense: true,
                                                       labelText: 'Descrição',
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
@@ -526,6 +538,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBackground,
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -554,7 +570,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      isDense: false,
+                                                      isDense: true,
                                                       labelText: 'Porções',
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
@@ -634,6 +650,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBackground,
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -661,7 +681,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     autofocus: false,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      isDense: false,
+                                                      isDense: true,
                                                       labelText:
                                                           'Tempo de cozimento em minutos',
                                                       labelStyle:
@@ -742,6 +762,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBackground,
+                                                      hoverColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -806,7 +830,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       Builder(
                                                         builder: (context) {
                                                           final ingredientesLocal =
-                                                              _model
+                                                              FFAppState()
                                                                   .ingredientes
                                                                   .toList();
 
@@ -831,79 +855,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               final ingredientesLocalItem =
                                                                   ingredientesLocal[
                                                                       ingredientesLocalIndex];
-                                                              return Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          100.0,
-                                                                      height:
-                                                                          48.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        border:
-                                                                            Border.all(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                        ),
-                                                                      ),
-                                                                      child:
-                                                                          Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            ingredientesLocalItem,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  FlutterFlowIconButton(
-                                                                    borderRadius:
-                                                                        8.0,
-                                                                    buttonSize:
-                                                                        40.0,
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .delete_outline_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                    onPressed:
-                                                                        () async {
-                                                                      _model.removeFromIngredientes(
-                                                                          ingredientesLocalItem);
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                  ),
-                                                                ].divide(SizedBox(
-                                                                    width:
-                                                                        8.0)),
+                                                              return IngredienteWidget(
+                                                                key: Key(
+                                                                    'Keys3z_${ingredientesLocalIndex}_of_${ingredientesLocal.length}'),
+                                                                ingrediente:
+                                                                    ingredientesLocalItem,
                                                               );
                                                             },
                                                           );
@@ -920,7 +876,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
-                                                            isDense: false,
+                                                            isDense: true,
                                                             labelText:
                                                                 'Ingrediente',
                                                             labelStyle:
@@ -941,6 +897,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     ),
                                                             alignLabelWithHint:
                                                                 false,
+                                                            hintText:
+                                                                '250g de farinha de trigo',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1011,6 +969,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             fillColor: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primaryBackground,
+                                                            hoverColor:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -1033,10 +995,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       ),
                                                       FFButtonWidget(
                                                         onPressed: () async {
-                                                          _model.addToIngredientes(
-                                                              _model
-                                                                  .ingredienteTextController1
-                                                                  .text);
+                                                          FFAppState()
+                                                              .addToIngredientes(
+                                                                  _model
+                                                                      .ingredienteTextController1
+                                                                      .text);
                                                           safeSetState(() {});
                                                           safeSetState(() {
                                                             _model
@@ -1141,17 +1104,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       ),
                                                       Builder(
                                                         builder: (context) {
-                                                          final passoapasso =
-                                                              _model
+                                                          final passoLocal =
+                                                              FFAppState()
                                                                   .passos
-                                                                  .map((e) => e)
-                                                                  .toList()
-                                                                  .sortedList(
-                                                                      keyOf:
-                                                                          (e) =>
-                                                                              e,
-                                                                      desc:
-                                                                          true)
                                                                   .toList();
 
                                                           return ListView
@@ -1163,7 +1118,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             scrollDirection:
                                                                 Axis.vertical,
                                                             itemCount:
-                                                                passoapasso
+                                                                passoLocal
                                                                     .length,
                                                             separatorBuilder:
                                                                 (_, __) =>
@@ -1171,216 +1126,204 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         height:
                                                                             8.0),
                                                             itemBuilder: (context,
-                                                                passoapassoIndex) {
-                                                              final passoapassoItem =
-                                                                  passoapasso[
-                                                                      passoapassoIndex];
-                                                              return Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Container(
-                                                                      width:
-                                                                          100.0,
-                                                                      height:
-                                                                          48.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        border:
-                                                                            Border.all(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                        ),
-                                                                      ),
-                                                                      child:
-                                                                          Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            -1.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              8.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Hello World',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Raleway',
-                                                                                  letterSpacing: 0.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                  ),
-                                                                  FlutterFlowIconButton(
-                                                                    borderRadius:
-                                                                        8.0,
-                                                                    buttonSize:
-                                                                        40.0,
-                                                                    icon: Icon(
-                                                                      Icons
-                                                                          .delete_outline_rounded,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      size:
-                                                                          24.0,
-                                                                    ),
-                                                                    onPressed:
-                                                                        () async {
-                                                                      _model.removeFromIngredientes(
-                                                                          passoapassoItem);
-                                                                      safeSetState(
-                                                                          () {});
-                                                                    },
-                                                                  ),
-                                                                ].divide(SizedBox(
-                                                                    width:
-                                                                        8.0)),
+                                                                passoLocalIndex) {
+                                                              final passoLocalItem =
+                                                                  passoLocal[
+                                                                      passoLocalIndex];
+                                                              return Container(
+                                                                child:
+                                                                    PassosWidget(
+                                                                  key: Key(
+                                                                      'Keyif0_${passoLocalIndex}_of_${passoLocal.length}'),
+                                                                  passo:
+                                                                      passoLocalItem,
+                                                                  numeroPasso:
+                                                                      _model
+                                                                          .numeropasso,
+                                                                ),
                                                               );
                                                             },
                                                           );
                                                         },
                                                       ),
-                                                      Container(
-                                                        width: double.infinity,
-                                                        child: TextFormField(
-                                                          controller: _model
-                                                              .ingredienteTextController2,
-                                                          focusNode: _model
-                                                              .ingredienteFocusNode2,
-                                                          autofocus: true,
-                                                          obscureText: false,
-                                                          decoration:
-                                                              InputDecoration(
-                                                            isDense: false,
-                                                            labelText:
-                                                                'Ingrediente',
-                                                            labelStyle:
-                                                                FlutterFlowTheme.of(
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Container(
+                                                            width: 40.0,
+                                                            height: 40.0,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                            ),
+                                                            child: Align(
+                                                              alignment:
+                                                                  AlignmentDirectional(
+                                                                      0.0, 0.0),
+                                                              child: Text(
+                                                                _model
+                                                                    .numeropasso
+                                                                    .toString(),
+                                                                style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
+                                                                    .headlineMedium
                                                                     .override(
                                                                       fontFamily:
                                                                           'Raleway',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primaryText,
+                                                                          .primaryBackground,
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
                                                                     ),
-                                                            alignLabelWithHint:
-                                                                false,
-                                                            hintStyle:
-                                                                FlutterFlowTheme.of(
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          Expanded(
+                                                            child: Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              child:
+                                                                  TextFormField(
+                                                                controller: _model
+                                                                    .ingredienteTextController2,
+                                                                focusNode: _model
+                                                                    .ingredienteFocusNode2,
+                                                                autofocus: true,
+                                                                obscureText:
+                                                                    false,
+                                                                decoration:
+                                                                    InputDecoration(
+                                                                  isDense: true,
+                                                                  labelText:
+                                                                      'Ingrediente',
+                                                                  labelStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Raleway',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                  alignLabelWithHint:
+                                                                      false,
+                                                                  hintText:
+                                                                      '250g de farinha de trigo',
+                                                                  hintStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Raleway',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                  enabledBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .alternate,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  focusedBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  errorBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .error,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  focusedErrorBorder:
+                                                                      OutlineInputBorder(
+                                                                    borderSide:
+                                                                        BorderSide(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .error,
+                                                                      width:
+                                                                          1.0,
+                                                                    ),
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                  ),
+                                                                  filled: true,
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  hoverColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium
+                                                                    .bodyMedium
                                                                     .override(
                                                                       fontFamily:
                                                                           'Raleway',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
-                                                            enabledBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                                width: 1.0,
+                                                                cursorColor:
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                validator: _model
+                                                                    .ingredienteTextController2Validator
+                                                                    .asValidator(
+                                                                        context),
                                                               ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
                                                             ),
-                                                            focusedBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                            ),
-                                                            errorBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                            ),
-                                                            focusedErrorBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .error,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                            ),
-                                                            filled: true,
-                                                            fillColor: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Raleway',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                          cursorColor:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .primaryText,
-                                                          validator: _model
-                                                              .ingredienteTextController2Validator
-                                                              .asValidator(
-                                                                  context),
-                                                        ),
+                                                        ],
                                                       ),
                                                       FFButtonWidget(
                                                         onPressed: () async {
-                                                          _model.addToIngredientes(
-                                                              _model
-                                                                  .ingredienteTextController2
-                                                                  .text);
+                                                          FFAppState()
+                                                              .addToNumeroPassos(
+                                                                  _model
+                                                                      .numeropasso);
+                                                          safeSetState(() {});
+                                                          _model.numeropasso =
+                                                              _model.numeropasso +
+                                                                  1;
                                                           safeSetState(() {});
                                                           safeSetState(() {
                                                             _model
@@ -1454,7 +1397,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                     ),
                                   ),
                                 ]
-                                    .addToStart(SizedBox(height: 24.0))
+                                    .addToStart(SizedBox(height: 16.0))
                                     .addToEnd(SizedBox(height: 104.0)),
                               ),
                             ),
@@ -1606,8 +1549,180 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   ),
                                                 ),
                                                 FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
+                                                  onPressed: () async {
+                                                    {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading2 =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
+                                                      var selectedMedia =
+                                                          <SelectedFile>[];
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        selectedUploadedFiles = _model
+                                                                .uploadedLocalFile1
+                                                                .bytes!
+                                                                .isNotEmpty
+                                                            ? [
+                                                                _model
+                                                                    .uploadedLocalFile1
+                                                              ]
+                                                            : <FFUploadedFile>[];
+                                                        selectedMedia =
+                                                            selectedFilesFromUploadedFiles(
+                                                          selectedUploadedFiles,
+                                                          storageFolderPath:
+                                                              'receitas',
+                                                        );
+                                                        downloadUrls =
+                                                            await uploadSupabaseStorageFiles(
+                                                          bucketName: 'imagens',
+                                                          selectedFiles:
+                                                              selectedMedia,
+                                                        );
+                                                      } finally {
+                                                        _model.isDataUploading2 =
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFile2 =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl2 =
+                                                              downloadUrls
+                                                                  .first;
+                                                        });
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        return;
+                                                      }
+                                                    }
+
+                                                    _model.receitaCriada =
+                                                        await ReceitasTable()
+                                                            .insert({
+                                                      'titulo': _model
+                                                          .textController1.text,
+                                                      'descricao': _model
+                                                          .textController2.text,
+                                                      'tempo_preparo':
+                                                          int.tryParse(_model
+                                                              .textController4
+                                                              .text),
+                                                      'autor_id':
+                                                          currentUserUid,
+                                                      'imagem_url': _model
+                                                          .uploadedFileUrl2,
+                                                    });
+                                                    FFAppState().contador = -1;
+                                                    safeSetState(() {});
+                                                    _model.instantTimer =
+                                                        InstantTimer.periodic(
+                                                      duration: Duration(
+                                                          milliseconds: 1000),
+                                                      callback: (timer) async {
+                                                        while (FFAppState()
+                                                                .contador <=
+                                                            FFAppState()
+                                                                .ingredientes
+                                                                .length) {
+                                                          FFAppState()
+                                                                  .contador =
+                                                              FFAppState()
+                                                                      .contador +
+                                                                  1;
+                                                          safeSetState(() {});
+                                                          await IngredientesTable()
+                                                              .insert({
+                                                            'receita_id': _model
+                                                                .receitaCriada
+                                                                ?.id,
+                                                            'ingrediente': FFAppState()
+                                                                .ingredientes
+                                                                .elementAtOrNull(
+                                                                    FFAppState()
+                                                                        .contador),
+                                                          });
+                                                        }
+                                                        _model.instantTimer
+                                                            ?.cancel();
+                                                        FFAppState().contador =
+                                                            -1;
+                                                        safeSetState(() {});
+                                                        _model.instantTimer2 =
+                                                            InstantTimer
+                                                                .periodic(
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  1000),
+                                                          callback:
+                                                              (timer) async {
+                                                            while (FFAppState()
+                                                                    .contador <=
+                                                                FFAppState()
+                                                                    .passos
+                                                                    .length) {
+                                                              FFAppState()
+                                                                      .contador =
+                                                                  FFAppState()
+                                                                          .contador +
+                                                                      1;
+                                                              safeSetState(
+                                                                  () {});
+                                                              await InstrucoesTable()
+                                                                  .insert({
+                                                                'receita_id': _model
+                                                                    .receitaCriada
+                                                                    ?.id,
+                                                                'descricao': FFAppState()
+                                                                    .passos
+                                                                    .elementAtOrNull(
+                                                                        FFAppState()
+                                                                            .contador),
+                                                                'foto_instrucao':
+                                                                    '',
+                                                                'numero_passo': FFAppState()
+                                                                    .numeroPassos
+                                                                    .elementAtOrNull(
+                                                                        FFAppState()
+                                                                            .contador),
+                                                              });
+                                                            }
+                                                            _model.instantTimer2
+                                                                ?.cancel();
+
+                                                            context.pushNamed(
+                                                              ReceitaWidget
+                                                                  .routeName,
+                                                              pathParameters: {
+                                                                'receitaid':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .receitaCriada
+                                                                      ?.id,
+                                                                  ParamType
+                                                                      .String,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          startImmediately:
+                                                              true,
+                                                        );
+                                                      },
+                                                      startImmediately: true,
+                                                    );
+
+                                                    safeSetState(() {});
                                                   },
                                                   text: 'Pubicar',
                                                   icon: Icon(
