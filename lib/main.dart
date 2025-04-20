@@ -117,20 +117,17 @@ class _MyAppState extends State<MyApp> {
           thumbVisibility: WidgetStateProperty.all(true),
           trackVisibility: WidgetStateProperty.all(true),
           interactive: true,
-          thickness: WidgetStateProperty.all(8.0),
-          radius: Radius.circular(8.0),
+          thickness: WidgetStateProperty.all(6.0),
           thumbColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.dragged)) {
               return Color(4292362258);
             }
             if (states.contains(WidgetState.hovered)) {
-              return Color(4292362258);
+              return Color(3436724242);
             }
-            return Color(4292362258);
+            return Color(3017293842);
           }),
-          minThumbLength: 8.0,
-          crossAxisMargin: 8.0,
-          mainAxisMargin: 8.0,
+          crossAxisMargin: 4.0,
         ),
       ),
       themeMode: _themeMode,

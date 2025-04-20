@@ -65,7 +65,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                       drawer: () async {},
                     ),
                   ),
-                  Flexible(
+                  Expanded(
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
@@ -76,72 +76,67 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                         decoration: BoxDecoration(),
                         child: Stack(
                           children: [
-                            Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).height * 1.0,
-                              decoration: BoxDecoration(),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 24.0, 8.0, 0.0),
-                                child: ScrollConfiguration(
-                                  behavior:
-                                      ScrollConfiguration.of(context).copyWith(
-                                    scrollbars: false,
-                                    dragDevices: {
-                                      PointerDeviceKind.mouse,
-                                      PointerDeviceKind.touch,
-                                      PointerDeviceKind.stylus,
-                                      PointerDeviceKind.unknown,
-                                    },
-                                  ),
-                                  child: Scrollbar(
-                                    child: SingleChildScrollView(
-                                      primary: false,
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Container(
-                                                width: 323.0,
-                                                height:
-                                                    MediaQuery.sizeOf(context)
-                                                            .height *
-                                                        1.0,
-                                                decoration: BoxDecoration(
+                            ScrollConfiguration(
+                              behavior:
+                                  ScrollConfiguration.of(context).copyWith(
+                                scrollbars: false,
+                                dragDevices: {
+                                  PointerDeviceKind.mouse,
+                                  PointerDeviceKind.touch,
+                                  PointerDeviceKind.stylus,
+                                  PointerDeviceKind.unknown,
+                                },
+                              ),
+                              child: Scrollbar(
+                                child: SingleChildScrollView(
+                                  primary: false,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              width: 400.0,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                                border: Border.all(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBackground,
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                  ),
-                                                ),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: [
-                                                    Text(
-                                                      'Informações gerais da receita',
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'Noto Sans',
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                    ),
-                                                  ],
+                                                      .alternate,
                                                 ),
                                               ),
-                                              Container(
+                                              child: Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    'Informações gerais da receita',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Noto Sans',
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            Expanded(
+                                              child: Container(
                                                 width: 100.0,
                                                 height: 100.0,
                                                 decoration: BoxDecoration(
@@ -150,11 +145,13 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       .secondaryBackground,
                                                 ),
                                               ),
-                                            ],
-                                          ),
-                                        ].addToEnd(SizedBox(height: 32.0)),
+                                            ),
+                                          ].divide(SizedBox(width: 16.0)),
+                                        ),
                                       ),
-                                    ),
+                                    ]
+                                        .addToStart(SizedBox(height: 24.0))
+                                        .addToEnd(SizedBox(height: 32.0)),
                                   ),
                                 ),
                               ),
