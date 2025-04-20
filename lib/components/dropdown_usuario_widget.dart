@@ -70,7 +70,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                   'Account Options',
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'Raleway',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -106,7 +106,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans',
+                                  fontFamily: 'Raleway',
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -119,7 +119,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     color: FlutterFlowTheme.of(context).primary,
                                     letterSpacing: 0.0,
                                   ),
@@ -170,7 +170,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -222,7 +222,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -274,7 +274,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -344,7 +344,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Noto Sans',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                               ),

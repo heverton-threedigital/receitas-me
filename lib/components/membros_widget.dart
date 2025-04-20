@@ -66,7 +66,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                 child: Text(
                   'Membros cadastrados',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'Raleway',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -76,7 +76,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                 child: Text(
                   'Create tables and ui elements that work below.',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'Raleway',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -107,7 +107,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                             'Informações de usuário',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Noto Sans',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                           ),
@@ -124,7 +124,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -140,7 +140,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'Raleway',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -151,7 +151,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                             textAlign: TextAlign.end,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Noto Sans',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                           ),
@@ -263,7 +263,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Noto Sans',
+                                                        fontFamily: 'Raleway',
                                                         letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.bold,
@@ -282,8 +282,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                                             context)
                                                         .bodySmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Noto Sans',
+                                                          fontFamily: 'Raleway',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .primary,
@@ -319,7 +318,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -343,7 +342,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans',
+                                            fontFamily: 'Raleway',
                                             letterSpacing: 0.0,
                                           ),
                                     ),

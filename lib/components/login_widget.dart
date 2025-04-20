@@ -107,7 +107,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Noto Sans',
+                                      fontFamily: 'Raleway',
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
@@ -130,13 +130,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -178,7 +178,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:
@@ -202,13 +202,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .labelMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -261,7 +261,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Noto Sans',
+                                      fontFamily: 'Raleway',
                                       letterSpacing: 0.0,
                                     ),
                                 cursorColor:
@@ -305,7 +305,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
@@ -332,7 +332,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Noto Sans',
+                                            fontFamily: 'Raleway',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
@@ -349,7 +349,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -375,7 +375,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
@@ -399,13 +399,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -447,7 +447,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:
@@ -473,13 +473,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -521,7 +521,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:
@@ -548,13 +548,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -609,7 +609,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:
@@ -637,13 +637,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -698,7 +698,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:
@@ -758,7 +758,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Noto Sans',
+                                        fontFamily: 'Raleway',
                                         color: Colors.white,
                                         letterSpacing: 0.0,
                                       ),
@@ -787,7 +787,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Noto Sans',
+                                              fontFamily: 'Raleway',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -805,7 +805,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Noto Sans',
+                                          fontFamily: 'Raleway',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
