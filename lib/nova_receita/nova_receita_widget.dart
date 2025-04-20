@@ -1,4 +1,4 @@
-import '/components/menu_lateral_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -85,9 +85,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             wrapWithModel(
-                              model: _model.menuLateralModel,
+                              model: _model.menuLateralEModel,
                               updateCallback: () => safeSetState(() {}),
-                              child: MenuLateralWidget(),
+                              child: MenuLateralEWidget(),
                             ),
                             Flexible(
                               child: Padding(

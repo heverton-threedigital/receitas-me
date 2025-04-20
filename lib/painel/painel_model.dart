@@ -1,4 +1,4 @@
-import '/components/menu_lateral_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'painel_widget.dart' show PainelWidget;
@@ -9,18 +9,18 @@ class PainelModel extends FlutterFlowModel<PainelWidget> {
 
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
-  // Model for MenuLateral component.
-  late MenuLateralModel menuLateralModel;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel;
 
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
-    menuLateralModel = createModel(context, () => MenuLateralModel());
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    menuLateralModel.dispose();
+    menuLateralEModel.dispose();
   }
 }

@@ -1,6 +1,5 @@
-import '/auth/base_auth_user_provider.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/menu_lateral_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -81,9 +80,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: wrapWithModel(
-                    model: _model.menuLateralModel2,
+                    model: _model.menuLateralEModel2,
                     updateCallback: () => safeSetState(() {}),
-                    child: MenuLateralWidget(),
+                    child: MenuLateralEWidget(),
                   ),
                 ),
               ),
@@ -120,19 +119,18 @@ class _InicioWidgetState extends State<InicioWidget> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (loggedIn &&
-                                responsiveVisibility(
-                                  context: context,
-                                  phone: false,
-                                  tablet: false,
-                                ))
+                            if (responsiveVisibility(
+                              context: context,
+                              phone: false,
+                              tablet: false,
+                            ))
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 24.0, 0.0),
                                 child: wrapWithModel(
-                                  model: _model.menuLateralModel1,
+                                  model: _model.menuLateralEModel1,
                                   updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralWidget(
+                                  child: MenuLateralEWidget(
                                     pagina: 'inicio',
                                   ),
                                 ),

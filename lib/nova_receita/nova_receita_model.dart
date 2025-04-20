@@ -1,4 +1,4 @@
-import '/components/menu_lateral_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'nova_receita_widget.dart' show NovaReceitaWidget;
@@ -9,8 +9,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
-  // Model for MenuLateral component.
-  late MenuLateralModel menuLateralModel;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
@@ -23,13 +23,13 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
-    menuLateralModel = createModel(context, () => MenuLateralModel());
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    menuLateralModel.dispose();
+    menuLateralEModel.dispose();
     textFieldFocusNode1?.dispose();
     textController1?.dispose();
 
