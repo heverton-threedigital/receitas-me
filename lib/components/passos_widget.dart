@@ -11,10 +11,12 @@ class PassosWidget extends StatefulWidget {
     super.key,
     required this.passo,
     required this.numeroPasso,
+    required this.indexPasso,
   });
 
   final String? passo;
   final int? numeroPasso;
+  final int? indexPasso;
 
   @override
   State<PassosWidget> createState() => _PassosWidgetState();
@@ -229,9 +231,11 @@ class _PassosWidgetState extends State<PassosWidget> {
               FFButtonWidget(
                 onPressed: () async {
                   FFAppState().updatePassosAtIndex(
-                    (widget.numeroPasso!) - 1,
+                    widget.indexPasso!,
                     (_) => _model.editarpassoTextController.text,
                   );
+                  safeSetState(() {});
+                  _model.editar = false;
                   safeSetState(() {});
                 },
                 text: 'Salvar',

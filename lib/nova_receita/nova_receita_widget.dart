@@ -860,6 +860,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     'Keys3z_${ingredientesLocalIndex}_of_${ingredientesLocal.length}'),
                                                                 ingrediente:
                                                                     ingredientesLocalItem,
+                                                                indexIngrediente:
+                                                                    ingredientesLocalIndex,
                                                               );
                                                             },
                                                           );
@@ -1140,6 +1142,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   numeroPasso:
                                                                       _model
                                                                           .numeropasso,
+                                                                  indexPasso:
+                                                                      passoLocalIndex,
                                                                 ),
                                                               );
                                                             },

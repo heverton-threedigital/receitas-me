@@ -10,9 +10,11 @@ class IngredienteWidget extends StatefulWidget {
   const IngredienteWidget({
     super.key,
     required this.ingrediente,
+    required this.indexIngrediente,
   });
 
   final String? ingrediente;
+  final int? indexIngrediente;
 
   @override
   State<IngredienteWidget> createState() => _IngredienteWidgetState();
@@ -127,7 +129,6 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       isDense: true,
-                      labelText: 'Passo',
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
                                 fontFamily: 'Raleway',
@@ -182,8 +183,14 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                 ),
               ),
               FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  FFAppState().updateIngredientesAtIndex(
+                    widget.indexIngrediente!,
+                    (_) => _model.textController.text,
+                  );
+                  safeSetState(() {});
+                  _model.editar = false;
+                  safeSetState(() {});
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(
