@@ -49,11 +49,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
 
-    _model.ingredienteTextController1 ??= TextEditingController();
-    _model.ingredienteFocusNode1 ??= FocusNode();
+    _model.ingredienteTextController ??= TextEditingController();
+    _model.ingredienteFocusNode ??= FocusNode();
 
-    _model.ingredienteTextController2 ??= TextEditingController();
-    _model.ingredienteFocusNode2 ??= FocusNode();
+    _model.passoTextController ??= TextEditingController();
+    _model.passoFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -871,9 +871,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
-                                                              .ingredienteTextController1,
+                                                              .ingredienteTextController,
                                                           focusNode: _model
-                                                              .ingredienteFocusNode1,
+                                                              .ingredienteFocusNode,
                                                           autofocus: true,
                                                           obscureText: false,
                                                           decoration:
@@ -990,7 +990,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       context)
                                                                   .primaryText,
                                                           validator: _model
-                                                              .ingredienteTextController1Validator
+                                                              .ingredienteTextControllerValidator
                                                               .asValidator(
                                                                   context),
                                                         ),
@@ -1000,12 +1000,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           FFAppState()
                                                               .addToIngredientes(
                                                                   _model
-                                                                      .ingredienteTextController1
+                                                                      .ingredienteTextController
                                                                       .text);
                                                           safeSetState(() {});
                                                           safeSetState(() {
                                                             _model
-                                                                .ingredienteTextController1
+                                                                .ingredienteTextController
                                                                 ?.clear();
                                                           });
                                                         },
@@ -1195,9 +1195,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               child:
                                                                   TextFormField(
                                                                 controller: _model
-                                                                    .ingredienteTextController2,
+                                                                    .passoTextController,
                                                                 focusNode: _model
-                                                                    .ingredienteFocusNode2,
+                                                                    .passoFocusNode,
                                                                 autofocus: true,
                                                                 obscureText:
                                                                     false,
@@ -1295,7 +1295,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             context)
                                                                         .primaryText,
                                                                 validator: _model
-                                                                    .ingredienteTextController2Validator
+                                                                    .passoTextControllerValidator
                                                                     .asValidator(
                                                                         context),
                                                               ),
@@ -1310,6 +1310,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               .addToNumeroPassos(
                                                                   _model
                                                                       .numeropasso);
+                                                          FFAppState()
+                                                              .addToPassos(_model
+                                                                  .passoTextController
+                                                                  .text);
                                                           safeSetState(() {});
                                                           _model.numeropasso =
                                                               _model.numeropasso +
@@ -1317,7 +1321,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           safeSetState(() {});
                                                           safeSetState(() {
                                                             _model
-                                                                .ingredienteTextController2
+                                                                .passoTextController
                                                                 ?.clear();
                                                           });
                                                         },

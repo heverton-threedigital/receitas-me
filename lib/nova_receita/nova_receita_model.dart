@@ -38,13 +38,13 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   // State field(s) for ingrediente widget.
-  FocusNode? ingredienteFocusNode1;
-  TextEditingController? ingredienteTextController1;
-  String? Function(BuildContext, String?)? ingredienteTextController1Validator;
-  // State field(s) for ingrediente widget.
-  FocusNode? ingredienteFocusNode2;
-  TextEditingController? ingredienteTextController2;
-  String? Function(BuildContext, String?)? ingredienteTextController2Validator;
+  FocusNode? ingredienteFocusNode;
+  TextEditingController? ingredienteTextController;
+  String? Function(BuildContext, String?)? ingredienteTextControllerValidator;
+  // State field(s) for passo widget.
+  FocusNode? passoFocusNode;
+  TextEditingController? passoTextController;
+  String? Function(BuildContext, String?)? passoTextControllerValidator;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -75,11 +75,11 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     textFieldFocusNode4?.dispose();
     textController4?.dispose();
 
-    ingredienteFocusNode1?.dispose();
-    ingredienteTextController1?.dispose();
+    ingredienteFocusNode?.dispose();
+    ingredienteTextController?.dispose();
 
-    ingredienteFocusNode2?.dispose();
-    ingredienteTextController2?.dispose();
+    passoFocusNode?.dispose();
+    passoTextController?.dispose();
 
     instantTimer?.cancel();
     instantTimer2?.cancel();
