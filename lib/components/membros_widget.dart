@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'membros_model.dart';
 export 'membros_model.dart';
 
@@ -171,10 +172,9 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                       child: SizedBox(
                         width: 50.0,
                         height: 50.0,
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            FlutterFlowTheme.of(context).primary,
-                          ),
+                        child: SpinKitPulse(
+                          color: FlutterFlowTheme.of(context).primary,
+                          size: 50.0,
                         ),
                       ),
                     );
