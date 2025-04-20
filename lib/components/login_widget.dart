@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'login_model.dart';
@@ -311,6 +312,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       if (user == null) {
                                         return;
                                       }
+
+                                      context.pushNamedAuth(
+                                          InicioWidget.routeName,
+                                          context.mounted);
 
                                       Navigator.pop(context);
                                     },
@@ -892,8 +897,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                   color: FlutterFlowTheme.of(context).secondaryText,
                   size: 24.0,
                 ),
-                onPressed: () {
-                  print('IconButton pressed ...');
+                onPressed: () async {
+                  Navigator.pop(context);
                 },
               ),
             ),
