@@ -132,7 +132,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 16.0, 0.0, 16.0),
+                                                      0.0, 24.0, 0.0, 16.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -488,7 +488,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 16.0)),
+                                                ].divide(SizedBox(width: 24.0)),
                                               ),
                                             ),
                                             Expanded(
@@ -511,6 +511,11 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16.0),
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                        ),
                                                       ),
                                                       child: Padding(
                                                         padding: EdgeInsets.all(
@@ -750,7 +755,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 16.0)),
+                                                ].divide(SizedBox(width: 24.0)),
                                               ),
                                             ),
                                           ],

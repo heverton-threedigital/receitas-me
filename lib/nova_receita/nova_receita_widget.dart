@@ -1108,7 +1108,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(SizedBox(width: 16.0)),
+                                            ].divide(SizedBox(width: 24.0)),
                                           ),
                                         ),
                                       ),
@@ -1522,7 +1522,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     8.0),
                                                         child: Row(
                                                           mainAxisSize:
-                                                              MainAxisSize.max,
+                                                              MainAxisSize.min,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
                                                           children: [
                                                             Container(
                                                               width: 40.0,
@@ -1846,9 +1849,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         MainAxisSize.max,
                                                     children: [
                                                       FFButtonWidget(
-                                                        onPressed: () {
-                                                          print(
-                                                              'Button pressed ...');
+                                                        onPressed: () async {
+                                                          Navigator.pop(
+                                                              context);
                                                         },
                                                         text: 'Cancelar',
                                                         icon: FaIcon(
