@@ -231,7 +231,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           24.0),
                                                   child: Container(
                                                     width: 360.0,
-                                                    height: 500.0,
+                                                    height: 440.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
