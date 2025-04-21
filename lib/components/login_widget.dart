@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/gestures.dart';
@@ -1089,18 +1090,22 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     _model
                                         .codigodeConfirmacaoTextController.text,
                                   );
-                                  if (_model.emailVerificado!) {
-                                    await PerfisTable().insert({
-                                      'id': currentUserUid,
-                                      'nome': _model.nomeTextController.text,
-                                      'sobrenome':
-                                          _model.sobrenomeTextController.text,
-                                      'email': currentUserEmail,
-                                      'is_admin': false,
-                                    });
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 1000));
+                                  unawaited(
+                                    () async {
+                                      await PerfisTable().insert({
+                                        'id': currentUserUid,
+                                        'nome': _model.nomeTextController.text,
+                                        'sobrenome':
+                                            _model.sobrenomeTextController.text,
+                                        'email': currentUserEmail,
+                                        'is_admin': false,
+                                      });
+                                    }(),
+                                  );
 
-                                    context.pushNamed(InicioWidget.routeName);
-                                  }
+                                  context.pushNamed(InicioWidget.routeName);
 
                                   safeSetState(() {});
                                 },
