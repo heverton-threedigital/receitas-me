@@ -1,4 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -854,30 +855,45 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     _model.confirmeSenhaCadastroTextController
                                         .text,
                                   );
-                                  var confirmDialogResponse = await showDialog<
-                                          bool>(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Mensagem'),
-                                            content: Text(_model.usuarioCriado!
-                                                .toString()),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, false),
-                                                child: Text('Cancel'),
-                                              ),
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext, true),
-                                                child: Text('Confirm'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      ) ??
-                                      false;
+                                  if (getJsonField(
+                                        _model.usuarioCriado,
+                                        r'''$.userId''',
+                                      ) !=
+                                      null) {
+                                    await PerfisTable().insert({
+                                      'id': getJsonField(
+                                        _model.usuarioCriado,
+                                        r'''$.userId''',
+                                      ).toString(),
+                                      'email': _model
+                                          .emailCadastroTextController.text,
+                                      'nome': _model.nomeTextController.text,
+                                      'sobrenome':
+                                          _model.sobrenomeTextController.text,
+                                      'is_admin': false,
+                                    });
+                                    _model.corfirmarConta = true;
+                                    safeSetState(() {});
+                                  } else {
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          getJsonField(
+                                            _model.usuarioCriado,
+                                            r'''$.error''',
+                                          ).toString(),
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
+                                      ),
+                                    );
+                                  }
 
                                   safeSetState(() {});
                                 },
