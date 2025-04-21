@@ -872,22 +872,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     return;
                                   }
 
-                                  _model.userCriado =
-                                      await PerfisTable().insert({
-                                    'id': currentUserUid,
+                                  await PerfisTable().insert({
                                     'is_admin': false,
                                     'email':
                                         _model.emailCadastroTextController.text,
                                     'nome': _model.nomeTextController.text,
                                     'sobrenome':
                                         _model.sobrenomeTextController.text,
+                                    'id': currentUserUid,
                                   });
-                                  await Future.delayed(
-                                      const Duration(milliseconds: 1000));
                                   _model.corfirmarConta = true;
-                                  safeSetState(() {});
-
-                                  safeSetState(() {});
                                 },
                                 text: 'Avançar',
                                 options: FFButtonOptions(

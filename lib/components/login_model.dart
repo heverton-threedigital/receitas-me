@@ -1,4 +1,3 @@
-import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
@@ -44,8 +43,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   late bool confirmeSenhaCadastroVisibility;
   String? Function(BuildContext, String?)?
       confirmeSenhaCadastroTextControllerValidator;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  PerfisRow? userCriado;
   // State field(s) for CodigodeConfirmacao widget.
   FocusNode? codigodeConfirmacaoFocusNode;
   TextEditingController? codigodeConfirmacaoTextController;
