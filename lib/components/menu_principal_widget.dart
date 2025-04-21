@@ -117,7 +117,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                                 child: SvgPicture.asset(
                                   'assets/images/Receitas.me.svg',
-                                  width: 150.0,
+                                  width: 160.0,
                                   fit: BoxFit.fitWidth,
                                 ),
                               ),
@@ -142,7 +142,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         .pushNamed(PesquisarWidget.routeName);
                                   },
                                   child: Container(
-                                    width: 350.0,
+                                    width: 368.0,
                                     height: 40.0,
                                     decoration: BoxDecoration(
                                       color: valueOrDefault<Color>(
@@ -179,7 +179,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                           child: Text(
                                             'Pesquise por receita ou ingredientes...',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
+                                                .bodyLarge
                                                 .override(
                                                   fontFamily: 'Poppins',
                                                   letterSpacing: 0.0,
@@ -268,7 +268,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 36.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconPadding:
@@ -348,7 +348,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       size: 15.0,
                                     ),
                                     options: FFButtonOptions(
-                                      height: 38.0,
+                                      height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
                                       iconAlignment: IconAlignment.start,
@@ -404,8 +404,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       );
                                     },
                                     child: Container(
-                                      width: 38.0,
-                                      height: 38.0,
+                                      width: 40.0,
+                                      height: 40.0,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,

@@ -48,7 +48,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
     return Container(
       height: double.infinity,
       constraints: BoxConstraints(
-        maxWidth: 200.0,
+        maxWidth: 2080.0,
       ),
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -305,6 +305,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                           .secondaryText;
                                                     }
                                                   }(),
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -417,6 +418,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                                 .secondaryText;
                                                           }
                                                         }(),
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -524,6 +526,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                           .secondaryText;
                                                     }
                                                   }(),
+                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -634,6 +637,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                                 .secondaryText;
                                                           }
                                                         }(),
+                                                        fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
