@@ -4,9 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
-import '/index.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'login_model.dart';
@@ -298,10 +296,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     return;
                                   }
 
-                                  context.pushNamedAuth(
-                                      InicioWidget.routeName, context.mounted);
-
-                                  Navigator.pop(context);
+                                  await widget.redirecionar?.call();
                                 },
                                 text: 'Entrar',
                                 options: FFButtonOptions(
@@ -1011,13 +1006,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
-                                    labelText: 'Código de confirmação',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                         ),
+                                    hintText: '0-0-0-0-0-0',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -1059,6 +1054,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .primaryBackground,
+                                    hoverColor: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -1092,20 +1089,35 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   );
                                   await Future.delayed(
                                       const Duration(milliseconds: 1000));
-                                  unawaited(
-                                    () async {
+                                  _model.perfilCriado =
                                       await PerfisTable().insert({
-                                        'id': currentUserUid,
-                                        'nome': _model.nomeTextController.text,
-                                        'sobrenome':
-                                            _model.sobrenomeTextController.text,
-                                        'email': currentUserEmail,
-                                        'is_admin': false,
-                                      });
-                                    }(),
-                                  );
-
-                                  context.pushNamed(InicioWidget.routeName);
+                                    'id': currentUserUid,
+                                    'nome': _model.nomeTextController.text,
+                                    'sobrenome':
+                                        _model.sobrenomeTextController.text,
+                                    'email': currentUserEmail,
+                                    'is_admin': false,
+                                  });
+                                  if (_model.perfilCriado != null) {
+                                    await widget.redirecionar?.call();
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Erro'),
+                                          content: Text('Deu erro mano'),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
 
                                   safeSetState(() {});
                                 },

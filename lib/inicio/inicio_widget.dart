@@ -61,7 +61,7 @@ class _InicioWidgetState extends State<InicioWidget> {
     context.watch<FFAppState>();
 
     return Title(
-        title: 'Página inicial do Receitas.me',
+        title: 'Receitas.me',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () {
