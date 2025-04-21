@@ -1,3 +1,4 @@
+import '/components/barra_latera_receita_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'receita_widget.dart' show ReceitaWidget;
@@ -8,14 +9,19 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
 
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
+  // Model for BarraLateraReceita component.
+  late BarraLateraReceitaModel barraLateraReceitaModel;
 
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
+    barraLateraReceitaModel =
+        createModel(context, () => BarraLateraReceitaModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
+    barraLateraReceitaModel.dispose();
   }
 }

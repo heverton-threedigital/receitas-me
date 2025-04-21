@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/barra_latera_receita_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -757,16 +758,12 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
-                                        child: Container(
-                                          width: 280.0,
-                                          height: MediaQuery.sizeOf(context)
-                                                  .height *
-                                              1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                          ),
+                                            24.0, 0.0, 0.0, 0.0),
+                                        child: wrapWithModel(
+                                          model: _model.barraLateraReceitaModel,
+                                          updateCallback: () =>
+                                              safeSetState(() {}),
+                                          child: BarraLateraReceitaWidget(),
                                         ),
                                       ),
                                     ],
