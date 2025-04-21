@@ -1000,7 +1000,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 1.0,
+                                width: 220.0,
                                 child: TextFormField(
                                   controller:
                                       _model.codigodeConfirmacaoTextController,
@@ -1010,13 +1010,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
+                                    labelText: 'Código de confirmação',
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                         ),
-                                    hintText: 'Digite aqui o código',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
@@ -1065,11 +1065,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         fontFamily: 'Poppins',
                                         letterSpacing: 0.0,
                                       ),
+                                  textAlign: TextAlign.center,
+                                  keyboardType: TextInputType.number,
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model
                                       .codigodeConfirmacaoTextControllerValidator
                                       .asValidator(context),
+                                  inputFormatters: [
+                                    _model.codigodeConfirmacaoMask
+                                  ],
                                 ),
                               ),
                             ),
@@ -1078,9 +1083,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 16.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  _model.emailConfirmado =
-                                      await actions.verifyEmailWithToken(
-                                    currentUserEmail,
+                                  await actions.verifyEmailWithToken(
+                                    _model.emailCadastroTextController.text,
                                     _model
                                         .codigodeConfirmacaoTextController.text,
                                   );
@@ -1098,8 +1102,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   });
 
                                   context.pushNamed(InicioWidget.routeName);
-
-                                  safeSetState(() {});
                                 },
                                 text: 'Finalizar',
                                 options: FFButtonOptions(

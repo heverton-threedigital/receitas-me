@@ -12,30 +12,40 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<bool> verifyEmailWithToken(
   String email,
-  String? token,
+  String? token, // Token ainda pode ser nulo vindo do input
 ) async {
-  // Add your function code here!
-  // instantiate Supabase client
-  final supabase = Supabase.instance.client;
+  // **MELHORIA 1: Validar o token antes de prosseguir**
+  // Retorna falso imediatamente se o token for nulo ou vazio (ignorando espaços em branco)
+  if (token == null || token.trim().isEmpty) {
+    print('Token de verificação está vazio ou nulo.');
+    return false;
+  }
+
+  // **MELHORIA 2: Usar SupaFlow.client (padrão FlutterFlow)**
+  // Em vez de Supabase.instance.client
+  final supabase = SupaFlow.client;
 
   try {
-    // call the supabase verifyOTP function
-    // if successful, a response with the user and session is returned
+    // Chama a função verifyOTP do Supabase
+    // O token aqui já foi validado e não é nulo/vazio
     final AuthResponse res = await supabase.auth.verifyOTP(
       type: OtpType.signup,
-      token: token ?? " ",
+      token: token, // Passa o token validado
       email: email,
     );
 
-    // return true if session is not null (i.e. user has signed in)
+    // Retorna true se a verificação resultou em uma sessão (usuário logado)
+    // Esta continua sendo uma forma comum de verificar o sucesso
     return res.session != null;
   } on AuthException catch (e) {
-    // catch any authenticatino errors and print them to the console
-    print(e.message);
-    return false;
+    // Captura erros específicos de autenticação do Supabase
+    // Imprime o erro no console para depuração
+    print('Erro Supabase ao verificar OTP: ${e.message}');
+    return false; // Retorna falso em caso de erro de autenticação
   } catch (error) {
-    // catch any other errors
-    print(error);
-    return false;
+    // Captura quaisquer outros erros inesperados
+    // Imprime o erro no console para depuração
+    print('Erro inesperado ao verificar OTP: $error');
+    return false; // Retorna falso em caso de outros erros
   }
 }

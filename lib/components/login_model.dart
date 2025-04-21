@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
+import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  Local state fields for this component.
@@ -48,10 +49,9 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   // State field(s) for CodigodeConfirmacao widget.
   FocusNode? codigodeConfirmacaoFocusNode;
   TextEditingController? codigodeConfirmacaoTextController;
+  final codigodeConfirmacaoMask = MaskTextInputFormatter(mask: '######');
   String? Function(BuildContext, String?)?
       codigodeConfirmacaoTextControllerValidator;
-  // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
-  bool? emailConfirmado;
 
   @override
   void initState(BuildContext context) {
