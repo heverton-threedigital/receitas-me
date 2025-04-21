@@ -1092,7 +1092,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       'nome': _model.nomeTextController.text,
                                       'sobrenome':
                                           _model.sobrenomeTextController.text,
-                                      'email': currentUserEmail,
                                       'is_admin': false,
                                     },
                                     matchingRows: (rows) => rows.eqOrNull(

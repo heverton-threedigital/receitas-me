@@ -480,7 +480,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .primary,
                                                             validator: _model
                                                                 .textController1Validator
                                                                 .asValidator(
@@ -619,7 +619,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryText,
+                                                                    .primary,
                                                             validator: _model
                                                                 .textController2Validator
                                                                 .asValidator(
@@ -1227,7 +1227,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         ?.clear();
                                                                   });
                                                                 },
-                                                                autofocus: true,
+                                                                autofocus:
+                                                                    false,
                                                                 obscureText:
                                                                     false,
                                                                 decoration:
@@ -1335,7 +1336,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primaryText,
+                                                                        .primary,
                                                                 validator: _model
                                                                     .ingredienteTextControllerValidator
                                                                     .asValidator(
@@ -1586,7 +1587,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     });
                                                                   },
                                                                   autofocus:
-                                                                      true,
+                                                                      false,
                                                                   obscureText:
                                                                       false,
                                                                   decoration:
@@ -1676,10 +1677,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
+                                                                  maxLines: 2,
                                                                   cursorColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primaryText,
+                                                                          .primary,
                                                                   validator: _model
                                                                       .passoTextControllerValidator
                                                                       .asValidator(
@@ -2258,6 +2260,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             'imagem_url': _model
                                                                 .uploadedFileUrl3,
                                                             'publicado': true,
+                                                            'categoria_id': _model
+                                                                .dropDownValue,
                                                           });
                                                           FFAppState()
                                                               .contador = -1;
