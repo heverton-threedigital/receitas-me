@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/instant_timer.dart';
 import '/index.dart';
 import 'nova_receita_widget.dart' show NovaReceitaWidget;
@@ -10,6 +11,14 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   ///  Local state fields for this page.
 
   FFUploadedFile? imagemReceita;
+
+  String? titulo;
+
+  String? descricao;
+
+  String? porcoes;
+
+  String? tempoPreparo;
 
   ///  State fields for stateful widgets in this page.
 
@@ -27,6 +36,9 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
