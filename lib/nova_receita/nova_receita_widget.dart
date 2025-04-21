@@ -365,7 +365,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           .textController1,
                                                       focusNode: _model
                                                           .textFieldFocusNode1,
-                                                      autofocus: true,
+                                                      autofocus: false,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -989,8 +989,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         ?.clear();
                                                                   });
                                                                 },
-                                                                autofocus:
-                                                                    false,
+                                                                autofocus: true,
                                                                 obscureText:
                                                                     false,
                                                                 decoration:
