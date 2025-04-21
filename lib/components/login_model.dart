@@ -42,6 +42,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? confirmeSenhaTextController;
   late bool confirmeSenhaVisibility;
   String? Function(BuildContext, String?)? confirmeSenhaTextControllerValidator;
+  // Stores action output result for [Custom Action - generateUniqueUsernameSupabase] action in Button widget.
+  String? nomeUsuarioGerado;
   // State field(s) for CodigodeConfirmacao widget.
   FocusNode? codigodeConfirmacaoFocusNode;
   TextEditingController? codigodeConfirmacaoTextController;

@@ -865,13 +865,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     return;
                                   }
 
+                                  _model.nomeUsuarioGerado = await actions
+                                      .generateUniqueUsernameSupabase(
+                                    _model.nomeTextController.text,
+                                    _model.sobrenomeTextController.text,
+                                  );
                                   await PerfisTable().insert({
                                     'id': currentUserUid,
-                                    'nome_usuario': currentUserEmail,
                                     'is_admin': false,
                                     'email': currentUserEmail,
+                                    'nome': _model.nomeTextController.text,
+                                    'sobrenome':
+                                        _model.sobrenomeTextController.text,
+                                    'nome_usuario': _model.nomeUsuarioGerado,
                                   });
                                   _model.corfirmarConta = true;
+                                  safeSetState(() {});
+
                                   safeSetState(() {});
                                 },
                                 text: 'Avançar',
