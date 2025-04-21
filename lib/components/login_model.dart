@@ -52,6 +52,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   final codigodeConfirmacaoMask = MaskTextInputFormatter(mask: '######');
   String? Function(BuildContext, String?)?
       codigodeConfirmacaoTextControllerValidator;
+  // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
+  bool? emailVerificado;
 
   @override
   void initState(BuildContext context) {

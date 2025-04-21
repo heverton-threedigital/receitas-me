@@ -1083,25 +1083,26 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 16.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await actions.verifyEmailWithToken(
+                                  _model.emailVerificado =
+                                      await actions.verifyEmailWithToken(
                                     _model.emailCadastroTextController.text,
                                     _model
                                         .codigodeConfirmacaoTextController.text,
                                   );
-                                  await PerfisTable().insert({
-                                    'id': getJsonField(
-                                      _model.usuarioCriado,
-                                      r'''$.userId''',
-                                    ).toString(),
-                                    'nome': _model.nomeTextController.text,
-                                    'sobrenome':
-                                        _model.sobrenomeTextController.text,
-                                    'email':
-                                        _model.emailCadastroTextController.text,
-                                    'is_admin': false,
-                                  });
+                                  if (_model.emailVerificado!) {
+                                    await PerfisTable().insert({
+                                      'id': currentUserUid,
+                                      'nome': _model.nomeTextController.text,
+                                      'sobrenome':
+                                          _model.sobrenomeTextController.text,
+                                      'email': currentUserEmail,
+                                      'is_admin': false,
+                                    });
 
-                                  context.pushNamed(InicioWidget.routeName);
+                                    context.pushNamed(InicioWidget.routeName);
+                                  }
+
+                                  safeSetState(() {});
                                 },
                                 text: 'Finalizar',
                                 options: FFButtonOptions(
