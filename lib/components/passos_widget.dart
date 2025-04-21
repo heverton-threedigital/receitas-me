@@ -199,8 +199,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
-                          color:
-                              FlutterFlowTheme.of(context).secondaryBackground,
+                          color: FlutterFlowTheme.of(context).alternate,
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
