@@ -43,6 +43,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   late bool confirmeSenhaCadastroVisibility;
   String? Function(BuildContext, String?)?
       confirmeSenhaCadastroTextControllerValidator;
+  // Stores action output result for [Custom Action - signUpWithEmail] action in Button widget.
+  dynamic usuarioCriado;
   // State field(s) for CodigodeConfirmacao widget.
   FocusNode? codigodeConfirmacaoFocusNode;
   TextEditingController? codigodeConfirmacaoTextController;

@@ -848,40 +848,53 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 16.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  GoRouter.of(context).prepareAuthEvent();
-                                  if (_model.senhaCadastroTextController.text !=
-                                      _model.confirmeSenhaCadastroTextController
-                                          .text) {
+                                  _model.usuarioCriado =
+                                      await actions.signUpWithEmail(
+                                    _model.emailCadastroTextController.text,
+                                    _model.senhaCadastroTextController.text,
+                                    _model.confirmeSenhaCadastroTextController
+                                        .text,
+                                  );
+                                  if (getJsonField(
+                                        _model.usuarioCriado,
+                                        r'''$.userId''',
+                                      ) !=
+                                      null) {
+                                    await PerfisTable().insert({
+                                      'id': getJsonField(
+                                        _model.usuarioCriado,
+                                        r'''$.userId''',
+                                      ).toString(),
+                                      'is_admin': false,
+                                      'email': _model
+                                          .emailCadastroTextController.text,
+                                      'nome': _model.nomeTextController.text,
+                                      'sobrenome':
+                                          _model.sobrenomeTextController.text,
+                                    });
+                                    _model.corfirmarConta = true;
+                                  } else {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
-                                          'A senha não corresponde',
+                                          getJsonField(
+                                            _model.usuarioCriado,
+                                            r'''$.error''',
+                                          ).toString(),
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
                                         ),
+                                        duration: Duration(milliseconds: 4000),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondary,
                                       ),
                                     );
-                                    return;
                                   }
 
-                                  final user =
-                                      await authManager.createAccountWithEmail(
-                                    context,
-                                    _model.emailCadastroTextController.text,
-                                    _model.senhaCadastroTextController.text,
-                                  );
-                                  if (user == null) {
-                                    return;
-                                  }
-
-                                  await PerfisTable().insert({
-                                    'is_admin': false,
-                                    'email':
-                                        _model.emailCadastroTextController.text,
-                                    'nome': _model.nomeTextController.text,
-                                    'sobrenome':
-                                        _model.sobrenomeTextController.text,
-                                    'id': currentUserUid,
-                                  });
-                                  _model.corfirmarConta = true;
+                                  safeSetState(() {});
                                 },
                                 text: 'Avançar',
                                 options: FFButtonOptions(
