@@ -7,6 +7,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   bool islogin = true;
 
+  bool corfirmarConta = false;
+
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for Email widget.
@@ -22,6 +24,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FocusNode? nomeFocusNode;
   TextEditingController? nomeTextController;
   String? Function(BuildContext, String?)? nomeTextControllerValidator;
+  // State field(s) for Sobrenome widget.
+  FocusNode? sobrenomeFocusNode;
+  TextEditingController? sobrenomeTextController;
+  String? Function(BuildContext, String?)? sobrenomeTextControllerValidator;
   // State field(s) for Email widget.
   FocusNode? emailFocusNode2;
   TextEditingController? emailTextController2;
@@ -36,6 +42,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? confirmeSenhaTextController;
   late bool confirmeSenhaVisibility;
   String? Function(BuildContext, String?)? confirmeSenhaTextControllerValidator;
+  // State field(s) for CodigodeConfirmacao widget.
+  FocusNode? codigodeConfirmacaoFocusNode;
+  TextEditingController? codigodeConfirmacaoTextController;
+  String? Function(BuildContext, String?)?
+      codigodeConfirmacaoTextControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -55,6 +66,9 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     nomeFocusNode?.dispose();
     nomeTextController?.dispose();
 
+    sobrenomeFocusNode?.dispose();
+    sobrenomeTextController?.dispose();
+
     emailFocusNode2?.dispose();
     emailTextController2?.dispose();
 
@@ -63,5 +77,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
     confirmeSenhaFocusNode?.dispose();
     confirmeSenhaTextController?.dispose();
+
+    codigodeConfirmacaoFocusNode?.dispose();
+    codigodeConfirmacaoTextController?.dispose();
   }
 }
