@@ -1124,8 +1124,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         mouseCursor: SystemMouseCursors.click,
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () async {
-                                            _model.islogin = true;
-                                            safeSetState(() {});
+                                            await actions
+                                                .resendVerificationEmail(
+                                              currentUserEmail,
+                                            );
                                           },
                                       )
                                     ],
