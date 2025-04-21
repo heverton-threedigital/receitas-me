@@ -870,17 +870,38 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     _model.nomeTextController.text,
                                     _model.sobrenomeTextController.text,
                                   );
-                                  await PerfisTable().insert({
-                                    'id': currentUserUid,
-                                    'is_admin': false,
-                                    'email': currentUserEmail,
-                                    'nome': _model.nomeTextController.text,
-                                    'sobrenome':
-                                        _model.sobrenomeTextController.text,
-                                    'nome_usuario': _model.nomeUsuarioGerado,
-                                  });
-                                  _model.corfirmarConta = true;
-                                  safeSetState(() {});
+                                  if (_model.nomeUsuarioGerado != null &&
+                                      _model.nomeUsuarioGerado != '') {
+                                    await PerfisTable().insert({
+                                      'id': currentUserUid,
+                                      'is_admin': false,
+                                      'email': currentUserEmail,
+                                      'nome': _model.nomeTextController.text,
+                                      'sobrenome':
+                                          _model.sobrenomeTextController.text,
+                                      'nome_usuario': _model.nomeUsuarioGerado,
+                                    });
+                                    _model.corfirmarConta = true;
+                                    safeSetState(() {});
+                                  } else {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (alertDialogContext) {
+                                        return AlertDialog(
+                                          title: Text('Erro'),
+                                          content:
+                                              Text(_model.nomeUsuarioGerado!),
+                                          actions: [
+                                            TextButton(
+                                              onPressed: () => Navigator.pop(
+                                                  alertDialogContext),
+                                              child: Text('Ok'),
+                                            ),
+                                          ],
+                                        );
+                                      },
+                                    );
+                                  }
 
                                   safeSetState(() {});
                                 },
@@ -982,11 +1003,15 @@ class _LoginWidgetState extends State<LoginWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 16.0),
                               child: Text(
-                                'Digite abaixo o código enviado para o seu email',
+                                'Digite abaixo o código enviado para o seu email (Se não chegar na caixa de entrada verifique o spam)',
+                                textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryText,
+                                      fontSize: 12.0,
                                       letterSpacing: 0.0,
                                     ),
                               ),
