@@ -138,33 +138,10 @@ class FFAppState extends ChangeNotifier {
     _contador = value;
   }
 
-  List<int> _numeroPassos = [];
-  List<int> get numeroPassos => _numeroPassos;
-  set numeroPassos(List<int> value) {
-    _numeroPassos = value;
-  }
-
-  void addToNumeroPassos(int value) {
-    numeroPassos.add(value);
-  }
-
-  void removeFromNumeroPassos(int value) {
-    numeroPassos.remove(value);
-  }
-
-  void removeAtIndexFromNumeroPassos(int index) {
-    numeroPassos.removeAt(index);
-  }
-
-  void updateNumeroPassosAtIndex(
-    int index,
-    int Function(int) updateFn,
-  ) {
-    numeroPassos[index] = updateFn(_numeroPassos[index]);
-  }
-
-  void insertAtIndexInNumeroPassos(int index, int value) {
-    numeroPassos.insert(index, value);
+  int _passoAtual = 1;
+  int get passoAtual => _passoAtual;
+  set passoAtual(int value) {
+    _passoAtual = value;
   }
 }
 

@@ -11,8 +11,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   FFUploadedFile? imagemReceita;
 
-  int numeropasso = 1;
-
   ///  State fields for stateful widgets in this page.
 
   // Model for MenuPrincipal component.
