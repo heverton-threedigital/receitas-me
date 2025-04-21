@@ -55,8 +55,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       codigodeConfirmacaoTextControllerValidator;
   // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
   bool? emailVerificado;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  PerfisRow? perfilCriado;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<PerfisRow>? perfilCriado;
 
   @override
   void initState(BuildContext context) {

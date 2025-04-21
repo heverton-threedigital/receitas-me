@@ -1087,37 +1087,23 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     _model
                                         .codigodeConfirmacaoTextController.text,
                                   );
-                                  await Future.delayed(
-                                      const Duration(milliseconds: 1000));
-                                  _model.perfilCriado =
-                                      await PerfisTable().insert({
-                                    'id': currentUserUid,
-                                    'nome': _model.nomeTextController.text,
-                                    'sobrenome':
-                                        _model.sobrenomeTextController.text,
-                                    'email': currentUserEmail,
-                                    'is_admin': false,
-                                  });
-                                  if (_model.perfilCriado != null) {
-                                    await widget.redirecionar?.call();
-                                  } else {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: Text('Erro'),
-                                          content: Text('Deu erro mano'),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  }
+                                  await PerfisTable().update(
+                                    data: {
+                                      'nome': _model.nomeTextController.text,
+                                      'sobrenome':
+                                          _model.sobrenomeTextController.text,
+                                      'email': currentUserEmail,
+                                      'is_admin': false,
+                                    },
+                                    matchingRows: (rows) => rows.eqOrNull(
+                                      'id',
+                                      getJsonField(
+                                        _model.usuarioCriado,
+                                        r'''$.userId''',
+                                      ).toString(),
+                                    ),
+                                  );
+                                  await widget.redirecionar?.call();
 
                                   safeSetState(() {});
                                 },
