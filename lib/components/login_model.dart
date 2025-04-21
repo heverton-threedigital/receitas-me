@@ -50,6 +50,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? codigodeConfirmacaoTextController;
   String? Function(BuildContext, String?)?
       codigodeConfirmacaoTextControllerValidator;
+  // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
+  bool? emailConfirmado;
 
   @override
   void initState(BuildContext context) {

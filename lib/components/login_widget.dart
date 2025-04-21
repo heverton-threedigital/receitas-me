@@ -860,18 +860,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         r'''$.userId''',
                                       ) !=
                                       null) {
-                                    await PerfisTable().insert({
-                                      'id': getJsonField(
-                                        _model.usuarioCriado,
-                                        r'''$.userId''',
-                                      ).toString(),
-                                      'email': _model
-                                          .emailCadastroTextController.text,
-                                      'nome': _model.nomeTextController.text,
-                                      'sobrenome':
-                                          _model.sobrenomeTextController.text,
-                                      'is_admin': false,
-                                    });
                                     _model.corfirmarConta = true;
                                     safeSetState(() {});
                                   } else {
@@ -1090,15 +1078,28 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 16.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  await actions.verifyEmailWithToken(
+                                  _model.emailConfirmado =
+                                      await actions.verifyEmailWithToken(
                                     currentUserEmail,
                                     _model
                                         .codigodeConfirmacaoTextController.text,
                                   );
-                                  _model.islogin = true;
-                                  _model.corfirmarConta = false;
+                                  await PerfisTable().insert({
+                                    'id': getJsonField(
+                                      _model.usuarioCriado,
+                                      r'''$.userId''',
+                                    ).toString(),
+                                    'nome': _model.nomeTextController.text,
+                                    'sobrenome':
+                                        _model.sobrenomeTextController.text,
+                                    'email':
+                                        _model.emailCadastroTextController.text,
+                                    'is_admin': false,
+                                  });
+
+                                  context.pushNamed(InicioWidget.routeName);
+
                                   safeSetState(() {});
-                                  Navigator.pop(context);
                                 },
                                 text: 'Finalizar',
                                 options: FFButtonOptions(
