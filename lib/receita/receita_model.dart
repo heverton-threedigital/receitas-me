@@ -8,10 +8,6 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
 
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
-  // State field(s) for Checkbox widget.
-  Map<dynamic, bool> checkboxValueMap = {};
-  List<dynamic> get checkboxCheckedItems =>
-      checkboxValueMap.entries.where((e) => e.value).map((e) => e.key).toList();
 
   @override
   void initState(BuildContext context) {

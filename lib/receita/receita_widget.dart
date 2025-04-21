@@ -141,8 +141,8 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                         BorderRadius.circular(
                                                             24.0),
                                                     child: Container(
-                                                      width: 300.0,
-                                                      height: 420.0,
+                                                      width: 248.0,
+                                                      height: 336.0,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -150,11 +150,6 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(24.0),
-                                                        border: Border.all(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .alternate,
-                                                        ),
                                                       ),
                                                       child: ClipRRect(
                                                         borderRadius:
@@ -181,9 +176,6 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               .width *
                                                           1.0,
                                                       decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(0.0),
@@ -202,7 +194,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
-                                                                        16.0),
+                                                                        8.0),
                                                             child: Text(
                                                               valueOrDefault<
                                                                   String>(
@@ -212,12 +204,14 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .titleLarge
+                                                                  .headlineLarge
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    lineHeight:
+                                                                        1.1,
                                                                   ),
                                                             ),
                                                           ),
@@ -238,7 +232,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium
+                                                                  .bodyLarge
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
@@ -259,15 +253,12 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               'Categorias',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .bodyMedium
+                                                                  .titleMedium
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
                                                                     letterSpacing:
                                                                         0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
                                                                   ),
                                                             ),
                                                           ),
@@ -279,22 +270,47 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         0.0,
                                                                         0.0,
                                                                         16.0),
-                                                            child: Text(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                receitaReceitasDetalhadasRow
-                                                                    ?.categoriaNome,
-                                                                '-',
+                                                            child: Container(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            24.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    letterSpacing:
-                                                                        0.0,
+                                                              child: Padding(
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        4.0,
+                                                                        16.0,
+                                                                        4.0),
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    receitaReceitasDetalhadasRow
+                                                                        ?.categoriaNome,
+                                                                    '-',
                                                                   ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                              ),
                                                             ),
                                                           ),
                                                           Padding(
@@ -332,11 +348,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                             Text(
                                                                           'Porçoes',
                                                                           style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
+                                                                              .titleMedium
                                                                               .override(
                                                                                 fontFamily: 'Poppins',
                                                                                 letterSpacing: 0.0,
-                                                                                fontWeight: FontWeight.bold,
                                                                               ),
                                                                         ),
                                                                       ),
@@ -346,14 +361,27 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         decoration:
                                                                             BoxDecoration(),
                                                                         child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Icon(
+                                                                              Icons.fastfood_outlined,
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              size: 24.0,
+                                                                            ),
                                                                             Text(
-                                                                          'Hello World',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
+                                                                              valueOrDefault<String>(
+                                                                                receitaReceitasDetalhadasRow?.receitaDescricao,
+                                                                                '-',
                                                                               ),
+                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ].divide(SizedBox(width: 8.0)),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -368,15 +396,22 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         CrossAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Text(
-                                                                        'Tempo de preparação',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              letterSpacing: 0.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            2.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Preparo',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .titleMedium
+                                                                              .override(
+                                                                                fontFamily: 'Poppins',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                        ),
                                                                       ),
                                                                       Container(
                                                                         width: double
@@ -384,18 +419,24 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         decoration:
                                                                             BoxDecoration(),
                                                                         child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Icon(
+                                                                              Icons.alarm,
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              size: 24.0,
+                                                                            ),
                                                                             Text(
-                                                                          valueOrDefault<
-                                                                              String>(
-                                                                            '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()} minutos',
-                                                                            '-',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
+                                                                              '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
+                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                    fontFamily: 'Poppins',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ].divide(SizedBox(width: 8.0)),
                                                                         ),
                                                                       ),
                                                                     ],
@@ -430,6 +471,9 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                         width: double.infinity,
                                                         decoration:
                                                             BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
@@ -456,12 +500,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                 'Ingredientes',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall
+                                                                    .titleLarge
                                                                     .override(
                                                                       fontFamily:
                                                                           'Poppins',
-                                                                      fontSize:
-                                                                          18.0,
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -510,46 +552,20 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               Column(
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.start,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
                                                                             children: [
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                children: [
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                                                                                    child: Text(
-                                                                                      ingredientesItem.toString(),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                  Theme(
-                                                                                    data: ThemeData(
-                                                                                      checkboxTheme: CheckboxThemeData(
-                                                                                        visualDensity: VisualDensity.compact,
-                                                                                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                                                                        shape: RoundedRectangleBorder(
-                                                                                          borderRadius: BorderRadius.circular(4.0),
-                                                                                        ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                                                                                child: Text(
+                                                                                  ingredientesItem.toString(),
+                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
-                                                                                      unselectedWidgetColor: FlutterFlowTheme.of(context).alternate,
-                                                                                    ),
-                                                                                    child: Checkbox(
-                                                                                      value: _model.checkboxValueMap[ingredientesItem] ??= false,
-                                                                                      onChanged: (newValue) async {
-                                                                                        safeSetState(() => _model.checkboxValueMap[ingredientesItem] = newValue!);
-                                                                                      },
-                                                                                      side: BorderSide(
-                                                                                        width: 2,
-                                                                                        color: FlutterFlowTheme.of(context).alternate,
-                                                                                      ),
-                                                                                      activeColor: FlutterFlowTheme.of(context).primary,
-                                                                                      checkColor: FlutterFlowTheme.of(context).info,
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
+                                                                                ),
                                                                               ),
                                                                               Divider(
                                                                                 height: 1.0,
@@ -574,6 +590,9 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                   Expanded(
                                                     child: Container(
                                                       decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryBackground,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16.0),
@@ -597,12 +616,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               'Passo a passo',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .titleSmall
+                                                                  .titleLarge
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
-                                                                    fontSize:
-                                                                        18.0,
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
@@ -651,11 +668,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                             Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
                                                                           children:
                                                                               [
                                                                             Container(
-                                                                              width: 40.0,
-                                                                              height: 40.0,
+                                                                              width: 32.0,
+                                                                              height: 32.0,
                                                                               decoration: BoxDecoration(
                                                                                 color: FlutterFlowTheme.of(context).primary,
                                                                                 shape: BoxShape.circle,
@@ -663,22 +682,32 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               child: Align(
                                                                                 alignment: AlignmentDirectional(0.0, 0.0),
                                                                                 child: Text(
-                                                                                  passosIndex.toString(),
+                                                                                  getJsonField(
+                                                                                    passosItem,
+                                                                                    r'''$.passo''',
+                                                                                  ).toString(),
                                                                                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                                                                                         fontFamily: 'Poppins',
                                                                                         color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        fontSize: 24.0,
                                                                                         letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
                                                                               ),
                                                                             ),
                                                                             Expanded(
-                                                                              child: Text(
-                                                                                passosItem.toString(),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  getJsonField(
+                                                                                    passosItem,
+                                                                                    r'''$.descricao''',
+                                                                                  ).toString(),
+                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ].divide(SizedBox(width: 8.0)),
@@ -711,7 +740,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                               1.0,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
+                                                .primaryBackground,
                                           ),
                                         ),
                                       ),
