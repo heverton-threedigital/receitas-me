@@ -135,9 +135,10 @@ class _PassosWidgetState extends State<PassosWidget> {
                 onPressed: () async {
                   FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
                   FFAppState().passoAtual = FFAppState().passoAtual + -1;
-                  safeSetState(() {});
+                  FFAppState().update(() {});
                   _model.editar = false;
                   safeSetState(() {});
+                  Navigator.pop(context);
                 },
               ),
             ].divide(SizedBox(width: 8.0)),
@@ -183,7 +184,6 @@ class _PassosWidgetState extends State<PassosWidget> {
                                 fontFamily: 'Raleway',
                                 letterSpacing: 0.0,
                               ),
-                      hintText: 'TextField',
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
                                 fontFamily: 'Raleway',
@@ -221,6 +221,8 @@ class _PassosWidgetState extends State<PassosWidget> {
                       filled: true,
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
+                      hoverColor:
+                          FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
@@ -238,9 +240,10 @@ class _PassosWidgetState extends State<PassosWidget> {
                     widget.indexPasso!,
                     (_) => _model.editarpassoTextController.text,
                   );
-                  safeSetState(() {});
+                  FFAppState().update(() {});
                   _model.editar = false;
                   _model.updatePage(() {});
+                  Navigator.pop(context);
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(

@@ -973,7 +973,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .ingredienteTextController,
                                                                 focusNode: _model
                                                                     .ingredienteFocusNode,
-                                                                autofocus: true,
+                                                                autofocus:
+                                                                    false,
                                                                 obscureText:
                                                                     false,
                                                                 decoration:
@@ -1067,9 +1068,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  hoverColor: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
+                                                                  hoverColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)

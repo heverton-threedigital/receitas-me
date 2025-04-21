@@ -111,7 +111,8 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                 onPressed: () async {
                   FFAppState()
                       .removeAtIndexFromIngredientes(widget.indexIngrediente!);
-                  _model.updatePage(() {});
+                  safeSetState(() {});
+                  Navigator.pop(context);
                 },
               ),
             ].divide(SizedBox(width: 8.0)),
@@ -135,7 +136,6 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                                 fontFamily: 'Raleway',
                                 letterSpacing: 0.0,
                               ),
-                      hintText: 'Misture a farinha de trigo com os ovos...',
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
                                 fontFamily: 'Raleway',
@@ -173,6 +173,8 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                       filled: true,
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
+                      hoverColor:
+                          FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Raleway',
@@ -190,9 +192,10 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                     widget.indexIngrediente!,
                     (_) => _model.textController.text,
                   );
-                  safeSetState(() {});
+                  FFAppState().update(() {});
                   _model.editar = false;
-                  _model.updatePage(() {});
+                  safeSetState(() {});
+                  Navigator.pop(context);
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(
