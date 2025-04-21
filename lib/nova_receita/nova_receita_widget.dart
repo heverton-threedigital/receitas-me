@@ -1083,12 +1083,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .start,
                                                             children: [
                                                               Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  novaReceitaPerfisRow
-                                                                      ?.nome,
-                                                                  '-',
-                                                                ),
+                                                                '${novaReceitaPerfisRow?.nome} ${novaReceitaPerfisRow?.sobrenome}',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
@@ -1100,27 +1095,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
-                                                                    ),
-                                                              ),
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  '@${novaReceitaPerfisRow?.nomeUsuario}',
-                                                                  '-',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Poppins',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryText,
-                                                                      fontSize:
-                                                                          12.0,
-                                                                      letterSpacing:
-                                                                          0.0,
                                                                     ),
                                                               ),
                                                             ],

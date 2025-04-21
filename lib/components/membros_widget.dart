@@ -254,11 +254,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  valueOrDefault<String>(
-                                                    listViewPerfisRow
-                                                        .nomeUsuario,
-                                                    '-',
-                                                  ),
+                                                  '${listViewPerfisRow.nome} ${listViewPerfisRow.sobrenome}',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium

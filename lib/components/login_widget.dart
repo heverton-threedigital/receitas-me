@@ -37,11 +37,11 @@ class _LoginWidgetState extends State<LoginWidget> {
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.emailTextController1 ??= TextEditingController();
-    _model.emailFocusNode1 ??= FocusNode();
+    _model.emailLoginTextController ??= TextEditingController();
+    _model.emailLoginFocusNode ??= FocusNode();
 
-    _model.senhaTextController1 ??= TextEditingController();
-    _model.senhaFocusNode1 ??= FocusNode();
+    _model.senhaLoginTextController ??= TextEditingController();
+    _model.senhaLoginFocusNode ??= FocusNode();
 
     _model.nomeTextController ??= TextEditingController();
     _model.nomeFocusNode ??= FocusNode();
@@ -49,14 +49,14 @@ class _LoginWidgetState extends State<LoginWidget> {
     _model.sobrenomeTextController ??= TextEditingController();
     _model.sobrenomeFocusNode ??= FocusNode();
 
-    _model.emailTextController2 ??= TextEditingController();
-    _model.emailFocusNode2 ??= FocusNode();
+    _model.emailCadastroTextController ??= TextEditingController();
+    _model.emailCadastroFocusNode ??= FocusNode();
 
-    _model.senhaTextController2 ??= TextEditingController();
-    _model.senhaFocusNode2 ??= FocusNode();
+    _model.senhaCadastroTextController ??= TextEditingController();
+    _model.senhaCadastroFocusNode ??= FocusNode();
 
-    _model.confirmeSenhaTextController ??= TextEditingController();
-    _model.confirmeSenhaFocusNode ??= FocusNode();
+    _model.confirmeSenhaCadastroTextController ??= TextEditingController();
+    _model.confirmeSenhaCadastroFocusNode ??= FocusNode();
 
     _model.codigodeConfirmacaoTextController ??= TextEditingController();
     _model.codigodeConfirmacaoFocusNode ??= FocusNode();
@@ -128,8 +128,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 child: TextFormField(
-                                  controller: _model.emailTextController1,
-                                  focusNode: _model.emailFocusNode1,
+                                  controller: _model.emailLoginTextController,
+                                  focusNode: _model.emailLoginFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -192,7 +192,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model
-                                      .emailTextController1Validator
+                                      .emailLoginTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -200,10 +200,10 @@ class _LoginWidgetState extends State<LoginWidget> {
                             Container(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               child: TextFormField(
-                                controller: _model.senhaTextController1,
-                                focusNode: _model.senhaFocusNode1,
+                                controller: _model.senhaLoginTextController,
+                                focusNode: _model.senhaLoginFocusNode,
                                 autofocus: false,
-                                obscureText: !_model.senhaVisibility1,
+                                obscureText: !_model.senhaLoginVisibility,
                                 decoration: InputDecoration(
                                   isDense: false,
                                   labelText: 'Senha',
@@ -254,12 +254,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       .primaryBackground,
                                   suffixIcon: InkWell(
                                     onTap: () => safeSetState(
-                                      () => _model.senhaVisibility1 =
-                                          !_model.senhaVisibility1,
+                                      () => _model.senhaLoginVisibility =
+                                          !_model.senhaLoginVisibility,
                                     ),
                                     focusNode: FocusNode(skipTraversal: true),
                                     child: Icon(
-                                      _model.senhaVisibility1
+                                      _model.senhaLoginVisibility
                                           ? Icons.visibility_outlined
                                           : Icons.visibility_off_outlined,
                                       size: 22,
@@ -274,7 +274,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     ),
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primaryText,
-                                validator: _model.senhaTextController1Validator
+                                validator: _model
+                                    .senhaLoginTextControllerValidator
                                     .asValidator(context),
                               ),
                             ),
@@ -289,8 +290,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   final user =
                                       await authManager.signInWithEmail(
                                     context,
-                                    _model.emailTextController1.text,
-                                    _model.senhaTextController1.text,
+                                    _model.emailLoginTextController.text,
+                                    _model.senhaLoginTextController.text,
                                   );
                                   if (user == null) {
                                     return;
@@ -590,8 +591,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 child: TextFormField(
-                                  controller: _model.emailTextController2,
-                                  focusNode: _model.emailFocusNode2,
+                                  controller:
+                                      _model.emailCadastroTextController,
+                                  focusNode: _model.emailCadastroFocusNode,
                                   autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -654,7 +656,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model
-                                      .emailTextController2Validator
+                                      .emailCadastroTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -665,10 +667,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 child: TextFormField(
-                                  controller: _model.senhaTextController2,
-                                  focusNode: _model.senhaFocusNode2,
+                                  controller:
+                                      _model.senhaCadastroTextController,
+                                  focusNode: _model.senhaCadastroFocusNode,
                                   autofocus: false,
-                                  obscureText: !_model.senhaVisibility2,
+                                  obscureText: !_model.senhaCadastroVisibility,
                                   decoration: InputDecoration(
                                     isDense: false,
                                     labelText: 'Senha',
@@ -721,12 +724,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         .primaryBackground,
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.senhaVisibility2 =
-                                            !_model.senhaVisibility2,
+                                        () => _model.senhaCadastroVisibility =
+                                            !_model.senhaCadastroVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.senhaVisibility2
+                                        _model.senhaCadastroVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         size: 22,
@@ -742,7 +745,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model
-                                      .senhaTextController2Validator
+                                      .senhaCadastroTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -753,11 +756,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
                                 child: TextFormField(
-                                  controller:
-                                      _model.confirmeSenhaTextController,
-                                  focusNode: _model.confirmeSenhaFocusNode,
+                                  controller: _model
+                                      .confirmeSenhaCadastroTextController,
+                                  focusNode:
+                                      _model.confirmeSenhaCadastroFocusNode,
                                   autofocus: false,
-                                  obscureText: !_model.confirmeSenhaVisibility,
+                                  obscureText:
+                                      !_model.confirmeSenhaCadastroVisibility,
                                   decoration: InputDecoration(
                                     isDense: false,
                                     labelText: 'Confirmar senha',
@@ -810,12 +815,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         .primaryBackground,
                                     suffixIcon: InkWell(
                                       onTap: () => safeSetState(
-                                        () => _model.confirmeSenhaVisibility =
-                                            !_model.confirmeSenhaVisibility,
+                                        () => _model
+                                                .confirmeSenhaCadastroVisibility =
+                                            !_model
+                                                .confirmeSenhaCadastroVisibility,
                                       ),
                                       focusNode: FocusNode(skipTraversal: true),
                                       child: Icon(
-                                        _model.confirmeSenhaVisibility
+                                        _model.confirmeSenhaCadastroVisibility
                                             ? Icons.visibility_outlined
                                             : Icons.visibility_off_outlined,
                                         size: 22,
@@ -831,7 +838,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   cursorColor:
                                       FlutterFlowTheme.of(context).primaryText,
                                   validator: _model
-                                      .confirmeSenhaTextControllerValidator
+                                      .confirmeSenhaCadastroTextControllerValidator
                                       .asValidator(context),
                                 ),
                               ),
@@ -843,8 +850,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 onPressed: () async {
                                   // Fazer login
                                   GoRouter.of(context).prepareAuthEvent();
-                                  if (_model.senhaTextController2.text !=
-                                      _model.confirmeSenhaTextController.text) {
+                                  if (_model.senhaCadastroTextController.text !=
+                                      _model.confirmeSenhaCadastroTextController
+                                          .text) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
@@ -858,50 +866,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   final user =
                                       await authManager.createAccountWithEmail(
                                     context,
-                                    _model.emailTextController2.text,
-                                    _model.senhaTextController2.text,
+                                    _model.emailCadastroTextController.text,
+                                    _model.senhaCadastroTextController.text,
                                   );
                                   if (user == null) {
                                     return;
                                   }
 
-                                  _model.nomeUsuarioGerado = await actions
-                                      .generateUniqueUsernameSupabase(
-                                    _model.nomeTextController.text,
-                                    _model.sobrenomeTextController.text,
-                                  );
-                                  if (_model.nomeUsuarioGerado != null &&
-                                      _model.nomeUsuarioGerado != '') {
-                                    await PerfisTable().insert({
-                                      'id': currentUserUid,
-                                      'is_admin': false,
-                                      'email': currentUserEmail,
-                                      'nome': _model.nomeTextController.text,
-                                      'sobrenome':
-                                          _model.sobrenomeTextController.text,
-                                      'nome_usuario': _model.nomeUsuarioGerado,
-                                    });
-                                    _model.corfirmarConta = true;
-                                    safeSetState(() {});
-                                  } else {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (alertDialogContext) {
-                                        return AlertDialog(
-                                          title: Text('Erro'),
-                                          content:
-                                              Text(_model.nomeUsuarioGerado!),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () => Navigator.pop(
-                                                  alertDialogContext),
-                                              child: Text('Ok'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  }
+                                  _model.userCriado =
+                                      await PerfisTable().insert({
+                                    'id': currentUserUid,
+                                    'is_admin': false,
+                                    'email':
+                                        _model.emailCadastroTextController.text,
+                                    'nome': _model.nomeTextController.text,
+                                    'sobrenome':
+                                        _model.sobrenomeTextController.text,
+                                  });
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 1000));
+                                  _model.corfirmarConta = true;
+                                  safeSetState(() {});
 
                                   safeSetState(() {});
                                 },

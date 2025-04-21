@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
@@ -11,15 +12,15 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for Email widget.
-  FocusNode? emailFocusNode1;
-  TextEditingController? emailTextController1;
-  String? Function(BuildContext, String?)? emailTextController1Validator;
-  // State field(s) for Senha widget.
-  FocusNode? senhaFocusNode1;
-  TextEditingController? senhaTextController1;
-  late bool senhaVisibility1;
-  String? Function(BuildContext, String?)? senhaTextController1Validator;
+  // State field(s) for EmailLogin widget.
+  FocusNode? emailLoginFocusNode;
+  TextEditingController? emailLoginTextController;
+  String? Function(BuildContext, String?)? emailLoginTextControllerValidator;
+  // State field(s) for SenhaLogin widget.
+  FocusNode? senhaLoginFocusNode;
+  TextEditingController? senhaLoginTextController;
+  late bool senhaLoginVisibility;
+  String? Function(BuildContext, String?)? senhaLoginTextControllerValidator;
   // State field(s) for Nome widget.
   FocusNode? nomeFocusNode;
   TextEditingController? nomeTextController;
@@ -28,22 +29,23 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FocusNode? sobrenomeFocusNode;
   TextEditingController? sobrenomeTextController;
   String? Function(BuildContext, String?)? sobrenomeTextControllerValidator;
-  // State field(s) for Email widget.
-  FocusNode? emailFocusNode2;
-  TextEditingController? emailTextController2;
-  String? Function(BuildContext, String?)? emailTextController2Validator;
-  // State field(s) for Senha widget.
-  FocusNode? senhaFocusNode2;
-  TextEditingController? senhaTextController2;
-  late bool senhaVisibility2;
-  String? Function(BuildContext, String?)? senhaTextController2Validator;
-  // State field(s) for ConfirmeSenha widget.
-  FocusNode? confirmeSenhaFocusNode;
-  TextEditingController? confirmeSenhaTextController;
-  late bool confirmeSenhaVisibility;
-  String? Function(BuildContext, String?)? confirmeSenhaTextControllerValidator;
-  // Stores action output result for [Custom Action - generateUniqueUsernameSupabase] action in Button widget.
-  String? nomeUsuarioGerado;
+  // State field(s) for EmailCadastro widget.
+  FocusNode? emailCadastroFocusNode;
+  TextEditingController? emailCadastroTextController;
+  String? Function(BuildContext, String?)? emailCadastroTextControllerValidator;
+  // State field(s) for SenhaCadastro widget.
+  FocusNode? senhaCadastroFocusNode;
+  TextEditingController? senhaCadastroTextController;
+  late bool senhaCadastroVisibility;
+  String? Function(BuildContext, String?)? senhaCadastroTextControllerValidator;
+  // State field(s) for ConfirmeSenhaCadastro widget.
+  FocusNode? confirmeSenhaCadastroFocusNode;
+  TextEditingController? confirmeSenhaCadastroTextController;
+  late bool confirmeSenhaCadastroVisibility;
+  String? Function(BuildContext, String?)?
+      confirmeSenhaCadastroTextControllerValidator;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  PerfisRow? userCriado;
   // State field(s) for CodigodeConfirmacao widget.
   FocusNode? codigodeConfirmacaoFocusNode;
   TextEditingController? codigodeConfirmacaoTextController;
@@ -52,18 +54,18 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   @override
   void initState(BuildContext context) {
-    senhaVisibility1 = false;
-    senhaVisibility2 = false;
-    confirmeSenhaVisibility = false;
+    senhaLoginVisibility = false;
+    senhaCadastroVisibility = false;
+    confirmeSenhaCadastroVisibility = false;
   }
 
   @override
   void dispose() {
-    emailFocusNode1?.dispose();
-    emailTextController1?.dispose();
+    emailLoginFocusNode?.dispose();
+    emailLoginTextController?.dispose();
 
-    senhaFocusNode1?.dispose();
-    senhaTextController1?.dispose();
+    senhaLoginFocusNode?.dispose();
+    senhaLoginTextController?.dispose();
 
     nomeFocusNode?.dispose();
     nomeTextController?.dispose();
@@ -71,14 +73,14 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     sobrenomeFocusNode?.dispose();
     sobrenomeTextController?.dispose();
 
-    emailFocusNode2?.dispose();
-    emailTextController2?.dispose();
+    emailCadastroFocusNode?.dispose();
+    emailCadastroTextController?.dispose();
 
-    senhaFocusNode2?.dispose();
-    senhaTextController2?.dispose();
+    senhaCadastroFocusNode?.dispose();
+    senhaCadastroTextController?.dispose();
 
-    confirmeSenhaFocusNode?.dispose();
-    confirmeSenhaTextController?.dispose();
+    confirmeSenhaCadastroFocusNode?.dispose();
+    confirmeSenhaCadastroTextController?.dispose();
 
     codigodeConfirmacaoFocusNode?.dispose();
     codigodeConfirmacaoTextController?.dispose();

@@ -17,9 +17,6 @@ class PerfisRow extends SupabaseDataRow {
   String get id => getField<String>('id')!;
   set id(String value) => setField<String>('id', value);
 
-  String get nomeUsuario => getField<String>('nome_usuario')!;
-  set nomeUsuario(String value) => setField<String>('nome_usuario', value);
-
   String? get avatarUrl => getField<String>('avatar_url');
   set avatarUrl(String? value) => setField<String>('avatar_url', value);
 
