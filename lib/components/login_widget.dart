@@ -848,7 +848,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 16.0, 0.0, 16.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  // Fazer login
                                   GoRouter.of(context).prepareAuthEvent();
                                   if (_model.senhaCadastroTextController.text !=
                                       _model.confirmeSenhaCadastroTextController
