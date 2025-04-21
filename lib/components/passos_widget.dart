@@ -138,7 +138,6 @@ class _PassosWidgetState extends State<PassosWidget> {
                   FFAppState().update(() {});
                   _model.editar = false;
                   safeSetState(() {});
-                  Navigator.pop(context);
                 },
               ),
             ].divide(SizedBox(width: 8.0)),
@@ -243,7 +242,6 @@ class _PassosWidgetState extends State<PassosWidget> {
                   FFAppState().update(() {});
                   _model.editar = false;
                   _model.updatePage(() {});
-                  Navigator.pop(context);
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(

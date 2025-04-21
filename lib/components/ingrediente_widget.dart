@@ -112,7 +112,6 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   FFAppState()
                       .removeAtIndexFromIngredientes(widget.indexIngrediente!);
                   safeSetState(() {});
-                  Navigator.pop(context);
                 },
               ),
             ].divide(SizedBox(width: 8.0)),
@@ -195,7 +194,6 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   FFAppState().update(() {});
                   _model.editar = false;
                   safeSetState(() {});
-                  Navigator.pop(context);
                 },
                 text: 'Salvar',
                 options: FFButtonOptions(

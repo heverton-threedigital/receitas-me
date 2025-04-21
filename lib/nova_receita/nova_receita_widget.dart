@@ -980,8 +980,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 decoration:
                                                                     InputDecoration(
                                                                   isDense: true,
-                                                                  labelText:
-                                                                      'Ingrediente',
                                                                   labelStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
@@ -1068,10 +1066,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   fillColor: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  hoverColor:
-                                                                      FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
+                                                                  hoverColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
