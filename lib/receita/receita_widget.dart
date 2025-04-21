@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/menu_principal_widget.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -151,20 +152,77 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                             BorderRadius
                                                                 .circular(24.0),
                                                       ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          valueOrDefault<
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await Navigator.push(
+                                                            context,
+                                                            PageTransition(
+                                                              type:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              child:
+                                                                  FlutterFlowExpandedImageView(
+                                                                image: Image
+                                                                    .network(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    receitaReceitasDetalhadasRow
+                                                                        ?.imagemUrl,
+                                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .contain,
+                                                                ),
+                                                                allowRotation:
+                                                                    false,
+                                                                tag:
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                  receitaReceitasDetalhadasRow
+                                                                      ?.imagemUrl,
+                                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                                ),
+                                                                useHeroAnimation:
+                                                                    true,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Hero(
+                                                          tag: valueOrDefault<
                                                               String>(
                                                             receitaReceitasDetalhadasRow
                                                                 ?.imagemUrl,
                                                             'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                           ),
-                                                          width: 200.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
+                                                          transitionOnUserGestures:
+                                                              true,
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                            child:
+                                                                Image.network(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                receitaReceitasDetalhadasRow
+                                                                    ?.imagemUrl,
+                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                              ),
+                                                              width: 200.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -233,27 +291,6 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                  ),
-                                                            ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        2.0),
-                                                            child: Text(
-                                                              'Categorias',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleMedium
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
@@ -372,10 +409,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               size: 24.0,
                                                                             ),
                                                                             Text(
-                                                                              valueOrDefault<String>(
-                                                                                receitaReceitasDetalhadasRow?.receitaDescricao,
-                                                                                '-',
-                                                                              ),
+                                                                              '-',
                                                                               style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                     fontFamily: 'Poppins',
                                                                                     letterSpacing: 0.0,
@@ -560,7 +594,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               Padding(
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                                                                                 child: Text(
-                                                                                  ingredientesItem.toString(),
+                                                                                  getJsonField(
+                                                                                    ingredientesItem,
+                                                                                    r'''$.ingrediente''',
+                                                                                  ).toString(),
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                         fontFamily: 'Poppins',
                                                                                         letterSpacing: 0.0,
