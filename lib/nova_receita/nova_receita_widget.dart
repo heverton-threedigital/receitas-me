@@ -645,6 +645,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     'Poppins',
                                                                 letterSpacing:
                                                                     0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
                                                               ),
                                                         ),
                                                       ),
@@ -803,6 +806,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 'Poppins',
                                                                             letterSpacing:
                                                                                 0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -929,6 +934,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               'Poppins',
                                                                           letterSpacing:
                                                                               0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
                                                                         ),
                                                                   ),
                                                                   Container(
@@ -1163,7 +1170,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Poppins',
+                                                            fontSize: 18.0,
                                                             letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
                                                           ),
                                                     ),
                                                     Builder(
@@ -1464,16 +1474,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     children: [
                                                       Text(
                                                         'Passo a passo',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Poppins',
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .titleSmall
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Poppins',
+                                                              fontSize: 18.0,
+                                                              letterSpacing:
+                                                                  0.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                            ),
                                                       ),
                                                       Builder(
                                                         builder: (context) {
@@ -1800,7 +1813,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                   alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 16.0),
+                                        0.0, 0.0, 0.0, 16.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(16.0),
                                       child: BackdropFilter(
