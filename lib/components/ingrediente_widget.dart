@@ -91,7 +91,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Poppins',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -141,12 +141,12 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                       isDense: true,
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Poppins',
                                 letterSpacing: 0.0,
                               ),
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Poppins',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -184,7 +184,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                           FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Poppins',
                           letterSpacing: 0.0,
                         ),
                     cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -211,7 +211,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Poppins',
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),

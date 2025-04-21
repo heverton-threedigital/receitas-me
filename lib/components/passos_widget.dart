@@ -73,7 +73,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                       '-',
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           letterSpacing: 0.0,
                         ),
@@ -115,7 +115,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Raleway',
+                                    fontFamily: 'Poppins',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -161,7 +161,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                       '-',
                     ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryBackground,
                           letterSpacing: 0.0,
                         ),
@@ -189,12 +189,12 @@ class _PassosWidgetState extends State<PassosWidget> {
                       isDense: true,
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Poppins',
                                 letterSpacing: 0.0,
                               ),
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Raleway',
+                                fontFamily: 'Poppins',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -232,7 +232,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                           FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Raleway',
+                          fontFamily: 'Poppins',
                           letterSpacing: 0.0,
                         ),
                     cursorColor: FlutterFlowTheme.of(context).primaryText,
@@ -259,7 +259,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primary,
                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Raleway',
+                        fontFamily: 'Poppins',
                         color: Colors.white,
                         letterSpacing: 0.0,
                       ),

@@ -163,11 +163,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   final selectedMedia =
-                                                      await selectMediaWithSourceBottomSheet(
-                                                    context: context,
+                                                      await selectMedia(
                                                     maxWidth: 1080.00,
                                                     imageQuality: 80,
-                                                    allowPhoto: true,
+                                                    mediaSource: MediaSource
+                                                        .photoGallery,
+                                                    multiImage: false,
                                                   );
                                                   if (selectedMedia != null &&
                                                       selectedMedia.every((m) =>
@@ -274,7 +275,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -289,7 +290,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -378,7 +379,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         letterSpacing:
@@ -394,7 +395,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         fontSize:
                                                                             16.0,
                                                                         letterSpacing:
@@ -470,7 +471,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Poppins',
                                                                   fontSize:
                                                                       16.0,
                                                                   letterSpacing:
@@ -514,7 +515,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         fontSize:
@@ -532,7 +533,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .secondaryText,
                                                                         letterSpacing:
@@ -608,7 +609,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Poppins',
                                                                   fontSize:
                                                                       14.0,
                                                                   letterSpacing:
@@ -641,7 +642,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Raleway',
+                                                                    'Poppins',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -720,7 +721,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -799,7 +800,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             fontFamily:
-                                                                                'Raleway',
+                                                                                'Poppins',
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -831,7 +832,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Poppins',
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -842,7 +843,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Poppins',
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           enabledBorder:
@@ -895,7 +896,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Poppins',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         cursorColor:
@@ -925,7 +926,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Poppins',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -956,7 +957,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           labelStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Poppins',
                                                                                 color: FlutterFlowTheme.of(context).primaryText,
                                                                                 letterSpacing: 0.0,
                                                                               ),
@@ -967,7 +968,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           hintStyle: FlutterFlowTheme.of(context)
                                                                               .labelMedium
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Poppins',
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                           enabledBorder:
@@ -1020,7 +1021,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
-                                                                              fontFamily: 'Raleway',
+                                                                              fontFamily: 'Poppins',
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                         cursorColor:
@@ -1086,7 +1087,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight:
@@ -1105,7 +1106,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondaryText,
@@ -1161,7 +1162,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           .titleSmall
                                                           .override(
                                                             fontFamily:
-                                                                'Raleway',
+                                                                'Poppins',
                                                             letterSpacing: 0.0,
                                                           ),
                                                     ),
@@ -1253,7 +1254,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
                                                                         letterSpacing:
@@ -1270,7 +1271,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .labelMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1343,7 +1344,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
@@ -1402,7 +1403,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
                                                                         letterSpacing:
@@ -1469,7 +1470,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 .titleSmall
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Poppins',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -1557,7 +1558,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .headlineMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryBackground,
                                                                         letterSpacing:
@@ -1614,7 +1615,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .labelMedium
                                                                         .override(
                                                                           fontFamily:
-                                                                              'Raleway',
+                                                                              'Poppins',
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
@@ -1684,7 +1685,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .bodyMedium
                                                                       .override(
                                                                         fontFamily:
-                                                                            'Raleway',
+                                                                            'Poppins',
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
@@ -1747,7 +1748,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .titleSmall
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Raleway',
+                                                                          'Poppins',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
@@ -1840,7 +1841,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             context)
                                                         .titleLarge
                                                         .override(
-                                                          fontFamily: 'Raleway',
+                                                          fontFamily: 'Poppins',
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -1890,7 +1891,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Poppins',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -2166,7 +2167,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Poppins',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
@@ -2446,7 +2447,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Raleway',
+                                                                        'Poppins',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,

@@ -230,7 +230,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Raleway',
+                                                                      'Poppins',
                                                                   letterSpacing:
                                                                       0.0,
                                                                   fontWeight:
@@ -261,7 +261,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Raleway',
+                                                fontFamily: 'Poppins',
                                                 fontSize: 20.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
@@ -459,7 +459,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                 '-',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Raleway',
+                                                                                    fontFamily: 'Poppins',
                                                                                     color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
@@ -513,7 +513,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                fontFamily: 'Raleway',
+                                                                                fontFamily: 'Poppins',
                                                                                 fontSize: 12.0,
                                                                                 letterSpacing: 0.0,
                                                                               ),

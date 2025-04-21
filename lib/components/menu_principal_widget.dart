@@ -181,7 +181,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Poppins',
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
@@ -279,7 +279,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             letterSpacing: 0.0,
@@ -360,7 +360,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Raleway',
+                                            fontFamily: 'Poppins',
                                             color: Colors.white,
                                             letterSpacing: 0.0,
                                           ),
@@ -465,14 +465,14 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Pesquisar',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          fontFamily: 'Raleway',
+                                          fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                         ),
                                     enabledBorder: OutlineInputBorder(
@@ -517,7 +517,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Raleway',
+                                        fontFamily: 'Poppins',
                                         letterSpacing: 0.0,
                                       ),
                                   cursorColor:

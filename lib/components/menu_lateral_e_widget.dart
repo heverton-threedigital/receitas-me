@@ -181,7 +181,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Poppins',
                                                   color: () {
                                                     if (widget.pagina ==
                                                         'inicio') {
@@ -287,7 +287,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Poppins',
                                                   color: () {
                                                     if (widget.pagina ==
                                                         'notificacoes') {
@@ -399,7 +399,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily: 'Poppins',
                                                         color: () {
                                                           if (widget.pagina ==
                                                               'minhasreceitas') {
@@ -506,7 +506,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .labelMedium
                                                 .override(
-                                                  fontFamily: 'Raleway',
+                                                  fontFamily: 'Poppins',
                                                   color: () {
                                                     if (widget.pagina ==
                                                         'receitassalvas') {
@@ -616,7 +616,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Raleway',
+                                                        fontFamily: 'Poppins',
                                                         color: () {
                                                           if (widget.pagina ==
                                                               'painel') {
