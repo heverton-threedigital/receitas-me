@@ -32,10 +32,6 @@ class ReceitasRow extends SupabaseDataRow {
   String? get categoriaId => getField<String>('categoria_id');
   set categoriaId(String? value) => setField<String>('categoria_id', value);
 
-  String? get categoriaRegionalId => getField<String>('categoria_regional_id');
-  set categoriaRegionalId(String? value) =>
-      setField<String>('categoria_regional_id', value);
-
   String? get autorId => getField<String>('autor_id');
   set autorId(String? value) => setField<String>('autor_id', value);
 
