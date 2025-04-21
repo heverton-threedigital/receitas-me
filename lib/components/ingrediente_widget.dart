@@ -126,6 +126,15 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   child: TextFormField(
                     controller: _model.textController,
                     focusNode: _model.textFieldFocusNode,
+                    onFieldSubmitted: (_) async {
+                      FFAppState().updateIngredientesAtIndex(
+                        widget.indexIngrediente!,
+                        (_) => _model.textController.text,
+                      );
+                      FFAppState().update(() {});
+                      _model.editar = false;
+                      safeSetState(() {});
+                    },
                     autofocus: false,
                     obscureText: false,
                     decoration: InputDecoration(

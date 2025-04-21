@@ -973,6 +973,22 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .ingredienteTextController,
                                                                 focusNode: _model
                                                                     .ingredienteFocusNode,
+                                                                onFieldSubmitted:
+                                                                    (_) async {
+                                                                  FFAppState()
+                                                                      .addToIngredientes(_model
+                                                                          .ingredienteTextController
+                                                                          .text);
+                                                                  FFAppState()
+                                                                      .update(
+                                                                          () {});
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model
+                                                                        .ingredienteTextController
+                                                                        ?.clear();
+                                                                  });
+                                                                },
                                                                 autofocus:
                                                                     false,
                                                                 obscureText:
@@ -1302,6 +1318,28 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .passoTextController,
                                                                 focusNode: _model
                                                                     .passoFocusNode,
+                                                                onFieldSubmitted:
+                                                                    (_) async {
+                                                                  FFAppState()
+                                                                      .addToPassos(_model
+                                                                          .passoTextController
+                                                                          .text);
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  FFAppState()
+                                                                          .passoAtual =
+                                                                      FFAppState()
+                                                                              .passoAtual +
+                                                                          1;
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model
+                                                                        .passoTextController
+                                                                        ?.clear();
+                                                                  });
+                                                                },
                                                                 autofocus: true,
                                                                 obscureText:
                                                                     false,
@@ -1600,56 +1638,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   ),
                                                 ),
                                                 FFButtonWidget(
-                                                  onPressed: () {
-                                                    print('Button pressed ...');
-                                                  },
-                                                  text: 'Rascunho',
-                                                  icon: Icon(
-                                                    Icons.save_outlined,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    size: 15.0,
-                                                  ),
-                                                  options: FFButtonOptions(
-                                                    height: 36.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(16.0, 0.0,
-                                                                16.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    textStyle: FlutterFlowTheme
-                                                            .of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Raleway',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.bold,
-                                                        ),
-                                                    elevation: 0.0,
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                ),
-                                                FFButtonWidget(
                                                   onPressed: () async {
                                                     {
                                                       safeSetState(() => _model
@@ -1708,6 +1696,253 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       }
                                                     }
 
+                                                    _model.receitaCriada2 =
+                                                        await ReceitasTable()
+                                                            .insert({
+                                                      'titulo': _model
+                                                          .textController1.text,
+                                                      'descricao': _model
+                                                          .textController2.text,
+                                                      'tempo_preparo':
+                                                          int.tryParse(_model
+                                                              .textController4
+                                                              .text),
+                                                      'autor_id':
+                                                          currentUserUid,
+                                                      'imagem_url': _model
+                                                          .uploadedFileUrl3,
+                                                      'publicado': false,
+                                                    });
+                                                    FFAppState().contador = -1;
+                                                    safeSetState(() {});
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          'Salvando receita como rascunho',
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                      ),
+                                                    );
+                                                    _model.instantTimer =
+                                                        InstantTimer.periodic(
+                                                      duration: Duration(
+                                                          milliseconds: 1000),
+                                                      callback: (timer) async {
+                                                        while (FFAppState()
+                                                                .contador <=
+                                                            FFAppState()
+                                                                .ingredientes
+                                                                .length) {
+                                                          FFAppState()
+                                                                  .contador =
+                                                              FFAppState()
+                                                                      .contador +
+                                                                  1;
+                                                          safeSetState(() {});
+                                                          await IngredientesTable()
+                                                              .insert({
+                                                            'receita_id': _model
+                                                                .receitaCriada2
+                                                                ?.id,
+                                                            'ingrediente': FFAppState()
+                                                                .ingredientes
+                                                                .elementAtOrNull(
+                                                                    FFAppState()
+                                                                        .contador),
+                                                          });
+                                                        }
+                                                        _model.instantTimer
+                                                            ?.cancel();
+                                                        FFAppState().contador =
+                                                            -1;
+                                                        safeSetState(() {});
+                                                        _model.instantTimer2 =
+                                                            InstantTimer
+                                                                .periodic(
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  1000),
+                                                          callback:
+                                                              (timer) async {
+                                                            while (FFAppState()
+                                                                    .contador <=
+                                                                FFAppState()
+                                                                    .passos
+                                                                    .length) {
+                                                              FFAppState()
+                                                                      .contador =
+                                                                  FFAppState()
+                                                                          .contador +
+                                                                      1;
+                                                              safeSetState(
+                                                                  () {});
+                                                              await InstrucoesTable()
+                                                                  .insert({
+                                                                'receita_id': _model
+                                                                    .receitaCriada2
+                                                                    ?.id,
+                                                                'descricao': FFAppState()
+                                                                    .passos
+                                                                    .elementAtOrNull(
+                                                                        FFAppState()
+                                                                            .contador),
+                                                                'foto_instrucao':
+                                                                    '',
+                                                                'numero_passo':
+                                                                    FFAppState()
+                                                                            .contador +
+                                                                        1,
+                                                              });
+                                                            }
+                                                            _model.instantTimer2
+                                                                ?.cancel();
+                                                            FFAppState()
+                                                                .ingredientes = [];
+                                                            FFAppState()
+                                                                .passos = [];
+                                                            safeSetState(() {});
+
+                                                            context.pushNamed(
+                                                              ReceitaWidget
+                                                                  .routeName,
+                                                              pathParameters: {
+                                                                'receitaid':
+                                                                    serializeParam(
+                                                                  _model
+                                                                      .receitaCriada
+                                                                      ?.id,
+                                                                  ParamType
+                                                                      .String,
+                                                                ),
+                                                              }.withoutNulls,
+                                                            );
+                                                          },
+                                                          startImmediately:
+                                                              true,
+                                                        );
+                                                      },
+                                                      startImmediately: true,
+                                                    );
+
+                                                    safeSetState(() {});
+                                                  },
+                                                  text: 'Rascunho',
+                                                  icon: Icon(
+                                                    Icons.save_outlined,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    size: 15.0,
+                                                  ),
+                                                  options: FFButtonOptions(
+                                                    height: 36.0,
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(16.0, 0.0,
+                                                                16.0, 0.0),
+                                                    iconPadding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 0.0),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBackground,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Raleway',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                    elevation: 0.0,
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                ),
+                                                FFButtonWidget(
+                                                  onPressed: () async {
+                                                    {
+                                                      safeSetState(() => _model
+                                                              .isDataUploading3 =
+                                                          true);
+                                                      var selectedUploadedFiles =
+                                                          <FFUploadedFile>[];
+                                                      var selectedMedia =
+                                                          <SelectedFile>[];
+                                                      var downloadUrls =
+                                                          <String>[];
+                                                      try {
+                                                        selectedUploadedFiles = _model
+                                                                .uploadedLocalFile1
+                                                                .bytes!
+                                                                .isNotEmpty
+                                                            ? [
+                                                                _model
+                                                                    .uploadedLocalFile1
+                                                              ]
+                                                            : <FFUploadedFile>[];
+                                                        selectedMedia =
+                                                            selectedFilesFromUploadedFiles(
+                                                          selectedUploadedFiles,
+                                                          storageFolderPath:
+                                                              'receitas',
+                                                        );
+                                                        downloadUrls =
+                                                            await uploadSupabaseStorageFiles(
+                                                          bucketName: 'imagens',
+                                                          selectedFiles:
+                                                              selectedMedia,
+                                                        );
+                                                      } finally {
+                                                        _model.isDataUploading3 =
+                                                            false;
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                                  .length ==
+                                                              selectedMedia
+                                                                  .length &&
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        safeSetState(() {
+                                                          _model.uploadedLocalFile3 =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl3 =
+                                                              downloadUrls
+                                                                  .first;
+                                                        });
+                                                      } else {
+                                                        safeSetState(() {});
+                                                        return;
+                                                      }
+                                                    }
+
                                                     _model.receitaCriada =
                                                         await ReceitasTable()
                                                             .insert({
@@ -1722,11 +1957,32 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       'autor_id':
                                                           currentUserUid,
                                                       'imagem_url': _model
-                                                          .uploadedFileUrl2,
+                                                          .uploadedFileUrl3,
+                                                      'publicado': true,
                                                     });
                                                     FFAppState().contador = -1;
                                                     safeSetState(() {});
-                                                    _model.instantTimer =
+                                                    ScaffoldMessenger.of(
+                                                            context)
+                                                        .showSnackBar(
+                                                      SnackBar(
+                                                        content: Text(
+                                                          'Publicando receita',
+                                                          style: TextStyle(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                          ),
+                                                        ),
+                                                        duration: Duration(
+                                                            milliseconds: 4000),
+                                                        backgroundColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondary,
+                                                      ),
+                                                    );
+                                                    _model.instantTimer1 =
                                                         InstantTimer.periodic(
                                                       duration: Duration(
                                                           milliseconds: 1000),
@@ -1754,12 +2010,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .contador),
                                                           });
                                                         }
-                                                        _model.instantTimer
+                                                        _model.instantTimer1
                                                             ?.cancel();
                                                         FFAppState().contador =
                                                             -1;
                                                         safeSetState(() {});
-                                                        _model.instantTimer2 =
+                                                        _model.instantTimer3 =
                                                             InstantTimer
                                                                 .periodic(
                                                           duration: Duration(
@@ -1797,7 +2053,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         1,
                                                               });
                                                             }
-                                                            _model.instantTimer2
+                                                            _model.instantTimer3
                                                                 ?.cancel();
                                                             FFAppState()
                                                                 .ingredientes = [];

@@ -45,4 +45,7 @@ class ReceitasRow extends SupabaseDataRow {
   DateTime? get atualizadoEm => getField<DateTime>('atualizado_em');
   set atualizadoEm(DateTime? value) =>
       setField<DateTime>('atualizado_em', value);
+
+  bool? get publicado => getField<bool>('publicado');
+  set publicado(bool? value) => setField<bool>('publicado', value);
 }

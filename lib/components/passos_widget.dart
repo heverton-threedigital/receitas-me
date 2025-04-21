@@ -174,6 +174,15 @@ class _PassosWidgetState extends State<PassosWidget> {
                   child: TextFormField(
                     controller: _model.editarpassoTextController,
                     focusNode: _model.editarpassoFocusNode,
+                    onFieldSubmitted: (_) async {
+                      FFAppState().updatePassosAtIndex(
+                        widget.indexPasso!,
+                        (_) => _model.editarpassoTextController.text,
+                      );
+                      FFAppState().update(() {});
+                      _model.editar = false;
+                      safeSetState(() {});
+                    },
                     autofocus: false,
                     obscureText: false,
                     decoration: InputDecoration(

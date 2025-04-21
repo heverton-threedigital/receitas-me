@@ -49,9 +49,18 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada;
+  ReceitasRow? receitaCriada2;
   InstantTimer? instantTimer;
   InstantTimer? instantTimer2;
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl3 = '';
+
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ReceitasRow? receitaCriada;
+  InstantTimer? instantTimer1;
+  InstantTimer? instantTimer3;
 
   @override
   void initState(BuildContext context) {
@@ -81,5 +90,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
     instantTimer?.cancel();
     instantTimer2?.cancel();
+    instantTimer1?.cancel();
+    instantTimer3?.cancel();
   }
 }
