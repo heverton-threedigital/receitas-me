@@ -71,7 +71,6 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   },
                   child: Container(
                     width: 100.0,
-                    height: 40.0,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).primaryBackground,
                       borderRadius: BorderRadius.circular(8.0),
@@ -83,7 +82,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                       alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 0.0, 8.0),
                         child: Text(
                           valueOrDefault<String>(
                             widget.ingrediente,
@@ -187,6 +186,8 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                           fontFamily: 'Poppins',
                           letterSpacing: 0.0,
                         ),
+                    maxLines: null,
+                    minLines: 1,
                     cursorColor: FlutterFlowTheme.of(context).primaryText,
                     validator:
                         _model.textControllerValidator.asValidator(context),

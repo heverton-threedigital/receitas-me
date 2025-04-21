@@ -230,7 +230,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       BorderRadius.circular(
                                                           24.0),
                                                   child: Container(
-                                                    width: 360.0,
+                                                    width: 320.0,
                                                     height: 440.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
@@ -615,7 +615,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                            maxLines: 3,
+                                                            maxLines: null,
+                                                            minLines: 3,
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1333,6 +1334,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       letterSpacing:
                                                                           0.0,
                                                                     ),
+                                                                maxLines: null,
+                                                                minLines: 1,
                                                                 cursorColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
@@ -1677,7 +1680,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         letterSpacing:
                                                                             0.0,
                                                                       ),
-                                                                  maxLines: 2,
+                                                                  maxLines:
+                                                                      null,
+                                                                  minLines: 1,
                                                                   cursorColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
