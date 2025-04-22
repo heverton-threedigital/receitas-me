@@ -55,6 +55,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
         if (_model.editar == false)
           Row(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: InkWell(
@@ -118,6 +119,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
         if (_model.editar == true)
           Row(
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: Container(
