@@ -525,7 +525,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               .override(
                                                                                 fontFamily: 'Poppins',
                                                                                 color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                fontSize: 24.0,
                                                                                 letterSpacing: 0.0,
+                                                                                lineHeight: 1.2,
                                                                               ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
@@ -571,6 +573,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               true,
                                                                           fillColor:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          contentPadding:
+                                                                              EdgeInsets.all(12.0),
                                                                           hoverColor:
                                                                               FlutterFlowTheme.of(context).primaryBackground,
                                                                         ),
@@ -578,7 +582,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             .headlineMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
+                                                                              fontSize: 24.0,
                                                                               letterSpacing: 0.0,
+                                                                              lineHeight: 1.2,
                                                                             ),
                                                                         maxLines:
                                                                             null,
@@ -1932,6 +1938,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
+                                                                    if (_model.formKey1.currentState ==
+                                                                            null ||
+                                                                        !_model
+                                                                            .formKey1
+                                                                            .currentState!
+                                                                            .validate()) {
+                                                                      return;
+                                                                    }
+                                                                    if (_model
+                                                                            .categoriaReceitaValue ==
+                                                                        null) {
+                                                                      return;
+                                                                    }
                                                                     {
                                                                       safeSetState(() =>
                                                                           _model.isDataUploading3 =
