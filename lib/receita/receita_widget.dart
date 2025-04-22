@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -100,32 +101,33 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 body: SafeArea(
                   top: true,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                        child: wrapWithModel(
-                          model: _model.menuPrincipalModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: MenuPrincipalWidget(
-                            drawer: () async {},
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.9,
-                            constraints: BoxConstraints(
-                              maxWidth: 1104.0,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        StickyHeader(
+                          overlapHeaders: false,
+                          header: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                2.0, 0.0, 0.0, 0.0),
+                            child: wrapWithModel(
+                              model: _model.menuPrincipalModel,
+                              updateCallback: () => safeSetState(() {}),
+                              child: MenuPrincipalWidget(
+                                drawer: () async {},
+                              ),
                             ),
-                            decoration: BoxDecoration(),
-                            child: SingleChildScrollView(
+                          ),
+                          content: Align(
+                            alignment: AlignmentDirectional(0.0, -1.0),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              constraints: BoxConstraints(
+                                maxWidth: 1104.0,
+                              ),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -838,8 +840,8 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
