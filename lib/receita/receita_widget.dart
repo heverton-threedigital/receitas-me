@@ -378,113 +378,135 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .start,
                                                               children: [
                                                                 Expanded(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Porçoes',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            16.0),
+                                                                    child:
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
-                                                                      Container(
-                                                                        width: double
-                                                                            .infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            8.0,
+                                                                            16.0,
+                                                                            16.0),
                                                                         child:
-                                                                            Row(
+                                                                            Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
-                                                                          children:
-                                                                              [
-                                                                            Icon(
-                                                                              Icons.fastfood_outlined,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 24.0,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                              child: Text(
+                                                                                'Porçoes',
+                                                                                style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                            Text(
-                                                                              '-',
-                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    letterSpacing: 0.0,
+                                                                            Container(
+                                                                              width: double.infinity,
+                                                                              decoration: BoxDecoration(),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Icon(
+                                                                                    Icons.fastfood_outlined,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    size: 24.0,
                                                                                   ),
+                                                                                  Text(
+                                                                                    '-',
+                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                          fontFamily: 'Poppins',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ].divide(SizedBox(width: 8.0)),
+                                                                              ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                          ],
                                                                         ),
                                                                       ),
-                                                                    ],
+                                                                    ),
                                                                   ),
                                                                 ),
                                                                 Expanded(
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            2.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Preparo',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .titleMedium
-                                                                              .override(
-                                                                                fontFamily: 'Poppins',
-                                                                                letterSpacing: 0.0,
-                                                                              ),
-                                                                        ),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            16.0),
+                                                                    child:
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
                                                                       ),
-                                                                      Container(
-                                                                        width: double
-                                                                            .infinity,
-                                                                        decoration:
-                                                                            BoxDecoration(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            8.0,
+                                                                            16.0,
+                                                                            16.0),
                                                                         child:
-                                                                            Row(
+                                                                            Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
-                                                                          children:
-                                                                              [
-                                                                            Icon(
-                                                                              Icons.alarm,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 24.0,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                              child: Text(
+                                                                                'Preparo',
+                                                                                style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                      fontFamily: 'Poppins',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                            Text(
-                                                                              '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
-                                                                              style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                    fontFamily: 'Poppins',
-                                                                                    letterSpacing: 0.0,
+                                                                            Container(
+                                                                              width: double.infinity,
+                                                                              decoration: BoxDecoration(),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                children: [
+                                                                                  Icon(
+                                                                                    Icons.alarm,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    size: 24.0,
                                                                                   ),
+                                                                                  Text(
+                                                                                    '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
+                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                          fontFamily: 'Poppins',
+                                                                                          letterSpacing: 0.0,
+                                                                                        ),
+                                                                                  ),
+                                                                                ].divide(SizedBox(width: 8.0)),
+                                                                              ),
                                                                             ),
-                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                          ],
                                                                         ),
                                                                       ),
-                                                                    ],
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ].divide(SizedBox(

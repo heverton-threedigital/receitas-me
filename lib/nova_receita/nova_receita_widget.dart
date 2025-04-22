@@ -834,87 +834,90 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           [
                                                                         Expanded(
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
-                                                                                child: Text(
-                                                                                  'Porçoes',
-                                                                                  style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        fontFamily: 'Poppins',
-                                                                                        letterSpacing: 0.0,
-                                                                                      ),
-                                                                                ),
-                                                                              ),
                                                                               Container(
-                                                                                width: double.infinity,
-                                                                                decoration: BoxDecoration(),
-                                                                                child: Container(
-                                                                                  width: double.infinity,
-                                                                                  child: TextFormField(
-                                                                                    controller: _model.porcoesReceitaTextController,
-                                                                                    focusNode: _model.porcoesReceitaFocusNode,
-                                                                                    autofocus: false,
-                                                                                    obscureText: false,
-                                                                                    decoration: InputDecoration(
-                                                                                      isDense: true,
-                                                                                      labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            color: FlutterFlowTheme.of(context).primaryText,
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      alignLabelWithHint: false,
-                                                                                      hintText: 'ex. 8 fatias',
-                                                                                      hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            fontFamily: 'Poppins',
-                                                                                            letterSpacing: 0.0,
-                                                                                          ),
-                                                                                      enabledBorder: OutlineInputBorder(
-                                                                                        borderSide: BorderSide(
-                                                                                          color: FlutterFlowTheme.of(context).alternate,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                      focusedBorder: OutlineInputBorder(
-                                                                                        borderSide: BorderSide(
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                      errorBorder: OutlineInputBorder(
-                                                                                        borderSide: BorderSide(
-                                                                                          color: FlutterFlowTheme.of(context).error,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                      focusedErrorBorder: OutlineInputBorder(
-                                                                                        borderSide: BorderSide(
-                                                                                          color: FlutterFlowTheme.of(context).error,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                      filled: true,
-                                                                                      fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      hoverColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                    ),
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                            decoration:
+                                                                                BoxDecoration(),
+                                                                            child:
+                                                                                Column(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                                                              children: [
+                                                                                Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                                                                                  child: Text(
+                                                                                    'Porçoes',
+                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
                                                                                           fontFamily: 'Poppins',
                                                                                           letterSpacing: 0.0,
                                                                                         ),
-                                                                                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                    validator: _model.porcoesReceitaTextControllerValidator.asValidator(context),
                                                                                   ),
                                                                                 ),
-                                                                              ),
-                                                                            ],
+                                                                                Container(
+                                                                                  width: double.infinity,
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: Container(
+                                                                                    width: double.infinity,
+                                                                                    child: TextFormField(
+                                                                                      controller: _model.porcoesReceitaTextController,
+                                                                                      focusNode: _model.porcoesReceitaFocusNode,
+                                                                                      autofocus: false,
+                                                                                      obscureText: false,
+                                                                                      decoration: InputDecoration(
+                                                                                        isDense: true,
+                                                                                        labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: FlutterFlowTheme.of(context).primaryText,
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        alignLabelWithHint: false,
+                                                                                        hintText: 'ex. 8 fatias',
+                                                                                        hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              letterSpacing: 0.0,
+                                                                                            ),
+                                                                                        enabledBorder: OutlineInputBorder(
+                                                                                          borderSide: BorderSide(
+                                                                                            color: FlutterFlowTheme.of(context).alternate,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                        focusedBorder: OutlineInputBorder(
+                                                                                          borderSide: BorderSide(
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                        errorBorder: OutlineInputBorder(
+                                                                                          borderSide: BorderSide(
+                                                                                            color: FlutterFlowTheme.of(context).error,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                        focusedErrorBorder: OutlineInputBorder(
+                                                                                          borderSide: BorderSide(
+                                                                                            color: FlutterFlowTheme.of(context).error,
+                                                                                            width: 1.0,
+                                                                                          ),
+                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                        ),
+                                                                                        filled: true,
+                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        hoverColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                      ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            letterSpacing: 0.0,
+                                                                                          ),
+                                                                                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                      validator: _model.porcoesReceitaTextControllerValidator.asValidator(context),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ],
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                         Expanded(
