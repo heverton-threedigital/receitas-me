@@ -9,6 +9,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'receita_model.dart';
 export 'receita_model.dart';
 
@@ -275,10 +276,27 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .of(context)
                                                                   .headlineMedium
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .headlineMedium
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .headlineMedium
+                                                                        .fontStyle,
                                                                     lineHeight:
                                                                         1.1,
                                                                   ),
@@ -303,12 +321,27 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .of(context)
                                                                   .bodyLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
-                                                                    fontSize:
-                                                                        14.0,
+                                                                    font: GoogleFonts
+                                                                        .roboto(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                           ),
@@ -331,7 +364,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                     Border.all(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primary,
+                                                                      .tertiary,
                                                                 ),
                                                               ),
                                                               child: Padding(
@@ -350,14 +383,25 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyLarge
+                                                                      .bodyMedium
                                                                       .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
+                                                                        font: GoogleFonts
+                                                                            .roboto(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
                                                                         letterSpacing:
                                                                             0.0,
-                                                                        fontWeight:
-                                                                            FontWeight.w500,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
                                                                       ),
                                                                 ),
                                                               ),
@@ -413,8 +457,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               child: Text(
                                                                                 'Porçoes',
                                                                                 style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                      fontFamily: 'Poppins',
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                      ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -432,8 +481,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                   Text(
                                                                                     '-',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.roboto(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ].divide(SizedBox(width: 8.0)),
@@ -479,8 +533,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               child: Text(
                                                                                 'Preparo',
                                                                                 style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                      fontFamily: 'Poppins',
+                                                                                      font: GoogleFonts.poppins(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                      ),
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -498,8 +557,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                   Text(
                                                                                     '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.roboto(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                          ),
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ].divide(SizedBox(width: 8.0)),
@@ -572,13 +636,25 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .of(context)
                                                                   .titleLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                             Builder(
@@ -635,9 +711,14 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                   r'''$.ingrediente''',
                                                                                 ).toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'Poppins',
+                                                                                      font: GoogleFonts.roboto(
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                      ),
                                                                                       fontSize: 16.0,
                                                                                       letterSpacing: 0.0,
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                       lineHeight: 1.1,
                                                                                     ),
                                                                               ),
@@ -694,13 +775,25 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .of(context)
                                                                   .titleLarge
                                                                   .override(
-                                                                    fontFamily:
-                                                                        'Poppins',
+                                                                    font: GoogleFonts
+                                                                        .poppins(
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleLarge
+                                                                          .fontStyle,
+                                                                    ),
                                                                     letterSpacing:
                                                                         0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleLarge
+                                                                        .fontStyle,
                                                                   ),
                                                             ),
                                                             Builder(
@@ -735,26 +828,23 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
-                                                                          8.0),
+                                                                          6.0),
                                                                       child:
                                                                           Container(
                                                                         decoration:
                                                                             BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
                                                                           borderRadius:
                                                                               BorderRadius.circular(16.0),
-                                                                          border:
-                                                                              Border.all(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).alternate,
-                                                                          ),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              10.0,
-                                                                              8.0,
-                                                                              10.0,
-                                                                              8.0),
+                                                                              16.0,
+                                                                              16.0,
+                                                                              16.0,
+                                                                              16.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -778,10 +868,15 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                       r'''$.passo''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                          fontFamily: 'Poppins',
+                                                                                          font: GoogleFonts.poppins(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                                                                                          ),
                                                                                           color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                           fontSize: 20.0,
                                                                                           letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                         ),
                                                                                   ),
                                                                                 ),
@@ -793,8 +888,13 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                     r'''$.descricao''',
                                                                                   ).toString(),
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                        fontFamily: 'Poppins',
+                                                                                        font: GoogleFonts.roboto(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                        ),
                                                                                         letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                         lineHeight: 1.1,
                                                                                       ),
                                                                                 ),
