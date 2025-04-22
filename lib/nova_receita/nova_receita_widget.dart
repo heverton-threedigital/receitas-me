@@ -1039,7 +1039,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             AutovalidateMode
                                                                 .disabled,
                                                         child: Container(
-                                                          width: 440.0,
+                                                          width: 320.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             borderRadius:
@@ -1130,6 +1130,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     mainAxisSize:
                                                                         MainAxisSize
                                                                             .max,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
                                                                     children: [
                                                                       Flexible(
                                                                         child:
