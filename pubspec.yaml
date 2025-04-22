@@ -28,7 +28,6 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   aligned_dialog: 0.0.6
-  aligned_tooltip: 0.0.1
   app_links: 6.3.2
   app_links_platform_interface: 2.0.2
   auto_size_text: 3.0.0

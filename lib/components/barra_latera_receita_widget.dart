@@ -2,13 +2,13 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/actions/index.dart' as actions;
-import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:provider/provider.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
 
@@ -52,11 +52,11 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
               currentUserUid,
             ),
       );
-      if (_model.curtiu != null && (_model.curtiu)!.isNotEmpty) {
-        _model.curtiuReceita = true;
+      if (_model.curtiu?.length == 1) {
+        FFAppState().CurtiuReceita = true;
         safeSetState(() {});
       } else {
-        _model.curtiuReceita = false;
+        FFAppState().CurtiuReceita = false;
         safeSetState(() {});
       }
     });
@@ -73,6 +73,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
@@ -339,95 +341,29 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              AlignedTooltip(
-                                content: Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: Text(
-                                    'Descurtir',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x1AD84012),
+                                  borderRadius: BorderRadius.circular(40.0),
                                 ),
-                                offset: 4.0,
-                                preferredDirection: AxisDirection.up,
-                                borderRadius: BorderRadius.circular(8.0),
-                                backgroundColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 0.0,
-                                tailBaseWidth: 24.0,
-                                tailLength: 12.0,
-                                waitDuration: Duration(milliseconds: 100),
-                                showDuration: Duration(milliseconds: 200),
-                                triggerMode: TooltipTriggerMode.tap,
-                                child: Visibility(
-                                  visible: _model.curtiuReceita == true,
-                                  child: FlutterFlowIconButton(
-                                    borderRadius: 40.0,
-                                    buttonSize: 40.0,
-                                    fillColor: Color(0x1AD84012),
-                                    icon: Icon(
-                                      Icons.favorite_outlined,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      _model.curtiuReceita = false;
-                                      _model.updatePage(() {});
-                                      await actions.descurtirReceita(
-                                        widget.informacoesReceita!.id!,
-                                      );
-                                    },
+                                child: ToggleIcon(
+                                  onPressed: () async {
+                                    safeSetState(() =>
+                                        FFAppState().CurtiuReceita =
+                                            !FFAppState().CurtiuReceita);
+                                  },
+                                  value: FFAppState().CurtiuReceita,
+                                  onIcon: Icon(
+                                    Icons.favorite_outlined,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
                                   ),
-                                ),
-                              ),
-                              AlignedTooltip(
-                                content: Padding(
-                                  padding: EdgeInsets.all(4.0),
-                                  child: Text(
-                                    'Curtir',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                offset: 4.0,
-                                preferredDirection: AxisDirection.up,
-                                borderRadius: BorderRadius.circular(8.0),
-                                backgroundColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 0.0,
-                                tailBaseWidth: 24.0,
-                                tailLength: 12.0,
-                                waitDuration: Duration(milliseconds: 100),
-                                showDuration: Duration(milliseconds: 200),
-                                triggerMode: TooltipTriggerMode.tap,
-                                child: Visibility(
-                                  visible: _model.curtiuReceita == false,
-                                  child: FlutterFlowIconButton(
-                                    borderRadius: 40.0,
-                                    buttonSize: 40.0,
-                                    fillColor: Color(0x1AD84012),
-                                    icon: Icon(
-                                      Icons.favorite_border_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    onPressed: () async {
-                                      _model.curtiuReceita = true;
-                                      safeSetState(() {});
-                                      await actions.curtirReceita(
-                                        widget.informacoesReceita!.id!,
-                                      );
-                                    },
+                                  offIcon: Icon(
+                                    Icons.favorite_border,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
                                   ),
                                 ),
                               ),
