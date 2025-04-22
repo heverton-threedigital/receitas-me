@@ -1719,6 +1719,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
+                                                                    if (_model.formKey1.currentState ==
+                                                                            null ||
+                                                                        !_model
+                                                                            .formKey1
+                                                                            .currentState!
+                                                                            .validate()) {
+                                                                      return;
+                                                                    }
                                                                     {
                                                                       safeSetState(() =>
                                                                           _model.isDataUploading2 =
@@ -1954,11 +1962,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             .formKey1
                                                                             .currentState!
                                                                             .validate()) {
-                                                                      return;
-                                                                    }
-                                                                    if (_model
-                                                                            .categoriaReceitaValue ==
-                                                                        null) {
                                                                       return;
                                                                     }
                                                                     {

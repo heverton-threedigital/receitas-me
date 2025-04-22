@@ -143,136 +143,150 @@ class _PassosWidgetState extends State<PassosWidget> {
               ),
             ].divide(SizedBox(width: 8.0)),
           ),
-        if (_model.editar == true)
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 40.0,
-                height: 40.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
-                  shape: BoxShape.circle,
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    valueOrDefault<String>(
-                      widget.numeroPasso?.toString(),
-                      '-',
-                    ),
-                    style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Poppins',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  width: double.infinity,
-                  child: TextFormField(
-                    controller: _model.editarpassoTextController,
-                    focusNode: _model.editarpassoFocusNode,
-                    onFieldSubmitted: (_) async {
-                      FFAppState().updatePassosAtIndex(
-                        widget.indexPasso!,
-                        (_) => _model.editarpassoTextController.text,
-                      );
-                      FFAppState().update(() {});
-                      _model.editar = false;
-                      safeSetState(() {});
-                    },
-                    autofocus: false,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      isDense: true,
-                      labelStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
-                      hintStyle:
-                          FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Poppins',
-                                letterSpacing: 0.0,
-                              ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).alternate,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).primary,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.of(context).error,
-                          width: 1.0,
-                        ),
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      filled: true,
-                      fillColor:
-                          FlutterFlowTheme.of(context).secondaryBackground,
-                      hoverColor:
-                          FlutterFlowTheme.of(context).primaryBackground,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Poppins',
-                          letterSpacing: 0.0,
-                        ),
-                    maxLines: null,
-                    minLines: 1,
-                    cursorColor: FlutterFlowTheme.of(context).primaryText,
-                    validator: _model.editarpassoTextControllerValidator
-                        .asValidator(context),
-                  ),
-                ),
-              ),
-              FFButtonWidget(
-                onPressed: () async {
-                  FFAppState().updatePassosAtIndex(
-                    widget.indexPasso!,
-                    (_) => _model.editarpassoTextController.text,
-                  );
-                  FFAppState().update(() {});
-                  _model.editar = false;
-                  safeSetState(() {});
-                },
-                text: 'Salvar',
-                options: FFButtonOptions(
+        Form(
+          key: _model.formKey,
+          autovalidateMode: AutovalidateMode.disabled,
+          child: Visibility(
+            visible: _model.editar == true,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 40.0,
                   height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primary,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                        letterSpacing: 0.0,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).primary,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      valueOrDefault<String>(
+                        widget.numeroPasso?.toString(),
+                        '-',
                       ),
-                  elevation: 0.0,
-                  borderRadius: BorderRadius.circular(8.0),
+                      style: FlutterFlowTheme.of(context)
+                          .headlineMedium
+                          .override(
+                            fontFamily: 'Poppins',
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                  ),
                 ),
-              ),
-            ].divide(SizedBox(width: 8.0)),
+                Expanded(
+                  child: Container(
+                    width: double.infinity,
+                    child: TextFormField(
+                      controller: _model.editarpassoTextController,
+                      focusNode: _model.editarpassoFocusNode,
+                      onFieldSubmitted: (_) async {
+                        FFAppState().updatePassosAtIndex(
+                          widget.indexPasso!,
+                          (_) => _model.editarpassoTextController.text,
+                        );
+                        FFAppState().update(() {});
+                        _model.editar = false;
+                        safeSetState(() {});
+                      },
+                      autofocus: false,
+                      obscureText: false,
+                      decoration: InputDecoration(
+                        isDense: true,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Poppins',
+                                  letterSpacing: 0.0,
+                                ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).alternate,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).primary,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        focusedErrorBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: FlutterFlowTheme.of(context).error,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        filled: true,
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        hoverColor:
+                            FlutterFlowTheme.of(context).primaryBackground,
+                      ),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Poppins',
+                            letterSpacing: 0.0,
+                          ),
+                      maxLines: null,
+                      minLines: 1,
+                      cursorColor: FlutterFlowTheme.of(context).primaryText,
+                      validator: _model.editarpassoTextControllerValidator
+                          .asValidator(context),
+                    ),
+                  ),
+                ),
+                FFButtonWidget(
+                  onPressed: () async {
+                    if (_model.formKey.currentState == null ||
+                        !_model.formKey.currentState!.validate()) {
+                      return;
+                    }
+                    FFAppState().updatePassosAtIndex(
+                      widget.indexPasso!,
+                      (_) => _model.editarpassoTextController.text,
+                    );
+                    FFAppState().update(() {});
+                    _model.editar = false;
+                    safeSetState(() {});
+                  },
+                  text: 'Salvar',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                          letterSpacing: 0.0,
+                        ),
+                    elevation: 0.0,
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                ),
+              ].divide(SizedBox(width: 8.0)),
+            ),
           ),
+        ),
       ],
     );
   }

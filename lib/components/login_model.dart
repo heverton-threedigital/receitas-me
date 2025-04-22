@@ -10,38 +10,107 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   ///  State fields for stateful widgets in this component.
 
+  final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
   // State field(s) for EmailLogin widget.
   FocusNode? emailLoginFocusNode;
   TextEditingController? emailLoginTextController;
   String? Function(BuildContext, String?)? emailLoginTextControllerValidator;
+  String? _emailLoginTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Has to be a valid email address.';
+    }
+    return null;
+  }
+
   // State field(s) for SenhaLogin widget.
   FocusNode? senhaLoginFocusNode;
   TextEditingController? senhaLoginTextController;
   late bool senhaLoginVisibility;
   String? Function(BuildContext, String?)? senhaLoginTextControllerValidator;
+  String? _senhaLoginTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for Nome widget.
   FocusNode? nomeFocusNode;
   TextEditingController? nomeTextController;
   String? Function(BuildContext, String?)? nomeTextControllerValidator;
+  String? _nomeTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for Sobrenome widget.
   FocusNode? sobrenomeFocusNode;
   TextEditingController? sobrenomeTextController;
   String? Function(BuildContext, String?)? sobrenomeTextControllerValidator;
+  String? _sobrenomeTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for EmailCadastro widget.
   FocusNode? emailCadastroFocusNode;
   TextEditingController? emailCadastroTextController;
   String? Function(BuildContext, String?)? emailCadastroTextControllerValidator;
+  String? _emailCadastroTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return 'Has to be a valid email address.';
+    }
+    return null;
+  }
+
   // State field(s) for SenhaCadastro widget.
   FocusNode? senhaCadastroFocusNode;
   TextEditingController? senhaCadastroTextController;
   late bool senhaCadastroVisibility;
   String? Function(BuildContext, String?)? senhaCadastroTextControllerValidator;
+  String? _senhaCadastroTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // State field(s) for ConfirmeSenhaCadastro widget.
   FocusNode? confirmeSenhaCadastroFocusNode;
   TextEditingController? confirmeSenhaCadastroTextController;
   late bool confirmeSenhaCadastroVisibility;
   String? Function(BuildContext, String?)?
       confirmeSenhaCadastroTextControllerValidator;
+  String? _confirmeSenhaCadastroTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // Stores action output result for [Custom Action - signUpWithEmail] action in Button widget.
   dynamic usuarioCriado;
   // State field(s) for PinCode widget.
@@ -55,9 +124,19 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   @override
   void initState(BuildContext context) {
+    emailLoginTextControllerValidator = _emailLoginTextControllerValidator;
     senhaLoginVisibility = false;
+    senhaLoginTextControllerValidator = _senhaLoginTextControllerValidator;
+    nomeTextControllerValidator = _nomeTextControllerValidator;
+    sobrenomeTextControllerValidator = _sobrenomeTextControllerValidator;
+    emailCadastroTextControllerValidator =
+        _emailCadastroTextControllerValidator;
     senhaCadastroVisibility = false;
+    senhaCadastroTextControllerValidator =
+        _senhaCadastroTextControllerValidator;
     confirmeSenhaCadastroVisibility = false;
+    confirmeSenhaCadastroTextControllerValidator =
+        _confirmeSenhaCadastroTextControllerValidator;
     pinCodeController = TextEditingController();
   }
 
