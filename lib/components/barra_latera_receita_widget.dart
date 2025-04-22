@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -353,6 +354,11 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     safeSetState(() =>
                                         FFAppState().CurtiuReceita =
                                             !FFAppState().CurtiuReceita);
+                                    await actions.curtirReceita(
+                                      widget.informacoesReceita!.id!,
+                                    );
+                                    FFAppState().CurtiuReceita = true;
+                                    FFAppState().update(() {});
                                   },
                                   value: FFAppState().CurtiuReceita,
                                   onIcon: Icon(
