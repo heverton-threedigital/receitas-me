@@ -614,7 +614,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           focusNode:
                                                                               _model.dscricaoReceitaFocusNode,
                                                                           autofocus:
-                                                                              false,
+                                                                              true,
                                                                           obscureText:
                                                                               false,
                                                                           decoration:
@@ -860,7 +860,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                     child: TextFormField(
                                                                                       controller: _model.porcoesReceitaTextController,
                                                                                       focusNode: _model.porcoesReceitaFocusNode,
-                                                                                      autofocus: false,
+                                                                                      autofocus: true,
                                                                                       obscureText: false,
                                                                                       decoration: InputDecoration(
                                                                                         isDense: true,
@@ -946,7 +946,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   child: TextFormField(
                                                                                     controller: _model.preparacaoReceitaTextController,
                                                                                     focusNode: _model.preparacaoReceitaFocusNode,
-                                                                                    autofocus: false,
+                                                                                    autofocus: true,
                                                                                     obscureText: false,
                                                                                     decoration: InputDecoration(
                                                                                       isDense: true,
@@ -1156,7 +1156,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               });
                                                                             },
                                                                             autofocus:
-                                                                                false,
+                                                                                true,
+                                                                            textInputAction:
+                                                                                TextInputAction.send,
                                                                             obscureText:
                                                                                 false,
                                                                             decoration:
@@ -1243,7 +1245,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         options:
                                                                             FFButtonOptions(
                                                                           height:
-                                                                              32.0,
+                                                                              36.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
                                                                               8.0,
                                                                               0.0,
@@ -1434,12 +1436,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                         _model.passoTextController?.clear();
                                                                                       });
                                                                                     },
-                                                                                    autofocus: false,
+                                                                                    autofocus: true,
                                                                                     obscureText: false,
                                                                                     decoration: InputDecoration(
                                                                                       isDense: true,
                                                                                       alignLabelWithHint: false,
-                                                                                      hintText: 'Misture a farinha de trigo com os ovos e o açucar...',
+                                                                                      hintText: 'Misture a farinha com...',
                                                                                       hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                                                                                             fontFamily: 'Poppins',
                                                                                             letterSpacing: 0.0,
@@ -1500,7 +1502,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 },
                                                                                 text: 'Salvar',
                                                                                 options: FFButtonOptions(
-                                                                                  height: 32.0,
+                                                                                  height: 36.0,
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,

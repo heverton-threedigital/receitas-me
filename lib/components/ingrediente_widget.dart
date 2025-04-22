@@ -220,7 +220,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   },
                   text: 'Salvar',
                   options: FFButtonOptions(
-                    height: 32.0,
+                    height: 38.0,
                     padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
