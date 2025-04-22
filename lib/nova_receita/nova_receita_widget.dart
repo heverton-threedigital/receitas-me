@@ -2008,11 +2008,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 'receita_id': _model.receitaCriada2?.id,
                                                                                 'descricao': FFAppState().passos.elementAtOrNull(FFAppState().contador),
                                                                                 'numero_passo': FFAppState().contador + 1,
-                                                                                'foto_instrucao01': '',
-                                                                                'foto_instrucao02': '',
-                                                                                'foto_instrucao03': '',
-                                                                                'foto_instrucao04': '',
-                                                                                'foto_instrucao05': '',
                                                                               });
                                                                             }
                                                                             _model.instantTimer2?.cancel();
@@ -2022,15 +2017,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 [];
                                                                             safeSetState(() {});
 
-                                                                            context.pushNamed(
-                                                                              ReceitaWidget.routeName,
-                                                                              pathParameters: {
-                                                                                'receitaid': serializeParam(
-                                                                                  _model.receitaCriada?.id,
-                                                                                  ParamType.String,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                            );
+                                                                            context.pushNamed(MinhasReceitasWidget.routeName);
                                                                           },
                                                                           startImmediately:
                                                                               true,
@@ -2260,11 +2247,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 'receita_id': _model.receitaCriada?.id,
                                                                                 'descricao': FFAppState().passos.elementAtOrNull(FFAppState().contador),
                                                                                 'numero_passo': FFAppState().contador + 1,
-                                                                                'foto_instrucao01': '',
-                                                                                'foto_instrucao02': '',
-                                                                                'foto_instrucao03': '',
-                                                                                'foto_instrucao04': '',
-                                                                                'foto_instrucao05': '',
                                                                               });
                                                                             }
                                                                             _model.instantTimer3?.cancel();

@@ -183,8 +183,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                 .titleSmall
                                                 .override(
                                                   font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FontWeight.normal,
+                                                    fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -209,7 +208,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                     }
                                                   }(),
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -299,18 +298,14 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                           child: Text(
                                             'Notificações',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium
+                                                .titleSmall
                                                 .override(
                                                   font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
+                                                    fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .labelMedium
+                                                            .titleSmall
                                                             .fontStyle,
                                                   ),
                                                   color: () {
@@ -330,17 +325,12 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                           .secondaryText;
                                                     }
                                                   }(),
-                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium
+                                                          .titleSmall
                                                           .fontStyle,
                                                 ),
                                           ),
@@ -431,53 +421,44 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                     12.0, 0.0, 6.0, 0.0),
                                             child: Text(
                                               'Minhas receitas',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        color: () {
-                                                          if (widget.pagina ==
-                                                              'minhasreceitas') {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary;
-                                                          } else if (_model
-                                                              .mouseRegionHovered3) {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText;
-                                                          } else {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText;
-                                                          }
-                                                        }(),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: () {
+                                                      if (widget.pagina ==
+                                                          'minhasreceitas') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primary;
+                                                      } else if (_model
+                                                          .mouseRegionHovered3) {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryText;
+                                                      } else {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryText;
+                                                      }
+                                                    }(),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                           ),
                                       ],
@@ -563,18 +544,14 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                           child: Text(
                                             'Receitas salvas',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelMedium
+                                                .titleSmall
                                                 .override(
                                                   font: GoogleFonts.poppins(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .labelMedium
-                                                            .fontWeight,
+                                                    fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .labelMedium
+                                                            .titleSmall
                                                             .fontStyle,
                                                   ),
                                                   color: () {
@@ -594,17 +571,12 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                           .secondaryText;
                                                     }
                                                   }(),
-                                                  fontSize: 16.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMedium
-                                                          .fontWeight,
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium
+                                                          .titleSmall
                                                           .fontStyle,
                                                 ),
                                           ),
@@ -693,53 +665,44 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                     12.0, 0.0, 69.0, 0.0),
                                             child: Text(
                                               'Painel',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        font:
-                                                            GoogleFonts.poppins(
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
-                                                        color: () {
-                                                          if (widget.pagina ==
-                                                              'painel') {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary;
-                                                          } else if (_model
-                                                              .mouseRegionHovered5) {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText;
-                                                          } else {
-                                                            return FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryText;
-                                                          }
-                                                        }(),
-                                                        fontSize: 16.0,
-                                                        letterSpacing: 0.0,
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .labelMedium
-                                                                .fontStyle,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    font: GoogleFonts.poppins(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .fontStyle,
+                                                    ),
+                                                    color: () {
+                                                      if (widget.pagina ==
+                                                          'painel') {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primary;
+                                                      } else if (_model
+                                                          .mouseRegionHovered5) {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .primaryText;
+                                                      } else {
+                                                        return FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryText;
+                                                      }
+                                                    }(),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
                                             ),
                                           ),
                                       ],
