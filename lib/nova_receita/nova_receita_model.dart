@@ -22,39 +22,98 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   ///  State fields for stateful widgets in this page.
 
+  final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode1;
-  TextEditingController? textController1;
-  String? Function(BuildContext, String?)? textController1Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode2;
-  TextEditingController? textController2;
-  String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue;
-  FormFieldController<String>? dropDownValueController;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode3;
-  TextEditingController? textController3;
-  String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
+  // State field(s) for TituloReceita widget.
+  FocusNode? tituloReceitaFocusNode;
+  TextEditingController? tituloReceitaTextController;
+  String? Function(BuildContext, String?)? tituloReceitaTextControllerValidator;
+  String? _tituloReceitaTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Digite o titulo da receita';
+    }
+
+    return null;
+  }
+
+  // State field(s) for DscricaoReceita widget.
+  FocusNode? dscricaoReceitaFocusNode;
+  TextEditingController? dscricaoReceitaTextController;
+  String? Function(BuildContext, String?)?
+      dscricaoReceitaTextControllerValidator;
+  String? _dscricaoReceitaTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Digite uma descrição para a receita';
+    }
+
+    return null;
+  }
+
+  // State field(s) for CategoriaReceita widget.
+  String? categoriaReceitaValue;
+  FormFieldController<String>? categoriaReceitaValueController;
+  // State field(s) for PorcoesReceita widget.
+  FocusNode? porcoesReceitaFocusNode;
+  TextEditingController? porcoesReceitaTextController;
+  String? Function(BuildContext, String?)?
+      porcoesReceitaTextControllerValidator;
+  String? _porcoesReceitaTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Digite a porção';
+    }
+
+    return null;
+  }
+
+  // State field(s) for PreparacaoReceita widget.
+  FocusNode? preparacaoReceitaFocusNode;
+  TextEditingController? preparacaoReceitaTextController;
+  String? Function(BuildContext, String?)?
+      preparacaoReceitaTextControllerValidator;
+  String? _preparacaoReceitaTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Digite o tempo de preparo';
+    }
+
+    return null;
+  }
+
   // State field(s) for ingrediente widget.
   FocusNode? ingredienteFocusNode;
   TextEditingController? ingredienteTextController;
   String? Function(BuildContext, String?)? ingredienteTextControllerValidator;
+  String? _ingredienteTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo não pode ficar vazio';
+    }
+
+    return null;
+  }
+
   // State field(s) for passo widget.
   FocusNode? passoFocusNode;
   TextEditingController? passoTextController;
   String? Function(BuildContext, String?)? passoTextControllerValidator;
+  String? _passoTextControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo não pode ficar vazio';
+    }
+
+    return null;
+  }
+
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -77,22 +136,32 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
+    tituloReceitaTextControllerValidator =
+        _tituloReceitaTextControllerValidator;
+    dscricaoReceitaTextControllerValidator =
+        _dscricaoReceitaTextControllerValidator;
+    porcoesReceitaTextControllerValidator =
+        _porcoesReceitaTextControllerValidator;
+    preparacaoReceitaTextControllerValidator =
+        _preparacaoReceitaTextControllerValidator;
+    ingredienteTextControllerValidator = _ingredienteTextControllerValidator;
+    passoTextControllerValidator = _passoTextControllerValidator;
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    textFieldFocusNode1?.dispose();
-    textController1?.dispose();
+    tituloReceitaFocusNode?.dispose();
+    tituloReceitaTextController?.dispose();
 
-    textFieldFocusNode2?.dispose();
-    textController2?.dispose();
+    dscricaoReceitaFocusNode?.dispose();
+    dscricaoReceitaTextController?.dispose();
 
-    textFieldFocusNode3?.dispose();
-    textController3?.dispose();
+    porcoesReceitaFocusNode?.dispose();
+    porcoesReceitaTextController?.dispose();
 
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
+    preparacaoReceitaFocusNode?.dispose();
+    preparacaoReceitaTextController?.dispose();
 
     ingredienteFocusNode?.dispose();
     ingredienteTextController?.dispose();
