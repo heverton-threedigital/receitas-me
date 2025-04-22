@@ -26,9 +26,6 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _corfirmarConta = prefs.getBool('ff_corfirmarConta') ?? _corfirmarConta;
     });
-    _safeInit(() {
-      _CurtiuReceita = prefs.getBool('ff_CurtiuReceita') ?? _CurtiuReceita;
-    });
   }
 
   void update(VoidCallback callback) {
@@ -157,11 +154,10 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_corfirmarConta', value);
   }
 
-  bool _CurtiuReceita = false;
-  bool get CurtiuReceita => _CurtiuReceita;
-  set CurtiuReceita(bool value) {
-    _CurtiuReceita = value;
-    prefs.setBool('ff_CurtiuReceita', value);
+  bool _curtiuReceita = false;
+  bool get curtiuReceita => _curtiuReceita;
+  set curtiuReceita(bool value) {
+    _curtiuReceita = value;
   }
 }
 

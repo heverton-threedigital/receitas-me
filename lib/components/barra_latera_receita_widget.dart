@@ -1,15 +1,13 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
 
@@ -40,28 +38,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
     super.initState();
     _model = createModel(context, () => BarraLateraReceitaModel());
 
-    // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.curtiu = await CurtidasReceitasTable().queryRows(
-        queryFn: (q) => q
-            .eqOrNull(
-              'receita_id',
-              widget.informacoesReceita?.id,
-            )
-            .eqOrNull(
-              'user_id',
-              currentUserUid,
-            ),
-      );
-      if (_model.curtiu != null && (_model.curtiu)!.isNotEmpty) {
-        _model.curtiuReceita = true;
-        _model.updatePage(() {});
-      } else {
-        _model.curtiuReceita = false;
-        _model.updatePage(() {});
-      }
-    });
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -74,6 +50,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
@@ -496,23 +474,11 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 ),
                                 child: ToggleIcon(
                                   onPressed: () async {
-                                    safeSetState(() => _model.curtiuReceita =
-                                        !_model.curtiuReceita!);
-                                    if (_model.curtiuReceita!) {
-                                      _model.curtiuReceita = false;
-                                      _model.updatePage(() {});
-                                      await actions.descurtirReceita(
-                                        widget.informacoesReceita!.id!,
-                                      );
-                                    } else {
-                                      _model.curtiuReceita = true;
-                                      _model.updatePage(() {});
-                                      await actions.curtirReceita(
-                                        widget.informacoesReceita!.id!,
-                                      );
-                                    }
+                                    safeSetState(() =>
+                                        FFAppState().curtiuReceita =
+                                            !FFAppState().curtiuReceita);
                                   },
-                                  value: _model.curtiuReceita!,
+                                  value: FFAppState().curtiuReceita,
                                   onIcon: Icon(
                                     Icons.favorite_outlined,
                                     color: FlutterFlowTheme.of(context).primary,
