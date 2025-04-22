@@ -231,7 +231,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           24.0),
                                                   child: Container(
                                                     width: 320.0,
-                                                    height: 440.0,
+                                                    height: 416.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -389,18 +389,15 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   false,
                                                               hintText:
                                                                   'Título da receita: Bolo de Cenoura',
-                                                              hintStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .labelMedium
-                                                                      .override(
-                                                                        fontFamily:
-                                                                            'Poppins',
-                                                                        fontSize:
-                                                                            16.0,
-                                                                        letterSpacing:
-                                                                            0.0,
-                                                                      ),
+                                                              hintStyle: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .headlineMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
@@ -468,15 +465,15 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyMedium
+                                                                .headlineMedium
                                                                 .override(
                                                                   fontFamily:
                                                                       'Poppins',
-                                                                  fontSize:
-                                                                      16.0,
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
+                                                            maxLines: null,
+                                                            minLines: 1,
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -526,7 +523,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               alignLabelWithHint:
                                                                   false,
                                                               hintText:
-                                                                  'Descrição: Fale um pouco sobre sua receita. Com que você aprendeu, qual foi a inspiração, detalhes extras sobre os ingredientes',
+                                                                  'Descrição: Fale um pouco sobre sua receita. Como você aprendeu, qual foi a inspiração, detalhes extras sobre os ingredientes',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -616,7 +613,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       0.0,
                                                                 ),
                                                             maxLines: null,
-                                                            minLines: 3,
+                                                            minLines: 2,
                                                             cursorColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -635,20 +632,17 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
-                                                                    2.0),
+                                                                    4.0),
                                                         child: Text(
                                                           'Categorias',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium
+                                                              .titleMedium
                                                               .override(
                                                                 fontFamily:
                                                                     'Poppins',
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
                                                               ),
                                                         ),
                                                       ),
@@ -718,6 +712,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   safeSetState(() =>
                                                                       _model.dropDownValue =
                                                                           val),
+                                                              width: 280.0,
                                                               height: 40.0,
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
@@ -743,9 +738,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .of(context)
                                                                   .secondaryBackground,
                                                               elevation: 2.0,
-                                                              borderColor: Colors
-                                                                  .transparent,
-                                                              borderWidth: 0.0,
+                                                              borderColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              borderWidth: 1.0,
                                                               borderRadius: 8.0,
                                                               margin:
                                                                   EdgeInsetsDirectional
@@ -796,19 +793,17 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
-                                                                            2.0),
+                                                                            4.0),
                                                                     child: Text(
                                                                       'Porçoes',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium
+                                                                          .titleMedium
                                                                           .override(
                                                                             fontFamily:
                                                                                 'Poppins',
                                                                             letterSpacing:
                                                                                 0.0,
-                                                                            fontWeight:
-                                                                                FontWeight.bold,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -925,19 +920,25 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     CrossAxisAlignment
                                                                         .start,
                                                                 children: [
-                                                                  Text(
-                                                                    'Tempo de preparação',
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Poppins',
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            4.0),
+                                                                    child: Text(
+                                                                      'Tempo de preparação',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                    ),
                                                                   ),
                                                                   Container(
                                                                     width: double
@@ -1141,14 +1142,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       'Ingredientes',
                                                       style: FlutterFlowTheme
                                                               .of(context)
-                                                          .titleSmall
+                                                          .titleLarge
                                                           .override(
                                                             fontFamily:
                                                                 'Poppins',
-                                                            fontSize: 18.0,
                                                             letterSpacing: 0.0,
-                                                            fontWeight:
-                                                                FontWeight.bold,
                                                           ),
                                                     ),
                                                     Builder(
@@ -1452,19 +1450,16 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     children: [
                                                       Text(
                                                         'Passo a passo',
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 18.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .bold,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                       Builder(
                                                         builder: (context) {

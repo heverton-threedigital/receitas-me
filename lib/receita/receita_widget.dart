@@ -263,7 +263,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .headlineLarge
+                                                                  .headlineMedium
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
