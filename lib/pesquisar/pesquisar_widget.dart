@@ -92,20 +92,29 @@ class _PesquisarWidgetState extends State<PesquisarWidget> {
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         constraints: BoxConstraints(
-                          maxWidth: 1104.0,
+                          maxWidth: 1080.0,
                         ),
                         decoration: BoxDecoration(),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            wrapWithModel(
-                              model: _model.menuLateralEModel,
-                              updateCallback: () => safeSetState(() {}),
-                              child: MenuLateralEWidget(
-                                pagina: 'pesquisa',
+                            if (responsiveVisibility(
+                              context: context,
+                              phone: false,
+                              tablet: false,
+                            ))
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 24.0, 0.0),
+                                child: wrapWithModel(
+                                  model: _model.menuLateralEModel,
+                                  updateCallback: () => safeSetState(() {}),
+                                  child: MenuLateralEWidget(
+                                    pagina: 'inicio',
+                                  ),
+                                ),
                               ),
-                            ),
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(

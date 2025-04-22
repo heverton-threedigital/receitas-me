@@ -140,15 +140,22 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 16.0, 0.0),
-                                  child: wrapWithModel(
-                                    model: _model.menuLateralEModel,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: MenuLateralEWidget(),
+                                if (responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                  tablet: false,
+                                ))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 24.0, 0.0),
+                                    child: wrapWithModel(
+                                      model: _model.menuLateralEModel,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: MenuLateralEWidget(
+                                        pagina: 'inicio',
+                                      ),
+                                    ),
                                   ),
-                                ),
                                 Expanded(
                                   child: Align(
                                     alignment: AlignmentDirectional(0.0, -1.0),
