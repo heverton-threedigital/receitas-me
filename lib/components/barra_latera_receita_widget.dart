@@ -1,9 +1,13 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
@@ -11,10 +15,10 @@ export 'barra_latera_receita_model.dart';
 class BarraLateraReceitaWidget extends StatefulWidget {
   const BarraLateraReceitaWidget({
     super.key,
-    this.informacoesReceita,
+    required this.informacoesReceita,
   });
 
-  final List<String>? informacoesReceita;
+  final ReceitasDetalhadasRow? informacoesReceita;
 
   @override
   State<BarraLateraReceitaWidget> createState() =>
@@ -34,6 +38,28 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BarraLateraReceitaModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.curtiu = await CurtidasReceitasTable().queryRows(
+        queryFn: (q) => q
+            .eqOrNull(
+              'receita_id',
+              widget.informacoesReceita?.id,
+            )
+            .eqOrNull(
+              'user_id',
+              currentUserUid,
+            ),
+      );
+      if (_model.curtiu != null && (_model.curtiu)!.isNotEmpty) {
+        _model.curtiuReceita = true;
+        safeSetState(() {});
+      } else {
+        _model.curtiuReceita = false;
+        safeSetState(() {});
+      }
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -105,7 +131,10 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.network(
-                                      'https://picsum.photos/seed/779/600',
+                                      valueOrDefault<String>(
+                                        widget.informacoesReceita?.imagemUrl,
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                      ),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -115,7 +144,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Heverton Xavier',
+                                        '${widget.informacoesReceita?.autorNome} ${widget.informacoesReceita?.autorSobrenome}',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -257,7 +286,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    '150 Visualizações',
+                                    '${widget.informacoesReceita?.visualizacoes?.toString()} Visualizações',
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -275,7 +304,14 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Ontem',
+                                    dateTimeFormat(
+                                      "relative",
+                                      widget.informacoesReceita!.criadoEm!,
+                                      locale: FFLocalizations.of(context)
+                                              .languageShortCode ??
+                                          FFLocalizations.of(context)
+                                              .languageCode,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -303,21 +339,104 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              FlutterFlowIconButton(
-                                borderRadius: 40.0,
-                                buttonSize: 40.0,
-                                fillColor: Color(0x1AD84012),
-                                icon: Icon(
-                                  Icons.favorite_border_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
+                              AlignedTooltip(
+                                content: Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Text(
+                                    'Descurtir',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
+                                offset: 4.0,
+                                preferredDirection: AxisDirection.up,
+                                borderRadius: BorderRadius.circular(8.0),
+                                backgroundColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 0.0,
+                                tailBaseWidth: 24.0,
+                                tailLength: 12.0,
+                                waitDuration: Duration(milliseconds: 100),
+                                showDuration: Duration(milliseconds: 200),
+                                triggerMode: TooltipTriggerMode.tap,
+                                child: Visibility(
+                                  visible: _model.curtiuReceita == true,
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 40.0,
+                                    buttonSize: 40.0,
+                                    fillColor: Color(0x1AD84012),
+                                    icon: Icon(
+                                      Icons.favorite_outlined,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      _model.curtiuReceita = false;
+                                      _model.updatePage(() {});
+                                      await actions.descurtirReceita(
+                                        widget.informacoesReceita!.id!,
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                              AlignedTooltip(
+                                content: Padding(
+                                  padding: EdgeInsets.all(4.0),
+                                  child: Text(
+                                    'Curtir',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                offset: 4.0,
+                                preferredDirection: AxisDirection.up,
+                                borderRadius: BorderRadius.circular(8.0),
+                                backgroundColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                elevation: 0.0,
+                                tailBaseWidth: 24.0,
+                                tailLength: 12.0,
+                                waitDuration: Duration(milliseconds: 100),
+                                showDuration: Duration(milliseconds: 200),
+                                triggerMode: TooltipTriggerMode.tap,
+                                child: Visibility(
+                                  visible: _model.curtiuReceita == false,
+                                  child: FlutterFlowIconButton(
+                                    borderRadius: 40.0,
+                                    buttonSize: 40.0,
+                                    fillColor: Color(0x1AD84012),
+                                    icon: Icon(
+                                      Icons.favorite_border_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 24.0,
+                                    ),
+                                    onPressed: () async {
+                                      _model.curtiuReceita = true;
+                                      safeSetState(() {});
+                                      await actions.curtirReceita(
+                                        widget.informacoesReceita!.id!,
+                                      );
+                                    },
+                                  ),
+                                ),
                               ),
                               Text(
-                                '20',
+                                valueOrDefault<String>(
+                                  widget.informacoesReceita?.curtidas
+                                      ?.toString(),
+                                  '0',
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(

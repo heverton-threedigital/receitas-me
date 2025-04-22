@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'receita_model.dart';
 export 'receita_model.dart';
@@ -33,6 +34,19 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ReceitaModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await ReceitasTable().update(
+        data: {
+          'visualizacoes': -1,
+        },
+        matchingRows: (rows) => rows.eqOrNull(
+          'id',
+          widget.receitaid,
+        ),
+      );
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -777,7 +791,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                           model: _model.barraLateraReceitaModel,
                                           updateCallback: () =>
                                               safeSetState(() {}),
-                                          child: BarraLateraReceitaWidget(),
+                                          child: BarraLateraReceitaWidget(
+                                            informacoesReceita:
+                                                receitaReceitasDetalhadasRow!,
+                                          ),
                                         ),
                                       ),
                                     ],
