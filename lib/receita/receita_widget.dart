@@ -680,69 +680,78 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                   final passosItem =
                                                                       passos[
                                                                           passosIndex];
-                                                                  return Container(
-                                                                    decoration:
-                                                                        BoxDecoration(),
+                                                                  return Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            8.0),
                                                                     child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          8.0),
+                                                                        Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(16.0),
+                                                                        border:
+                                                                            Border.all(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                        ),
+                                                                      ),
                                                                       child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
-                                                                        children:
-                                                                            [
-                                                                          Container(
-                                                                            width:
-                                                                                28.0,
-                                                                            height:
-                                                                                28.0,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              shape: BoxShape.circle,
-                                                                            ),
-                                                                            child:
-                                                                                Align(
-                                                                              alignment: AlignmentDirectional(0.0, 0.0),
-                                                                              child: Text(
-                                                                                getJsonField(
-                                                                                  passosItem,
-                                                                                  r'''$.passo''',
-                                                                                ).toString(),
-                                                                                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      fontSize: 20.0,
-                                                                                      letterSpacing: 0.0,
-                                                                                    ),
+                                                                          Padding(
+                                                                        padding:
+                                                                            EdgeInsets.all(16.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children:
+                                                                              [
+                                                                            Container(
+                                                                              width: 28.0,
+                                                                              height: 28.0,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                shape: BoxShape.circle,
+                                                                              ),
+                                                                              child: Align(
+                                                                                alignment: AlignmentDirectional(0.0, 0.0),
+                                                                                child: Text(
+                                                                                  getJsonField(
+                                                                                    passosItem,
+                                                                                    r'''$.passo''',
+                                                                                  ).toString(),
+                                                                                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                        fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                             ),
-                                                                          ),
-                                                                          Expanded(
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                                                                              child: Text(
-                                                                                getJsonField(
-                                                                                  passosItem,
-                                                                                  r'''$.descricao''',
-                                                                                ).toString(),
-                                                                                style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      letterSpacing: 0.0,
-                                                                                      lineHeight: 1.1,
-                                                                                    ),
+                                                                            Expanded(
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  getJsonField(
+                                                                                    passosItem,
+                                                                                    r'''$.descricao''',
+                                                                                  ).toString(),
+                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                        fontFamily: 'Poppins',
+                                                                                        letterSpacing: 0.0,
+                                                                                        lineHeight: 1.1,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                             ),
-                                                                          ),
-                                                                        ].divide(SizedBox(width: 8.0)),
+                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                   );
