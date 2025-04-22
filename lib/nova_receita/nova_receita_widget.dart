@@ -1877,8 +1877,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               await InstrucoesTable().insert({
                                                                                 'receita_id': _model.receitaCriada2?.id,
                                                                                 'descricao': FFAppState().passos.elementAtOrNull(FFAppState().contador),
-                                                                                'foto_instrucao': '',
                                                                                 'numero_passo': FFAppState().contador + 1,
+                                                                                'foto_instrucao01': '',
+                                                                                'foto_instrucao02': '',
+                                                                                'foto_instrucao03': '',
+                                                                                'foto_instrucao04': '',
+                                                                                'foto_instrucao05': '',
                                                                               });
                                                                             }
                                                                             _model.instantTimer2?.cancel();
@@ -2117,8 +2121,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               await InstrucoesTable().insert({
                                                                                 'receita_id': _model.receitaCriada?.id,
                                                                                 'descricao': FFAppState().passos.elementAtOrNull(FFAppState().contador),
-                                                                                'foto_instrucao': '',
                                                                                 'numero_passo': FFAppState().contador + 1,
+                                                                                'foto_instrucao01': '',
+                                                                                'foto_instrucao02': '',
+                                                                                'foto_instrucao03': '',
+                                                                                'foto_instrucao04': '',
+                                                                                'foto_instrucao05': '',
                                                                               });
                                                                             }
                                                                             _model.instantTimer3?.cancel();

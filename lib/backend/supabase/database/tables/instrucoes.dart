@@ -29,6 +29,23 @@ class InstrucoesRow extends SupabaseDataRow {
   DateTime? get criadoEm => getField<DateTime>('criado_em');
   set criadoEm(DateTime? value) => setField<DateTime>('criado_em', value);
 
-  String? get fotoInstrucao => getField<String>('foto_instrucao');
-  set fotoInstrucao(String? value) => setField<String>('foto_instrucao', value);
+  String? get fotoInstrucao01 => getField<String>('foto_instrucao01');
+  set fotoInstrucao01(String? value) =>
+      setField<String>('foto_instrucao01', value);
+
+  String? get fotoInstrucao02 => getField<String>('foto_instrucao02');
+  set fotoInstrucao02(String? value) =>
+      setField<String>('foto_instrucao02', value);
+
+  String? get fotoInstrucao03 => getField<String>('foto_instrucao03');
+  set fotoInstrucao03(String? value) =>
+      setField<String>('foto_instrucao03', value);
+
+  String? get fotoInstrucao04 => getField<String>('foto_instrucao04');
+  set fotoInstrucao04(String? value) =>
+      setField<String>('foto_instrucao04', value);
+
+  String? get fotoInstrucao05 => getField<String>('foto_instrucao05');
+  set fotoInstrucao05(String? value) =>
+      setField<String>('foto_instrucao05', value);
 }

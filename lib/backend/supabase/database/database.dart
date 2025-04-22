@@ -15,4 +15,5 @@ export 'tables/categorias.dart';
 export 'tables/instrucoes.dart';
 export 'tables/resposta_avaliacao.dart';
 export 'tables/tags.dart';
+export 'tables/curtidas_receitas.dart';
 export 'tables/avaliacoes.dart';

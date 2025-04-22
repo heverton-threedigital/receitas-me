@@ -44,4 +44,7 @@ class ReceitasRow extends SupabaseDataRow {
 
   bool? get publicado => getField<bool>('publicado');
   set publicado(bool? value) => setField<bool>('publicado', value);
+
+  int? get visualizacoes => getField<int>('visualizacoes');
+  set visualizacoes(int? value) => setField<int>('visualizacoes', value);
 }

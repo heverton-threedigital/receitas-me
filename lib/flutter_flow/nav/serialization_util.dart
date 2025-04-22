@@ -225,6 +225,8 @@ dynamic deserializeParam<T>(
             return RespostaAvaliacaoRow(data);
           case TagsRow:
             return TagsRow(data);
+          case CurtidasReceitasRow:
+            return CurtidasReceitasRow(data);
           case AvaliacoesRow:
             return AvaliacoesRow(data);
           default:
