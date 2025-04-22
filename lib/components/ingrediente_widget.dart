@@ -132,6 +132,10 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                       controller: _model.textController,
                       focusNode: _model.textFieldFocusNode,
                       onFieldSubmitted: (_) async {
+                        if (_model.formKey.currentState == null ||
+                            !_model.formKey.currentState!.validate()) {
+                          return;
+                        }
                         FFAppState().updateIngredientesAtIndex(
                           widget.indexIngrediente!,
                           (_) => _model.textController.text,
@@ -216,9 +220,8 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                   },
                   text: 'Salvar',
                   options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    height: 32.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,

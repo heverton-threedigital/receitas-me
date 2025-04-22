@@ -184,6 +184,10 @@ class _PassosWidgetState extends State<PassosWidget> {
                       controller: _model.editarpassoTextController,
                       focusNode: _model.editarpassoFocusNode,
                       onFieldSubmitted: (_) async {
+                        if (_model.formKey.currentState == null ||
+                            !_model.formKey.currentState!.validate()) {
+                          return;
+                        }
                         FFAppState().updatePassosAtIndex(
                           widget.indexPasso!,
                           (_) => _model.editarpassoTextController.text,
@@ -268,9 +272,8 @@ class _PassosWidgetState extends State<PassosWidget> {
                   },
                   text: 'Salvar',
                   options: FFButtonOptions(
-                    height: 40.0,
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    height: 32.0,
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,

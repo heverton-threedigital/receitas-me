@@ -14,7 +14,6 @@ import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import '/index.dart';
-import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -1142,21 +1141,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 _model.ingredienteTextController,
                                                                             focusNode:
                                                                                 _model.ingredienteFocusNode,
-                                                                            onChanged: (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                              '_model.ingredienteTextController',
-                                                                              Duration(milliseconds: 2000),
-                                                                              () async {
-                                                                                if (_model.formKey2.currentState == null || !_model.formKey2.currentState!.validate()) {
-                                                                                  return;
-                                                                                }
-                                                                                FFAppState().addToIngredientes(_model.ingredienteTextController.text);
-                                                                                FFAppState().update(() {});
-                                                                                safeSetState(() {
-                                                                                  _model.ingredienteTextController?.clear();
-                                                                                });
-                                                                              },
-                                                                            ),
                                                                             onFieldSubmitted:
                                                                                 (_) async {
                                                                               if (_model.formKey2.currentState == null || !_model.formKey2.currentState!.validate()) {
@@ -1252,15 +1236,15 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           });
                                                                         },
                                                                         text:
-                                                                            'Adicionar',
+                                                                            'Salvar',
                                                                         options:
                                                                             FFButtonOptions(
                                                                           height:
-                                                                              40.0,
+                                                                              32.0,
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              16.0,
+                                                                              8.0,
                                                                               0.0,
-                                                                              16.0,
+                                                                              8.0,
                                                                               0.0),
                                                                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
@@ -1435,23 +1419,10 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   child: TextFormField(
                                                                                     controller: _model.passoTextController,
                                                                                     focusNode: _model.passoFocusNode,
-                                                                                    onChanged: (_) => EasyDebounce.debounce(
-                                                                                      '_model.passoTextController',
-                                                                                      Duration(milliseconds: 2000),
-                                                                                      () async {
-                                                                                        if (_model.formKey3.currentState == null || !_model.formKey3.currentState!.validate()) {
-                                                                                          return;
-                                                                                        }
-                                                                                        FFAppState().addToPassos(_model.passoTextController.text);
-                                                                                        safeSetState(() {});
-                                                                                        FFAppState().passoAtual = FFAppState().passoAtual + 1;
-                                                                                        safeSetState(() {});
-                                                                                        safeSetState(() {
-                                                                                          _model.passoTextController?.clear();
-                                                                                        });
-                                                                                      },
-                                                                                    ),
                                                                                     onFieldSubmitted: (_) async {
+                                                                                      if (_model.formKey3.currentState == null || !_model.formKey3.currentState!.validate()) {
+                                                                                        return;
+                                                                                      }
                                                                                       FFAppState().addToPassos(_model.passoTextController.text);
                                                                                       safeSetState(() {});
                                                                                       FFAppState().passoAtual = FFAppState().passoAtual + 1;
@@ -1526,8 +1497,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 },
                                                                                 text: 'Salvar',
                                                                                 options: FFButtonOptions(
-                                                                                  height: 40.0,
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                                  height: 32.0,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
@@ -1596,7 +1567,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           1.0,
                                                       decoration: BoxDecoration(
                                                         color:
-                                                            Color(0x9AFFFFFF),
+                                                            Color(0x80FFFFFF),
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(16.0),
