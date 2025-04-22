@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -27,6 +28,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   final formKey3 = GlobalKey<FormState>();
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -136,6 +139,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
     tituloReceitaTextControllerValidator =
         _tituloReceitaTextControllerValidator;
     dscricaoReceitaTextControllerValidator =
@@ -151,6 +155,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   @override
   void dispose() {
     menuPrincipalModel.dispose();
+    menuLateralEModel.dispose();
     tituloReceitaFocusNode?.dispose();
     tituloReceitaTextController?.dispose();
 
