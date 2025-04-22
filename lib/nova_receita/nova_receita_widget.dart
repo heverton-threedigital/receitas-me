@@ -14,6 +14,7 @@ import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import '/index.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -1161,8 +1162,26 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 _model.ingredienteTextController,
                                                                             focusNode:
                                                                                 _model.ingredienteFocusNode,
+                                                                            onChanged: (_) =>
+                                                                                EasyDebounce.debounce(
+                                                                              '_model.ingredienteTextController',
+                                                                              Duration(milliseconds: 2000),
+                                                                              () async {
+                                                                                if (_model.formKey2.currentState == null || !_model.formKey2.currentState!.validate()) {
+                                                                                  return;
+                                                                                }
+                                                                                FFAppState().addToIngredientes(_model.ingredienteTextController.text);
+                                                                                FFAppState().update(() {});
+                                                                                safeSetState(() {
+                                                                                  _model.ingredienteTextController?.clear();
+                                                                                });
+                                                                              },
+                                                                            ),
                                                                             onFieldSubmitted:
                                                                                 (_) async {
+                                                                              if (_model.formKey2.currentState == null || !_model.formKey2.currentState!.validate()) {
+                                                                                return;
+                                                                              }
                                                                               FFAppState().addToIngredientes(_model.ingredienteTextController.text);
                                                                               FFAppState().update(() {});
                                                                               safeSetState(() {
@@ -1217,7 +1236,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 borderRadius: BorderRadius.circular(8.0),
                                                                               ),
                                                                               filled: true,
-                                                                              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              fillColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                               hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1442,6 +1461,22 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 TextFormField(
                                                                               controller: _model.passoTextController,
                                                                               focusNode: _model.passoFocusNode,
+                                                                              onChanged: (_) => EasyDebounce.debounce(
+                                                                                '_model.passoTextController',
+                                                                                Duration(milliseconds: 2000),
+                                                                                () async {
+                                                                                  if (_model.formKey3.currentState == null || !_model.formKey3.currentState!.validate()) {
+                                                                                    return;
+                                                                                  }
+                                                                                  FFAppState().addToPassos(_model.passoTextController.text);
+                                                                                  safeSetState(() {});
+                                                                                  FFAppState().passoAtual = FFAppState().passoAtual + 1;
+                                                                                  safeSetState(() {});
+                                                                                  safeSetState(() {
+                                                                                    _model.passoTextController?.clear();
+                                                                                  });
+                                                                                },
+                                                                              ),
                                                                               onFieldSubmitted: (_) async {
                                                                                 FFAppState().addToPassos(_model.passoTextController.text);
                                                                                 safeSetState(() {});
@@ -1489,8 +1524,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   ),
                                                                                   borderRadius: BorderRadius.circular(8.0),
                                                                                 ),
-                                                                                filled: true,
-                                                                                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                 hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
