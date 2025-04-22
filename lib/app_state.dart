@@ -23,6 +23,9 @@ class FFAppState extends ChangeNotifier {
       _categoriasReceitas =
           prefs.getStringList('ff_categoriasReceitas') ?? _categoriasReceitas;
     });
+    _safeInit(() {
+      _corfirmarConta = prefs.getBool('ff_corfirmarConta') ?? _corfirmarConta;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -142,6 +145,13 @@ class FFAppState extends ChangeNotifier {
   int get passoAtual => _passoAtual;
   set passoAtual(int value) {
     _passoAtual = value;
+  }
+
+  bool _corfirmarConta = false;
+  bool get corfirmarConta => _corfirmarConta;
+  set corfirmarConta(bool value) {
+    _corfirmarConta = value;
+    prefs.setBool('ff_corfirmarConta', value);
   }
 }
 

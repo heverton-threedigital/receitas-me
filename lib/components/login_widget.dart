@@ -8,6 +8,7 @@ import '/custom_code/actions/index.dart' as actions;
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -72,6 +73,8 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: AlignmentDirectional(0.0, 0.0),
       child: Container(
@@ -99,7 +102,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     if ((_model.islogin == true) &&
-                        (_model.corfirmarConta == false))
+                        (FFAppState().corfirmarConta == false))
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
@@ -364,7 +367,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                     if ((_model.islogin == false) &&
-                        (_model.corfirmarConta == false))
+                        (FFAppState().corfirmarConta == false))
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
@@ -856,7 +859,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         r'''$.userId''',
                                       ) !=
                                       null) {
-                                    _model.corfirmarConta = true;
+                                    FFAppState().corfirmarConta = true;
                                     safeSetState(() {});
                                   } else {
                                     ScaffoldMessenger.of(context).showSnackBar(
@@ -950,7 +953,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ],
                         ),
                       ),
-                    if (_model.corfirmarConta == true)
+                    if (FFAppState().corfirmarConta == true)
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 32.0, 0.0, 24.0),
@@ -1063,6 +1066,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       ).toString(),
                                     ),
                                   );
+                                  FFAppState().corfirmarConta = false;
                                   await widget.redirecionar?.call();
 
                                   safeSetState(() {});
