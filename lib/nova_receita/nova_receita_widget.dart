@@ -395,6 +395,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .override(
                                                                     fontFamily:
                                                                         'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .secondaryText,
                                                                     letterSpacing:
                                                                         0.0,
                                                                   ),
