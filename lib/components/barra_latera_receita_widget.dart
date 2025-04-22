@@ -135,7 +135,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     ),
                                     child: Image.network(
                                       valueOrDefault<String>(
-                                        widget.informacoesReceita?.imagemUrl,
+                                        widget
+                                            .informacoesReceita?.autorAvatarUrl,
                                         'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                                       ),
                                       fit: BoxFit.cover,
