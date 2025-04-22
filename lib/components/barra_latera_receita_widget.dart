@@ -10,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
 
@@ -54,12 +53,12 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
               currentUserUid,
             ),
       );
-      if (_model.curtiu?.length == 1) {
-        FFAppState().CurtiuReceita = true;
-        safeSetState(() {});
+      if (_model.curtiu != null && (_model.curtiu)!.isNotEmpty) {
+        _model.curtiuReceita = true;
+        _model.updatePage(() {});
       } else {
-        FFAppState().CurtiuReceita = false;
-        safeSetState(() {});
+        _model.curtiuReceita = false;
+        _model.updatePage(() {});
       }
     });
 
@@ -75,8 +74,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
@@ -499,16 +496,23 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 ),
                                 child: ToggleIcon(
                                   onPressed: () async {
-                                    safeSetState(() =>
-                                        FFAppState().CurtiuReceita =
-                                            !FFAppState().CurtiuReceita);
-                                    await actions.curtirReceita(
-                                      widget.informacoesReceita!.id!,
-                                    );
-                                    FFAppState().CurtiuReceita = true;
-                                    FFAppState().update(() {});
+                                    safeSetState(() => _model.curtiuReceita =
+                                        !_model.curtiuReceita!);
+                                    if (_model.curtiuReceita!) {
+                                      _model.curtiuReceita = false;
+                                      _model.updatePage(() {});
+                                      await actions.descurtirReceita(
+                                        widget.informacoesReceita!.id!,
+                                      );
+                                    } else {
+                                      _model.curtiuReceita = true;
+                                      _model.updatePage(() {});
+                                      await actions.curtirReceita(
+                                        widget.informacoesReceita!.id!,
+                                      );
+                                    }
                                   },
-                                  value: FFAppState().CurtiuReceita,
+                                  value: _model.curtiuReceita!,
                                   onIcon: Icon(
                                     Icons.favorite_outlined,
                                     color: FlutterFlowTheme.of(context).primary,
