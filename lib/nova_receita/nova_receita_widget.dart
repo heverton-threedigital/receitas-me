@@ -278,50 +278,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               ),
                                                               child: Stack(
                                                                 children: [
-                                                                  if (_model.imagemReceita !=
-                                                                          null &&
-                                                                      (_model
-                                                                              .imagemReceita
-                                                                              ?.bytes
-                                                                              ?.isNotEmpty ??
-                                                                          false))
-                                                                    Align(
-                                                                      alignment:
-                                                                          AlignmentDirectional(
-                                                                              1.0,
-                                                                              -1.0),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            8.0,
-                                                                            8.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            FlutterFlowIconButton(
-                                                                          borderRadius:
-                                                                              8.0,
-                                                                          buttonSize:
-                                                                              40.0,
-                                                                          fillColor:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                          icon:
-                                                                              Icon(
-                                                                            Icons.close_rounded,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                          onPressed:
-                                                                              () async {
-                                                                            _model.imagemReceita =
-                                                                                null;
-                                                                            safeSetState(() {});
-                                                                          },
-                                                                        ),
-                                                                      ),
-                                                                    ),
                                                                   Align(
                                                                     alignment:
                                                                         AlignmentDirectional(
@@ -388,6 +344,50 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             double.infinity,
                                                                         fit: BoxFit
                                                                             .cover,
+                                                                      ),
+                                                                    ),
+                                                                  if (_model.imagemReceita !=
+                                                                          null &&
+                                                                      (_model
+                                                                              .imagemReceita
+                                                                              ?.bytes
+                                                                              ?.isNotEmpty ??
+                                                                          false))
+                                                                    Align(
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              1.0,
+                                                                              -1.0),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            8.0,
+                                                                            8.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            FlutterFlowIconButton(
+                                                                          borderRadius:
+                                                                              8.0,
+                                                                          buttonSize:
+                                                                              40.0,
+                                                                          fillColor:
+                                                                              FlutterFlowTheme.of(context).alternate,
+                                                                          icon:
+                                                                              Icon(
+                                                                            Icons.close_rounded,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                          onPressed:
+                                                                              () async {
+                                                                            _model.imagemReceita =
+                                                                                null;
+                                                                            safeSetState(() {});
+                                                                          },
+                                                                        ),
                                                                       ),
                                                                     ),
                                                                 ],
