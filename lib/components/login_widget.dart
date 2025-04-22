@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'login_model.dart';
@@ -57,8 +58,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     _model.confirmeSenhaCadastroTextController ??= TextEditingController();
     _model.confirmeSenhaCadastroFocusNode ??= FocusNode();
 
-    _model.codigodeConfirmacaoTextController ??= TextEditingController();
-    _model.codigodeConfirmacaoFocusNode ??= FocusNode();
+    _model.pinCodeFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -992,89 +992,51 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     ),
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 16.0),
-                              child: Container(
-                                width: 220.0,
-                                child: TextFormField(
-                                  controller:
-                                      _model.codigodeConfirmacaoTextController,
-                                  focusNode:
-                                      _model.codigodeConfirmacaoFocusNode,
-                                  autofocus: false,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    isDense: false,
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    hintText: '0-0-0-0-0-0',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          letterSpacing: 0.0,
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                    filled: true,
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    hoverColor: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
+                            PinCodeTextField(
+                              autoDisposeControllers: false,
+                              appContext: context,
+                              length: 6,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyLarge
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    letterSpacing: 0.0,
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        letterSpacing: 0.0,
-                                      ),
-                                  textAlign: TextAlign.center,
-                                  keyboardType: TextInputType.number,
-                                  cursorColor:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  validator: _model
-                                      .codigodeConfirmacaoTextControllerValidator
-                                      .asValidator(context),
-                                  inputFormatters: [
-                                    _model.codigodeConfirmacaoMask
-                                  ],
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              enableActiveFill: false,
+                              autoFocus: true,
+                              focusNode: _model.pinCodeFocusNode,
+                              enablePinAutofill: true,
+                              errorTextSpace: 16.0,
+                              showCursor: true,
+                              cursorColor: FlutterFlowTheme.of(context).primary,
+                              obscureText: false,
+                              hintCharacter: '-',
+                              keyboardType: TextInputType.number,
+                              pinTheme: PinTheme(
+                                fieldHeight: 44.0,
+                                fieldWidth: 44.0,
+                                borderWidth: 1.0,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12.0),
+                                  bottomRight: Radius.circular(12.0),
+                                  topLeft: Radius.circular(12.0),
+                                  topRight: Radius.circular(12.0),
                                 ),
+                                shape: PinCodeFieldShape.box,
+                                activeColor:
+                                    FlutterFlowTheme.of(context).primaryText,
+                                inactiveColor:
+                                    FlutterFlowTheme.of(context).alternate,
+                                selectedColor:
+                                    FlutterFlowTheme.of(context).primary,
                               ),
+                              controller: _model.pinCodeController,
+                              onChanged: (_) {},
+                              autovalidateMode:
+                                  AutovalidateMode.onUserInteraction,
+                              validator: _model.pinCodeControllerValidator
+                                  .asValidator(context),
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -1084,8 +1046,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   _model.emailVerificado =
                                       await actions.verifyEmailWithToken(
                                     _model.emailCadastroTextController.text,
-                                    _model
-                                        .codigodeConfirmacaoTextController.text,
+                                    _model.pinCodeController!.text,
                                   );
                                   await PerfisTable().update(
                                     data: {

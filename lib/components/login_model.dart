@@ -2,7 +2,6 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class LoginModel extends FlutterFlowModel<LoginWidget> {
   ///  Local state fields for this component.
@@ -47,12 +46,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       confirmeSenhaCadastroTextControllerValidator;
   // Stores action output result for [Custom Action - signUpWithEmail] action in Button widget.
   dynamic usuarioCriado;
-  // State field(s) for CodigodeConfirmacao widget.
-  FocusNode? codigodeConfirmacaoFocusNode;
-  TextEditingController? codigodeConfirmacaoTextController;
-  final codigodeConfirmacaoMask = MaskTextInputFormatter(mask: '######');
-  String? Function(BuildContext, String?)?
-      codigodeConfirmacaoTextControllerValidator;
+  // State field(s) for PinCode widget.
+  TextEditingController? pinCodeController;
+  FocusNode? pinCodeFocusNode;
+  String? Function(BuildContext, String?)? pinCodeControllerValidator;
   // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
   bool? emailVerificado;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
@@ -63,6 +60,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     senhaLoginVisibility = false;
     senhaCadastroVisibility = false;
     confirmeSenhaCadastroVisibility = false;
+    pinCodeController = TextEditingController();
   }
 
   @override
@@ -88,7 +86,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     confirmeSenhaCadastroFocusNode?.dispose();
     confirmeSenhaCadastroTextController?.dispose();
 
-    codigodeConfirmacaoFocusNode?.dispose();
-    codigodeConfirmacaoTextController?.dispose();
+    pinCodeFocusNode?.dispose();
+    pinCodeController?.dispose();
   }
 }

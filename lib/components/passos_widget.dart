@@ -145,7 +145,6 @@ class _PassosWidgetState extends State<PassosWidget> {
         if (_model.editar == true)
           Row(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 40.0,
