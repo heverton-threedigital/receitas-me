@@ -153,12 +153,6 @@ class FFAppState extends ChangeNotifier {
     _corfirmarConta = value;
     prefs.setBool('ff_corfirmarConta', value);
   }
-
-  bool _curtiuReceita = false;
-  bool get curtiuReceita => _curtiuReceita;
-  set curtiuReceita(bool value) {
-    _curtiuReceita = value;
-  }
 }
 
 void _safeInit(Function() initializeField) {
