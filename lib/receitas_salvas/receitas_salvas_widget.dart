@@ -88,7 +88,7 @@ class _ReceitasSalvasWidgetState extends State<ReceitasSalvasWidget> {
                                   model: _model.menuLateralEModel,
                                   updateCallback: () => safeSetState(() {}),
                                   child: MenuLateralEWidget(
-                                    pagina: 'inicio',
+                                    pagina: 'receitassalvas',
                                   ),
                                 ),
                               ),

@@ -86,7 +86,7 @@ class _NoticacoesWidgetState extends State<NoticacoesWidget> {
                                   model: _model.menuLateralEModel,
                                   updateCallback: () => safeSetState(() {}),
                                   child: MenuLateralEWidget(
-                                    pagina: 'inicio',
+                                    pagina: 'notificacoes',
                                   ),
                                 ),
                               ),

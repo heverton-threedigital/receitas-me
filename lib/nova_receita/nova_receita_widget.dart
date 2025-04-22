@@ -153,7 +153,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                       model: _model.menuLateralEModel,
                                       updateCallback: () => safeSetState(() {}),
                                       child: MenuLateralEWidget(
-                                        pagina: 'inicio',
+                                        pagina: '',
                                       ),
                                     ),
                                   ),
