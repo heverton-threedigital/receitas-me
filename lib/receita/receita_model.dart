@@ -7,20 +7,28 @@ import 'package:flutter/material.dart';
 class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // Stores action output result for [Custom Action - showEmojiPicker] action in Icon widget.
-  String? emoji;
+  String? _textControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Este campo é obrigatório';
+    }
+
+    return null;
+  }
+
   // Model for BarraLateraReceita component.
   late BarraLateraReceitaModel barraLateraReceitaModel;
 
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
+    textControllerValidator = _textControllerValidator;
     barraLateraReceitaModel =
         createModel(context, () => BarraLateraReceitaModel());
   }
