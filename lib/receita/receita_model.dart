@@ -13,6 +13,8 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Stores action output result for [Custom Action - showEmojiPicker] action in Icon widget.
+  String? emoji;
   // Model for BarraLateraReceita component.
   late BarraLateraReceitaModel barraLateraReceitaModel;
 
