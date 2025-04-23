@@ -1,4 +1,3 @@
-import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -66,63 +65,11 @@ class _NoticacoesWidgetState extends State<NoticacoesWidget> {
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
+                        height: MediaQuery.sizeOf(context).height * 1.0,
                         constraints: BoxConstraints(
-                          maxWidth: 1080.0,
+                          maxWidth: 1120.0,
                         ),
                         decoration: BoxDecoration(),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (responsiveVisibility(
-                              context: context,
-                              phone: false,
-                              tablet: false,
-                            ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 24.0, 0.0),
-                                child: wrapWithModel(
-                                  model: _model.menuLateralEModel,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralEWidget(
-                                    pagina: 'notificacoes',
-                                  ),
-                                ),
-                              ),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    valueOrDefault<double>(
-                                      () {
-                                        if (MediaQuery.sizeOf(context).width <
-                                            kBreakpointSmall) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointMedium) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointLarge) {
-                                          return 24.0;
-                                        } else {
-                                          return 24.0;
-                                        }
-                                      }(),
-                                      0.0,
-                                    ),
-                                    0.0,
-                                    0.0,
-                                    0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
                       ),
                     ),
                   ),

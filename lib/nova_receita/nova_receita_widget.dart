@@ -1,7 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/ingrediente_widget.dart';
-import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/components/passos_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -135,28 +134,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             constraints: BoxConstraints(
-                              maxWidth: 1080.0,
+                              maxWidth: 1120.0,
                             ),
                             decoration: BoxDecoration(),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                if (responsiveVisibility(
-                                  context: context,
-                                  phone: false,
-                                  tablet: false,
-                                ))
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 24.0, 0.0),
-                                    child: wrapWithModel(
-                                      model: _model.menuLateralEModel,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: MenuLateralEWidget(
-                                        pagina: '',
-                                      ),
-                                    ),
-                                  ),
                                 Expanded(
                                   child: Align(
                                     alignment: AlignmentDirectional(0.0, -1.0),
@@ -540,7 +523,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                     fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                   ),
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                  fontSize: 24.0,
                                                                                   letterSpacing: 0.0,
                                                                                   fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
@@ -654,15 +636,15 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 false,
                                                                             hintText:
                                                                                 'Descrição: Fale um pouco sobre sua receita. Como você aprendeu, qual foi a inspiração, detalhes extras sobre os ingredientes',
-                                                                            hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                            hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   font: GoogleFonts.workSans(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
                                                                                   letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
                                                                             enabledBorder:
                                                                                 OutlineInputBorder(
@@ -710,7 +692,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
-                                                                                fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
                                                                                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
@@ -739,19 +720,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       'Categorias',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleMedium
+                                                                          .titleSmall
                                                                           .override(
                                                                             font:
                                                                                 GoogleFonts.workSans(
-                                                                              fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                             ),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                             fontWeight:
-                                                                                FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                             fontStyle:
-                                                                                FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -911,14 +892,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                                                                                     child: Text(
                                                                                       'Porçoes',
-                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                      style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                             font: GoogleFonts.workSans(
-                                                                                              fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                              fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                             ),
                                                                                             letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                           ),
                                                                                     ),
                                                                                   ),
@@ -1018,14 +999,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
                                                                                 child: Text(
                                                                                   'Tempo de preparo',
-                                                                                  style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                  style: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         font: GoogleFonts.workSans(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                         ),
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                       ),
                                                                                 ),
                                                                               ),
@@ -1336,24 +1317,24 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   'Ingredientes',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleLarge
+                                                                      .titleMedium
                                                                       .override(
                                                                         font: GoogleFonts
                                                                             .workSans(
                                                                           fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleLarge
+                                                                              .titleMedium
                                                                               .fontWeight,
                                                                           fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleLarge
+                                                                              .titleMedium
                                                                               .fontStyle,
                                                                         ),
                                                                         letterSpacing:
                                                                             0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleLarge
+                                                                            .titleMedium
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleLarge
+                                                                            .titleMedium
                                                                             .fontStyle,
                                                                       ),
                                                                 ),
@@ -1631,22 +1612,22 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     'Passo a passo',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .titleLarge
+                                                                        .titleMedium
                                                                         .override(
                                                                           font:
                                                                               GoogleFonts.workSans(
                                                                             fontWeight:
-                                                                                FlutterFlowTheme.of(context).titleLarge.fontWeight,
+                                                                                FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                             fontStyle:
-                                                                                FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                                                                                FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                           ),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
-                                                                              .titleLarge
+                                                                              .titleMedium
                                                                               .fontWeight,
                                                                           fontStyle: FlutterFlowTheme.of(context)
-                                                                              .titleLarge
+                                                                              .titleMedium
                                                                               .fontStyle,
                                                                         ),
                                                                   ),
@@ -1960,24 +1941,26 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 'Criar nova receita',
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleLarge
+                                                                    .titleMedium
                                                                     .override(
                                                                       font: GoogleFonts
                                                                           .workSans(
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .titleMedium
+                                                                            .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleLarge
+                                                                            .titleMedium
                                                                             .fontStyle,
                                                                       ),
                                                                       letterSpacing:
                                                                           0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
                                                                       fontStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleLarge
+                                                                          .titleMedium
                                                                           .fontStyle,
                                                                     ),
                                                               ),

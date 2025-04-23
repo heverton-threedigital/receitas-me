@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -83,22 +82,6 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (responsiveVisibility(
-                              context: context,
-                              phone: false,
-                              tablet: false,
-                            ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 24.0, 0.0),
-                                child: wrapWithModel(
-                                  model: _model.menuLateralEModel,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralEWidget(
-                                    pagina: 'minhasreceitas',
-                                  ),
-                                ),
-                              ),
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -134,10 +117,13 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                         child: Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  1.0,
+                                                  0.9,
                                           height: MediaQuery.sizeOf(context)
                                                   .height *
                                               1.0,
+                                          constraints: BoxConstraints(
+                                            maxWidth: 1120.0,
+                                          ),
                                           decoration: BoxDecoration(),
                                           child: Padding(
                                             padding:

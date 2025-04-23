@@ -130,9 +130,9 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                           content: Align(
                             alignment: AlignmentDirectional(0.0, -1.0),
                             child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              width: MediaQuery.sizeOf(context).width * 0.9,
                               constraints: BoxConstraints(
-                                maxWidth: 1080.0,
+                                maxWidth: 1120.0,
                               ),
                               decoration: BoxDecoration(),
                               child: Column(

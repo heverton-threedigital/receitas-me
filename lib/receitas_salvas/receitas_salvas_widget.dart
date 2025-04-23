@@ -1,4 +1,3 @@
-import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -76,28 +75,16 @@ class _ReceitasSalvasWidgetState extends State<ReceitasSalvasWidget> {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (responsiveVisibility(
-                              context: context,
-                              phone: false,
-                              tablet: false,
-                            ))
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 24.0, 0.0),
-                                child: wrapWithModel(
-                                  model: _model.menuLateralEModel,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralEWidget(
-                                    pagina: 'receitassalvas',
-                                  ),
-                                ),
-                              ),
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Container(
+                                  width: MediaQuery.sizeOf(context).width * 0.9,
                                   height: 300.0,
+                                  constraints: BoxConstraints(
+                                    maxWidth: 1120.0,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
