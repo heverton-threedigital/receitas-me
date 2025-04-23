@@ -273,6 +273,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 child: TextFormField(
                                   controller: _model.senhaLoginTextController,
                                   focusNode: _model.senhaLoginFocusNode,
+                                  onFieldSubmitted: (_) async {
+                                    if (_model.formKey2.currentState == null ||
+                                        !_model.formKey2.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
+                                    // Fazer login
+                                    GoRouter.of(context).prepareAuthEvent();
+
+                                    final user =
+                                        await authManager.signInWithEmail(
+                                      context,
+                                      _model.emailLoginTextController.text,
+                                      _model.senhaLoginTextController.text,
+                                    );
+                                    if (user == null) {
+                                      return;
+                                    }
+
+                                    await widget.redirecionar?.call();
+                                  },
                                   autofocus: false,
                                   obscureText: !_model.senhaLoginVisibility,
                                   decoration: InputDecoration(
@@ -1190,6 +1211,48 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         .confirmeSenhaCadastroTextController,
                                     focusNode:
                                         _model.confirmeSenhaCadastroFocusNode,
+                                    onFieldSubmitted: (_) async {
+                                      _model.usuarioCriado2 =
+                                          await actions.signUpWithEmail(
+                                        _model.emailCadastroTextController.text,
+                                        _model.senhaCadastroTextController.text,
+                                        _model
+                                            .confirmeSenhaCadastroTextController
+                                            .text,
+                                      );
+                                      if (getJsonField(
+                                            _model.usuarioCriado,
+                                            r'''$.userId''',
+                                          ) !=
+                                          null) {
+                                        FFAppState().corfirmarConta = true;
+                                        safeSetState(() {});
+                                      } else {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              getJsonField(
+                                                _model.usuarioCriado,
+                                                r'''$.error''',
+                                              ).toString(),
+                                              style: TextStyle(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                              ),
+                                            ),
+                                            duration:
+                                                Duration(milliseconds: 4000),
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                          ),
+                                        );
+                                      }
+
+                                      safeSetState(() {});
+                                    },
                                     autofocus: false,
                                     obscureText:
                                         !_model.confirmeSenhaCadastroVisibility,
@@ -1610,6 +1673,32 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                               controller: _model.pinCodeController,
                               onChanged: (_) {},
+                              onCompleted: (_) async {
+                                _model.emailVerificado2 =
+                                    await actions.verifyEmailWithToken(
+                                  _model.emailCadastroTextController.text,
+                                  _model.pinCodeController!.text,
+                                );
+                                await PerfisTable().update(
+                                  data: {
+                                    'nome': _model.nomeTextController.text,
+                                    'sobrenome':
+                                        _model.sobrenomeTextController.text,
+                                    'is_admin': false,
+                                  },
+                                  matchingRows: (rows) => rows.eqOrNull(
+                                    'id',
+                                    getJsonField(
+                                      _model.usuarioCriado,
+                                      r'''$.userId''',
+                                    ).toString(),
+                                  ),
+                                );
+                                FFAppState().corfirmarConta = false;
+                                await widget.redirecionar?.call();
+
+                                safeSetState(() {});
+                              },
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
                               validator: _model.pinCodeControllerValidator
