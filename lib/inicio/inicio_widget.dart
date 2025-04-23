@@ -112,7 +112,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                     child: Align(
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.9,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         constraints: BoxConstraints(
                           maxWidth: 1080.0,
                         ),
@@ -190,9 +190,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
-                                                children: List.generate(
-                                                    rowCategoriasRowList.length,
-                                                    (rowIndex) {
+                                                children: List
+                                                        .generate(
+                                                            rowCategoriasRowList
+                                                                .length,
+                                                            (rowIndex) {
                                                   final rowCategoriasRow =
                                                       rowCategoriasRowList[
                                                           rowIndex];
@@ -253,8 +255,48 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       ),
                                                     ],
                                                   );
-                                                }).divide(
-                                                    SizedBox(width: 16.0)),
+                                                })
+                                                    .divide(
+                                                        SizedBox(width: 16.0))
+                                                    .addToStart(
+                                                        SizedBox(width: () {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return 24.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return 0.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return 0.0;
+                                                  } else {
+                                                    return 0.0;
+                                                  }
+                                                }())).addToEnd(
+                                                        SizedBox(width: () {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return 24.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return 0.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return 0.0;
+                                                  } else {
+                                                    return 0.0;
+                                                  }
+                                                }())),
                                               ),
                                             );
                                           },
@@ -268,7 +310,31 @@ class _InicioWidgetState extends State<InicioWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 16.0, 0.0, 0.0),
+                                            valueOrDefault<double>(
+                                              () {
+                                                if (MediaQuery.sizeOf(context)
+                                                        .width <
+                                                    kBreakpointSmall) {
+                                                  return 16.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointMedium) {
+                                                  return 0.0;
+                                                } else if (MediaQuery.sizeOf(
+                                                            context)
+                                                        .width <
+                                                    kBreakpointLarge) {
+                                                  return 0.0;
+                                                } else {
+                                                  return 0.0;
+                                                }
+                                              }(),
+                                              0.0,
+                                            ),
+                                            16.0,
+                                            0.0,
+                                            0.0),
                                         child: Text(
                                           'Últimas receitas adicionadas',
                                           style: FlutterFlowTheme.of(context)
@@ -343,9 +409,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: List.generate(
-                                                        rowReceitasResumoRowList
-                                                            .length,
-                                                        (rowIndex) {
+                                                            rowReceitasResumoRowList
+                                                                .length,
+                                                            (rowIndex) {
                                                       final rowReceitasResumoRow =
                                                           rowReceitasResumoRowList[
                                                               rowIndex];
@@ -623,8 +689,54 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                           ),
                                                         ),
                                                       );
-                                                    }).divide(
-                                                        SizedBox(width: 16.0)),
+                                                    })
+                                                        .divide(SizedBox(
+                                                            width: 16.0))
+                                                        .addToStart(
+                                                            SizedBox(width: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 24.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 0.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 0.0;
+                                                      } else {
+                                                        return 0.0;
+                                                      }
+                                                    }())).addToEnd(
+                                                            SizedBox(width: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 24.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 0.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 0.0;
+                                                      } else {
+                                                        return 0.0;
+                                                      }
+                                                    }())),
                                                   ),
                                                 );
                                               },

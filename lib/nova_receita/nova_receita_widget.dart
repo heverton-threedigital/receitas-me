@@ -184,7 +184,31 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
-                                                    child: Row(
+                                                    child: Flex(
+                                                      direction: () {
+                                                        if (MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width <
+                                                            kBreakpointSmall) {
+                                                          return false;
+                                                        } else if (MediaQuery
+                                                                    .sizeOf(
+                                                                        context)
+                                                                .width <
+                                                            kBreakpointMedium) {
+                                                          return true;
+                                                        } else if (MediaQuery
+                                                                    .sizeOf(
+                                                                        context)
+                                                                .width <
+                                                            kBreakpointLarge) {
+                                                          return true;
+                                                        } else {
+                                                          return true;
+                                                        }
+                                                      }()
+                                                          ? Axis.horizontal
+                                                          : Axis.vertical,
                                                       mainAxisSize:
                                                           MainAxisSize.max,
                                                       crossAxisAlignment:
@@ -266,8 +290,35 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .circular(
                                                                         24.0),
                                                             child: Container(
-                                                              width: 320.0,
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
                                                               height: 432.0,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: () {
+                                                                  if (MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width <
+                                                                      kBreakpointSmall) {
+                                                                    return 400.0;
+                                                                  } else if (MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width <
+                                                                      kBreakpointMedium) {
+                                                                    return 296.0;
+                                                                  } else if (MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width <
+                                                                      kBreakpointLarge) {
+                                                                    return 296.0;
+                                                                  } else {
+                                                                    return 296.0;
+                                                                  }
+                                                                }(),
+                                                              ),
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -443,68 +494,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     CrossAxisAlignment
                                                                         .start,
                                                                 children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            8.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .center,
-                                                                      children:
-                                                                          [
-                                                                        Container(
-                                                                          width:
-                                                                              40.0,
-                                                                          height:
-                                                                              40.0,
-                                                                          clipBehavior:
-                                                                              Clip.antiAlias,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            shape:
-                                                                                BoxShape.circle,
-                                                                          ),
-                                                                          child:
-                                                                              Image.network(
-                                                                            valueOrDefault<String>(
-                                                                              novaReceitaPerfisRow?.avatarUrl,
-                                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                                                            ),
-                                                                            fit:
-                                                                                BoxFit.cover,
-                                                                          ),
-                                                                        ),
-                                                                        Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            Text(
-                                                                              '${novaReceitaPerfisRow?.nome} ${novaReceitaPerfisRow?.sobrenome}',
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.roboto(
-                                                                                      fontWeight: FontWeight.bold,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                    ),
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                  ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 8.0)),
-                                                                    ),
-                                                                  ),
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
@@ -879,120 +868,141 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             0.0,
                                                                             0.0,
                                                                             16.0),
-                                                                    child: Row(
+                                                                    child: Flex(
+                                                                      direction: () {
+                                                                        if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointSmall) {
+                                                                          return false;
+                                                                        } else if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointMedium) {
+                                                                          return true;
+                                                                        } else if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointLarge) {
+                                                                          return true;
+                                                                        } else {
+                                                                          return true;
+                                                                        }
+                                                                      }()
+                                                                          ? Axis.horizontal
+                                                                          : Axis.vertical,
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
                                                                       crossAxisAlignment:
                                                                           CrossAxisAlignment
                                                                               .start,
-                                                                      children:
-                                                                          [
+                                                                      children: [
                                                                         Expanded(
                                                                           child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(),
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                16.0),
                                                                             child:
-                                                                                Column(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                                                              children: [
-                                                                                Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
-                                                                                  child: Text(
-                                                                                    'Porçoes',
-                                                                                    style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                          font: GoogleFonts.poppins(
+                                                                                Container(
+                                                                              decoration: BoxDecoration(),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+                                                                                    child: Text(
+                                                                                      'Porçoes',
+                                                                                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                                                                                            font: GoogleFonts.poppins(
+                                                                                              fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
+                                                                                              fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
+                                                                                            ),
+                                                                                            letterSpacing: 0.0,
                                                                                             fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                           ),
-                                                                                          letterSpacing: 0.0,
-                                                                                          fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
-                                                                                        ),
+                                                                                    ),
                                                                                   ),
-                                                                                ),
-                                                                                Container(
-                                                                                  width: double.infinity,
-                                                                                  decoration: BoxDecoration(),
-                                                                                  child: Container(
+                                                                                  Container(
                                                                                     width: double.infinity,
-                                                                                    child: TextFormField(
-                                                                                      controller: _model.porcoesReceitaTextController,
-                                                                                      focusNode: _model.porcoesReceitaFocusNode,
-                                                                                      autofocus: true,
-                                                                                      obscureText: false,
-                                                                                      decoration: InputDecoration(
-                                                                                        isDense: true,
-                                                                                        labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              font: GoogleFonts.poppins(
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Container(
+                                                                                      width: double.infinity,
+                                                                                      child: TextFormField(
+                                                                                        controller: _model.porcoesReceitaTextController,
+                                                                                        focusNode: _model.porcoesReceitaFocusNode,
+                                                                                        autofocus: true,
+                                                                                        obscureText: false,
+                                                                                        decoration: InputDecoration(
+                                                                                          isDense: true,
+                                                                                          labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                ),
+                                                                                                color: FlutterFlowTheme.of(context).primaryText,
+                                                                                                letterSpacing: 0.0,
                                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                                 fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                               ),
-                                                                                              color: FlutterFlowTheme.of(context).primaryText,
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                                                                                            ),
-                                                                                        alignLabelWithHint: false,
-                                                                                        hintText: 'ex. 8 fatias',
-                                                                                        hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                              font: GoogleFonts.poppins(
+                                                                                          alignLabelWithHint: false,
+                                                                                          hintText: 'ex. 8 fatias',
+                                                                                          hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                                font: GoogleFonts.poppins(
+                                                                                                  fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
+                                                                                                  fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                                ),
+                                                                                                letterSpacing: 0.0,
                                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                                 fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                               ),
-                                                                                              letterSpacing: 0.0,
-                                                                                              fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                                                                                              fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
+                                                                                          enabledBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                                              width: 1.0,
                                                                                             ),
-                                                                                        enabledBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).alternate,
-                                                                                            width: 1.0,
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                        focusedBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).primary,
-                                                                                            width: 1.0,
+                                                                                          focusedBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                                              width: 1.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                        errorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 1.0,
+                                                                                          errorBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              width: 1.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
-                                                                                        ),
-                                                                                        focusedErrorBorder: OutlineInputBorder(
-                                                                                          borderSide: BorderSide(
-                                                                                            color: FlutterFlowTheme.of(context).error,
-                                                                                            width: 1.0,
+                                                                                          focusedErrorBorder: OutlineInputBorder(
+                                                                                            borderSide: BorderSide(
+                                                                                              color: FlutterFlowTheme.of(context).error,
+                                                                                              width: 1.0,
+                                                                                            ),
+                                                                                            borderRadius: BorderRadius.circular(8.0),
                                                                                           ),
-                                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                                          filled: true,
+                                                                                          fillColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                          hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                         ),
-                                                                                        filled: true,
-                                                                                        fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                        hoverColor: FlutterFlowTheme.of(context).primaryBackground,
-                                                                                      ),
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            font: GoogleFonts.roboto(
+                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                              font: GoogleFonts.roboto(
+                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                              ),
+                                                                                              letterSpacing: 0.0,
                                                                                               fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                             ),
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                          ),
-                                                                                      cursorColor: FlutterFlowTheme.of(context).primaryText,
-                                                                                      validator: _model.porcoesReceitaTextControllerValidator.asValidator(context),
+                                                                                        cursorColor: FlutterFlowTheme.of(context).primaryText,
+                                                                                        validator: _model.porcoesReceitaTextControllerValidator.asValidator(context),
+                                                                                      ),
                                                                                     ),
                                                                                   ),
-                                                                                ),
-                                                                              ],
+                                                                                ],
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1101,9 +1111,98 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             ],
                                                                           ),
                                                                         ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 16.0)),
+                                                                      ].divide(() {
+                                                                        if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointSmall) {
+                                                                          return false;
+                                                                        } else if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointMedium) {
+                                                                          return true;
+                                                                        } else if (MediaQuery.sizeOf(context).width <
+                                                                            kBreakpointLarge) {
+                                                                          return true;
+                                                                        } else {
+                                                                          return true;
+                                                                        }
+                                                                      }()
+                                                                          ? SizedBox(width: () {
+                                                                              if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                                                                                return 0.0;
+                                                                              } else if (MediaQuery.sizeOf(context).width < kBreakpointMedium) {
+                                                                                return 16.0;
+                                                                              } else if (MediaQuery.sizeOf(context).width < kBreakpointLarge) {
+                                                                                return 16.0;
+                                                                              } else {
+                                                                                return 16.0;
+                                                                              }
+                                                                            }())
+                                                                          : SizedBox(height: () {
+                                                                              if (MediaQuery.sizeOf(context).width < kBreakpointSmall) {
+                                                                                return 0.0;
+                                                                              } else if (MediaQuery.sizeOf(context).width < kBreakpointMedium) {
+                                                                                return 16.0;
+                                                                              } else if (MediaQuery.sizeOf(context).width < kBreakpointLarge) {
+                                                                                return 16.0;
+                                                                              } else {
+                                                                                return 16.0;
+                                                                              }
+                                                                            }())),
                                                                     ),
+                                                                  ),
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Container(
+                                                                        width:
+                                                                            40.0,
+                                                                        height:
+                                                                            40.0,
+                                                                        clipBehavior:
+                                                                            Clip.antiAlias,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                        ),
+                                                                        child: Image
+                                                                            .network(
+                                                                          valueOrDefault<
+                                                                              String>(
+                                                                            novaReceitaPerfisRow?.avatarUrl,
+                                                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                                                          ),
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
+                                                                      Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Text(
+                                                                            '${novaReceitaPerfisRow?.nome} ${novaReceitaPerfisRow?.sobrenome}',
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  font: GoogleFonts.roboto(
+                                                                                    fontWeight: FontWeight.bold,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FontWeight.bold,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ].divide(SizedBox(
+                                                                        width:
+                                                                            8.0)),
                                                                   ),
                                                                 ].divide(SizedBox(
                                                                     height:
@@ -1112,18 +1211,63 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      ].divide(SizedBox(
-                                                          width: 24.0)),
+                                                      ].divide(() {
+                                                        if (MediaQuery.sizeOf(
+                                                                    context)
+                                                                .width <
+                                                            kBreakpointSmall) {
+                                                          return false;
+                                                        } else if (MediaQuery
+                                                                    .sizeOf(
+                                                                        context)
+                                                                .width <
+                                                            kBreakpointMedium) {
+                                                          return true;
+                                                        } else if (MediaQuery
+                                                                    .sizeOf(
+                                                                        context)
+                                                                .width <
+                                                            kBreakpointLarge) {
+                                                          return true;
+                                                        } else {
+                                                          return true;
+                                                        }
+                                                      }()
+                                                          ? SizedBox(
+                                                              width: 16.0)
+                                                          : SizedBox(
+                                                              height: 16.0)),
                                                     ),
                                                   ),
                                                 ),
                                                 Expanded(
-                                                  child: Row(
+                                                  child: Flex(
+                                                    direction: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return false;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return true;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return true;
+                                                      } else {
+                                                        return true;
+                                                      }
+                                                    }()
+                                                        ? Axis.horizontal
+                                                        : Axis.vertical,
                                                     mainAxisSize:
-                                                        MainAxisSize.min,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                        MainAxisSize.max,
                                                     children: [
                                                       Form(
                                                         key: _model.formKey2,
@@ -1131,7 +1275,36 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             AutovalidateMode
                                                                 .disabled,
                                                         child: Container(
-                                                          width: 320.0,
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  1.0,
+                                                          constraints:
+                                                              BoxConstraints(
+                                                            maxWidth: () {
+                                                              if (MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width <
+                                                                  kBreakpointSmall) {
+                                                                return 400.0;
+                                                              } else if (MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width <
+                                                                  kBreakpointMedium) {
+                                                                return 296.0;
+                                                              } else if (MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width <
+                                                                  kBreakpointLarge) {
+                                                                return 296.0;
+                                                              } else {
+                                                                return 296.0;
+                                                              }
+                                                            }(),
+                                                          ),
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -1694,8 +1867,31 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           ),
                                                         ),
                                                       ),
-                                                    ].divide(
-                                                        SizedBox(width: 16.0)),
+                                                    ].divide(() {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return false;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return true;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return true;
+                                                      } else {
+                                                        return true;
+                                                      }
+                                                    }()
+                                                        ? SizedBox(width: 16.0)
+                                                        : SizedBox(
+                                                            height: 16.0)),
                                                   ),
                                                 ),
                                               ]
@@ -1756,14 +1952,26 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               MainAxisAlignment
                                                                   .spaceBetween,
                                                           children: [
-                                                            Text(
-                                                              'Criar nova receita',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .titleLarge
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .poppins(
+                                                            if (responsiveVisibility(
+                                                              context: context,
+                                                              phone: false,
+                                                            ))
+                                                              Text(
+                                                                'Criar nova receita',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .poppins(
+                                                                        fontWeight:
+                                                                            FontWeight.bold,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .titleLarge
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -1772,93 +1980,87 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           .titleLarge
                                                                           .fontStyle,
                                                                     ),
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
+                                                              ),
                                                             Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .max,
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .center,
                                                               children: [
-                                                                FFButtonWidget(
-                                                                  onPressed:
-                                                                      () async {
-                                                                    Navigator.pop(
-                                                                        context);
-                                                                  },
-                                                                  text:
-                                                                      'Cancelar',
-                                                                  icon: FaIcon(
-                                                                    FontAwesomeIcons
-                                                                        .trashAlt,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    size: 15.0,
-                                                                  ),
-                                                                  options:
-                                                                      FFButtonOptions(
-                                                                    height:
-                                                                        36.0,
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            16.0,
-                                                                            0.0,
-                                                                            16.0,
-                                                                            0.0),
-                                                                    iconPadding:
-                                                                        EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    textStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          font:
-                                                                              GoogleFonts.roboto(
+                                                                if (responsiveVisibility(
+                                                                  context:
+                                                                      context,
+                                                                  phone: false,
+                                                                ))
+                                                                  FFButtonWidget(
+                                                                    onPressed:
+                                                                        () async {
+                                                                      Navigator.pop(
+                                                                          context);
+                                                                    },
+                                                                    text:
+                                                                        'Cancelar',
+                                                                    icon:
+                                                                        FaIcon(
+                                                                      FontAwesomeIcons
+                                                                          .trashAlt,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      size:
+                                                                          15.0,
+                                                                    ),
+                                                                    options:
+                                                                        FFButtonOptions(
+                                                                      height:
+                                                                          36.0,
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryBackground,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.roboto(
+                                                                              fontWeight: FontWeight.bold,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontStyle:
                                                                                 FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                           ),
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          letterSpacing:
-                                                                              0.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                          fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .fontStyle,
-                                                                        ),
-                                                                    elevation:
-                                                                        0.0,
-                                                                    borderSide:
-                                                                        BorderSide(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      width:
-                                                                          1.0,
+                                                                      elevation:
+                                                                          0.0,
+                                                                      borderSide:
+                                                                          BorderSide(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        width:
+                                                                            1.0,
+                                                                      ),
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
                                                                     ),
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            8.0),
                                                                   ),
-                                                                ),
                                                                 FFButtonWidget(
                                                                   onPressed:
                                                                       () async {
