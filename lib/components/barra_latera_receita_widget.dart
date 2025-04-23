@@ -3,7 +3,6 @@ import '/backend/supabase/supabase.dart';
 import '/components/login_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -11,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
 
@@ -59,12 +57,9 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
         if ((_model.curtidaLogado != null &&
                 (_model.curtidaLogado)!.isNotEmpty) ==
             true) {
-          FFAppState().isReceitaCurtida = true;
-          safeSetState(() {});
+          _model.receitaCurtida = !_model.receitaCurtida;
+          _model.updatePage(() {});
         }
-      } else {
-        FFAppState().isReceitaCurtida = false;
-        safeSetState(() {});
       }
     });
 
@@ -80,8 +75,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Container(
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
@@ -503,123 +496,92 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   borderRadius: BorderRadius.circular(40.0),
                                 ),
                                 child: Builder(
-                                  builder: (context) => ToggleIcon(
-                                    onPressed: () async {
-                                      safeSetState(() =>
-                                          FFAppState().isReceitaCurtida =
-                                              !FFAppState().isReceitaCurtida);
-                                      if (loggedIn) {
-                                        if (FFAppState().isReceitaCurtida) {
+                                  builder: (context) {
+                                    if (loggedIn && _model.receitaCurtida) {
+                                      return InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
                                           await actions.descurtirReceita(
                                             widget.informacoesReceita!.id!,
                                           );
-                                          FFAppState().isReceitaCurtida = false;
-                                          FFAppState().update(() {});
-                                        } else {
-                                          await actions.curtirReceita(
-                                            widget.informacoesReceita!.id!,
-                                          );
-                                          FFAppState().isReceitaCurtida = true;
-                                          FFAppState().update(() {});
-                                        }
-                                      } else {
-                                        await showDialog(
-                                          barrierColor: Color(0x80000000),
-                                          context: context,
-                                          builder: (dialogContext) {
-                                            return Dialog(
-                                              elevation: 0,
-                                              insetPadding: EdgeInsets.zero,
-                                              backgroundColor:
-                                                  Colors.transparent,
-                                              alignment:
-                                                  AlignmentDirectional(0.0, 0.0)
-                                                      .resolve(
-                                                          Directionality.of(
-                                                              context)),
-                                              child: Container(
-                                                width:
-                                                    MediaQuery.sizeOf(context)
-                                                            .width *
-                                                        0.9,
-                                                child: LoginWidget(
-                                                  redirecionar: () async {
-                                                    _model.curtidaNaoLogado =
-                                                        await CurtidasReceitasTable()
-                                                            .queryRows(
-                                                      queryFn: (q) => q
-                                                          .eqOrNull(
-                                                            'receita_id',
-                                                            widget
-                                                                .informacoesReceita
-                                                                ?.id,
-                                                          )
-                                                          .eqOrNull(
-                                                            'user_id',
-                                                            currentUserUid,
-                                                          ),
-                                                    );
-                                                    if ((_model.curtidaNaoLogado !=
-                                                                null &&
-                                                            (_model.curtidaNaoLogado)!
-                                                                .isNotEmpty) ==
-                                                        true) {
-                                                      await actions
-                                                          .descurtirReceita(
-                                                        widget
-                                                            .informacoesReceita!
-                                                            .id!,
-                                                      );
-                                                      FFAppState()
-                                                              .isReceitaCurtida =
-                                                          false;
-                                                      safeSetState(() {});
-                                                    } else {
-                                                      await actions
-                                                          .curtirReceita(
-                                                        widget
-                                                            .informacoesReceita!
-                                                            .id!,
-                                                      );
-                                                      FFAppState()
-                                                              .isReceitaCurtida =
-                                                          true;
-                                                      safeSetState(() {});
-                                                    }
-
-                                                    Navigator.pop(context);
-                                                  },
-                                                ),
-                                              ),
-                                            );
+                                          _model.receitaCurtida =
+                                              !_model.receitaCurtida;
+                                          _model.updatePage(() {});
+                                        },
+                                        child: Icon(
+                                          Icons.favorite,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 24.0,
+                                        ),
+                                      );
+                                    } else {
+                                      return Builder(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            if (loggedIn) {
+                                              await actions.curtirReceita(
+                                                widget.informacoesReceita!.id!,
+                                              );
+                                              _model.receitaCurtida =
+                                                  !_model.receitaCurtida;
+                                              _model.updatePage(() {});
+                                            } else {
+                                              await showDialog(
+                                                context: context,
+                                                builder: (dialogContext) {
+                                                  return Dialog(
+                                                    elevation: 0,
+                                                    insetPadding:
+                                                        EdgeInsets.zero,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                                0.0, 0.0)
+                                                            .resolve(
+                                                                Directionality.of(
+                                                                    context)),
+                                                    child: LoginWidget(
+                                                      redirecionar: () async {
+                                                        await actions
+                                                            .curtirReceita(
+                                                          widget
+                                                              .informacoesReceita!
+                                                              .id!,
+                                                        );
+                                                        _model.receitaCurtida =
+                                                            !_model
+                                                                .receitaCurtida;
+                                                        _model
+                                                            .updatePage(() {});
+                                                      },
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            }
                                           },
-                                        );
-                                      }
-
-                                      safeSetState(() {});
-                                    },
-                                    value: FFAppState().isReceitaCurtida,
-                                    onIcon: Icon(
-                                      Icons.favorite,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                    offIcon: Icon(
-                                      Icons.favorite_border,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 24.0,
-                                    ),
-                                  ),
+                                          child: Icon(
+                                            Icons.favorite_border,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            size: 24.0,
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                  },
                                 ),
                               ),
-                              Text(
-                                valueOrDefault<String>(
-                                  widget.informacoesReceita?.curtidas
-                                      ?.toString(),
-                                  '0',
-                                ),
+                              AnimatedDefaultTextStyle(
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
@@ -640,6 +602,15 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           .titleLarge
                                           .fontStyle,
                                     ),
+                                duration: Duration(milliseconds: 600),
+                                curve: Curves.easeIn,
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    widget.informacoesReceita?.curtidas
+                                        ?.toString(),
+                                    '0',
+                                  ),
+                                ),
                               ),
                             ].divide(SizedBox(width: 4.0)),
                           ),
