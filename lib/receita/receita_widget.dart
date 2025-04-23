@@ -147,7 +147,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               constraints: BoxConstraints(
-                                maxWidth: 1104.0,
+                                maxWidth: 1080.0,
                               ),
                               decoration: BoxDecoration(),
                               child: Column(
