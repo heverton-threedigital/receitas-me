@@ -10,6 +10,7 @@ import '/index.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_principal_model.dart';
@@ -97,7 +98,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -105,20 +107,20 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            if (loggedIn)
-                              FlutterFlowIconButton(
-                                borderRadius: 8.0,
-                                buttonSize: 48.0,
-                                fillColor: Color(0x1AD84012),
-                                icon: Icon(
-                                  Icons.menu_outlined,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 32.0,
-                                ),
-                                onPressed: () async {
-                                  await widget.drawer?.call();
-                                },
+                            FlutterFlowIconButton(
+                              borderRadius: 40.0,
+                              buttonSize: 40.0,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              icon: FaIcon(
+                                FontAwesomeIcons.bars,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
                               ),
+                              onPressed: () async {
+                                await widget.drawer?.call();
+                              },
+                            ),
                             InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -131,7 +133,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                 borderRadius: BorderRadius.circular(0.0),
                                 child: Image.asset(
                                   'assets/images/receitas.me.png',
-                                  width: 180.0,
+                                  height: 40.0,
                                   fit: BoxFit.contain,
                                 ),
                               ),

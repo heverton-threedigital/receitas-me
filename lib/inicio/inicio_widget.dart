@@ -6,6 +6,7 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
+import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -95,21 +96,22 @@ class _InicioWidgetState extends State<InicioWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
-                      child: wrapWithModel(
-                        model: _model.menuPrincipalModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: MenuPrincipalWidget(
-                          drawer: () async {
-                            scaffoldKey.currentState!.openDrawer();
-                          },
+                    StickyHeader(
+                      overlapHeaders: false,
+                      header: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                        child: wrapWithModel(
+                          model: _model.menuPrincipalModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: MenuPrincipalWidget(
+                            drawer: () async {
+                              scaffoldKey.currentState!.openDrawer();
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                    Flexible(
-                      child: Align(
+                      content: Align(
                         alignment: AlignmentDirectional(0.0, -1.0),
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.9,
@@ -119,7 +121,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                           decoration: BoxDecoration(),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 24.0, 0.0, 0.0),
+                                0.0, 32.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +135,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                        width: 350.0,
+                                        width: 344.0,
                                         decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -453,7 +455,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     valueOrDefault<String>(
                                                       rowCategoriasRow
                                                           .imagemUrl,
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/99evf32skkdm/icon_receitas.me.png',
+                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/xc0k5g3j3cgv/icon_receitas.me.png',
                                                     ),
                                                     fit: BoxFit.cover,
                                                   ),
