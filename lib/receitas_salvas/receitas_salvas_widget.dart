@@ -95,31 +95,13 @@ class _ReceitasSalvasWidgetState extends State<ReceitasSalvasWidget> {
                             Expanded(
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    valueOrDefault<double>(
-                                      () {
-                                        if (MediaQuery.sizeOf(context).width <
-                                            kBreakpointSmall) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointMedium) {
-                                          return 0.0;
-                                        } else if (MediaQuery.sizeOf(context)
-                                                .width <
-                                            kBreakpointLarge) {
-                                          return 24.0;
-                                        } else {
-                                          return 24.0;
-                                        }
-                                      }(),
-                                      0.0,
-                                    ),
-                                    0.0,
-                                    0.0,
-                                    0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [],
+                                    0.0, 16.0, 0.0, 0.0),
+                                child: Container(
+                                  height: 300.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
                                 ),
                               ),
                             ),

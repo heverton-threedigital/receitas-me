@@ -33,6 +33,9 @@ class ReceitasResumoRow extends SupabaseDataRow {
   DateTime? get criadoEm => getField<DateTime>('criado_em');
   set criadoEm(DateTime? value) => setField<DateTime>('criado_em', value);
 
+  String? get autorId => getField<String>('autor_id');
+  set autorId(String? value) => setField<String>('autor_id', value);
+
   String? get autorNome => getField<String>('autor_nome');
   set autorNome(String? value) => setField<String>('autor_nome', value);
 
