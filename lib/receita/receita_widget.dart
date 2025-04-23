@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/barra_latera_receita_widget.dart';
 import '/components/menu_principal_widget.dart';
@@ -10,6 +11,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'receita_model.dart';
 export 'receita_model.dart';
 
@@ -43,6 +45,23 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
       await actions.incrementarVisualizacao(
         widget.receitaid!,
       );
+      if (loggedIn) {
+        _model.curtida = await CurtidasReceitasTable().queryRows(
+          queryFn: (q) => q
+              .eqOrNull(
+                'receita_id',
+                widget.receitaid,
+              )
+              .eqOrNull(
+                'user_id',
+                currentUserUid,
+              ),
+        );
+        if (_model.curtida?.length == 1) {
+          FFAppState().isReceitaCurtida = true;
+          safeSetState(() {});
+        }
+      }
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -57,6 +76,8 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<ReceitasDetalhadasRow>>(
       future: ReceitasDetalhadasTable().querySingleRow(
         queryFn: (q) => q.eqOrNull(

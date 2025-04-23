@@ -11,8 +11,6 @@ class BarraLateraReceitaModel
 
   ///  State fields for stateful widgets in this component.
 
-  // Stores action output result for [Backend Call - Query Rows] action in BarraLateraReceita widget.
-  List<CurtidasReceitasRow>? curtida;
   // Stores action output result for [Backend Call - Query Rows] action in ToggleIcon widget.
   List<CurtidasReceitasRow>? curtidaNaoLogado;
 

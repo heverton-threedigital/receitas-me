@@ -153,6 +153,12 @@ class FFAppState extends ChangeNotifier {
     _corfirmarConta = value;
     prefs.setBool('ff_corfirmarConta', value);
   }
+
+  bool _isReceitaCurtida = false;
+  bool get isReceitaCurtida => _isReceitaCurtida;
+  set isReceitaCurtida(bool value) {
+    _isReceitaCurtida = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

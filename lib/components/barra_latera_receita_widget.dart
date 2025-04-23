@@ -8,9 +8,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'barra_latera_receita_model.dart';
 export 'barra_latera_receita_model.dart';
 
@@ -41,27 +41,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
     super.initState();
     _model = createModel(context, () => BarraLateraReceitaModel());
 
-    // On component load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (loggedIn) {
-        _model.curtida = await CurtidasReceitasTable().queryRows(
-          queryFn: (q) => q
-              .eqOrNull(
-                'receita_id',
-                widget.informacoesReceita?.id,
-              )
-              .eqOrNull(
-                'user_id',
-                currentUserUid,
-              ),
-        );
-        if (_model.curtida?.length == 1) {
-          _model.isRceitaCurtia = true;
-          _model.updatePage(() {});
-        }
-      }
-    });
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -74,6 +53,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Container(
       height: MediaQuery.sizeOf(context).height * 1.0,
       decoration: BoxDecoration(
@@ -533,17 +514,19 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                               _model.isRceitaCurtia =
                                                   !_model.isRceitaCurtia);
                                           if (loggedIn) {
-                                            if (_model.isRceitaCurtia) {
+                                            if (FFAppState().isReceitaCurtida) {
                                               await actions.descurtirReceita(
                                                 widget.informacoesReceita!.id!,
                                               );
-                                              _model.isRceitaCurtia = false;
+                                              FFAppState().isReceitaCurtida =
+                                                  false;
                                               safeSetState(() {});
                                             } else {
                                               await actions.curtirReceita(
                                                 widget.informacoesReceita!.id!,
                                               );
-                                              _model.isRceitaCurtia = true;
+                                              FFAppState().isReceitaCurtida =
+                                                  true;
                                               safeSetState(() {});
                                             }
                                           } else {
@@ -594,7 +577,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 .informacoesReceita!
                                                                 .id!,
                                                           );
-                                                          _model.isRceitaCurtia =
+                                                          FFAppState()
+                                                                  .isReceitaCurtida =
                                                               false;
                                                           safeSetState(() {});
                                                         } else {
@@ -604,7 +588,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 .informacoesReceita!
                                                                 .id!,
                                                           );
-                                                          _model.isRceitaCurtia =
+                                                          FFAppState()
+                                                                  .isReceitaCurtida =
                                                               true;
                                                           safeSetState(() {});
                                                         }
