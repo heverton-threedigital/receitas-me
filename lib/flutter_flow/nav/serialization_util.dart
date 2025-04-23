@@ -207,6 +207,8 @@ dynamic deserializeParam<T>(
         switch (T) {
           case ReceitasDetalhadasRow:
             return ReceitasDetalhadasRow(data);
+          case ReceitasResumoRow:
+            return ReceitasResumoRow(data);
           case ReceitasSalvasRow:
             return ReceitasSalvasRow(data);
           case ReceitasTagsRow:
@@ -225,8 +227,6 @@ dynamic deserializeParam<T>(
             return RespostaAvaliacaoRow(data);
           case TagsRow:
             return TagsRow(data);
-          case CurtidasReceitasRow:
-            return CurtidasReceitasRow(data);
           case AvaliacoesRow:
             return AvaliacoesRow(data);
           default:

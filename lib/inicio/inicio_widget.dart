@@ -301,18 +301,19 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 16.0, 0.0, 0.0),
                                             child: StreamBuilder<
-                                                List<ReceitasRow>>(
+                                                List<ReceitasResumoRow>>(
                                               stream: _model
                                                       .rowSupabaseStream2 ??=
                                                   SupaFlow.client
-                                                      .from("receitas")
+                                                      .from("receitas_resumo")
                                                       .stream(
                                                           primaryKey: ['id'])
                                                       .order('criado_em')
                                                       .limit(6)
                                                       .map((list) => list
                                                           .map((item) =>
-                                                              ReceitasRow(item))
+                                                              ReceitasResumoRow(
+                                                                  item))
                                                           .toList()),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -331,8 +332,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     ),
                                                   );
                                                 }
-                                                List<ReceitasRow>
-                                                    rowReceitasRowList =
+                                                List<ReceitasResumoRow>
+                                                    rowReceitasResumoRowList =
                                                     snapshot.data!;
 
                                                 return SingleChildScrollView(
@@ -342,11 +343,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: List.generate(
-                                                        rowReceitasRowList
+                                                        rowReceitasResumoRowList
                                                             .length,
                                                         (rowIndex) {
-                                                      final rowReceitasRow =
-                                                          rowReceitasRowList[
+                                                      final rowReceitasResumoRow =
+                                                          rowReceitasResumoRowList[
                                                               rowIndex];
                                                       return Padding(
                                                         padding:
@@ -412,7 +413,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             {
                                                                           'receitaid':
                                                                               serializeParam(
-                                                                            rowReceitasRow.id,
+                                                                            rowReceitasResumoRow.id,
                                                                             ParamType.String,
                                                                           ),
                                                                         }.withoutNulls,
@@ -427,7 +428,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                           child:
                                                                               Image.network(
                                                                             valueOrDefault<String>(
-                                                                              rowReceitasRow.imagemUrl,
+                                                                              rowReceitasResumoRow.imagemUrl,
                                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                                             ),
                                                                             width:
@@ -479,7 +480,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             child:
                                                                                 Text(
                                                                               valueOrDefault<String>(
-                                                                                rowReceitasRow.titulo,
+                                                                                rowReceitasResumoRow.titulo,
                                                                                 '-',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -503,57 +504,117 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 Container(
                                                                   decoration:
                                                                       BoxDecoration(),
-                                                                  child:
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            16.0,
+                                                                            0.0,
+                                                                            16.0,
+                                                                            8.0),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Icon(
+                                                                                  Icons.fastfood_outlined,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 18.0,
+                                                                                ),
+                                                                                Text(
+                                                                                  valueOrDefault<String>(
+                                                                                    rowReceitasResumoRow.porcoes,
+                                                                                    '-',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        font: GoogleFonts.roboto(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
+                                                                                ),
+                                                                              ].divide(SizedBox(width: 8.0)),
+                                                                            ),
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Icon(
+                                                                                  Icons.alarm,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 18.0,
+                                                                                ),
+                                                                                Text(
+                                                                                  '${rowReceitasResumoRow.tempoPreparo?.toString()} minutos',
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        font: GoogleFonts.roboto(
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        ),
+                                                                                        letterSpacing: 0.0,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                      ),
+                                                                                ),
+                                                                              ].divide(SizedBox(width: 8.0)),
+                                                                            ),
+                                                                          ].divide(SizedBox(width: 8.0)),
+                                                                        ),
+                                                                      ),
+                                                                      Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
                                                                             0.0,
                                                                             16.0,
                                                                             16.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children:
-                                                                          [
-                                                                        Container(
-                                                                          width:
-                                                                              24.0,
-                                                                          height:
-                                                                              24.0,
-                                                                          clipBehavior:
-                                                                              Clip.antiAlias,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            shape:
-                                                                                BoxShape.circle,
-                                                                          ),
-                                                                          child:
-                                                                              Image.network(
-                                                                            'https://picsum.photos/seed/747/600',
-                                                                            fit:
-                                                                                BoxFit.cover,
-                                                                          ),
-                                                                        ),
-                                                                        Text(
-                                                                          'Hello World',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                font: GoogleFonts.roboto(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
-                                                                                fontSize: 12.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children:
+                                                                              [
+                                                                            Container(
+                                                                              width: 24.0,
+                                                                              height: 24.0,
+                                                                              clipBehavior: Clip.antiAlias,
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.circle,
                                                                               ),
+                                                                              child: Image.network(
+                                                                                valueOrDefault<String>(
+                                                                                  rowReceitasResumoRow.autorAvatarUrl,
+                                                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                                                                ),
+                                                                                fit: BoxFit.cover,
+                                                                              ),
+                                                                            ),
+                                                                            Text(
+                                                                              '${rowReceitasResumoRow.autorNome}',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    font: GoogleFonts.roboto(
+                                                                                      fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                      fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                    ),
+                                                                                    fontSize: 12.0,
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                  ),
+                                                                            ),
+                                                                          ].divide(SizedBox(width: 4.0)),
                                                                         ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 4.0)),
-                                                                    ),
+                                                                      ),
+                                                                    ],
                                                                   ),
                                                                 ),
                                                               ].divide(SizedBox(

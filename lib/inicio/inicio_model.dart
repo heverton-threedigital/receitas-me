@@ -18,7 +18,7 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   // Model for MenuLateralE component.
   late MenuLateralEModel menuLateralEModel1;
   Stream<List<CategoriasRow>>? rowSupabaseStream1;
-  Stream<List<ReceitasRow>>? rowSupabaseStream2;
+  Stream<List<ReceitasResumoRow>>? rowSupabaseStream2;
   // Model for MenuLateralE component.
   late MenuLateralEModel menuLateralEModel2;
 
