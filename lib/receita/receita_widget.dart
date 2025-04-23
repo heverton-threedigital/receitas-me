@@ -520,7 +520,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                     size: 24.0,
                                                                                   ),
                                                                                   Text(
-                                                                                    '-',
+                                                                                    valueOrDefault<String>(
+                                                                                      receitaReceitasDetalhadasRow?.porcoes,
+                                                                                      '-',
+                                                                                    ),
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                           font: GoogleFonts.roboto(
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
