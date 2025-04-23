@@ -89,6 +89,7 @@ class _InicioWidgetState extends State<InicioWidget> {
             body: SafeArea(
               top: true,
               child: SingleChildScrollView(
+                primary: false,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -607,6 +608,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             snapshot.data!;
 
                                         return MasonryGridView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           gridDelegate:
                                               SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: 4,
@@ -1008,6 +1011,36 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         );
                                       },
                                     ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 16.0),
+                                  child: Text(
+                                    'Últimas receitas adicionadas',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          font: GoogleFonts.workSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleLarge
+                                                    .fontStyle,
+                                          ),
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .fontStyle,
+                                        ),
                                   ),
                                 ),
                               ],
