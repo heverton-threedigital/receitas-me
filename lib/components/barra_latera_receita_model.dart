@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 
 class BarraLateraReceitaModel
     extends FlutterFlowModel<BarraLateraReceitaWidget> {
-  ///  Local state fields for this component.
-
-  bool isRceitaCurtia = false;
-
   ///  State fields for stateful widgets in this component.
 
   // Stores action output result for [Backend Call - Query Rows] action in ToggleIcon widget.

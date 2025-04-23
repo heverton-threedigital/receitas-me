@@ -510,9 +510,9 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     child: Builder(
                                       builder: (context) => ToggleIcon(
                                         onPressed: () async {
-                                          safeSetState(() =>
-                                              _model.isRceitaCurtia =
-                                                  !_model.isRceitaCurtia);
+                                          safeSetState(() => FFAppState()
+                                                  .isReceitaCurtida =
+                                              !FFAppState().isReceitaCurtida);
                                           if (loggedIn) {
                                             if (FFAppState().isReceitaCurtida) {
                                               await actions.descurtirReceita(
@@ -520,14 +520,14 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                               );
                                               FFAppState().isReceitaCurtida =
                                                   false;
-                                              safeSetState(() {});
+                                              FFAppState().update(() {});
                                             } else {
                                               await actions.curtirReceita(
                                                 widget.informacoesReceita!.id!,
                                               );
                                               FFAppState().isReceitaCurtida =
                                                   true;
-                                              safeSetState(() {});
+                                              FFAppState().update(() {});
                                             }
                                           } else {
                                             await showDialog(
@@ -567,10 +567,11 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 currentUserUid,
                                                               ),
                                                         );
-                                                        if (_model
-                                                                .curtidaNaoLogado
-                                                                ?.length ==
-                                                            1) {
+                                                        if ((_model.curtidaNaoLogado !=
+                                                                    null &&
+                                                                (_model.curtidaNaoLogado)!
+                                                                    .isNotEmpty) ==
+                                                            true) {
                                                           await actions
                                                               .descurtirReceita(
                                                             widget
@@ -605,7 +606,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
                                           safeSetState(() {});
                                         },
-                                        value: _model.isRceitaCurtia,
+                                        value: FFAppState().isReceitaCurtida,
                                         onIcon: Icon(
                                           Icons.favorite,
                                           color: FlutterFlowTheme.of(context)

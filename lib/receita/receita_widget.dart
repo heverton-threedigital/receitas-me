@@ -5,6 +5,7 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
@@ -42,8 +43,12 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.incrementarVisualizacao(
-        widget.receitaid!,
+      unawaited(
+        () async {
+          await actions.incrementarVisualizacao(
+            widget.receitaid!,
+          );
+        }(),
       );
       if (loggedIn) {
         _model.curtida = await CurtidasReceitasTable().queryRows(
@@ -57,7 +62,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                 currentUserUid,
               ),
         );
-        if (_model.curtida?.length == 1) {
+        if ((_model.curtida != null && (_model.curtida)!.isNotEmpty) == true) {
           FFAppState().isReceitaCurtida = true;
           safeSetState(() {});
         }
