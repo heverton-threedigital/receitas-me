@@ -10,7 +10,6 @@ import '/index.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_principal_model.dart';
@@ -115,11 +114,11 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                 context.pushNamed(InicioWidget.routeName);
                               },
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8.0),
-                                child: SvgPicture.asset(
-                                  'assets/images/Receitas.me.svg',
-                                  width: 160.0,
-                                  fit: BoxFit.fitWidth,
+                                borderRadius: BorderRadius.circular(0.0),
+                                child: Image.asset(
+                                  'assets/images/receitas.me.png',
+                                  width: 180.0,
+                                  fit: BoxFit.contain,
                                 ),
                               ),
                             ),
