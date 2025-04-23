@@ -468,161 +468,124 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              FutureBuilder<List<CurtidasReceitasRow>>(
-                                future: CurtidasReceitasTable().queryRows(
-                                  queryFn: (q) => q
-                                      .eqOrNull(
-                                        'receita_id',
-                                        widget.informacoesReceita?.id,
-                                      )
-                                      .eqOrNull(
-                                        'user_id',
-                                        currentUserUid,
-                                      ),
-                                  limit: 1,
+                              Container(
+                                width: 40.0,
+                                height: 40.0,
+                                decoration: BoxDecoration(
+                                  color: Color(0x1AD84012),
+                                  borderRadius: BorderRadius.circular(40.0),
                                 ),
-                                builder: (context, snapshot) {
-                                  // Customize what your widget looks like when it's loading.
-                                  if (!snapshot.hasData) {
-                                    return Center(
-                                      child: SizedBox(
-                                        width: 50.0,
-                                        height: 50.0,
-                                        child: SpinKitPulse(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 50.0,
-                                        ),
-                                      ),
-                                    );
-                                  }
-                                  List<CurtidasReceitasRow>
-                                      containerCurtidasReceitasRowList =
-                                      snapshot.data!;
-
-                                  return Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: Color(0x1AD84012),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                    ),
-                                    child: Builder(
-                                      builder: (context) => ToggleIcon(
-                                        onPressed: () async {
-                                          safeSetState(() => FFAppState()
-                                                  .isReceitaCurtida =
+                                child: Builder(
+                                  builder: (context) => ToggleIcon(
+                                    onPressed: () async {
+                                      safeSetState(() =>
+                                          FFAppState().isReceitaCurtida =
                                               !FFAppState().isReceitaCurtida);
-                                          if (loggedIn) {
-                                            if (FFAppState().isReceitaCurtida) {
-                                              await actions.descurtirReceita(
-                                                widget.informacoesReceita!.id!,
-                                              );
-                                              FFAppState().isReceitaCurtida =
-                                                  false;
-                                              FFAppState().update(() {});
-                                            } else {
-                                              await actions.curtirReceita(
-                                                widget.informacoesReceita!.id!,
-                                              );
-                                              FFAppState().isReceitaCurtida =
-                                                  true;
-                                              FFAppState().update(() {});
-                                            }
-                                          } else {
-                                            await showDialog(
-                                              barrierColor: Color(0x80000000),
-                                              context: context,
-                                              builder: (dialogContext) {
-                                                return Dialog(
-                                                  elevation: 0,
-                                                  insetPadding: EdgeInsets.zero,
-                                                  backgroundColor:
-                                                      Colors.transparent,
-                                                  alignment:
-                                                      AlignmentDirectional(
-                                                              0.0, 0.0)
-                                                          .resolve(
-                                                              Directionality.of(
-                                                                  context)),
-                                                  child: Container(
-                                                    width: MediaQuery.sizeOf(
-                                                                context)
+                                      if (loggedIn) {
+                                        if (FFAppState().isReceitaCurtida) {
+                                          await actions.descurtirReceita(
+                                            widget.informacoesReceita!.id!,
+                                          );
+                                          FFAppState().isReceitaCurtida = false;
+                                          FFAppState().update(() {});
+                                        } else {
+                                          await actions.curtirReceita(
+                                            widget.informacoesReceita!.id!,
+                                          );
+                                          FFAppState().isReceitaCurtida = true;
+                                          FFAppState().update(() {});
+                                        }
+                                      } else {
+                                        await showDialog(
+                                          barrierColor: Color(0x80000000),
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              alignment:
+                                                  AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
                                                             .width *
                                                         0.9,
-                                                    child: LoginWidget(
-                                                      redirecionar: () async {
-                                                        _model.curtidaNaoLogado =
-                                                            await CurtidasReceitasTable()
-                                                                .queryRows(
-                                                          queryFn: (q) => q
-                                                              .eqOrNull(
-                                                                'receita_id',
-                                                                widget
-                                                                    .informacoesReceita
-                                                                    ?.id,
-                                                              )
-                                                              .eqOrNull(
-                                                                'user_id',
-                                                                currentUserUid,
-                                                              ),
-                                                        );
-                                                        if ((_model.curtidaNaoLogado !=
-                                                                    null &&
-                                                                (_model.curtidaNaoLogado)!
-                                                                    .isNotEmpty) ==
-                                                            true) {
-                                                          await actions
-                                                              .descurtirReceita(
+                                                child: LoginWidget(
+                                                  redirecionar: () async {
+                                                    _model.curtidaNaoLogado =
+                                                        await CurtidasReceitasTable()
+                                                            .queryRows(
+                                                      queryFn: (q) => q
+                                                          .eqOrNull(
+                                                            'receita_id',
                                                             widget
-                                                                .informacoesReceita!
-                                                                .id!,
-                                                          );
-                                                          FFAppState()
-                                                                  .isReceitaCurtida =
-                                                              false;
-                                                          safeSetState(() {});
-                                                        } else {
-                                                          await actions
-                                                              .curtirReceita(
-                                                            widget
-                                                                .informacoesReceita!
-                                                                .id!,
-                                                          );
-                                                          FFAppState()
-                                                                  .isReceitaCurtida =
-                                                              true;
-                                                          safeSetState(() {});
-                                                        }
+                                                                .informacoesReceita
+                                                                ?.id,
+                                                          )
+                                                          .eqOrNull(
+                                                            'user_id',
+                                                            currentUserUid,
+                                                          ),
+                                                    );
+                                                    if ((_model.curtidaNaoLogado !=
+                                                                null &&
+                                                            (_model.curtidaNaoLogado)!
+                                                                .isNotEmpty) ==
+                                                        true) {
+                                                      await actions
+                                                          .descurtirReceita(
+                                                        widget
+                                                            .informacoesReceita!
+                                                            .id!,
+                                                      );
+                                                      FFAppState()
+                                                              .isReceitaCurtida =
+                                                          false;
+                                                      safeSetState(() {});
+                                                    } else {
+                                                      await actions
+                                                          .curtirReceita(
+                                                        widget
+                                                            .informacoesReceita!
+                                                            .id!,
+                                                      );
+                                                      FFAppState()
+                                                              .isReceitaCurtida =
+                                                          true;
+                                                      safeSetState(() {});
+                                                    }
 
-                                                        Navigator.pop(context);
-                                                      },
-                                                    ),
-                                                  ),
-                                                );
-                                              },
+                                                    Navigator.pop(context);
+                                                  },
+                                                ),
+                                              ),
                                             );
-                                          }
+                                          },
+                                        );
+                                      }
 
-                                          safeSetState(() {});
-                                        },
-                                        value: FFAppState().isReceitaCurtida,
-                                        onIcon: Icon(
-                                          Icons.favorite,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 24.0,
-                                        ),
-                                        offIcon: Icon(
-                                          Icons.favorite_border,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 24.0,
-                                        ),
-                                      ),
+                                      safeSetState(() {});
+                                    },
+                                    value: FFAppState().isReceitaCurtida,
+                                    onIcon: Icon(
+                                      Icons.favorite,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 24.0,
                                     ),
-                                  );
-                                },
+                                    offIcon: Icon(
+                                      Icons.favorite_border,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 24.0,
+                                    ),
+                                  ),
+                                ),
                               ),
                               Text(
                                 valueOrDefault<String>(

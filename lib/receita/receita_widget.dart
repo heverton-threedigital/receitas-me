@@ -129,6 +129,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                 body: SafeArea(
                   top: true,
                   child: SingleChildScrollView(
+                    primary: false,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.start,
