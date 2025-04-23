@@ -315,7 +315,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 if (MediaQuery.sizeOf(context)
                                                         .width <
                                                     kBreakpointSmall) {
-                                                  return 16.0;
+                                                  return 24.0;
                                                 } else if (MediaQuery.sizeOf(
                                                             context)
                                                         .width <
@@ -338,22 +338,28 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         child: Text(
                                           'Últimas receitas adicionadas',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
+                                              .titleMedium
                                               .override(
-                                                font: GoogleFonts.roboto(
-                                                  fontWeight: FontWeight.bold,
+                                                font: GoogleFonts.poppins(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleMedium
+                                                          .fontWeight,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium
+                                                          .titleMedium
                                                           .fontStyle,
                                                 ),
-                                                fontSize: 20.0,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.bold,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleMedium
+                                                        .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .titleMedium
                                                         .fontStyle,
                                               ),
                                         ),
@@ -593,21 +599,21 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                 Icon(
                                                                                   Icons.fastfood_outlined,
                                                                                   color: FlutterFlowTheme.of(context).primary,
-                                                                                  size: 18.0,
+                                                                                  size: 16.0,
                                                                                 ),
                                                                                 Text(
                                                                                   valueOrDefault<String>(
                                                                                     rowReceitasResumoRow.porcoes,
                                                                                     '-',
                                                                                   ),
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                         font: GoogleFonts.roboto(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                         ),
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                       ),
                                                                                 ),
                                                                               ].divide(SizedBox(width: 8.0)),
@@ -618,18 +624,18 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                 Icon(
                                                                                   Icons.alarm,
                                                                                   color: FlutterFlowTheme.of(context).primary,
-                                                                                  size: 18.0,
+                                                                                  size: 16.0,
                                                                                 ),
                                                                                 Text(
-                                                                                  '${rowReceitasResumoRow.tempoPreparo?.toString()} minutos',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  '${rowReceitasResumoRow.tempoPreparo?.toString()} min',
+                                                                                  style: FlutterFlowTheme.of(context).bodySmall.override(
                                                                                         font: GoogleFonts.roboto(
-                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                         ),
                                                                                         letterSpacing: 0.0,
-                                                                                        fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                        fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                        fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                        fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                       ),
                                                                                 ),
                                                                               ].divide(SizedBox(width: 8.0)),
