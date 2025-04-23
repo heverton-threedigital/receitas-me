@@ -585,7 +585,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             child:
                                                                                 Builder(
                                                                               builder: (context) {
-                                                                                if (loggedIn && FFAppState().ReceitaSalva) {
+                                                                                if (FFAppState().ReceitaSalva == true) {
                                                                                   return Icon(
                                                                                     Icons.bookmark_outlined,
                                                                                     color: FlutterFlowTheme.of(context).primary,
