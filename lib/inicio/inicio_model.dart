@@ -4,6 +4,7 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
+import '/index.dart';
 import 'inicio_widget.dart' show InicioWidget;
 import 'package:flutter/material.dart';
 

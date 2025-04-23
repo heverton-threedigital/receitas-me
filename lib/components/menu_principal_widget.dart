@@ -105,6 +105,20 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            if (loggedIn)
+                              FlutterFlowIconButton(
+                                borderRadius: 8.0,
+                                buttonSize: 48.0,
+                                fillColor: Color(0x1AD84012),
+                                icon: Icon(
+                                  Icons.menu_outlined,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 32.0,
+                                ),
+                                onPressed: () async {
+                                  await widget.drawer?.call();
+                                },
+                              ),
                             InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
@@ -499,18 +513,6 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          FlutterFlowIconButton(
-                            borderRadius: 8.0,
-                            buttonSize: 40.0,
-                            icon: Icon(
-                              Icons.menu_rounded,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 24.0,
-                            ),
-                            onPressed: () async {
-                              await widget.drawer?.call();
-                            },
-                          ),
                           Expanded(
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(

@@ -5,6 +5,7 @@ import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -410,26 +411,54 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.network(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  staggeredViewReceitasResumoRow
-                                                                      .imagemUrl,
-                                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  ReceitaWidget
+                                                                      .routeName,
+                                                                  pathParameters:
+                                                                      {
+                                                                    'receitaid':
+                                                                        serializeParam(
+                                                                      staggeredViewReceitasResumoRow
+                                                                          .id,
+                                                                      ParamType
+                                                                          .String,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              },
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            16.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    staggeredViewReceitasResumoRow
+                                                                        .imagemUrl,
+                                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                                  ),
+                                                                  width: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width *
+                                                                      1.0,
+                                                                  height: 200.0,
+                                                                  fit: BoxFit
+                                                                      .cover,
                                                                 ),
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    1.0,
-                                                                height: 200.0,
-                                                                fit: BoxFit
-                                                                    .cover,
                                                               ),
                                                             ),
                                                             Align(
@@ -437,39 +466,66 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                   AlignmentDirectional(
                                                                       -1.0,
                                                                       1.0),
-                                                              child: Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  staggeredViewReceitasResumoRow
-                                                                      .titulo,
-                                                                  '-',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .workSans(
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    ReceitaWidget
+                                                                        .routeName,
+                                                                    pathParameters:
+                                                                        {
+                                                                      'receitaid':
+                                                                          serializeParam(
+                                                                        staggeredViewReceitasResumoRow
+                                                                            .id,
+                                                                        ParamType
+                                                                            .String,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                  );
+                                                                },
+                                                                child: Text(
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    staggeredViewReceitasResumoRow
+                                                                        .titulo,
+                                                                    '-',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        font: GoogleFonts
+                                                                            .workSans(
+                                                                          fontWeight: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontWeight,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .titleSmall
+                                                                              .fontStyle,
+                                                                        ),
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
                                                                             .titleSmall
                                                                             .fontStyle,
+                                                                        lineHeight:
+                                                                            1.3,
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
-                                                                      lineHeight:
-                                                                          1.3,
-                                                                    ),
+                                                                ),
                                                               ),
                                                             ),
                                                             Container(
