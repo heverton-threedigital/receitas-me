@@ -54,12 +54,20 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                 currentUserUid,
               ),
         );
-        if ((_model.curtidaLogado != null &&
-                (_model.curtidaLogado)!.isNotEmpty) ==
-            true) {
-          _model.receitaCurtida = !_model.receitaCurtida;
-          _model.updatePage(() {});
-        }
+        await showDialog(
+          context: context,
+          builder: (alertDialogContext) {
+            return AlertDialog(
+              content: Text(_model.curtidaLogado!.length.toString()),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(alertDialogContext),
+                  child: Text('Ok'),
+                ),
+              ],
+            );
+          },
+        );
       }
     });
 
