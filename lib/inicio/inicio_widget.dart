@@ -235,7 +235,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   font: GoogleFonts
-                                                                      .questrial(
+                                                                      .workSans(
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
@@ -342,7 +342,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleMedium
                                               .override(
-                                                font: GoogleFonts.questrial(
+                                                font: GoogleFonts.workSans(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -558,7 +558,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                 '-',
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.questrial(
+                                                                                    font: GoogleFonts.workSans(
                                                                                       fontWeight: FontWeight.bold,
                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                     ),
@@ -691,7 +691,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                     '-',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                        font: GoogleFonts.questrial(
+                                                                                        font: GoogleFonts.workSans(
                                                                                           fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                         ),
@@ -713,7 +713,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                 Text(
                                                                                   '${rowReceitasResumoRow.tempoPreparo?.toString()} min',
                                                                                   style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                        font: GoogleFonts.questrial(
+                                                                                        font: GoogleFonts.workSans(
                                                                                           fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                         ),
@@ -757,7 +757,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                             Text(
                                                                               '${rowReceitasResumoRow.autorNome}',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    font: GoogleFonts.questrial(
+                                                                                    font: GoogleFonts.workSans(
                                                                                       fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                       fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                     ),

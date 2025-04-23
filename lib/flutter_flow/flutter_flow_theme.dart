@@ -159,92 +159,92 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Questrial';
-  TextStyle get displayLarge => GoogleFonts.questrial(
+  String get displayLargeFamily => 'Work Sans';
+  TextStyle get displayLarge => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Questrial';
-  TextStyle get displayMedium => GoogleFonts.questrial(
+  String get displayMediumFamily => 'Work Sans';
+  TextStyle get displayMedium => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Questrial';
-  TextStyle get displaySmall => GoogleFonts.questrial(
+  String get displaySmallFamily => 'Work Sans';
+  TextStyle get displaySmall => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Questrial';
-  TextStyle get headlineLarge => GoogleFonts.questrial(
+  String get headlineLargeFamily => 'Work Sans';
+  TextStyle get headlineLarge => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Questrial';
-  TextStyle get headlineMedium => GoogleFonts.questrial(
+  String get headlineMediumFamily => 'Work Sans';
+  TextStyle get headlineMedium => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         fontSize: 24.0,
       );
-  String get headlineSmallFamily => 'Questrial';
-  TextStyle get headlineSmall => GoogleFonts.questrial(
+  String get headlineSmallFamily => 'Work Sans';
+  TextStyle get headlineSmall => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         fontSize: 16.0,
       );
-  String get titleLargeFamily => 'Questrial';
-  TextStyle get titleLarge => GoogleFonts.questrial(
+  String get titleLargeFamily => 'Work Sans';
+  TextStyle get titleLarge => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.bold,
         fontSize: 32.0,
       );
-  String get titleMediumFamily => 'Questrial';
-  TextStyle get titleMedium => GoogleFonts.questrial(
+  String get titleMediumFamily => 'Work Sans';
+  TextStyle get titleMedium => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.bold,
         fontSize: 24.0,
       );
-  String get titleSmallFamily => 'Questrial';
-  TextStyle get titleSmall => GoogleFonts.questrial(
+  String get titleSmallFamily => 'Work Sans';
+  TextStyle get titleSmall => GoogleFonts.workSans(
         color: theme.primaryText,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.bold,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Questrial';
-  TextStyle get labelLarge => GoogleFonts.questrial(
+  String get labelLargeFamily => 'Work Sans';
+  TextStyle get labelLarge => GoogleFonts.workSans(
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Questrial';
-  TextStyle get labelMedium => GoogleFonts.questrial(
+  String get labelMediumFamily => 'Work Sans';
+  TextStyle get labelMedium => GoogleFonts.workSans(
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Questrial';
-  TextStyle get labelSmall => GoogleFonts.questrial(
+  String get labelSmallFamily => 'Work Sans';
+  TextStyle get labelSmall => GoogleFonts.workSans(
         color: theme.secondaryText,
-        fontWeight: FontWeight.normal,
+        fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Questrial';
-  TextStyle get bodyLarge => GoogleFonts.questrial(
+  String get bodyLargeFamily => 'Work Sans';
+  TextStyle get bodyLarge => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Questrial';
-  TextStyle get bodyMedium => GoogleFonts.questrial(
+  String get bodyMediumFamily => 'Work Sans';
+  TextStyle get bodyMedium => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Questrial';
-  TextStyle get bodySmall => GoogleFonts.questrial(
+  String get bodySmallFamily => 'Work Sans';
+  TextStyle get bodySmall => GoogleFonts.workSans(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

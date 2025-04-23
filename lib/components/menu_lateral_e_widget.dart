@@ -182,7 +182,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: GoogleFonts.questrial(
+                                                  font: GoogleFonts.workSans(
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
@@ -300,7 +300,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: GoogleFonts.questrial(
+                                                  font: GoogleFonts.workSans(
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
@@ -425,7 +425,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font: GoogleFonts.questrial(
+                                                    font: GoogleFonts.workSans(
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontStyle:
@@ -546,7 +546,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleSmall
                                                 .override(
-                                                  font: GoogleFonts.questrial(
+                                                  font: GoogleFonts.workSans(
                                                     fontWeight: FontWeight.w500,
                                                     fontStyle:
                                                         FlutterFlowTheme.of(
@@ -669,7 +669,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                                                       context)
                                                   .titleSmall
                                                   .override(
-                                                    font: GoogleFonts.questrial(
+                                                    font: GoogleFonts.workSans(
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontStyle:

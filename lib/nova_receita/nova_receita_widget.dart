@@ -364,7 +364,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FontWeight.bold,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
@@ -378,7 +378,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
@@ -521,7 +521,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             isDense:
                                                                                 false,
                                                                             labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                   ),
@@ -535,7 +535,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             hintText:
                                                                                 'Título da receita: Bolo de Cenoura',
                                                                             hintStyle: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                   ),
@@ -590,7 +590,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .headlineMedium
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                 ),
@@ -640,7 +640,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             isDense:
                                                                                 true,
                                                                             labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                   ),
@@ -655,7 +655,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             hintText:
                                                                                 'Descrição: Fale um pouco sobre sua receita. Como você aprendeu, qual foi a inspiração, detalhes extras sobre os ingredientes',
                                                                             hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                   ),
@@ -706,7 +706,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
@@ -742,7 +742,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           .titleMedium
                                                                           .override(
                                                                             font:
-                                                                                GoogleFonts.questrial(
+                                                                                GoogleFonts.workSans(
                                                                               fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                             ),
@@ -816,7 +816,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                 ),
@@ -912,7 +912,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                     child: Text(
                                                                                       'Porçoes',
                                                                                       style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                            font: GoogleFonts.questrial(
+                                                                                            font: GoogleFonts.workSans(
                                                                                               fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                             ),
@@ -935,7 +935,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                         decoration: InputDecoration(
                                                                                           isDense: true,
                                                                                           labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                font: GoogleFonts.questrial(
+                                                                                                font: GoogleFonts.workSans(
                                                                                                   fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                                 ),
@@ -947,7 +947,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                           alignLabelWithHint: false,
                                                                                           hintText: 'ex. 8 fatias',
                                                                                           hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                                font: GoogleFonts.questrial(
+                                                                                                font: GoogleFonts.workSans(
                                                                                                   fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                                 ),
@@ -988,7 +988,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                           hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                         ),
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              font: GoogleFonts.questrial(
+                                                                                              font: GoogleFonts.workSans(
                                                                                                 fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                                 fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                               ),
@@ -1019,7 +1019,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 child: Text(
                                                                                   'Tempo de preparo',
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: GoogleFonts.questrial(
+                                                                                        font: GoogleFonts.workSans(
                                                                                           fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                         ),
@@ -1042,7 +1042,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                     decoration: InputDecoration(
                                                                                       isDense: true,
                                                                                       labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            font: GoogleFonts.questrial(
+                                                                                            font: GoogleFonts.workSans(
                                                                                               fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                             ),
@@ -1054,7 +1054,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                       alignLabelWithHint: false,
                                                                                       hintText: 'ex. 45',
                                                                                       hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            font: GoogleFonts.questrial(
+                                                                                            font: GoogleFonts.workSans(
                                                                                               fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                             ),
@@ -1095,7 +1095,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                       hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.questrial(
+                                                                                          font: GoogleFonts.workSans(
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                           ),
@@ -1189,7 +1189,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           Text(
                                                                             '${novaReceitaPerfisRow?.nome} ${novaReceitaPerfisRow?.sobrenome}',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FontWeight.bold,
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),
@@ -1339,7 +1339,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .titleLarge
                                                                       .override(
                                                                         font: GoogleFonts
-                                                                            .questrial(
+                                                                            .workSans(
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .titleLarge
                                                                               .fontWeight,
@@ -1447,7 +1447,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 InputDecoration(
                                                                               isDense: true,
                                                                               labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: GoogleFonts.questrial(
+                                                                                    font: GoogleFonts.workSans(
                                                                                       fontWeight: FontWeight.w500,
                                                                                       fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                     ),
@@ -1459,7 +1459,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               alignLabelWithHint: false,
                                                                               hintText: '250g de farinha de trigo',
                                                                               hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                    font: GoogleFonts.questrial(
+                                                                                    font: GoogleFonts.workSans(
                                                                                       fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                       fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                     ),
@@ -1500,7 +1500,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),
@@ -1557,7 +1557,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           textStyle: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .override(
-                                                                                font: GoogleFonts.questrial(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                 ),
@@ -1634,7 +1634,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .titleLarge
                                                                         .override(
                                                                           font:
-                                                                              GoogleFonts.questrial(
+                                                                              GoogleFonts.workSans(
                                                                             fontWeight:
                                                                                 FlutterFlowTheme.of(context).titleLarge.fontWeight,
                                                                             fontStyle:
@@ -1723,7 +1723,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   child: Text(
                                                                                     FFAppState().passoAtual.toString(),
                                                                                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                          font: GoogleFonts.questrial(
+                                                                                          font: GoogleFonts.workSans(
                                                                                             fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                           ),
@@ -1760,7 +1760,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                       alignLabelWithHint: false,
                                                                                       hintText: 'Misture a farinha com...',
                                                                                       hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                                                                                            font: GoogleFonts.questrial(
+                                                                                            font: GoogleFonts.workSans(
                                                                                               fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                                             ),
@@ -1799,7 +1799,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                       hoverColor: FlutterFlowTheme.of(context).primaryBackground,
                                                                                     ),
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          font: GoogleFonts.questrial(
+                                                                                          font: GoogleFonts.workSans(
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                           ),
@@ -1834,7 +1834,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                   iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                        font: GoogleFonts.questrial(
+                                                                                        font: GoogleFonts.workSans(
                                                                                           fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                         ),
@@ -1963,7 +1963,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     .titleLarge
                                                                     .override(
                                                                       font: GoogleFonts
-                                                                          .questrial(
+                                                                          .workSans(
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                         fontStyle: FlutterFlowTheme.of(context)
@@ -2034,7 +2034,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             font:
-                                                                                GoogleFonts.questrial(
+                                                                                GoogleFonts.workSans(
                                                                               fontWeight: FontWeight.bold,
                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                             ),
@@ -2266,7 +2266,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           font:
-                                                                              GoogleFonts.questrial(
+                                                                              GoogleFonts.workSans(
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontStyle:
@@ -2516,7 +2516,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           font:
-                                                                              GoogleFonts.questrial(
+                                                                              GoogleFonts.workSans(
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontStyle:

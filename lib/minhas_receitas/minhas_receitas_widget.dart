@@ -114,7 +114,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.questrial(
+                                              font: GoogleFonts.workSans(
                                                 fontWeight: FontWeight.bold,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
@@ -353,7 +353,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.questrial(
+                                                                                  font: GoogleFonts.workSans(
                                                                                     fontWeight: FontWeight.bold,
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),
@@ -407,7 +407,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                                   '-',
                                                                                 )}',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      font: GoogleFonts.questrial(
+                                                                                      font: GoogleFonts.workSans(
                                                                                         fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                         fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                       ),
@@ -438,7 +438,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: GoogleFonts.questrial(
+                                                                                    font: GoogleFonts.workSans(
                                                                                       fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                       fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                     ),
