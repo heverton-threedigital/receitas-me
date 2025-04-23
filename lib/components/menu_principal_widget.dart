@@ -293,23 +293,23 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         );
                                       }
                                     },
-                                    text: 'Criar',
+                                    text: 'Criar receita',
                                     icon: Icon(
-                                      Icons.add_rounded,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      size: 15.0,
+                                      Icons.open_in_new_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 18.0,
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 16.0, 0.0),
-                                      iconAlignment: IconAlignment.start,
+                                      iconAlignment: IconAlignment.end,
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
@@ -323,7 +323,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                       .titleSmall
                                                       .fontStyle,
                                             ),
-                                            color: Colors.white,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
                                             letterSpacing: 0.0,
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
@@ -336,6 +337,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                           ),
                                       elevation: 0.0,
                                       borderRadius: BorderRadius.circular(8.0),
+                                      hoverBorderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                      ),
+                                      hoverTextColor:
+                                          FlutterFlowTheme.of(context).primary,
                                     ),
                                     showLoadingIndicator: false,
                                   ),
