@@ -47,4 +47,7 @@ class ReceitasRow extends SupabaseDataRow {
 
   int? get visualizacoes => getField<int>('visualizacoes');
   set visualizacoes(int? value) => setField<int>('visualizacoes', value);
+
+  String? get porcoes => getField<String>('porcoes');
+  set porcoes(String? value) => setField<String>('porcoes', value);
 }

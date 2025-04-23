@@ -28,6 +28,9 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   int? get tempoPreparo => getField<int>('tempo_preparo');
   set tempoPreparo(int? value) => setField<int>('tempo_preparo', value);
 
+  String? get porcoes => getField<String>('porcoes');
+  set porcoes(String? value) => setField<String>('porcoes', value);
+
   String? get imagemUrl => getField<String>('imagem_url');
   set imagemUrl(String? value) => setField<String>('imagem_url', value);
 
@@ -54,9 +57,6 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
 
   String? get categoriaNome => getField<String>('categoria_nome');
   set categoriaNome(String? value) => setField<String>('categoria_nome', value);
-
-  int? get curtidas => getField<int>('curtidas');
-  set curtidas(int? value) => setField<int>('curtidas', value);
 
   dynamic get ingredientes => getField<dynamic>('ingredientes');
   set ingredientes(dynamic value) => setField<dynamic>('ingredientes', value);

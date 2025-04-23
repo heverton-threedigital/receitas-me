@@ -23,9 +23,6 @@ class AvaliacoesRow extends SupabaseDataRow {
   String? get receitaId => getField<String>('receita_id');
   set receitaId(String? value) => setField<String>('receita_id', value);
 
-  int get valor => getField<int>('valor')!;
-  set valor(int value) => setField<int>('valor', value);
-
   DateTime? get criadoEm => getField<DateTime>('criado_em');
   set criadoEm(DateTime? value) => setField<DateTime>('criado_em', value);
 
