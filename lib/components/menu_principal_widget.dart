@@ -89,7 +89,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 0.9,
               constraints: BoxConstraints(
-                maxWidth: 1080.0,
+                maxWidth: 1120.0,
               ),
               decoration: BoxDecoration(),
               child: Column(
@@ -249,91 +249,6 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            if (!loggedIn)
-                              Builder(
-                                builder: (context) => Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 0.0, 0.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      await showDialog(
-                                        barrierColor: Color(0xCC000000),
-                                        context: context,
-                                        builder: (dialogContext) {
-                                          return Dialog(
-                                            elevation: 0,
-                                            insetPadding: EdgeInsets.zero,
-                                            backgroundColor: Colors.transparent,
-                                            alignment: AlignmentDirectional(
-                                                    0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                            child: Container(
-                                              width: 380.0,
-                                              child: LoginWidget(
-                                                redirecionar: () async {
-                                                  context.goNamed(
-                                                      InicioWidget.routeName);
-                                                },
-                                              ),
-                                            ),
-                                          );
-                                        },
-                                      );
-                                    },
-                                    text: 'Login',
-                                    icon: Icon(
-                                      Icons.login_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: GoogleFonts.workSans(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
-                                          ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    showLoadingIndicator: false,
-                                  ),
-                                ),
-                              ),
                             if (responsiveVisibility(
                               context: context,
                               phone: false,
@@ -420,6 +335,91 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                     .fontStyle,
                                           ),
                                       elevation: 0.0,
+                                      borderRadius: BorderRadius.circular(8.0),
+                                    ),
+                                    showLoadingIndicator: false,
+                                  ),
+                                ),
+                              ),
+                            if (!loggedIn)
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      await showDialog(
+                                        barrierColor: Color(0xCC000000),
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: AlignmentDirectional(
+                                                    0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                            child: Container(
+                                              width: 380.0,
+                                              child: LoginWidget(
+                                                redirecionar: () async {
+                                                  context.goNamed(
+                                                      InicioWidget.routeName);
+                                                },
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                      );
+                                    },
+                                    text: 'Login',
+                                    icon: Icon(
+                                      Icons.login_rounded,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      height: 40.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryBackground,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            font: GoogleFonts.workSans(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .fontStyle,
+                                            ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall
+                                                    .fontStyle,
+                                          ),
+                                      elevation: 0.0,
+                                      borderSide: BorderSide(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        width: 1.0,
+                                      ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     showLoadingIndicator: false,

@@ -4,7 +4,6 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/request_manager.dart';
 
-import '/index.dart';
 import 'inicio_widget.dart' show InicioWidget;
 import 'package:flutter/material.dart';
 
@@ -15,12 +14,10 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   List<CategoriasRow>? categoriasQuery;
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
+  Stream<List<CategoriasRow>>? rowSupabaseStream;
+  Stream<List<ReceitasResumoRow>>? staggeredViewSupabaseStream;
   // Model for MenuLateralE component.
-  late MenuLateralEModel menuLateralEModel1;
-  Stream<List<CategoriasRow>>? rowSupabaseStream1;
-  Stream<List<ReceitasResumoRow>>? rowSupabaseStream2;
-  // Model for MenuLateralE component.
-  late MenuLateralEModel menuLateralEModel2;
+  late MenuLateralEModel menuLateralEModel;
 
   /// Query cache managers for this widget.
 
@@ -42,15 +39,13 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
-    menuLateralEModel1 = createModel(context, () => MenuLateralEModel());
-    menuLateralEModel2 = createModel(context, () => MenuLateralEModel());
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    menuLateralEModel1.dispose();
-    menuLateralEModel2.dispose();
+    menuLateralEModel.dispose();
 
     /// Dispose query cache managers for this widget.
 
