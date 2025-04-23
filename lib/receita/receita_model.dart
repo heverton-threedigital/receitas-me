@@ -9,6 +9,10 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
 
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
+  // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
+  TextEditingController? textController;
+  String? Function(BuildContext, String?)? textControllerValidator;
   // Model for BarraLateraReceita component.
   late BarraLateraReceitaModel barraLateraReceitaModel;
 
@@ -22,6 +26,9 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
   @override
   void dispose() {
     menuPrincipalModel.dispose();
+    textFieldFocusNode?.dispose();
+    textController?.dispose();
+
     barraLateraReceitaModel.dispose();
   }
 }

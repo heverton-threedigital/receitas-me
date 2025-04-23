@@ -153,6 +153,12 @@ class FFAppState extends ChangeNotifier {
     _corfirmarConta = value;
     prefs.setBool('ff_corfirmarConta', value);
   }
+
+  bool _ReceitaSalva = false;
+  bool get ReceitaSalva => _ReceitaSalva;
+  set ReceitaSalva(bool value) {
+    _ReceitaSalva = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

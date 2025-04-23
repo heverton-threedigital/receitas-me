@@ -1,4 +1,6 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/login_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -566,6 +568,88 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                     lineHeight: 1.3,
                                                                                   ),
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                        Align(
+                                                                          alignment: AlignmentDirectional(
+                                                                              1.0,
+                                                                              -1.0),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                16.0,
+                                                                                16.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Builder(
+                                                                              builder: (context) {
+                                                                                if (loggedIn && FFAppState().ReceitaSalva) {
+                                                                                  return Icon(
+                                                                                    Icons.bookmark_outlined,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    size: 30.0,
+                                                                                  );
+                                                                                } else {
+                                                                                  return Builder(
+                                                                                    builder: (context) => InkWell(
+                                                                                      splashColor: Colors.transparent,
+                                                                                      focusColor: Colors.transparent,
+                                                                                      hoverColor: Colors.transparent,
+                                                                                      highlightColor: Colors.transparent,
+                                                                                      onTap: () async {
+                                                                                        if (loggedIn) {
+                                                                                          await ReceitasSalvasTable().insert({
+                                                                                            'usuario_id': currentUserUid,
+                                                                                            'receita_id': rowReceitasResumoRow.id,
+                                                                                          });
+                                                                                          FFAppState().ReceitaSalva = true;
+                                                                                          safeSetState(() {});
+                                                                                        } else {
+                                                                                          await showDialog(
+                                                                                            barrierColor: Color(0x80000000),
+                                                                                            context: context,
+                                                                                            builder: (dialogContext) {
+                                                                                              return Dialog(
+                                                                                                elevation: 0,
+                                                                                                insetPadding: EdgeInsets.zero,
+                                                                                                backgroundColor: Colors.transparent,
+                                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                                child: GestureDetector(
+                                                                                                  onTap: () {
+                                                                                                    FocusScope.of(dialogContext).unfocus();
+                                                                                                    FocusManager.instance.primaryFocus?.unfocus();
+                                                                                                  },
+                                                                                                  child: Container(
+                                                                                                    width: MediaQuery.sizeOf(context).width * 0.9,
+                                                                                                    child: LoginWidget(
+                                                                                                      redirecionar: () async {
+                                                                                                        await ReceitasSalvasTable().insert({
+                                                                                                          'usuario_id': currentUserUid,
+                                                                                                          'receita_id': rowReceitasResumoRow.id,
+                                                                                                        });
+                                                                                                        FFAppState().ReceitaSalva = true;
+                                                                                                        safeSetState(() {});
+                                                                                                        Navigator.pop(context);
+                                                                                                      },
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ),
+                                                                                              );
+                                                                                            },
+                                                                                          );
+                                                                                        }
+                                                                                      },
+                                                                                      child: Icon(
+                                                                                        Icons.bookmark_border,
+                                                                                        color: FlutterFlowTheme.of(context).primary,
+                                                                                        size: 30.0,
+                                                                                      ),
+                                                                                    ),
+                                                                                  );
+                                                                                }
+                                                                              },
                                                                             ),
                                                                           ),
                                                                         ),
