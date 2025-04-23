@@ -166,18 +166,65 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 24.0, 0.0, 16.0),
-                                              child: Row(
+                                              child: Flex(
+                                                direction: () {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return true;
+                                                  } else {
+                                                    return true;
+                                                  }
+                                                }()
+                                                    ? Axis.horizontal
+                                                    : Axis.vertical,
                                                 mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   ClipRRect(
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             24.0),
                                                     child: Container(
-                                                      width: 288.0,
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
                                                       height: 342.0,
+                                                      constraints:
+                                                          BoxConstraints(
+                                                        maxWidth: () {
+                                                          if (MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width <
+                                                              kBreakpointSmall) {
+                                                            return 400.0;
+                                                          } else if (MediaQuery
+                                                                      .sizeOf(
+                                                                          context)
+                                                                  .width <
+                                                              kBreakpointMedium) {
+                                                            return 296.0;
+                                                          } else if (MediaQuery
+                                                                      .sizeOf(
+                                                                          context)
+                                                                  .width <
+                                                              kBreakpointLarge) {
+                                                            return 296.0;
+                                                          } else {
+                                                            return 296.0;
+                                                          }
+                                                        }(),
+                                                      ),
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -605,7 +652,27 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 24.0)),
+                                                ].divide(() {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return true;
+                                                  } else {
+                                                    return true;
+                                                  }
+                                                }()
+                                                    ? SizedBox(width: 16.0)
+                                                    : SizedBox(height: 16.0)),
                                               ),
                                             ),
                                             Divider(
@@ -616,10 +683,29 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                       .alternate,
                                             ),
                                             Expanded(
-                                              child: Row(
+                                              child: Flex(
+                                                direction: () {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return true;
+                                                  } else {
+                                                    return true;
+                                                  }
+                                                }()
+                                                    ? Axis.horizontal
+                                                    : Axis.vertical,
                                                 mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Padding(
                                                     padding:
@@ -627,7 +713,35 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 16.0),
                                                     child: Container(
-                                                      width: 288.0,
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      constraints:
+                                                          BoxConstraints(
+                                                        maxWidth: () {
+                                                          if (MediaQuery.sizeOf(
+                                                                      context)
+                                                                  .width <
+                                                              kBreakpointSmall) {
+                                                            return 400.0;
+                                                          } else if (MediaQuery
+                                                                      .sizeOf(
+                                                                          context)
+                                                                  .width <
+                                                              kBreakpointMedium) {
+                                                            return 296.0;
+                                                          } else if (MediaQuery
+                                                                      .sizeOf(
+                                                                          context)
+                                                                  .width <
+                                                              kBreakpointLarge) {
+                                                            return 296.0;
+                                                          } else {
+                                                            return 296.0;
+                                                          }
+                                                        }(),
+                                                      ),
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -935,25 +1049,53 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 24.0)),
+                                                ].divide(() {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return false;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return true;
+                                                  } else {
+                                                    return true;
+                                                  }
+                                                }()
+                                                    ? SizedBox(width: 16.0)
+                                                    : SizedBox(height: 16.0)),
                                               ),
                                             ),
                                           ],
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 0.0, 0.0),
-                                        child: wrapWithModel(
-                                          model: _model.barraLateraReceitaModel,
-                                          updateCallback: () =>
-                                              safeSetState(() {}),
-                                          child: BarraLateraReceitaWidget(
-                                            informacoesReceita:
-                                                receitaReceitasDetalhadasRow!,
+                                      if (responsiveVisibility(
+                                        context: context,
+                                        phone: false,
+                                        tablet: false,
+                                        tabletLandscape: false,
+                                      ))
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  24.0, 0.0, 0.0, 0.0),
+                                          child: wrapWithModel(
+                                            model:
+                                                _model.barraLateraReceitaModel,
+                                            updateCallback: () =>
+                                                safeSetState(() {}),
+                                            child: BarraLateraReceitaWidget(
+                                              informacoesReceita:
+                                                  receitaReceitasDetalhadasRow!,
+                                            ),
                                           ),
                                         ),
-                                      ),
                                     ],
                                   ),
                                 ].addToEnd(SizedBox(height: 40.0)),
