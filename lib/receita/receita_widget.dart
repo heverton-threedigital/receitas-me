@@ -366,7 +366,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                     .headlineMedium
                                                                     .override(
                                                                       font: GoogleFonts
-                                                                          .poppins(
+                                                                          .questrial(
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .headlineMedium
                                                                             .fontWeight,
@@ -409,7 +409,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                     .bodyLarge
                                                                     .override(
                                                                       font: GoogleFonts
-                                                                          .roboto(
+                                                                          .questrial(
                                                                         fontWeight: FlutterFlowTheme.of(context)
                                                                             .bodyLarge
                                                                             .fontWeight,
@@ -471,7 +471,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         .bodyMedium
                                                                         .override(
                                                                           font:
-                                                                              GoogleFonts.roboto(
+                                                                              GoogleFonts.questrial(
                                                                             fontWeight:
                                                                                 FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                             fontStyle:
@@ -540,7 +540,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                 child: Text(
                                                                                   'Porçoes',
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: GoogleFonts.poppins(
+                                                                                        font: GoogleFonts.questrial(
                                                                                           fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                         ),
@@ -567,7 +567,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                         '-',
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                            font: GoogleFonts.roboto(
+                                                                                            font: GoogleFonts.questrial(
                                                                                               fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                             ),
@@ -619,7 +619,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                 child: Text(
                                                                                   'Preparo',
                                                                                   style: FlutterFlowTheme.of(context).titleMedium.override(
-                                                                                        font: GoogleFonts.poppins(
+                                                                                        font: GoogleFonts.questrial(
                                                                                           fontWeight: FlutterFlowTheme.of(context).titleMedium.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).titleMedium.fontStyle,
                                                                                         ),
@@ -643,7 +643,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                     Text(
                                                                                       '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
                                                                                       style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                            font: GoogleFonts.roboto(
+                                                                                            font: GoogleFonts.questrial(
                                                                                               fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                             ),
@@ -688,7 +688,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       .titleSmall
                                                                       .override(
                                                                         font: GoogleFonts
-                                                                            .poppins(
+                                                                            .questrial(
                                                                           fontWeight: FlutterFlowTheme.of(context)
                                                                               .titleSmall
                                                                               .fontWeight,
@@ -781,7 +781,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                             Text(
                                                                               '${receitaReceitasDetalhadasRow?.autorNome} ${receitaReceitasDetalhadasRow?.autorSobrenome}',
                                                                               style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: GoogleFonts.poppins(
+                                                                                    font: GoogleFonts.questrial(
                                                                                       fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                       fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                     ),
@@ -801,7 +801,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                 iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      font: GoogleFonts.poppins(
+                                                                                      font: GoogleFonts.questrial(
                                                                                         fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                         fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                       ),
@@ -953,7 +953,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                   .titleLarge
                                                                   .override(
                                                                     font: GoogleFonts
-                                                                        .poppins(
+                                                                        .questrial(
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -1027,7 +1027,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                   r'''$.ingrediente''',
                                                                                 ).toString(),
                                                                                 style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                      font: GoogleFonts.roboto(
+                                                                                      font: GoogleFonts.questrial(
                                                                                         fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                         fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                       ),
@@ -1097,7 +1097,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                   .titleLarge
                                                                   .override(
                                                                     font: GoogleFonts
-                                                                        .poppins(
+                                                                        .questrial(
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -1189,7 +1189,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                       r'''$.passo''',
                                                                                     ).toString(),
                                                                                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                                                                                          font: GoogleFonts.poppins(
+                                                                                          font: GoogleFonts.questrial(
                                                                                             fontWeight: FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                                                                                             fontStyle: FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                                                                                           ),
@@ -1209,7 +1209,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                     r'''$.descricao''',
                                                                                   ).toString(),
                                                                                   style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                        font: GoogleFonts.roboto(
+                                                                                        font: GoogleFonts.questrial(
                                                                                           fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                           fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                         ),
@@ -1363,7 +1363,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         labelStyle: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
+                                                                              font: GoogleFonts.questrial(
                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                 fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                               ),
@@ -1376,7 +1376,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         hintStyle: FlutterFlowTheme.of(context)
                                                                             .labelMedium
                                                                             .override(
-                                                                              font: GoogleFonts.poppins(
+                                                                              font: GoogleFonts.questrial(
                                                                                 fontWeight: FlutterFlowTheme.of(context).labelMedium.fontWeight,
                                                                                 fontStyle: FlutterFlowTheme.of(context).labelMedium.fontStyle,
                                                                               ),
@@ -1447,7 +1447,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                           .bodyMedium
                                                                           .override(
                                                                             font:
-                                                                                GoogleFonts.roboto(
+                                                                                GoogleFonts.questrial(
                                                                               fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                             ),
@@ -1514,7 +1514,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                           .titleSmall
                                                                           .override(
                                                                             font:
-                                                                                GoogleFonts.poppins(
+                                                                                GoogleFonts.questrial(
                                                                               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                               fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                             ),
@@ -1651,7 +1651,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               Text(
                                                                                 'Nome do Usuário',
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      font: GoogleFonts.roboto(
+                                                                                      font: GoogleFonts.questrial(
                                                                                         fontWeight: FontWeight.w500,
                                                                                         fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                       ),
@@ -1673,7 +1673,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                         locale: FFLocalizations.of(context).languageCode,
                                                                                       ),
                                                                                 style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                      font: GoogleFonts.roboto(
+                                                                                      font: GoogleFonts.questrial(
                                                                                         fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
                                                                                         fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                                       ),
@@ -1690,7 +1690,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                               '-',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  font: GoogleFonts.roboto(
+                                                                                  font: GoogleFonts.questrial(
                                                                                     fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                                                                                     fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                                   ),

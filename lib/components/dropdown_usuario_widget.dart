@@ -71,7 +71,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                   'Account Options',
                   textAlign: TextAlign.start,
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.poppins(
+                        font: GoogleFonts.questrial(
                           fontWeight: FlutterFlowTheme.of(context)
                               .labelMedium
                               .fontWeight,
@@ -118,7 +118,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.roboto(
+                                  font: GoogleFonts.questrial(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -139,7 +139,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .fontWeight,
@@ -203,7 +203,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -268,7 +268,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -333,7 +333,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -416,7 +416,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.roboto(
+                                      font: GoogleFonts.questrial(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,

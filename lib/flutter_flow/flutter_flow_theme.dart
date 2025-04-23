@@ -159,92 +159,92 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Poppins';
-  TextStyle get displayLarge => GoogleFonts.poppins(
+  String get displayLargeFamily => 'Questrial';
+  TextStyle get displayLarge => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 64.0,
       );
-  String get displayMediumFamily => 'Poppins';
-  TextStyle get displayMedium => GoogleFonts.poppins(
+  String get displayMediumFamily => 'Questrial';
+  TextStyle get displayMedium => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 44.0,
       );
-  String get displaySmallFamily => 'Poppins';
-  TextStyle get displaySmall => GoogleFonts.poppins(
+  String get displaySmallFamily => 'Questrial';
+  TextStyle get displaySmall => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 36.0,
       );
-  String get headlineLargeFamily => 'Poppins';
-  TextStyle get headlineLarge => GoogleFonts.poppins(
+  String get headlineLargeFamily => 'Questrial';
+  TextStyle get headlineLarge => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Poppins';
-  TextStyle get headlineMedium => GoogleFonts.poppins(
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 28.0,
-      );
-  String get headlineSmallFamily => 'Poppins';
-  TextStyle get headlineSmall => GoogleFonts.poppins(
+  String get headlineMediumFamily => 'Questrial';
+  TextStyle get headlineMedium => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get titleLargeFamily => 'Poppins';
-  TextStyle get titleLarge => GoogleFonts.poppins(
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 20.0,
-      );
-  String get titleMediumFamily => 'Poppins';
-  TextStyle get titleMedium => GoogleFonts.poppins(
-        color: theme.primaryText,
-        fontWeight: FontWeight.w600,
-        fontSize: 18.0,
-      );
-  String get titleSmallFamily => 'Poppins';
-  TextStyle get titleSmall => GoogleFonts.poppins(
+  String get headlineSmallFamily => 'Questrial';
+  TextStyle get headlineSmall => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Poppins';
-  TextStyle get labelLarge => GoogleFonts.poppins(
+  String get titleLargeFamily => 'Questrial';
+  TextStyle get titleLarge => GoogleFonts.questrial(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 32.0,
+      );
+  String get titleMediumFamily => 'Questrial';
+  TextStyle get titleMedium => GoogleFonts.questrial(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 24.0,
+      );
+  String get titleSmallFamily => 'Questrial';
+  TextStyle get titleSmall => GoogleFonts.questrial(
+        color: theme.primaryText,
+        fontWeight: FontWeight.w600,
+        fontSize: 16.0,
+      );
+  String get labelLargeFamily => 'Questrial';
+  TextStyle get labelLarge => GoogleFonts.questrial(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get labelMediumFamily => 'Poppins';
-  TextStyle get labelMedium => GoogleFonts.poppins(
+  String get labelMediumFamily => 'Questrial';
+  TextStyle get labelMedium => GoogleFonts.questrial(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get labelSmallFamily => 'Poppins';
-  TextStyle get labelSmall => GoogleFonts.poppins(
+  String get labelSmallFamily => 'Questrial';
+  TextStyle get labelSmall => GoogleFonts.questrial(
         color: theme.secondaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,
       );
-  String get bodyLargeFamily => 'Roboto';
-  TextStyle get bodyLarge => GoogleFonts.roboto(
+  String get bodyLargeFamily => 'Questrial';
+  TextStyle get bodyLarge => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Roboto';
-  TextStyle get bodyMedium => GoogleFonts.roboto(
+  String get bodyMediumFamily => 'Questrial';
+  TextStyle get bodyMedium => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 14.0,
       );
-  String get bodySmallFamily => 'Roboto';
-  TextStyle get bodySmall => GoogleFonts.roboto(
+  String get bodySmallFamily => 'Questrial';
+  TextStyle get bodySmall => GoogleFonts.questrial(
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 12.0,

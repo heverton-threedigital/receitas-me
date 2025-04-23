@@ -92,7 +92,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -164,7 +164,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                         isDense: true,
                         labelStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  font: GoogleFonts.poppins(
+                                  font: GoogleFonts.questrial(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .fontWeight,
@@ -182,7 +182,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                                 ),
                         hintStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
-                                  font: GoogleFonts.poppins(
+                                  font: GoogleFonts.questrial(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .fontWeight,
@@ -233,7 +233,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                             FlutterFlowTheme.of(context).primaryBackground,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.roboto(
+                            font: GoogleFonts.questrial(
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .fontWeight,
@@ -279,7 +279,7 @@ class _IngredienteWidgetState extends State<IngredienteWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.poppins(
+                          font: GoogleFonts.questrial(
                             fontWeight: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .fontWeight,

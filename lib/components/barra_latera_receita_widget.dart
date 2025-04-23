@@ -86,7 +86,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                           'Receita enviada por',
                           style:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.poppins(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .fontWeight,
@@ -153,7 +153,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall
                                               .override(
-                                                font: GoogleFonts.poppins(
+                                                font: GoogleFonts.questrial(
                                                   fontWeight:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -193,7 +193,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           font: GoogleFonts
-                                                              .roboto(
+                                                              .questrial(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontStyle:
@@ -219,7 +219,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           font: GoogleFonts
-                                                              .roboto(
+                                                              .questrial(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -257,7 +257,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           font: GoogleFonts
-                                                              .roboto(
+                                                              .questrial(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontStyle:
@@ -283,7 +283,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           font: GoogleFonts
-                                                              .roboto(
+                                                              .questrial(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -329,39 +329,38 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryBackground,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      font: GoogleFonts.poppins(
-                                                        fontWeight:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontWeight,
-                                                        fontStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleSmall
-                                                                .fontStyle,
-                                                      ),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      fontSize: 14.0,
-                                                      letterSpacing: 0.0,
-                                                      fontWeight:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontWeight,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .fontStyle,
-                                                    ),
+                                            textStyle: FlutterFlowTheme.of(
+                                                    context)
+                                                .titleSmall
+                                                .override(
+                                                  font: GoogleFonts.questrial(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleSmall
+                                                            .fontStyle,
+                                                  ),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
                                             elevation: 0.0,
                                             borderSide: BorderSide(
                                               color:
@@ -412,7 +411,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            font: GoogleFonts.roboto(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -454,7 +453,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            font: GoogleFonts.roboto(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodySmall
@@ -521,7 +520,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.poppins(
+                                        font: GoogleFonts.questrial(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
@@ -586,7 +585,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                           'Receitas relacionadas',
                           style:
                               FlutterFlowTheme.of(context).titleMedium.override(
-                                    font: GoogleFonts.poppins(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -675,7 +674,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                         context)
                                                     .titleSmall
                                                     .override(
-                                                      font: GoogleFonts.poppins(
+                                                      font:
+                                                          GoogleFonts.questrial(
                                                         fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -737,7 +737,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                               .titleSmall
                                                               .override(
                                                                 font: GoogleFonts
-                                                                    .poppins(
+                                                                    .questrial(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleSmall

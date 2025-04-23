@@ -67,7 +67,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                 child: Text(
                   'Membros cadastrados',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        font: GoogleFonts.poppins(
+                        font: GoogleFonts.questrial(
                           fontWeight: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .fontWeight,
@@ -90,7 +90,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                 child: Text(
                   'Create tables and ui elements that work below.',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.poppins(
+                        font: GoogleFonts.questrial(
                           fontWeight: FlutterFlowTheme.of(context)
                               .labelMedium
                               .fontWeight,
@@ -132,7 +132,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                             'Informações de usuário',
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.roboto(
+                                      font: GoogleFonts.questrial(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .fontWeight,
@@ -162,7 +162,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .fontWeight,
@@ -191,7 +191,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.roboto(
+                                    font: GoogleFonts.questrial(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .fontWeight,
@@ -215,7 +215,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                             textAlign: TextAlign.end,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.roboto(
+                                      font: GoogleFonts.questrial(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .fontWeight,
@@ -336,8 +336,8 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        font:
-                                                            GoogleFonts.roboto(
+                                                        font: GoogleFonts
+                                                            .questrial(
                                                           fontWeight:
                                                               FontWeight.bold,
                                                           fontStyle:
@@ -370,7 +370,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                                         .bodySmall
                                                         .override(
                                                           font: GoogleFonts
-                                                              .roboto(
+                                                              .questrial(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -427,7 +427,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.roboto(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -468,7 +468,7 @@ class _MembrosWidgetState extends State<MembrosWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.roboto(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

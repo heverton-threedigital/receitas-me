@@ -182,7 +182,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
-                                                  font: GoogleFonts.roboto(
+                                                  font: GoogleFonts.questrial(
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -301,7 +301,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -399,7 +399,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: GoogleFonts.poppins(
+                                            font: GoogleFonts.questrial(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
@@ -521,7 +521,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
+                                          font: GoogleFonts.questrial(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -545,7 +545,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          font: GoogleFonts.poppins(
+                                          font: GoogleFonts.questrial(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
@@ -607,7 +607,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.roboto(
+                                        font: GoogleFonts.questrial(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
