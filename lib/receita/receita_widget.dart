@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/barra_latera_receita_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -105,6 +106,14 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
               child: Scaffold(
                 key: scaffoldKey,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+                drawer: Drawer(
+                  elevation: 16.0,
+                  child: wrapWithModel(
+                    model: _model.menuLateralEModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: MenuLateralEWidget(),
+                  ),
+                ),
                 body: SafeArea(
                   top: true,
                   child: SingleChildScrollView(

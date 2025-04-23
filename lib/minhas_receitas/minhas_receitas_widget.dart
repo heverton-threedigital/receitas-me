@@ -1,5 +1,6 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -55,6 +56,14 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+            drawer: Drawer(
+              elevation: 16.0,
+              child: wrapWithModel(
+                model: _model.menuLateralEModel,
+                updateCallback: () => safeSetState(() {}),
+                child: MenuLateralEWidget(),
+              ),
+            ),
             body: SafeArea(
               top: true,
               child: Column(

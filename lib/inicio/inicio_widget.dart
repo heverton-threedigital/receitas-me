@@ -79,16 +79,10 @@ class _InicioWidgetState extends State<InicioWidget> {
               width: 220.0,
               child: Drawer(
                 elevation: 16.0,
-                child: Container(
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: wrapWithModel(
-                    model: _model.menuLateralEModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: MenuLateralEWidget(),
-                  ),
+                child: wrapWithModel(
+                  model: _model.menuLateralEModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: MenuLateralEWidget(),
                 ),
               ),
             ),

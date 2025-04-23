@@ -1,4 +1,5 @@
 import '/backend/supabase/supabase.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -132,6 +133,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   ReceitasRow? receitaCriada;
   InstantTimer? instantTimer1;
   InstantTimer? instantTimer3;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel;
 
   @override
   void initState(BuildContext context) {
@@ -146,6 +149,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
         _preparacaoReceitaTextControllerValidator;
     ingredienteTextControllerValidator = _ingredienteTextControllerValidator;
     passoTextControllerValidator = _passoTextControllerValidator;
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
 
   @override
@@ -173,5 +177,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     instantTimer2?.cancel();
     instantTimer1?.cancel();
     instantTimer3?.cancel();
+    menuLateralEModel.dispose();
   }
 }

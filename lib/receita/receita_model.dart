@@ -1,4 +1,5 @@
 import '/components/barra_latera_receita_widget.dart';
+import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'receita_widget.dart' show ReceitaWidget;
@@ -24,6 +25,8 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
 
   // Model for BarraLateraReceita component.
   late BarraLateraReceitaModel barraLateraReceitaModel;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel;
 
   @override
   void initState(BuildContext context) {
@@ -31,6 +34,7 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
     textControllerValidator = _textControllerValidator;
     barraLateraReceitaModel =
         createModel(context, () => BarraLateraReceitaModel());
+    menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
 
   @override
@@ -40,5 +44,6 @@ class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
     textController?.dispose();
 
     barraLateraReceitaModel.dispose();
+    menuLateralEModel.dispose();
   }
 }
