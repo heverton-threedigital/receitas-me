@@ -132,7 +132,9 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                               model: _model.menuPrincipalModel,
                               updateCallback: () => safeSetState(() {}),
                               child: MenuPrincipalWidget(
-                                drawer: () async {},
+                                drawer: () async {
+                                  scaffoldKey.currentState!.openDrawer();
+                                },
                               ),
                             ),
                           ),

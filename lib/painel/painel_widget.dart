@@ -68,7 +68,9 @@ class _PainelWidgetState extends State<PainelWidget> {
                     model: _model.menuPrincipalModel,
                     updateCallback: () => safeSetState(() {}),
                     child: MenuPrincipalWidget(
-                      drawer: () async {},
+                      drawer: () async {
+                        scaffoldKey.currentState!.openDrawer();
+                      },
                     ),
                   ),
                   Flexible(

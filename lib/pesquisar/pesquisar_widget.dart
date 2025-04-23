@@ -90,7 +90,9 @@ class _PesquisarWidgetState extends State<PesquisarWidget> {
                       model: _model.menuPrincipalModel,
                       updateCallback: () => safeSetState(() {}),
                       child: MenuPrincipalWidget(
-                        drawer: () async {},
+                        drawer: () async {
+                          scaffoldKey.currentState!.openDrawer();
+                        },
                       ),
                     ),
                   ),

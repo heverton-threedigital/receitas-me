@@ -116,7 +116,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                         child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.9,
                           constraints: BoxConstraints(
-                            maxWidth: 1120.0,
+                            maxWidth: 1200.0,
                           ),
                           decoration: BoxDecoration(),
                           child: Padding(
@@ -574,7 +574,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   child: Container(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
-                                    height: 315.0,
+                                    height: 640.0,
                                     decoration: BoxDecoration(),
                                     child:
                                         StreamBuilder<List<ReceitasResumoRow>>(
@@ -614,7 +614,25 @@ class _InicioWidgetState extends State<InicioWidget> {
                                               const NeverScrollableScrollPhysics(),
                                           gridDelegate:
                                               SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                            crossAxisCount: 4,
+                                            crossAxisCount: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 2;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 3;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 4;
+                                              } else {
+                                                return 4;
+                                              }
+                                            }(),
                                           ),
                                           crossAxisSpacing: 16.0,
                                           mainAxisSpacing: 16.0,

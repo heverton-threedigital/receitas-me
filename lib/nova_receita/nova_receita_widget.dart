@@ -143,7 +143,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             constraints: BoxConstraints(
-                              maxWidth: 1120.0,
+                              maxWidth: 1200.0,
                             ),
                             decoration: BoxDecoration(),
                             child: Row(
@@ -305,9 +305,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               context)
                                                                           .width <
                                                                       kBreakpointLarge) {
-                                                                    return 296.0;
+                                                                    return 320.0;
                                                                   } else {
-                                                                    return 296.0;
+                                                                    return 320.0;
                                                                   }
                                                                 }(),
                                                               ),
@@ -1289,9 +1289,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               context)
                                                                       .width <
                                                                   kBreakpointLarge) {
-                                                                return 296.0;
+                                                                return 320.0;
                                                               } else {
-                                                                return 296.0;
+                                                                return 320.0;
                                                               }
                                                             }(),
                                                           ),

@@ -90,7 +90,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
             child: Container(
               width: MediaQuery.sizeOf(context).width * 0.9,
               constraints: BoxConstraints(
-                maxWidth: 1120.0,
+                maxWidth: 1200.0,
               ),
               decoration: BoxDecoration(),
               child: Column(
@@ -104,100 +104,114 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            FlutterFlowIconButton(
-                              borderRadius: 40.0,
-                              buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              icon: FaIcon(
-                                FontAwesomeIcons.bars,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 24.0,
-                              ),
-                              onPressed: () async {
-                                await widget.drawer?.call();
-                              },
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(InicioWidget.routeName);
-                              },
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(0.0),
-                                child: Image.asset(
-                                  'assets/images/receitas.me.png',
-                                  height: 40.0,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                            ),
-                            MouseRegion(
-                              opaque: false,
-                              cursor: MouseCursor.defer ?? MouseCursor.defer,
-                              child: Visibility(
-                                visible: responsiveVisibility(
-                                  context: context,
-                                  phone: false,
-                                  tablet: false,
-                                  tabletLandscape: false,
-                                ),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context
-                                        .pushNamed(PesquisarWidget.routeName);
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              if (loggedIn)
+                                FlutterFlowIconButton(
+                                  borderRadius: 40.0,
+                                  buttonSize: 40.0,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  icon: FaIcon(
+                                    FontAwesomeIcons.bars,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () async {
+                                    await widget.drawer?.call();
                                   },
-                                  child: Container(
-                                    width: 368.0,
+                                ),
+                              InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed(InicioWidget.routeName);
+                                },
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(0.0),
+                                  child: Image.asset(
+                                    'assets/images/receitas.me.png',
                                     height: 40.0,
-                                    decoration: BoxDecoration(
-                                      color: valueOrDefault<Color>(
-                                        _model.mouseRegionHovered
-                                            ? FlutterFlowTheme.of(context)
-                                                .primaryBackground
-                                            : FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                        FlutterFlowTheme.of(context)
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              ),
+                              MouseRegion(
+                                opaque: false,
+                                cursor: MouseCursor.defer ?? MouseCursor.defer,
+                                child: Visibility(
+                                  visible: responsiveVisibility(
+                                    context: context,
+                                    phone: false,
+                                    tablet: false,
+                                    tabletLandscape: false,
+                                  ),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      context
+                                          .pushNamed(PesquisarWidget.routeName);
+                                    },
+                                    child: Container(
+                                      width: 368.0,
+                                      height: 40.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                      ),
-                                      borderRadius: BorderRadius.circular(40.0),
-                                      border: Border.all(
-                                        color: valueOrDefault<Color>(
-                                          _model.mouseRegionHovered
-                                              ? FlutterFlowTheme.of(context)
-                                                  .alternate
-                                              : FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(40.0),
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
                                         ),
                                       ),
-                                    ),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Pesquise por receita ou ingredientes...',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyLarge
-                                                .override(
-                                                  font: GoogleFonts.workSans(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 0.0, 0.0),
+                                            child: Icon(
+                                              Icons.search_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 28.0,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 16.0, 0.0),
+                                            child: Text(
+                                              'Pesquise por receita ou ingredientes...',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    font: GoogleFonts.workSans(
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyLarge
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
                                                     fontWeight:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -209,58 +223,24 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                             .bodyLarge
                                                             .fontStyle,
                                                   ),
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontStyle,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 4.0, 0.0),
-                                          child: Container(
-                                            width: 36.0,
-                                            height: 36.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              borderRadius:
-                                                  BorderRadius.circular(40.0),
-                                            ),
-                                            child: Icon(
-                                              Icons.search_rounded,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryBackground,
-                                              size: 24.0,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
+                                onEnter: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered = true);
+                                }),
+                                onExit: ((event) async {
+                                  safeSetState(
+                                      () => _model.mouseRegionHovered = false);
+                                }),
                               ),
-                              onEnter: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = true);
-                              }),
-                              onExit: ((event) async {
-                                safeSetState(
-                                    () => _model.mouseRegionHovered = false);
-                              }),
-                            ),
-                          ].divide(SizedBox(width: 16.0)),
+                            ].divide(SizedBox(width: 16.0)),
+                          ),
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
