@@ -61,16 +61,15 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
             ),
           ),
         ),
-        Container(
-          width: 304.0,
-          height: MediaQuery.sizeOf(context).height * 1.0,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryBackground,
-          ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 16.0),
-            child: SingleChildScrollView(
-              primary: false,
+        Flexible(
+          child: Container(
+            width: 304.0,
+            height: MediaQuery.sizeOf(context).height * 1.0,
+            decoration: BoxDecoration(
+              color: FlutterFlowTheme.of(context).primaryBackground,
+            ),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,6 +131,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
@@ -159,6 +159,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .fontStyle,
+                                        lineHeight: 1.2,
                                       ),
                                 ),
                                 FFButtonWidget(
