@@ -86,7 +86,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.9,
                         constraints: BoxConstraints(
-                          maxWidth: 1080.0,
+                          maxWidth: 1200.0,
                         ),
                         decoration: BoxDecoration(),
                         child: Row(

@@ -143,7 +143,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               constraints: BoxConstraints(
-                                maxWidth: 1120.0,
+                                maxWidth: 1200.0,
                               ),
                               decoration: BoxDecoration(),
                               child: Column(
@@ -718,55 +718,55 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                       ),
                                                                 ),
                                                               ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          16.0),
-                                                              child: Container(
-                                                                width: 248.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              16.0),
-                                                                  border: Border
-                                                                      .all(
+                                                            if (responsiveVisibility(
+                                                              context: context,
+                                                              tablet: false,
+                                                              tabletLandscape:
+                                                                  false,
+                                                              desktop: false,
+                                                            ))
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            16.0),
+                                                                child:
+                                                                    Container(
+                                                                  width: 248.0,
+                                                                  decoration:
+                                                                      BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .alternate,
+                                                                        .primaryBackground,
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            16.0),
+                                                                    border:
+                                                                        Border
+                                                                            .all(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .alternate,
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                                child: Padding(
-                                                                  padding:
-                                                                      EdgeInsets
-                                                                          .all(
-                                                                              8.0),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .min,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      if (responsiveVisibility(
-                                                                        context:
-                                                                            context,
-                                                                        tablet:
-                                                                            false,
-                                                                        tabletLandscape:
-                                                                            false,
-                                                                        desktop:
-                                                                            false,
-                                                                      ))
+                                                                  child:
+                                                                      Padding(
+                                                                    padding:
+                                                                        EdgeInsets.all(
+                                                                            8.0),
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .min,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .center,
+                                                                      children:
+                                                                          [
                                                                         Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
@@ -831,13 +831,12 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                             ),
                                                                           ].divide(SizedBox(width: 8.0)),
                                                                         ),
-                                                                    ].divide(SizedBox(
-                                                                        height:
-                                                                            8.0)),
+                                                                      ].divide(SizedBox(
+                                                                              height: 8.0)),
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
                                                           ].divide(SizedBox(
                                                               height: 1.0)),
                                                         ),
@@ -1453,7 +1452,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                             FlutterFlowTheme.of(context).primaryBackground,
                                                                         contentPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             16.0,
-                                                                            16.0,
+                                                                            8.0,
                                                                             16.0,
                                                                             8.0),
                                                                       ),
