@@ -542,7 +542,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 16.0),
                                   child: Text(
-                                    'Últimas receitas adicionadas',
+                                    'Últimas receitas',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(
@@ -666,7 +666,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 16.0),
                                   child: Text(
-                                    'Últimas receitas adicionadas',
+                                    'Conheça criadores',
                                     style: FlutterFlowTheme.of(context)
                                         .titleLarge
                                         .override(

@@ -120,7 +120,10 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                     );
                   },
                   child: Text(
-                    widget.tituloReceita!,
+                    valueOrDefault<String>(
+                      widget.tituloReceita,
+                      '-',
+                    ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
                           font: GoogleFonts.workSans(
                             fontWeight: FlutterFlowTheme.of(context)
@@ -160,7 +163,10 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 size: 16.0,
                               ),
                               Text(
-                                widget.porcoes!,
+                                valueOrDefault<String>(
+                                  widget.porcoes,
+                                  '-',
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
@@ -192,7 +198,10 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 size: 16.0,
                               ),
                               Text(
-                                '${widget.tempo?.toString()} min',
+                                valueOrDefault<String>(
+                                  '${widget.tempo?.toString()} min',
+                                  '-',
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
@@ -240,7 +249,10 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 ),
                               ),
                               Text(
-                                '${widget.nomeAutor}',
+                                valueOrDefault<String>(
+                                  '${widget.nomeAutor}',
+                                  '-',
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
