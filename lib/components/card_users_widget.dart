@@ -66,8 +66,8 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              width: 80.0,
-              height: 80.0,
+              width: 64.0,
+              height: 64.0,
               clipBehavior: Clip.antiAlias,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -82,6 +82,7 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
             ),
             Column(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
