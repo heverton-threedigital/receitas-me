@@ -172,7 +172,28 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                               .displayMedium
                                                               .fontStyle,
                                                     ),
-                                                    fontSize: 40.0,
+                                                    fontSize: () {
+                                                      if (MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width <
+                                                          kBreakpointSmall) {
+                                                        return 32.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointMedium) {
+                                                        return 40.0;
+                                                      } else if (MediaQuery
+                                                                  .sizeOf(
+                                                                      context)
+                                                              .width <
+                                                          kBreakpointLarge) {
+                                                        return 40.0;
+                                                      } else {
+                                                        return 40.0;
+                                                      }
+                                                    }(),
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w800,
                                                     fontStyle:
@@ -596,6 +617,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             snapshot.data!;
 
                                         return MasonryGridView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           gridDelegate:
                                               SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: () {
@@ -728,6 +751,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             snapshot.data!;
 
                                         return MasonryGridView.builder(
+                                          physics:
+                                              const NeverScrollableScrollPhysics(),
                                           gridDelegate:
                                               SliverSimpleGridDelegateWithFixedCrossAxisCount(
                                             crossAxisCount: () {
