@@ -333,7 +333,7 @@ class FFRoute {
                     child: Image.asset(
                       'assets/images/Initial_splash_Image_receitas-me.gif',
                       width: 300.0,
-                      fit: BoxFit.contain,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 )
