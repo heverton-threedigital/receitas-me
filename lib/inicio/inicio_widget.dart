@@ -573,8 +573,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                   ),
-                                  child: FutureBuilder<List<ReceitasRow>>(
-                                    future: ReceitasTable().queryRows(
+                                  child: FutureBuilder<List<ReceitasResumoRow>>(
+                                    future: ReceitasResumoTable().queryRows(
                                       queryFn: (q) => q.order('criado_em'),
                                       limit: 8,
                                     ),
@@ -594,8 +594,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           ),
                                         );
                                       }
-                                      List<ReceitasRow>
-                                          staggeredViewReceitasRowList =
+                                      List<ReceitasResumoRow>
+                                          staggeredViewReceitasResumoRowList =
                                           snapshot.data!;
 
                                       return MasonryGridView.builder(
@@ -624,16 +624,38 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         crossAxisSpacing: 16.0,
                                         mainAxisSpacing: 16.0,
                                         itemCount:
-                                            staggeredViewReceitasRowList.length,
+                                            staggeredViewReceitasResumoRowList
+                                                .length,
                                         shrinkWrap: true,
                                         itemBuilder:
                                             (context, staggeredViewIndex) {
-                                          final staggeredViewReceitasRow =
-                                              staggeredViewReceitasRowList[
+                                          final staggeredViewReceitasResumoRow =
+                                              staggeredViewReceitasResumoRowList[
                                                   staggeredViewIndex];
                                           return CardReceitaWidget(
                                             key: Key(
-                                                'Keyae1_${staggeredViewIndex}_of_${staggeredViewReceitasRowList.length}'),
+                                                'Keyae1_${staggeredViewIndex}_of_${staggeredViewReceitasResumoRowList.length}'),
+                                            imagemReceita:
+                                                staggeredViewReceitasResumoRow
+                                                    .imagemUrl,
+                                            parameter2:
+                                                staggeredViewReceitasResumoRow
+                                                    .autorId,
+                                            tituloReceita:
+                                                staggeredViewReceitasResumoRow
+                                                    .titulo,
+                                            porcoes:
+                                                staggeredViewReceitasResumoRow
+                                                    .porcoes,
+                                            tempo:
+                                                staggeredViewReceitasResumoRow
+                                                    .tempoPreparo,
+                                            imagemAutor:
+                                                staggeredViewReceitasResumoRow
+                                                    .autorNome,
+                                            fotoAutor:
+                                                staggeredViewReceitasResumoRow
+                                                    .autorAvatarUrl,
                                           );
                                         },
                                       );
