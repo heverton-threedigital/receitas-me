@@ -421,7 +421,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                       decoration: BoxDecoration(),
                       child: FutureBuilder<List<ReceitasResumoRow>>(
                         future: ReceitasResumoTable().queryRows(
-                          queryFn: (q) => q.order('criado_em'),
+                          queryFn: (q) => q,
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
