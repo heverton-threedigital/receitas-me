@@ -654,6 +654,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             nomeAutor:
                                                 staggeredViewReceitasResumoRow
                                                     .autorNome,
+                                            sobrenomeAutor:
+                                                staggeredViewReceitasResumoRow
+                                                    .autorSobrenome!,
                                           );
                                         },
                                       );
@@ -742,9 +745,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             idUsuario:
                                                 staggeredViewPerfisComContagemReceitasRow
                                                     .id!,
-                                            fotoUsuario:
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .avatarUrl!,
+                                            fotoUsuario: valueOrDefault<String>(
+                                              staggeredViewPerfisComContagemReceitasRow
+                                                  .avatarUrl,
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                            ),
                                             nomeUsuario:
                                                 staggeredViewPerfisComContagemReceitasRow
                                                     .nome!,

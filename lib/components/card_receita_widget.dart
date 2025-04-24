@@ -19,6 +19,7 @@ class CardReceitaWidget extends StatefulWidget {
     this.tempo,
     this.fotoAutor,
     this.nomeAutor,
+    required this.sobrenomeAutor,
   });
 
   final String? imagemReceita;
@@ -28,6 +29,7 @@ class CardReceitaWidget extends StatefulWidget {
   final int? tempo;
   final String? fotoAutor;
   final String? nomeAutor;
+  final String? sobrenomeAutor;
 
   @override
   State<CardReceitaWidget> createState() => _CardReceitaWidgetState();
@@ -250,7 +252,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                               ),
                               Text(
                                 valueOrDefault<String>(
-                                  '${widget.nomeAutor}',
+                                  '${widget.nomeAutor} ${widget.sobrenomeAutor}',
                                   '-',
                                 ),
                                 style: FlutterFlowTheme.of(context)
