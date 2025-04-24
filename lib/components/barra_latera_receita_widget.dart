@@ -442,6 +442,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                               snapshot.data!;
 
                           return MasonryGridView.builder(
+                            physics: const NeverScrollableScrollPhysics(),
                             gridDelegate:
                                 SliverSimpleGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 1,

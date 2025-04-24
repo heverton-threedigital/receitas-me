@@ -169,7 +169,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
-                                              size: 32.0,
+                                              size: 24.0,
                                             ),
                                             options: FFButtonOptions(
                                               height: 40.0,
@@ -234,15 +234,15 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         context)
                                                                 .width <
                                                             kBreakpointMedium) {
-                                                          return 24.0;
+                                                          return 16.0;
                                                         } else if (MediaQuery
                                                                     .sizeOf(
                                                                         context)
                                                                 .width <
                                                             kBreakpointLarge) {
-                                                          return 24.0;
+                                                          return 16.0;
                                                         } else {
-                                                          return 24.0;
+                                                          return 16.0;
                                                         }
                                                       }(),
                                                       0.0,
