@@ -640,7 +640,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     .imagemUrl,
                                             parameter2:
                                                 staggeredViewReceitasResumoRow
-                                                    .autorId,
+                                                    .id,
                                             tituloReceita:
                                                 staggeredViewReceitasResumoRow
                                                     .titulo,
