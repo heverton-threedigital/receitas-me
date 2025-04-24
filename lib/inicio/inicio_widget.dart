@@ -769,14 +769,14 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                           context)
                                                       .width <
                                                   kBreakpointLarge) {
-                                                return 3;
+                                                return 4;
                                               } else {
-                                                return 3;
+                                                return 4;
                                               }
                                             }(),
                                           ),
-                                          crossAxisSpacing: 16.0,
-                                          mainAxisSpacing: 16.0,
+                                          crossAxisSpacing: 8.0,
+                                          mainAxisSpacing: 8.0,
                                           itemCount:
                                               staggeredViewPerfisComContagemReceitasRowList
                                                   .length,
