@@ -277,9 +277,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     "relative",
                                     widget.informacoesReceita!.criadoEm!,
                                     locale: FFLocalizations.of(context)
-                                            .languageShortCode ??
-                                        FFLocalizations.of(context)
-                                            .languageCode,
+                                        .languageCode,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
