@@ -1,5 +1,6 @@
 import '/backend/supabase/supabase.dart';
 import '/components/card_receita_widget.dart';
+import '/components/card_users_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -569,10 +570,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   ),
                                 ),
                                 Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
+                                  decoration: BoxDecoration(),
                                   child: FutureBuilder<List<ReceitasResumoRow>>(
                                     future: ReceitasResumoTable().queryRows(
                                       queryFn: (q) => q.order('criado_em'),
@@ -692,13 +690,84 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         ),
                                   ),
                                 ),
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  decoration: BoxDecoration(),
+                                  child: FutureBuilder<
+                                      List<PerfisComContagemReceitasRow>>(
+                                    future: PerfisComContagemReceitasTable()
+                                        .queryRows(
+                                      queryFn: (q) =>
+                                          q.order('quantidade_receitas'),
+                                    ),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: SpinKitPulse(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 50.0,
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      List<PerfisComContagemReceitasRow>
+                                          staggeredViewPerfisComContagemReceitasRowList =
+                                          snapshot.data!;
+
+                                      return MasonryGridView.builder(
+                                        gridDelegate:
+                                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 3,
+                                        ),
+                                        crossAxisSpacing: 16.0,
+                                        mainAxisSpacing: 16.0,
+                                        itemCount:
+                                            staggeredViewPerfisComContagemReceitasRowList
+                                                .length,
+                                        shrinkWrap: true,
+                                        itemBuilder:
+                                            (context, staggeredViewIndex) {
+                                          final staggeredViewPerfisComContagemReceitasRow =
+                                              staggeredViewPerfisComContagemReceitasRowList[
+                                                  staggeredViewIndex];
+                                          return CardUsersWidget(
+                                            key: Key(
+                                                'Key262_${staggeredViewIndex}_of_${staggeredViewPerfisComContagemReceitasRowList.length}'),
+                                            idUsuario:
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .id!,
+                                            fotoUsuario:
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .avatarUrl!,
+                                            nomeUsuario:
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .nome!,
+                                            sobrenomeUsuario:
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .sobrenome!,
+                                            quantidadeReceitas:
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .quantidadeReceitas!
+                                                    .toString(),
+                                          );
+                                        },
+                                      );
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ),
                     ),
-                  ],
+                  ].addToEnd(SizedBox(height: 40.0)),
                 ),
               ),
             ),

@@ -13,6 +13,7 @@ export 'tables/receitas.dart';
 export 'tables/perfis.dart';
 export 'tables/ingredientes.dart';
 export 'tables/categorias.dart';
+export 'tables/perfis_com_contagem_receitas.dart';
 export 'tables/instrucoes.dart';
 export 'tables/resposta_avaliacao.dart';
 export 'tables/tags.dart';
