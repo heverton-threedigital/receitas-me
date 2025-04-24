@@ -120,18 +120,34 @@ class _InicioWidgetState extends State<InicioWidget> {
                           decoration: BoxDecoration(),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 32.0, 0.0, 0.0),
+                                0.0, 40.0, 0.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 24.0),
-                                  child: Row(
+                                      0.0, 0.0, 0.0, 40.0),
+                                  child: Flex(
+                                    direction: () {
+                                      if (MediaQuery.sizeOf(context).width <
+                                          kBreakpointSmall) {
+                                        return false;
+                                      } else if (MediaQuery.sizeOf(context)
+                                              .width <
+                                          kBreakpointMedium) {
+                                        return true;
+                                      } else if (MediaQuery.sizeOf(context)
+                                              .width <
+                                          kBreakpointLarge) {
+                                        return true;
+                                      } else {
+                                        return true;
+                                      }
+                                    }()
+                                        ? Axis.horizontal
+                                        : Axis.vertical,
                                     mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         width: 344.0,
@@ -391,12 +407,29 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(width: 24.0)),
+                                    ].divide(() {
+                                      if (MediaQuery.sizeOf(context).width <
+                                          kBreakpointSmall) {
+                                        return false;
+                                      } else if (MediaQuery.sizeOf(context)
+                                              .width <
+                                          kBreakpointMedium) {
+                                        return true;
+                                      } else if (MediaQuery.sizeOf(context)
+                                              .width <
+                                          kBreakpointLarge) {
+                                        return true;
+                                      } else {
+                                        return true;
+                                      }
+                                    }()
+                                        ? SizedBox(width: 16.0)
+                                        : SizedBox(height: 16.0)),
                                   ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
+                                      0.0, 0.0, 0.0, 24.0),
                                   child: StreamBuilder<List<CategoriasRow>>(
                                     stream: _model.caegoriasInicio(
                                       requestFn: () =>
@@ -436,8 +469,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: List.generate(
-                                                  rowCategoriasRowList.length,
-                                                  (rowIndex) {
+                                              rowCategoriasRowList.length,
+                                              (rowIndex) {
                                             final rowCategoriasRow =
                                                 rowCategoriasRowList[rowIndex];
                                             return Column(
@@ -490,45 +523,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 ),
                                               ],
                                             );
-                                          })
-                                              .divide(SizedBox(width: 24.0))
-                                              .addToStart(SizedBox(width: () {
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width <
-                                                kBreakpointSmall) {
-                                              return 24.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointMedium) {
-                                              return 0.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointLarge) {
-                                              return 0.0;
-                                            } else {
-                                              return 0.0;
-                                            }
-                                          }())).addToEnd(SizedBox(width: () {
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width <
-                                                kBreakpointSmall) {
-                                              return 24.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointMedium) {
-                                              return 0.0;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointLarge) {
-                                              return 0.0;
-                                            } else {
-                                              return 0.0;
-                                            }
-                                          }())),
+                                          }).divide(SizedBox(width: 24.0)),
                                         ),
                                       );
                                     },
@@ -541,7 +536,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 16.0, 0.0, 16.0),
+                                      0.0, 24.0, 0.0, 16.0),
                                   child: Text(
                                     'Últimas receitas',
                                     style: FlutterFlowTheme.of(context)
@@ -569,98 +564,103 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         ),
                                   ),
                                 ),
-                                Container(
-                                  decoration: BoxDecoration(),
-                                  child: FutureBuilder<List<ReceitasResumoRow>>(
-                                    future: ReceitasResumoTable().queryRows(
-                                      queryFn: (q) => q.order('criado_em'),
-                                      limit: 8,
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: SpinKitPulse(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 50.0,
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 24.0),
+                                  child: Container(
+                                    decoration: BoxDecoration(),
+                                    child:
+                                        FutureBuilder<List<ReceitasResumoRow>>(
+                                      future: ReceitasResumoTable().queryRows(
+                                        queryFn: (q) => q.order('criado_em'),
+                                        limit: 8,
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitPulse(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 50.0,
+                                              ),
                                             ),
-                                          ),
-                                        );
-                                      }
-                                      List<ReceitasResumoRow>
-                                          staggeredViewReceitasResumoRowList =
-                                          snapshot.data!;
-
-                                      return MasonryGridView.builder(
-                                        gridDelegate:
-                                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: () {
-                                            if (MediaQuery.sizeOf(context)
-                                                    .width <
-                                                kBreakpointSmall) {
-                                              return 2;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointMedium) {
-                                              return 3;
-                                            } else if (MediaQuery.sizeOf(
-                                                        context)
-                                                    .width <
-                                                kBreakpointLarge) {
-                                              return 4;
-                                            } else {
-                                              return 4;
-                                            }
-                                          }(),
-                                        ),
-                                        crossAxisSpacing: 16.0,
-                                        mainAxisSpacing: 16.0,
-                                        itemCount:
-                                            staggeredViewReceitasResumoRowList
-                                                .length,
-                                        shrinkWrap: true,
-                                        itemBuilder:
-                                            (context, staggeredViewIndex) {
-                                          final staggeredViewReceitasResumoRow =
-                                              staggeredViewReceitasResumoRowList[
-                                                  staggeredViewIndex];
-                                          return CardReceitaWidget(
-                                            key: Key(
-                                                'Keyae1_${staggeredViewIndex}_of_${staggeredViewReceitasResumoRowList.length}'),
-                                            imagemReceita:
-                                                staggeredViewReceitasResumoRow
-                                                    .imagemUrl,
-                                            idReceita:
-                                                staggeredViewReceitasResumoRow
-                                                    .id,
-                                            tituloReceita:
-                                                staggeredViewReceitasResumoRow
-                                                    .titulo,
-                                            porcoes:
-                                                staggeredViewReceitasResumoRow
-                                                    .porcoes,
-                                            tempo:
-                                                staggeredViewReceitasResumoRow
-                                                    .tempoPreparo,
-                                            fotoAutor:
-                                                staggeredViewReceitasResumoRow
-                                                    .autorAvatarUrl,
-                                            nomeAutor:
-                                                staggeredViewReceitasResumoRow
-                                                    .autorNome,
-                                            sobrenomeAutor:
-                                                staggeredViewReceitasResumoRow
-                                                    .autorSobrenome!,
                                           );
-                                        },
-                                      );
-                                    },
+                                        }
+                                        List<ReceitasResumoRow>
+                                            staggeredViewReceitasResumoRowList =
+                                            snapshot.data!;
+
+                                        return MasonryGridView.builder(
+                                          gridDelegate:
+                                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 2;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 3;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 4;
+                                              } else {
+                                                return 4;
+                                              }
+                                            }(),
+                                          ),
+                                          crossAxisSpacing: 16.0,
+                                          mainAxisSpacing: 16.0,
+                                          itemCount:
+                                              staggeredViewReceitasResumoRowList
+                                                  .length,
+                                          shrinkWrap: true,
+                                          itemBuilder:
+                                              (context, staggeredViewIndex) {
+                                            final staggeredViewReceitasResumoRow =
+                                                staggeredViewReceitasResumoRowList[
+                                                    staggeredViewIndex];
+                                            return CardReceitaWidget(
+                                              key: Key(
+                                                  'Keyae1_${staggeredViewIndex}_of_${staggeredViewReceitasResumoRowList.length}'),
+                                              imagemReceita:
+                                                  staggeredViewReceitasResumoRow
+                                                      .imagemUrl,
+                                              idReceita:
+                                                  staggeredViewReceitasResumoRow
+                                                      .id,
+                                              tituloReceita:
+                                                  staggeredViewReceitasResumoRow
+                                                      .titulo,
+                                              porcoes:
+                                                  staggeredViewReceitasResumoRow
+                                                      .porcoes,
+                                              tempo:
+                                                  staggeredViewReceitasResumoRow
+                                                      .tempoPreparo,
+                                              fotoAutor:
+                                                  staggeredViewReceitasResumoRow
+                                                      .autorAvatarUrl,
+                                              nomeAutor:
+                                                  staggeredViewReceitasResumoRow
+                                                      .autorNome,
+                                              sobrenomeAutor:
+                                                  staggeredViewReceitasResumoRow
+                                                      .autorSobrenome!,
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                                 Padding(
@@ -693,80 +693,104 @@ class _InicioWidgetState extends State<InicioWidget> {
                                         ),
                                   ),
                                 ),
-                                Container(
-                                  width: MediaQuery.sizeOf(context).width * 1.0,
-                                  decoration: BoxDecoration(),
-                                  child: FutureBuilder<
-                                      List<PerfisComContagemReceitasRow>>(
-                                    future: PerfisComContagemReceitasTable()
-                                        .queryRows(
-                                      queryFn: (q) =>
-                                          q.order('quantidade_receitas'),
-                                    ),
-                                    builder: (context, snapshot) {
-                                      // Customize what your widget looks like when it's loading.
-                                      if (!snapshot.hasData) {
-                                        return Center(
-                                          child: SizedBox(
-                                            width: 50.0,
-                                            height: 50.0,
-                                            child: SpinKitPulse(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 50.0,
-                                            ),
-                                          ),
-                                        );
-                                      }
-                                      List<PerfisComContagemReceitasRow>
-                                          staggeredViewPerfisComContagemReceitasRowList =
-                                          snapshot.data!;
-
-                                      return MasonryGridView.builder(
-                                        gridDelegate:
-                                            SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 3,
-                                        ),
-                                        crossAxisSpacing: 16.0,
-                                        mainAxisSpacing: 16.0,
-                                        itemCount:
-                                            staggeredViewPerfisComContagemReceitasRowList
-                                                .length,
-                                        shrinkWrap: true,
-                                        itemBuilder:
-                                            (context, staggeredViewIndex) {
-                                          final staggeredViewPerfisComContagemReceitasRow =
-                                              staggeredViewPerfisComContagemReceitasRowList[
-                                                  staggeredViewIndex];
-                                          return CardUsersWidget(
-                                            key: Key(
-                                                'Key262_${staggeredViewIndex}_of_${staggeredViewPerfisComContagemReceitasRowList.length}'),
-                                            idUsuario:
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .id!,
-                                            fotoUsuario: valueOrDefault<String>(
-                                              staggeredViewPerfisComContagemReceitasRow
-                                                  .avatarUrl,
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                            ),
-                                            nomeUsuario:
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .nome!,
-                                            sobrenomeUsuario:
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .sobrenome!,
-                                            quantidadeReceitas:
-                                                valueOrDefault<String>(
-                                              staggeredViewPerfisComContagemReceitasRow
-                                                  .quantidadeReceitas
-                                                  ?.toString(),
-                                              '0',
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 24.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    decoration: BoxDecoration(),
+                                    child: FutureBuilder<
+                                        List<PerfisComContagemReceitasRow>>(
+                                      future: PerfisComContagemReceitasTable()
+                                          .queryRows(
+                                        queryFn: (q) =>
+                                            q.order('quantidade_receitas'),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitPulse(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 50.0,
+                                              ),
                                             ),
                                           );
-                                        },
-                                      );
-                                    },
+                                        }
+                                        List<PerfisComContagemReceitasRow>
+                                            staggeredViewPerfisComContagemReceitasRowList =
+                                            snapshot.data!;
+
+                                        return MasonryGridView.builder(
+                                          gridDelegate:
+                                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: () {
+                                              if (MediaQuery.sizeOf(context)
+                                                      .width <
+                                                  kBreakpointSmall) {
+                                                return 1;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointMedium) {
+                                                return 2;
+                                              } else if (MediaQuery.sizeOf(
+                                                          context)
+                                                      .width <
+                                                  kBreakpointLarge) {
+                                                return 3;
+                                              } else {
+                                                return 3;
+                                              }
+                                            }(),
+                                          ),
+                                          crossAxisSpacing: 16.0,
+                                          mainAxisSpacing: 16.0,
+                                          itemCount:
+                                              staggeredViewPerfisComContagemReceitasRowList
+                                                  .length,
+                                          shrinkWrap: true,
+                                          itemBuilder:
+                                              (context, staggeredViewIndex) {
+                                            final staggeredViewPerfisComContagemReceitasRow =
+                                                staggeredViewPerfisComContagemReceitasRowList[
+                                                    staggeredViewIndex];
+                                            return CardUsersWidget(
+                                              key: Key(
+                                                  'Key262_${staggeredViewIndex}_of_${staggeredViewPerfisComContagemReceitasRowList.length}'),
+                                              idUsuario:
+                                                  staggeredViewPerfisComContagemReceitasRow
+                                                      .id!,
+                                              fotoUsuario:
+                                                  valueOrDefault<String>(
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .avatarUrl,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                              ),
+                                              nomeUsuario:
+                                                  staggeredViewPerfisComContagemReceitasRow
+                                                      .nome!,
+                                              sobrenomeUsuario:
+                                                  staggeredViewPerfisComContagemReceitasRow
+                                                      .sobrenome!,
+                                              quantidadeReceitas:
+                                                  valueOrDefault<String>(
+                                                staggeredViewPerfisComContagemReceitasRow
+                                                    .quantidadeReceitas
+                                                    ?.toString(),
+                                                '0',
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],
