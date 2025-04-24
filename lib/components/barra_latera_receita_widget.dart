@@ -122,7 +122,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                             ),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 16.0),
+                                  16.0, 8.0, 16.0, 8.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -176,55 +176,61 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                       .fontStyle,
                                             ),
                                       ),
-                                    ],
-                                  ),
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: 'Seguir',
-                                    options: FFButtonOptions(
-                                      height: 28.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 8.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            font: GoogleFonts.workSans(
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
+                                      FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text: 'Seguir',
+                                        options: FFButtonOptions(
+                                          height: 28.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  8.0, 0.0, 8.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                font: GoogleFonts.workSans(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall
+                                                          .fontStyle,
+                                                ),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleSmall
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            fontSize: 14.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontStyle,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
+                                    ].divide(SizedBox(height: 8.0)),
                                   ),
                                 ].divide(SizedBox(width: 16.0)),
                               ),
@@ -514,7 +520,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                               ),
                                               width: 80.0,
-                                              height: 120.0,
+                                              height: 88.0,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -575,42 +581,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 ),
                                                       ),
                                                     ),
-                                                    Text(
-                                                      valueOrDefault<String>(
-                                                        widget
-                                                            .informacoesReceita
-                                                            ?.tempoPreparo
-                                                            ?.toString(),
-                                                        '-',
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                font: GoogleFonts
-                                                                    .workSans(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontWeight,
-                                                                  fontStyle: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .bodyMedium
-                                                                      .fontStyle,
-                                                                ),
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                              ),
-                                                    ),
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -624,8 +594,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                             MainAxisSize.max,
                                                         children: [
                                                           Container(
-                                                            width: 32.0,
-                                                            height: 32.0,
+                                                            width: 24.0,
+                                                            height: 24.0,
                                                             clipBehavior:
                                                                 Clip.antiAlias,
                                                             decoration:
@@ -669,26 +639,26 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall
+                                                                    .bodyMedium
                                                                     .override(
                                                                       font: GoogleFonts
                                                                           .workSans(
                                                                         fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
+                                                                            .bodyMedium
                                                                             .fontWeight,
                                                                         fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
+                                                                            .bodyMedium
                                                                             .fontStyle,
                                                                       ),
                                                                       letterSpacing:
                                                                           0.0,
                                                                       fontWeight: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleSmall
+                                                                          .bodyMedium
                                                                           .fontWeight,
                                                                       fontStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .titleSmall
+                                                                          .bodyMedium
                                                                           .fontStyle,
                                                                     ),
                                                               ),
