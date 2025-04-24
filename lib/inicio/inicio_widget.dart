@@ -752,9 +752,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 staggeredViewPerfisComContagemReceitasRow
                                                     .sobrenome!,
                                             quantidadeReceitas:
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .quantidadeReceitas!
-                                                    .toString(),
+                                                valueOrDefault<String>(
+                                              staggeredViewPerfisComContagemReceitasRow
+                                                  .quantidadeReceitas
+                                                  ?.toString(),
+                                              '0',
+                                            ),
                                           );
                                         },
                                       );
