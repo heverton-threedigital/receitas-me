@@ -13,21 +13,21 @@ class CardReceitaWidget extends StatefulWidget {
   const CardReceitaWidget({
     super.key,
     this.imagemReceita,
-    this.parameter2,
+    this.idReceita,
     this.tituloReceita,
     this.porcoes,
     this.tempo,
-    this.imagemAutor,
     this.fotoAutor,
+    this.nomeAutor,
   });
 
   final String? imagemReceita;
-  final String? parameter2;
+  final String? idReceita;
   final String? tituloReceita;
   final String? porcoes;
   final int? tempo;
-  final String? imagemAutor;
   final String? fotoAutor;
+  final String? nomeAutor;
 
   @override
   State<CardReceitaWidget> createState() => _CardReceitaWidgetState();
@@ -82,7 +82,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                     ReceitaWidget.routeName,
                     pathParameters: {
                       'receitaid': serializeParam(
-                        widget.parameter2,
+                        widget.idReceita,
                         ParamType.String,
                       ),
                     }.withoutNulls,
@@ -113,7 +113,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                       ReceitaWidget.routeName,
                       pathParameters: {
                         'receitaid': serializeParam(
-                          widget.parameter2,
+                          widget.idReceita,
                           ParamType.String,
                         ),
                       }.withoutNulls,
@@ -233,14 +233,14 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 ),
                                 child: Image.network(
                                   valueOrDefault<String>(
-                                    widget.imagemAutor,
+                                    widget.fotoAutor,
                                     'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                                   ),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Text(
-                                '${widget.fotoAutor}',
+                                '${widget.nomeAutor}',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -274,7 +274,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 if (loggedIn) {
                                   await ReceitasSalvasTable().insert({
                                     'usuario_id': currentUserUid,
-                                    'receita_id': widget.parameter2,
+                                    'receita_id': widget.idReceita,
                                   });
                                   FFAppState().ReceitaSalva = true;
                                   safeSetState(() {});
@@ -300,8 +300,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                               await ReceitasSalvasTable()
                                                   .insert({
                                                 'usuario_id': currentUserUid,
-                                                'receita_id':
-                                                    widget.parameter2,
+                                                'receita_id': widget.idReceita,
                                               });
                                               FFAppState().ReceitaSalva = true;
                                               safeSetState(() {});

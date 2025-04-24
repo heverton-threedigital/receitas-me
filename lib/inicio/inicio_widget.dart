@@ -638,7 +638,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             imagemReceita:
                                                 staggeredViewReceitasResumoRow
                                                     .imagemUrl,
-                                            parameter2:
+                                            idReceita:
                                                 staggeredViewReceitasResumoRow
                                                     .id,
                                             tituloReceita:
@@ -650,12 +650,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             tempo:
                                                 staggeredViewReceitasResumoRow
                                                     .tempoPreparo,
-                                            imagemAutor:
-                                                staggeredViewReceitasResumoRow
-                                                    .autorNome,
                                             fotoAutor:
                                                 staggeredViewReceitasResumoRow
                                                     .autorAvatarUrl,
+                                            nomeAutor:
+                                                staggeredViewReceitasResumoRow
+                                                    .autorNome,
                                           );
                                         },
                                       );
