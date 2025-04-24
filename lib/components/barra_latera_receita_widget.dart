@@ -49,321 +49,125 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 291.2,
-      height: MediaQuery.sizeOf(context).height * 1.0,
-      decoration: BoxDecoration(
-        color: FlutterFlowTheme.of(context).primaryBackground,
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (responsiveVisibility(
-            context: context,
-            phone: false,
-          ))
-            VerticalDivider(
-              width: 1.0,
-              thickness: 0.0,
+    return Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        Container(
+          width: 1.0,
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          decoration: BoxDecoration(
+            border: Border.all(
               color: FlutterFlowTheme.of(context).alternate,
             ),
-          Flexible(
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-              child: Container(
-                height: MediaQuery.sizeOf(context).height * 1.0,
-                decoration: BoxDecoration(),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
-                  child: SingleChildScrollView(
-                    primary: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 8.0),
-                          child: Text(
-                            'Receita enviada por',
-                            style: FlutterFlowTheme.of(context)
+          ),
+        ),
+        Container(
+          width: 304.0,
+          height: MediaQuery.sizeOf(context).height * 1.0,
+          decoration: BoxDecoration(
+            color: FlutterFlowTheme.of(context).primaryBackground,
+          ),
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 16.0),
+            child: SingleChildScrollView(
+              primary: false,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                    child: Text(
+                      'Receita enviada por',
+                      style: FlutterFlowTheme.of(context).titleSmall.override(
+                            font: GoogleFonts.workSans(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
                                 .titleSmall
-                                .override(
-                                  font: GoogleFonts.workSans(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .fontStyle,
-                                ),
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .fontStyle,
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 16.0),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              borderRadius: BorderRadius.circular(16.0),
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 8.0, 16.0, 8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    width: 40.0,
-                                    height: 40.0,
-                                    clipBehavior: Clip.antiAlias,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Image.network(
-                                      valueOrDefault<String>(
-                                        widget
-                                            .informacoesReceita?.autorAvatarUrl,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                      ),
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        valueOrDefault<String>(
-                                          '${widget.informacoesReceita?.autorNome} ${widget.informacoesReceita?.autorSobrenome}',
-                                          '-',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              font: GoogleFonts.workSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                      FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'Seguir',
-                                        options: FFButtonOptions(
-                                          height: 28.0,
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
-                                          iconPadding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .titleSmall
-                                              .override(
-                                                font: GoogleFonts.workSans(
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .fontStyle,
-                                                ),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                          elevation: 0.0,
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(height: 8.0)),
-                                  ),
-                                ].divide(SizedBox(width: 16.0)),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Icon(
-                                      Icons.remove_red_eye_outlined,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 18.0,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        valueOrDefault<String>(
-                                          widget
-                                              .informacoesReceita?.visualizacoes
-                                              ?.toString(),
-                                          '0',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .override(
-                                              font: GoogleFonts.workSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmall
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        dateTimeFormat(
-                                          "relative",
-                                          widget.informacoesReceita!.criadoEm!,
-                                          locale: FFLocalizations.of(context)
-                                                  .languageShortCode ??
-                                              FFLocalizations.of(context)
-                                                  .languageCode,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodySmall
-                                            .override(
-                                              font: GoogleFonts.workSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodySmall
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          height: 1.0,
-                          thickness: 0.0,
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: FlutterFlowTheme.of(context).primaryBackground,
+                        borderRadius: BorderRadius.circular(16.0),
+                        border: Border.all(
                           color: FlutterFlowTheme.of(context).alternate,
                         ),
-                        Container(
-                          decoration: BoxDecoration(),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 16.0, 0.0, 16.0),
-                            child: Row(
+                      ),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 8.0, 16.0, 8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Container(
+                              width: 40.0,
+                              height: 40.0,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.network(
+                                valueOrDefault<String>(
+                                  widget.informacoesReceita?.autorAvatarUrl,
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                ),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Column(
                               mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Text(
+                                  valueOrDefault<String>(
+                                    '${widget.informacoesReceita?.autorNome} ${widget.informacoesReceita?.autorSobrenome}',
+                                    '-',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        font: GoogleFonts.workSans(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .fontStyle,
+                                      ),
+                                ),
                                 FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
                                   },
-                                  text: 'Salvar receita',
-                                  icon: Icon(
-                                    Icons.bookmark_border_rounded,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 24.0,
-                                  ),
+                                  text: 'Seguir',
                                   options: FFButtonOptions(
-                                    height: 40.0,
+                                    height: 28.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 8.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
@@ -385,6 +189,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -403,294 +208,433 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                 ),
-                                Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    FlutterFlowIconButton(
-                                      borderRadius: 40.0,
-                                      buttonSize: 40.0,
-                                      fillColor: Color(0x1AD84012),
-                                      icon: Icon(
-                                        Icons.chat_bubble_outline_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 24.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                  ].divide(SizedBox(width: 4.0)),
-                                ),
-                              ].divide(SizedBox(width: 16.0)),
+                              ].divide(SizedBox(height: 8.0)),
                             ),
+                          ].divide(SizedBox(width: 16.0)),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 18.0,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  valueOrDefault<String>(
+                                    widget.informacoesReceita?.visualizacoes
+                                        ?.toString(),
+                                    '0',
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        font: GoogleFonts.workSans(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        Divider(
-                          height: 1.0,
-                          thickness: 0.0,
-                          color: FlutterFlowTheme.of(context).alternate,
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 16.0, 0.0, 16.0),
-                          child: Text(
-                            'Receitas relacionadas',
-                            style: FlutterFlowTheme.of(context)
-                                .titleMedium
-                                .override(
-                                  font: GoogleFonts.workSans(
-                                    fontWeight: FontWeight.bold,
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    4.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  dateTimeFormat(
+                                    "relative",
+                                    widget.informacoesReceita!.criadoEm!,
+                                    locale: FFLocalizations.of(context)
+                                            .languageShortCode ??
+                                        FFLocalizations.of(context)
+                                            .languageCode,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodySmall
+                                      .override(
+                                        font: GoogleFonts.workSans(
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodySmall
+                                                  .fontStyle,
+                                        ),
+                                        letterSpacing: 0.0,
+                                        fontWeight: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontWeight,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .fontStyle,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    height: 1.0,
+                    thickness: 0.0,
+                    color: FlutterFlowTheme.of(context).alternate,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          FFButtonWidget(
+                            onPressed: () {
+                              print('Button pressed ...');
+                            },
+                            text: 'Salvar receita',
+                            icon: Icon(
+                              Icons.bookmark_border_rounded,
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 24.0,
+                            ),
+                            options: FFButtonOptions(
+                              height: 40.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  8.0, 0.0, 8.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    font: GoogleFonts.workSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .fontStyle,
+                                    ),
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
                                     fontStyle: FlutterFlowTheme.of(context)
-                                        .titleMedium
+                                        .titleSmall
                                         .fontStyle,
                                   ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .fontStyle,
-                                ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 1.0,
-                            decoration: BoxDecoration(),
-                            child: FutureBuilder<List<ReceitasResumoRow>>(
-                              future: ReceitasResumoTable().queryRows(
-                                queryFn: (q) => q.order('criado_em'),
+                              elevation: 0.0,
+                              borderSide: BorderSide(
+                                color: FlutterFlowTheme.of(context).primary,
                               ),
-                              builder: (context, snapshot) {
-                                // Customize what your widget looks like when it's loading.
-                                if (!snapshot.hasData) {
-                                  return Center(
-                                    child: SizedBox(
-                                      width: 50.0,
-                                      height: 50.0,
-                                      child: SpinKitPulse(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        size: 50.0,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              FlutterFlowIconButton(
+                                borderRadius: 40.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0x1AD84012),
+                                icon: Icon(
+                                  Icons.chat_bubble_outline_outlined,
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 24.0,
+                                ),
+                                onPressed: () {
+                                  print('IconButton pressed ...');
+                                },
+                              ),
+                            ].divide(SizedBox(width: 4.0)),
+                          ),
+                        ].divide(SizedBox(width: 16.0)),
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    height: 1.0,
+                    thickness: 0.0,
+                    color: FlutterFlowTheme.of(context).alternate,
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 16.0),
+                    child: Text(
+                      'Receitas relacionadas',
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
+                            font: GoogleFonts.workSans(
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .fontStyle,
+                          ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      width: MediaQuery.sizeOf(context).width * 1.0,
+                      decoration: BoxDecoration(),
+                      child: FutureBuilder<List<ReceitasResumoRow>>(
+                        future: ReceitasResumoTable().queryRows(
+                          queryFn: (q) => q.order('criado_em'),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: SpinKitPulse(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  size: 50.0,
+                                ),
+                              ),
+                            );
+                          }
+                          List<ReceitasResumoRow>
+                              staggeredViewReceitasResumoRowList =
+                              snapshot.data!;
+
+                          return MasonryGridView.builder(
+                            gridDelegate:
+                                SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 1,
+                            ),
+                            mainAxisSpacing: 16.0,
+                            itemCount:
+                                staggeredViewReceitasResumoRowList.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, staggeredViewIndex) {
+                              final staggeredViewReceitasResumoRow =
+                                  staggeredViewReceitasResumoRowList[
+                                      staggeredViewIndex];
+                              return Container(
+                                width: 100.0,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                  borderRadius: BorderRadius.circular(16.0),
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                  ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: Image.network(
+                                        valueOrDefault<String>(
+                                          widget.informacoesReceita?.imagemUrl,
+                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                        ),
+                                        width: 80.0,
+                                        height: 88.0,
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
-                                  );
-                                }
-                                List<ReceitasResumoRow>
-                                    staggeredViewReceitasResumoRowList =
-                                    snapshot.data!;
-
-                                return MasonryGridView.builder(
-                                  gridDelegate:
-                                      SliverSimpleGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 1,
-                                  ),
-                                  mainAxisSpacing: 16.0,
-                                  itemCount:
-                                      staggeredViewReceitasResumoRowList.length,
-                                  shrinkWrap: true,
-                                  itemBuilder: (context, staggeredViewIndex) {
-                                    final staggeredViewReceitasResumoRow =
-                                        staggeredViewReceitasResumoRowList[
-                                            staggeredViewIndex];
-                                    return Container(
-                                      width: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        border: Border.all(
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                        ),
-                                      ),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              valueOrDefault<String>(
-                                                widget.informacoesReceita
-                                                    ?.imagemUrl,
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
-                                              ),
-                                              width: 80.0,
-                                              height: 88.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: ClipRRect(
-                                              child: Container(
-                                                decoration: BoxDecoration(),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          widget
-                                                              .informacoesReceita
-                                                              ?.titulo,
-                                                          '-',
-                                                        ).maybeHandleOverflow(
-                                                          maxChars: 30,
-                                                          replacement: '…',
+                                    Expanded(
+                                      child: ClipRRect(
+                                        child: Container(
+                                          decoration: BoxDecoration(),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 8.0, 0.0, 0.0),
+                                                child: Text(
+                                                  valueOrDefault<String>(
+                                                    widget.informacoesReceita
+                                                        ?.titulo,
+                                                    '-',
+                                                  ).maybeHandleOverflow(
+                                                    maxChars: 30,
+                                                    replacement: '…',
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleSmall
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .workSans(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .fontStyle,
                                                         ),
-                                                        style:
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .titleSmall
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .workSans(
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleSmall
-                                                                        .fontStyle,
-                                                                  ),
-                                                                  letterSpacing:
-                                                                      0.0,
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .fontStyle,
+                                                      ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 8.0, 0.0, 0.0),
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Container(
+                                                      width: 24.0,
+                                                      height: 24.0,
+                                                      clipBehavior:
+                                                          Clip.antiAlias,
+                                                      decoration: BoxDecoration(
+                                                        shape: BoxShape.circle,
+                                                      ),
+                                                      child: Image.network(
+                                                        valueOrDefault<String>(
+                                                          widget
+                                                              .informacoesReceita
+                                                              ?.autorAvatarUrl,
+                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                                        ),
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            '${valueOrDefault<String>(
+                                                              staggeredViewReceitasResumoRow
+                                                                  .autorNome,
+                                                              '-',
+                                                            )} ${valueOrDefault<String>(
+                                                              staggeredViewReceitasResumoRow
+                                                                  .autorSobrenome,
+                                                              '-',
+                                                            )}',
+                                                            '-',
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .workSans(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall
+                                                                      .bodyMedium
                                                                       .fontWeight,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .titleSmall
+                                                                      .bodyMedium
                                                                       .fontStyle,
                                                                 ),
-                                                      ),
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  8.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        children: [
-                                                          Container(
-                                                            width: 24.0,
-                                                            height: 24.0,
-                                                            clipBehavior:
-                                                                Clip.antiAlias,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              shape: BoxShape
-                                                                  .circle,
-                                                            ),
-                                                            child:
-                                                                Image.network(
-                                                              valueOrDefault<
-                                                                  String>(
-                                                                widget
-                                                                    .informacoesReceita
-                                                                    ?.autorAvatarUrl,
-                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                                              ),
-                                                              fit: BoxFit.cover,
-                                                            ),
-                                                          ),
-                                                          Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  '${valueOrDefault<String>(
-                                                                    staggeredViewReceitasResumoRow
-                                                                        .autorNome,
-                                                                    '-',
-                                                                  )} ${valueOrDefault<String>(
-                                                                    staggeredViewReceitasResumoRow
-                                                                        .autorSobrenome,
-                                                                    '-',
-                                                                  )}',
-                                                                  '-',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .workSans(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
                                                               ),
-                                                            ],
-                                                          ),
-                                                        ].divide(SizedBox(
-                                                            width: 8.0)),
-                                                      ),
+                                                        ),
+                                                      ],
                                                     ),
-                                                  ],
+                                                  ].divide(
+                                                      SizedBox(width: 8.0)),
                                                 ),
                                               ),
-                                            ),
+                                            ],
                                           ),
-                                        ].divide(SizedBox(width: 8.0)),
+                                        ),
                                       ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
+                                    ),
+                                  ].divide(SizedBox(width: 8.0)),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
