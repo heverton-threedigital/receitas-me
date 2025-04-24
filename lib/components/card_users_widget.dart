@@ -68,8 +68,8 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                width: 56.0,
-                height: 56.0,
+                width: 48.0,
+                height: 48.0,
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -253,7 +253,7 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
                   ),
                 ],
               ),
-            ].divide(SizedBox(width: 16.0)),
+            ].divide(SizedBox(width: 8.0)),
           ),
         ),
       ),
