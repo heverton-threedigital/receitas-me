@@ -110,11 +110,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: MinhasReceitasWidget.routeName,
               path: MinhasReceitasWidget.routePath,
+              requireAuth: true,
               builder: (context, params) => MinhasReceitasWidget(),
             ),
             FFRoute(
               name: ReceitasSalvasWidget.routeName,
               path: ReceitasSalvasWidget.routePath,
+              requireAuth: true,
               builder: (context, params) => ReceitasSalvasWidget(),
             ),
             FFRoute(
@@ -131,6 +133,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: PesquisarWidget.routeName,
               path: PesquisarWidget.routePath,
               builder: (context, params) => PesquisarWidget(),
+            ),
+            FFRoute(
+              name: UsuraioWidget.routeName,
+              path: UsuraioWidget.routePath,
+              builder: (context, params) => UsuraioWidget(
+                userId: params.getParam(
+                  'userId',
+                  ParamType.String,
+                ),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
