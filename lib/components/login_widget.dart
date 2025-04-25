@@ -112,7 +112,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Visibility(
                         visible: (_model.islogin == true) &&
-                            (FFAppState().corfirmarConta == false),
+                            (FFAppState().corfirmarConta == false) &&
+                            (_model.isFinalizacao == false),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
@@ -574,7 +575,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                       autovalidateMode: AutovalidateMode.disabled,
                       child: Visibility(
                         visible: (_model.islogin == false) &&
-                            (FFAppState().corfirmarConta == false),
+                            (FFAppState().corfirmarConta == false) &&
+                            (_model.isFinalizacao == false),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 24.0, 0.0, 0.0),
@@ -1565,7 +1567,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ),
                       ),
                     ),
-                    if (FFAppState().corfirmarConta == true)
+                    if ((FFAppState().corfirmarConta == true) &&
+                        (_model.isFinalizacao == false))
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 32.0, 0.0, 24.0),
@@ -1744,7 +1747,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     ),
                                   );
                                   FFAppState().corfirmarConta = false;
-                                  await widget.redirecionar?.call();
+                                  _model.isFinalizacao = true;
+                                  safeSetState(() {});
 
                                   safeSetState(() {});
                                 },
@@ -1787,7 +1791,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ],
                         ),
                       ),
-                    if (FFAppState().corfirmarConta == true)
+                    if (_model.isFinalizacao == true)
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 32.0, 0.0, 24.0),
@@ -2388,6 +2392,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       currentUserUid,
                                     ),
                                   );
+                                  _model.isFinalizacao = false;
+                                  safeSetState(() {});
+                                  await widget.redirecionar?.call();
                                 },
                                 text: 'Finalizar',
                                 options: FFButtonOptions(

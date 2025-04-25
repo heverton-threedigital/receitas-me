@@ -16,7 +16,6 @@ import 'dart:ui';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'nova_receita_model.dart';
@@ -344,8 +343,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               .center,
                                                                       children: [
                                                                         Icon(
-                                                                          Icons
-                                                                              .image_outlined,
+                                                                          FFIcons
+                                                                              .kadicionarFotoAlternativa,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           size:
@@ -2001,15 +2000,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     },
                                                                     text:
                                                                         'Cancelar',
-                                                                    icon:
-                                                                        FaIcon(
-                                                                      FontAwesomeIcons
-                                                                          .trashAlt,
+                                                                    icon: Icon(
+                                                                      FFIcons
+                                                                          .kcancelar,
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
                                                                       size:
-                                                                          15.0,
+                                                                          24.0,
                                                                     ),
                                                                     options:
                                                                         FFButtonOptions(
@@ -2234,12 +2232,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   text:
                                                                       'Rascunho',
                                                                   icon: Icon(
-                                                                    Icons
-                                                                        .save_outlined,
+                                                                    FFIcons
+                                                                        .ksairDoAplicativo,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primary,
-                                                                    size: 15.0,
+                                                                    size: 24.0,
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(
@@ -2481,12 +2479,12 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   text:
                                                                       'Pubicar',
                                                                   icon: Icon(
-                                                                    Icons
-                                                                        .file_upload_outlined,
+                                                                    FFIcons
+                                                                        .kpublicar,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
-                                                                    size: 15.0,
+                                                                    size: 24.0,
                                                                   ),
                                                                   options:
                                                                       FFButtonOptions(

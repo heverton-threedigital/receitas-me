@@ -10,6 +10,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   FFUploadedFile? fotoPerfil;
 
+  bool isFinalizacao = false;
+
   ///  State fields for stateful widgets in this component.
 
   final formKey3 = GlobalKey<FormState>();
