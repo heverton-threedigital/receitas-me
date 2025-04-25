@@ -162,7 +162,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Icon(
-                                Icons.fastfood_outlined,
+                                FFIcons.khamburger,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 16.0,
                               ),
@@ -191,13 +191,13 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                           .fontStyle,
                                     ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(SizedBox(width: 4.0)),
                           ),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Icon(
-                                Icons.alarm,
+                                FFIcons.kalarme,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 16.0,
                               ),
@@ -226,7 +226,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                           .fontStyle,
                                     ),
                               ),
-                            ].divide(SizedBox(width: 8.0)),
+                            ].divide(SizedBox(width: 4.0)),
                           ),
                         ].divide(SizedBox(width: 8.0)),
                       ),
@@ -330,7 +330,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 }
                               },
                               child: Icon(
-                                Icons.bookmark_border,
+                                FFIcons.kadicionarFavorito,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 24.0,
                               ),
