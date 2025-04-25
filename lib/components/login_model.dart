@@ -117,7 +117,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   }
 
   // Stores action output result for [Custom Action - signUpWithEmail] action in ConfirmeSenhaCadastro widget.
-  dynamic usuarioCriado2;
+  dynamic usuarioCriadoEnter;
   // Stores action output result for [Custom Action - signUpWithEmail] action in Button widget.
   dynamic usuarioCriado;
   // State field(s) for PinCode widget.

@@ -1224,7 +1224,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     focusNode:
                                         _model.confirmeSenhaCadastroFocusNode,
                                     onFieldSubmitted: (_) async {
-                                      _model.usuarioCriado2 =
+                                      if (_model.formKey1.currentState ==
+                                              null ||
+                                          !_model.formKey1.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      _model.usuarioCriadoEnter =
                                           await actions.signUpWithEmail(
                                         _model.emailCadastroTextController.text,
                                         _model.senhaCadastroTextController.text,
@@ -1409,6 +1415,11 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     0.0, 16.0, 0.0, 16.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
+                                    if (_model.formKey1.currentState == null ||
+                                        !_model.formKey1.currentState!
+                                            .validate()) {
+                                      return;
+                                    }
                                     _model.usuarioCriado =
                                         await actions.signUpWithEmail(
                                       _model.emailCadastroTextController.text,
