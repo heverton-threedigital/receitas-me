@@ -657,32 +657,52 @@ class _InicioWidgetState extends State<InicioWidget> {
                                               key: Key(
                                                   'Keyae1_${staggeredViewIndex}_of_${staggeredViewReceitasResumoRowList.length}'),
                                               imagemReceita:
-                                                  staggeredViewReceitasResumoRow
-                                                      .imagemUrl,
-                                              idReceita:
-                                                  staggeredViewReceitasResumoRow
-                                                      .id,
+                                                  valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .imagemUrl,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                              ),
+                                              idReceita: valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .id,
+                                                '-',
+                                              ),
                                               tituloReceita:
-                                                  staggeredViewReceitasResumoRow
-                                                      .titulo,
-                                              porcoes:
-                                                  staggeredViewReceitasResumoRow
-                                                      .porcoes,
+                                                  valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .titulo,
+                                                '-',
+                                              ),
+                                              porcoes: valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .porcoes,
+                                                '-',
+                                              ),
                                               tempo:
                                                   staggeredViewReceitasResumoRow
                                                       .tempoPreparo,
-                                              fotoAutor:
-                                                  staggeredViewReceitasResumoRow
-                                                      .autorAvatarUrl,
-                                              nomeAutor:
-                                                  staggeredViewReceitasResumoRow
-                                                      .autorNome,
+                                              fotoAutor: valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .autorAvatarUrl,
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                              ),
+                                              nomeAutor: valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .autorNome,
+                                                '-',
+                                              ),
                                               sobrenomeAutor:
-                                                  staggeredViewReceitasResumoRow
-                                                      .autorSobrenome!,
+                                                  valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .autorSobrenome,
+                                                '-',
+                                              ),
                                               tempoPeriodo:
-                                                  staggeredViewReceitasResumoRow
-                                                      .tempoPreparoPeriodo!,
+                                                  valueOrDefault<String>(
+                                                staggeredViewReceitasResumoRow
+                                                    .tempoPreparoPeriodo,
+                                                '-',
+                                              ),
                                             );
                                           },
                                         );
