@@ -2375,6 +2375,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             true,
                                                                         'categoria_id':
                                                                             _model.categoriaReceitaValue,
+                                                                        'porcoes': _model
+                                                                            .porcoesReceitaTextController
+                                                                            .text,
                                                                       });
                                                                       FFAppState()
                                                                           .contador = -1;
