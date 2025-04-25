@@ -370,6 +370,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                 redirecionar: () async {
                                                   context.goNamed(
                                                       InicioWidget.routeName);
+
+                                                  Navigator.pop(context);
                                                 },
                                               ),
                                             ),
