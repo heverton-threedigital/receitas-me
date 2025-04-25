@@ -138,10 +138,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: UsuarioWidget.routeName,
               path: UsuarioWidget.routePath,
               builder: (context, params) => UsuarioWidget(
-                userId: params.getParam(
-                  'userId',
-                  ParamType.String,
-                ),
                 usuario: params.getParam(
                   'usuario',
                   ParamType.String,

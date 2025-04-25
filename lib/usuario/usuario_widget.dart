@@ -3,10 +3,8 @@ import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'usuario_model.dart';
 export 'usuario_model.dart';
@@ -14,11 +12,9 @@ export 'usuario_model.dart';
 class UsuarioWidget extends StatefulWidget {
   const UsuarioWidget({
     super.key,
-    required this.userId,
     required this.usuario,
   });
 
-  final String? userId;
   final String? usuario;
 
   static String routeName = 'Usuario';
@@ -38,13 +34,6 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
     super.initState();
     _model = createModel(context, () => UsuarioModel());
 
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.incrementarVisualizacao(
-        widget.userId!,
-      );
-    });
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -57,11 +46,11 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<ReceitasDetalhadasRow>>(
-      future: ReceitasDetalhadasTable().querySingleRow(
+    return FutureBuilder<List<PerfisRow>>(
+      future: PerfisTable().querySingleRow(
         queryFn: (q) => q.eqOrNull(
-          'id',
-          widget.userId,
+          'usuario',
+          widget.usuario,
         ),
       ),
       builder: (context, snapshot) {
@@ -81,16 +70,13 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
             ),
           );
         }
-        List<ReceitasDetalhadasRow> usuarioReceitasDetalhadasRowList =
-            snapshot.data!;
+        List<PerfisRow> usuarioPerfisRowList = snapshot.data!;
 
-        final usuarioReceitasDetalhadasRow =
-            usuarioReceitasDetalhadasRowList.isNotEmpty
-                ? usuarioReceitasDetalhadasRowList.first
-                : null;
+        final usuarioPerfisRow =
+            usuarioPerfisRowList.isNotEmpty ? usuarioPerfisRowList.first : null;
 
         return Title(
-            title: ':usuario',
+            title: 'Receitas.me',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () {

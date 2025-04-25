@@ -803,13 +803,6 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       ParamType.String,
                                                     ),
                                                   }.withoutNulls,
-                                                  queryParameters: {
-                                                    'userId': serializeParam(
-                                                      staggeredViewPerfisComContagemReceitasRow
-                                                          .id,
-                                                      ParamType.String,
-                                                    ),
-                                                  }.withoutNulls,
                                                 );
                                               },
                                               child: CardUsersWidget(
