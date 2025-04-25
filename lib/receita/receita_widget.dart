@@ -964,6 +964,8 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                   ? Axis.horizontal
                                                   : Axis.vertical,
                                               mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsetsDirectional

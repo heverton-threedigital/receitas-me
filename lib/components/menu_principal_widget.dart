@@ -339,6 +339,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       ),
                                       hoverTextColor:
                                           FlutterFlowTheme.of(context).primary,
+                                      hoverElevation: 2.0,
                                     ),
                                     showLoadingIndicator: false,
                                   ),
@@ -421,7 +422,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        width: 1.0,
+                                        width: 2.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),

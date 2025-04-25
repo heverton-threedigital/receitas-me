@@ -44,6 +44,9 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   int? get visualizacoes => getField<int>('visualizacoes');
   set visualizacoes(int? value) => setField<int>('visualizacoes', value);
 
+  String? get autorId => getField<String>('autor_id');
+  set autorId(String? value) => setField<String>('autor_id', value);
+
   String? get autorNome => getField<String>('autor_nome');
   set autorNome(String? value) => setField<String>('autor_nome', value);
 
