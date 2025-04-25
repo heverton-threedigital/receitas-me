@@ -1866,315 +1866,188 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                       ),
                                     ),
-                                    if (_model.fotoPerfil == null ||
-                                        (_model.fotoPerfil?.bytes?.isEmpty ??
-                                            true))
-                                      Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.asset(
-                                          'assets/images/user-receita.me.png',
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    if (_model.fotoPerfil != null &&
-                                        (_model.fotoPerfil?.bytes?.isNotEmpty ??
-                                            false))
-                                      Container(
-                                        width: 80.0,
-                                        height: 80.0,
-                                        clipBehavior: Clip.antiAlias,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                        ),
-                                        child: Image.memory(
-                                          _model.fotoPerfil?.bytes ??
-                                              Uint8List.fromList([]),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    if (_model.fotoPerfil == null ||
-                                        (_model.fotoPerfil?.bytes?.isEmpty ??
-                                            true))
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            final selectedMedia =
-                                                await selectMedia(
-                                              maxWidth: 1000.00,
-                                              maxHeight: 1000.00,
-                                              imageQuality: 80,
-                                              mediaSource:
-                                                  MediaSource.photoGallery,
-                                              multiImage: false,
-                                            );
-                                            if (selectedMedia != null &&
-                                                selectedMedia.every((m) =>
-                                                    validateFileFormat(
-                                                        m.storagePath,
-                                                        context))) {
-                                              safeSetState(() => _model
-                                                  .isDataUploading1 = true);
-                                              var selectedUploadedFiles =
-                                                  <FFUploadedFile>[];
-
-                                              try {
-                                                showUploadMessage(
-                                                  context,
-                                                  'Uploading file...',
-                                                  showLoading: true,
-                                                );
-                                                selectedUploadedFiles =
-                                                    selectedMedia
-                                                        .map((m) =>
-                                                            FFUploadedFile(
-                                                              name: m
-                                                                  .storagePath
-                                                                  .split('/')
-                                                                  .last,
-                                                              bytes: m.bytes,
-                                                              height: m
-                                                                  .dimensions
-                                                                  ?.height,
-                                                              width: m
-                                                                  .dimensions
-                                                                  ?.width,
-                                                              blurHash:
-                                                                  m.blurHash,
-                                                            ))
-                                                        .toList();
-                                              } finally {
-                                                ScaffoldMessenger.of(context)
-                                                    .hideCurrentSnackBar();
-                                                _model.isDataUploading1 = false;
-                                              }
-                                              if (selectedUploadedFiles
-                                                      .length ==
-                                                  selectedMedia.length) {
-                                                safeSetState(() {
-                                                  _model.uploadedLocalFile1 =
-                                                      selectedUploadedFiles
-                                                          .first;
-                                                });
-                                                showUploadMessage(
-                                                    context, 'Success!');
-                                              } else {
-                                                safeSetState(() {});
-                                                showUploadMessage(context,
-                                                    'Failed to upload data');
-                                                return;
-                                              }
+                                    ClipRRect(
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                      child: Container(
+                                        width: 88.0,
+                                        height: 88.0,
+                                        constraints: BoxConstraints(
+                                          maxWidth: () {
+                                            if (MediaQuery.sizeOf(context)
+                                                    .width <
+                                                kBreakpointSmall) {
+                                              return 400.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointMedium) {
+                                              return 296.0;
+                                            } else if (MediaQuery.sizeOf(
+                                                        context)
+                                                    .width <
+                                                kBreakpointLarge) {
+                                              return 320.0;
+                                            } else {
+                                              return 320.0;
                                             }
-
-                                            _model.fotoPerfil =
-                                                _model.uploadedLocalFile1;
-                                            safeSetState(() {});
-                                          },
-                                          text: 'Adicionar foto do perfil',
-                                          icon: Icon(
-                                            FFIcons.kadicionarFotoAlternativa,
+                                          }(),
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(100.0),
+                                          border: Border.all(
                                             color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
+                                                .alternate,
                                           ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyLarge
-                                                .override(
-                                                  font: GoogleFonts.workSans(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyLarge
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontWeight,
+                                        ),
+                                        child: Stack(
+                                          children: [
+                                            Container(
+                                              width: 200.0,
+                                              height: 200.0,
+                                              clipBehavior: Clip.antiAlias,
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                              ),
+                                              child: Image.asset(
+                                                'assets/images/user-receita.me.png',
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            if (_model.fotoPerfil != null &&
+                                                (_model.fotoPerfil?.bytes
+                                                        ?.isNotEmpty ??
+                                                    false))
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.memory(
+                                                  _model.fotoPerfil?.bytes ??
+                                                      Uint8List.fromList([]),
+                                                  width: double.infinity,
+                                                  height: double.infinity,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 16.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          final selectedMedia =
+                                              await selectMedia(
+                                            maxWidth: 1080.00,
+                                            imageQuality: 80,
+                                            mediaSource:
+                                                MediaSource.photoGallery,
+                                            multiImage: false,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            safeSetState(() =>
+                                                _model.isDataUploading1 = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+
+                                            try {
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+                                            } finally {
+                                              _model.isDataUploading1 = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                selectedMedia.length) {
+                                              safeSetState(() {
+                                                _model.uploadedLocalFile1 =
+                                                    selectedUploadedFiles.first;
+                                              });
+                                            } else {
+                                              safeSetState(() {});
+                                              return;
+                                            }
+                                          }
+
+                                          _model.fotoPerfil =
+                                              _model.uploadedLocalFile1;
+                                          safeSetState(() {});
+                                        },
+                                        text: 'Adicionar foto',
+                                        icon: Icon(
+                                          FFIcons.kadicionarFotoAlternativa,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 24.0,
+                                        ),
+                                        options: FFButtonOptions(
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 0.0, 16.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyLarge
+                                              .override(
+                                                font: GoogleFonts.workSans(
+                                                  fontWeight: FontWeight.w500,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
                                                           .bodyLarge
                                                           .fontStyle,
                                                 ),
-                                            elevation: 0.0,
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                      ),
-                                    if (_model.fotoPerfil != null &&
-                                        (_model.fotoPerfil?.bytes?.isNotEmpty ??
-                                            false))
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            final selectedMedia =
-                                                await selectMedia(
-                                              maxWidth: 1000.00,
-                                              maxHeight: 1000.00,
-                                              imageQuality: 80,
-                                              mediaSource:
-                                                  MediaSource.photoGallery,
-                                              multiImage: false,
-                                            );
-                                            if (selectedMedia != null &&
-                                                selectedMedia.every((m) =>
-                                                    validateFileFormat(
-                                                        m.storagePath,
-                                                        context))) {
-                                              safeSetState(() => _model
-                                                  .isDataUploading2 = true);
-                                              var selectedUploadedFiles =
-                                                  <FFUploadedFile>[];
-
-                                              try {
-                                                showUploadMessage(
-                                                  context,
-                                                  'Uploading file...',
-                                                  showLoading: true,
-                                                );
-                                                selectedUploadedFiles =
-                                                    selectedMedia
-                                                        .map((m) =>
-                                                            FFUploadedFile(
-                                                              name: m
-                                                                  .storagePath
-                                                                  .split('/')
-                                                                  .last,
-                                                              bytes: m.bytes,
-                                                              height: m
-                                                                  .dimensions
-                                                                  ?.height,
-                                                              width: m
-                                                                  .dimensions
-                                                                  ?.width,
-                                                              blurHash:
-                                                                  m.blurHash,
-                                                            ))
-                                                        .toList();
-                                              } finally {
-                                                ScaffoldMessenger.of(context)
-                                                    .hideCurrentSnackBar();
-                                                _model.isDataUploading2 = false;
-                                              }
-                                              if (selectedUploadedFiles
-                                                      .length ==
-                                                  selectedMedia.length) {
-                                                safeSetState(() {
-                                                  _model.uploadedLocalFile2 =
-                                                      selectedUploadedFiles
-                                                          .first;
-                                                });
-                                                showUploadMessage(
-                                                    context, 'Success!');
-                                              } else {
-                                                safeSetState(() {});
-                                                showUploadMessage(context,
-                                                    'Failed to upload data');
-                                                return;
-                                              }
-                                            }
-
-                                            _model.fotoPerfil =
-                                                _model.uploadedLocalFile2;
-                                            safeSetState(() {});
-                                          },
-                                          text: 'Mudar',
-                                          icon: Icon(
-                                            FFIcons.keditar,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLarge
+                                                        .fontStyle,
+                                              ),
+                                          elevation: 0.0,
+                                          borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 24.0,
+                                            width: 1.0,
                                           ),
-                                          options: FFButtonOptions(
-                                            height: 40.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .bodyLarge
-                                                .override(
-                                                  font: GoogleFonts.workSans(
-                                                    fontWeight:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyLarge
-                                                            .fontWeight,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyLarge
-                                                            .fontStyle,
-                                                  ),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontWeight,
-                                                  fontStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyLarge
-                                                          .fontStyle,
-                                                ),
-                                            elevation: 0.0,
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
+                                    ),
                                     Text(
                                       'Nome de usuário',
                                       style: FlutterFlowTheme.of(context)
@@ -2453,7 +2326,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 onPressed: () async {
                                   {
                                     safeSetState(
-                                        () => _model.isDataUploading3 = true);
+                                        () => _model.isDataUploading2 = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
                                     var selectedMedia = <SelectedFile>[];
@@ -2464,19 +2337,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         'Uploading file...',
                                         showLoading: true,
                                       );
-                                      selectedUploadedFiles =
-                                          _model.isDataUploading2
-                                              ? _model.uploadedLocalFile2
-                                              : _model.uploadedLocalFile2.bytes!
-                                                      .isNotEmpty
-                                                  ? [
-                                                      _model.isDataUploading2
-                                                          ? _model
-                                                              .uploadedLocalFile2
-                                                          : _model
-                                                              .uploadedLocalFile2
-                                                    ]
-                                                  : <FFUploadedFile>[];
+                                      selectedUploadedFiles = _model
+                                              .uploadedLocalFile1
+                                              .bytes!
+                                              .isNotEmpty
+                                          ? [_model.uploadedLocalFile1]
+                                          : <FFUploadedFile>[];
                                       selectedMedia =
                                           selectedFilesFromUploadedFiles(
                                         selectedUploadedFiles,
@@ -2490,16 +2356,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     } finally {
                                       ScaffoldMessenger.of(context)
                                           .hideCurrentSnackBar();
-                                      _model.isDataUploading3 = false;
+                                      _model.isDataUploading2 = false;
                                     }
                                     if (selectedUploadedFiles.length ==
                                             selectedMedia.length &&
                                         downloadUrls.length ==
                                             selectedMedia.length) {
                                       safeSetState(() {
-                                        _model.uploadedLocalFile3 =
+                                        _model.uploadedLocalFile2 =
                                             selectedUploadedFiles.first;
-                                        _model.uploadedFileUrl3 =
+                                        _model.uploadedFileUrl2 =
                                             downloadUrls.first;
                                       });
                                       showUploadMessage(context, 'Success!');
@@ -2515,7 +2381,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     data: {
                                       'usuario':
                                           _model.nomeUsuarioTextController.text,
-                                      'avatar_url': _model.uploadedFileUrl3,
+                                      'avatar_url': _model.uploadedFileUrl2,
                                     },
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'id',

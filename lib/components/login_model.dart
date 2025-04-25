@@ -134,10 +134,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-
   // State field(s) for NomeUsuario widget.
   FocusNode? nomeUsuarioFocusNode;
   TextEditingController? nomeUsuarioTextController;
@@ -160,10 +156,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   // Stores action output result for [Custom Action - verificarDisponibilidadeUsuario] action in NomeUsuario widget.
   bool? usuarioVerificado;
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl3 = '';
+  String uploadedFileUrl2 = '';
 
   @override
   void initState(BuildContext context) {
