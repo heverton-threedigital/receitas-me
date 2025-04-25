@@ -258,6 +258,9 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       if (loggedIn) {
+                                        if (Navigator.of(context).canPop()) {
+                                          context.pop();
+                                        }
                                         context.pushNamed(
                                             NovaReceitaWidget.routeName);
                                       } else {
@@ -279,6 +282,10 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                 width: 380.0,
                                                 child: LoginWidget(
                                                   redirecionar: () async {
+                                                    if (Navigator.of(context)
+                                                        .canPop()) {
+                                                      context.pop();
+                                                    }
                                                     context.pushNamed(
                                                         NovaReceitaWidget
                                                             .routeName);
