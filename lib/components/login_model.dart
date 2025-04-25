@@ -143,11 +143,13 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     }
 
     if (val.length < 3) {
-      return 'O nome de usuário não pode ter menos de 4 caracteres';
+      return 'Não pode ter menos de 4 caracteres';
     }
-
+    if (val.length > 30) {
+      return 'Maximum 30 characters allowed, currently ${val.length}.';
+    }
     if (!RegExp('^[a-z0-9_]{3,30}\$').hasMatch(val)) {
-      return 'Use 3 a 30 caracteres: letras minúsculas (a-z), números (0-9) ou _';
+      return 'Somente letras minúsculas, números (0-9) e _';
     }
     return null;
   }
