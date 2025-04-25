@@ -135,11 +135,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PesquisarWidget(),
             ),
             FFRoute(
-              name: UsuraioWidget.routeName,
-              path: UsuraioWidget.routePath,
-              builder: (context, params) => UsuraioWidget(
+              name: UsuarioWidget.routeName,
+              path: UsuarioWidget.routePath,
+              builder: (context, params) => UsuarioWidget(
                 userId: params.getParam(
                   'userId',
+                  ParamType.String,
+                ),
+                usuario: params.getParam(
+                  'usuario',
                   ParamType.String,
                 ),
               ),

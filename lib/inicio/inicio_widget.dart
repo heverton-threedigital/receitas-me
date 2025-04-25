@@ -5,6 +5,7 @@ import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -786,30 +787,56 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             final staggeredViewPerfisComContagemReceitasRow =
                                                 staggeredViewPerfisComContagemReceitasRowList[
                                                     staggeredViewIndex];
-                                            return CardUsersWidget(
-                                              key: Key(
-                                                  'Key262_${staggeredViewIndex}_of_${staggeredViewPerfisComContagemReceitasRowList.length}'),
-                                              idUsuario:
+                                            return InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  UsuarioWidget.routeName,
+                                                  pathParameters: {
+                                                    'usuario': serializeParam(
+                                                      staggeredViewPerfisComContagemReceitasRow
+                                                          .usuario,
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  queryParameters: {
+                                                    'userId': serializeParam(
+                                                      staggeredViewPerfisComContagemReceitasRow
+                                                          .id,
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: CardUsersWidget(
+                                                key: Key(
+                                                    'Key262_${staggeredViewIndex}_of_${staggeredViewPerfisComContagemReceitasRowList.length}'),
+                                                idUsuario:
+                                                    staggeredViewPerfisComContagemReceitasRow
+                                                        .id!,
+                                                fotoUsuario:
+                                                    valueOrDefault<String>(
                                                   staggeredViewPerfisComContagemReceitasRow
-                                                      .id!,
-                                              fotoUsuario:
-                                                  valueOrDefault<String>(
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .avatarUrl,
-                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
-                                              ),
-                                              nomeUsuario:
+                                                      .avatarUrl,
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                                                ),
+                                                nomeUsuario:
+                                                    staggeredViewPerfisComContagemReceitasRow
+                                                        .nome!,
+                                                sobrenomeUsuario:
+                                                    staggeredViewPerfisComContagemReceitasRow
+                                                        .sobrenome!,
+                                                quantidadeReceitas:
+                                                    valueOrDefault<String>(
                                                   staggeredViewPerfisComContagemReceitasRow
-                                                      .nome!,
-                                              sobrenomeUsuario:
-                                                  staggeredViewPerfisComContagemReceitasRow
-                                                      .sobrenome!,
-                                              quantidadeReceitas:
-                                                  valueOrDefault<String>(
-                                                staggeredViewPerfisComContagemReceitasRow
-                                                    .quantidadeReceitas
-                                                    ?.toString(),
-                                                '0',
+                                                      .quantidadeReceitas
+                                                      ?.toString(),
+                                                  '0',
+                                                ),
                                               ),
                                             );
                                           },

@@ -25,6 +25,9 @@ class PerfisComContagemReceitasRow extends SupabaseDataRow {
   String? get sobrenome => getField<String>('sobrenome');
   set sobrenome(String? value) => setField<String>('sobrenome', value);
 
+  String? get usuario => getField<String>('usuario');
+  set usuario(String? value) => setField<String>('usuario', value);
+
   String? get avatarUrl => getField<String>('avatar_url');
   set avatarUrl(String? value) => setField<String>('avatar_url', value);
 
