@@ -290,7 +290,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                     'usuario_id': currentUserUid,
                                     'receita_id': widget.idReceita,
                                   });
-                                  FFAppState().ReceitaSalva = true;
+                                  FFAppState().receitaSalva = true;
                                   safeSetState(() {});
                                 } else {
                                   await showDialog(
@@ -316,7 +316,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                                 'usuario_id': currentUserUid,
                                                 'receita_id': widget.idReceita,
                                               });
-                                              FFAppState().ReceitaSalva = true;
+                                              FFAppState().receitaSalva = true;
                                               safeSetState(() {});
                                               Navigator.pop(context);
                                             },

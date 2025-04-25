@@ -12,11 +12,13 @@ class DropdownUsuarioWidget extends StatefulWidget {
     super.key,
     required this.fotoPerfil,
     required this.nomeUsuario,
+    required this.sobrenomeUsuario,
     required this.usuario,
   });
 
   final String? fotoPerfil;
   final String? nomeUsuario;
+  final String? sobrenomeUsuario;
   final String? usuario;
 
   @override

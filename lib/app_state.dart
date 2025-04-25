@@ -26,6 +26,16 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _fotoPefil = prefs.getString('ff_fotoPefil') ?? _fotoPefil;
     });
+    _safeInit(() {
+      _nomeUsuario = prefs.getString('ff_nomeUsuario') ?? _nomeUsuario;
+    });
+    _safeInit(() {
+      _usuario = prefs.getString('ff_usuario') ?? _usuario;
+    });
+    _safeInit(() {
+      _sobrenomeUsuario =
+          prefs.getString('ff_sobrenomeUsuario') ?? _sobrenomeUsuario;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -147,10 +157,10 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_corfirmarConta', value);
   }
 
-  bool _ReceitaSalva = false;
-  bool get ReceitaSalva => _ReceitaSalva;
-  set ReceitaSalva(bool value) {
-    _ReceitaSalva = value;
+  bool _receitaSalva = false;
+  bool get receitaSalva => _receitaSalva;
+  set receitaSalva(bool value) {
+    _receitaSalva = value;
   }
 
   String _fotoPefil = '';
@@ -158,6 +168,27 @@ class FFAppState extends ChangeNotifier {
   set fotoPefil(String value) {
     _fotoPefil = value;
     prefs.setString('ff_fotoPefil', value);
+  }
+
+  String _nomeUsuario = '';
+  String get nomeUsuario => _nomeUsuario;
+  set nomeUsuario(String value) {
+    _nomeUsuario = value;
+    prefs.setString('ff_nomeUsuario', value);
+  }
+
+  String _usuario = '';
+  String get usuario => _usuario;
+  set usuario(String value) {
+    _usuario = value;
+    prefs.setString('ff_usuario', value);
+  }
+
+  String _sobrenomeUsuario = '';
+  String get sobrenomeUsuario => _sobrenomeUsuario;
+  set sobrenomeUsuario(String value) {
+    _sobrenomeUsuario = value;
+    prefs.setString('ff_sobrenomeUsuario', value);
   }
 }
 

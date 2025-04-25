@@ -52,6 +52,10 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
             ),
           );
           FFAppState().fotoPefil = _model.perfilLogado!.firstOrNull!.avatarUrl!;
+          FFAppState().nomeUsuario = _model.perfilLogado!.firstOrNull!.nome!;
+          FFAppState().sobrenomeUsuario =
+              _model.perfilLogado!.firstOrNull!.sobrenome!;
+          FFAppState().usuario = _model.perfilLogado!.firstOrNull!.usuario!;
           safeSetState(() {});
         }
       }
@@ -456,8 +460,11 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                             child: DropdownUsuarioWidget(
                                               fotoPerfil:
                                                   FFAppState().fotoPefil,
-                                              nomeUsuario: '',
-                                              usuario: '',
+                                              nomeUsuario:
+                                                  FFAppState().nomeUsuario,
+                                              sobrenomeUsuario:
+                                                  FFAppState().sobrenomeUsuario,
+                                              usuario: FFAppState().usuario,
                                             ),
                                           );
                                         },
