@@ -372,7 +372,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                               width: 380.0,
                                               child: LoginWidget(
                                                 redirecionar: () async {
-                                                  Navigator.pop(context);
+                                                  context.pushNamed(
+                                                      InicioWidget.routeName);
                                                 },
                                               ),
                                             ),
