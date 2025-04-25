@@ -40,6 +40,9 @@ class ReceitasResumoRow extends SupabaseDataRow {
   String? get autorId => getField<String>('autor_id');
   set autorId(String? value) => setField<String>('autor_id', value);
 
+  bool? get publicado => getField<bool>('publicado');
+  set publicado(bool? value) => setField<bool>('publicado', value);
+
   String? get autorNome => getField<String>('autor_nome');
   set autorNome(String? value) => setField<String>('autor_nome', value);
 

@@ -594,7 +594,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                     child:
                                         FutureBuilder<List<ReceitasResumoRow>>(
                                       future: ReceitasResumoTable().queryRows(
-                                        queryFn: (q) => q.order('criado_em'),
+                                        queryFn: (q) => q
+                                            .eqOrNull(
+                                              'publicado',
+                                              true,
+                                            )
+                                            .order('criado_em'),
                                         limit: 8,
                                       ),
                                       builder: (context, snapshot) {
