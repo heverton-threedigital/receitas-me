@@ -28,6 +28,10 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   int? get tempoPreparo => getField<int>('tempo_preparo');
   set tempoPreparo(int? value) => setField<int>('tempo_preparo', value);
 
+  String? get tempoPreparoPeriodo => getField<String>('tempo_preparo_periodo');
+  set tempoPreparoPeriodo(String? value) =>
+      setField<String>('tempo_preparo_periodo', value);
+
   String? get porcoes => getField<String>('porcoes');
   set porcoes(String? value) => setField<String>('porcoes', value);
 

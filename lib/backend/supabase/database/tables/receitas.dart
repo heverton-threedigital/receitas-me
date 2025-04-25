@@ -50,4 +50,8 @@ class ReceitasRow extends SupabaseDataRow {
 
   String? get porcoes => getField<String>('porcoes');
   set porcoes(String? value) => setField<String>('porcoes', value);
+
+  String? get tempoPreparoPeriodo => getField<String>('tempo_preparo_periodo');
+  set tempoPreparoPeriodo(String? value) =>
+      setField<String>('tempo_preparo_periodo', value);
 }
