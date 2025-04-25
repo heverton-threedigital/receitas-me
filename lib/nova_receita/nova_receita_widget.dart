@@ -251,7 +251,25 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     MediaQuery.sizeOf(context)
                                                             .width *
                                                         1.0,
-                                                height: 432.0,
+                                                height: () {
+                                                  if (MediaQuery.sizeOf(context)
+                                                          .width <
+                                                      kBreakpointSmall) {
+                                                    return 384.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointMedium) {
+                                                    return 432.0;
+                                                  } else if (MediaQuery.sizeOf(
+                                                              context)
+                                                          .width <
+                                                      kBreakpointLarge) {
+                                                    return 432.0;
+                                                  } else {
+                                                    return 432.0;
+                                                  }
+                                                }(),
                                                 constraints: BoxConstraints(
                                                   maxWidth: () {
                                                     if (MediaQuery.sizeOf(
