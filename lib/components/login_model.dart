@@ -124,10 +124,6 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   TextEditingController? pinCodeController;
   FocusNode? pinCodeFocusNode;
   String? Function(BuildContext, String?)? pinCodeControllerValidator;
-  // Stores action output result for [Custom Action - verifyEmailWithToken] action in PinCode widget.
-  bool? emailVerificado2;
-  // Stores action output result for [Backend Call - Update Row(s)] action in PinCode widget.
-  List<PerfisRow>? perfilCriado2;
   // Stores action output result for [Custom Action - verifyEmailWithToken] action in Button widget.
   bool? emailVerificado;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.

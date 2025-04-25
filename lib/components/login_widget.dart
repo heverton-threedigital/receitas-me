@@ -1690,32 +1690,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                               ),
                               controller: _model.pinCodeController,
                               onChanged: (_) {},
-                              onCompleted: (_) async {
-                                _model.emailVerificado2 =
-                                    await actions.verifyEmailWithToken(
-                                  _model.emailCadastroTextController.text,
-                                  _model.pinCodeController!.text,
-                                );
-                                await PerfisTable().update(
-                                  data: {
-                                    'nome': _model.nomeTextController.text,
-                                    'sobrenome':
-                                        _model.sobrenomeTextController.text,
-                                    'is_admin': false,
-                                  },
-                                  matchingRows: (rows) => rows.eqOrNull(
-                                    'id',
-                                    getJsonField(
-                                      _model.usuarioCriado,
-                                      r'''$.userId''',
-                                    ).toString(),
-                                  ),
-                                );
-                                FFAppState().corfirmarConta = false;
-                                await widget.redirecionar?.call();
-
-                                safeSetState(() {});
-                              },
                               autovalidateMode:
                                   AutovalidateMode.onUserInteraction,
                               validator: _model.pinCodeControllerValidator
