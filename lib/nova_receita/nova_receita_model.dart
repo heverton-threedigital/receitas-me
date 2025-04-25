@@ -90,6 +90,9 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     return null;
   }
 
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for ingrediente widget.
   FocusNode? ingredienteFocusNode;
   TextEditingController? ingredienteTextController;
