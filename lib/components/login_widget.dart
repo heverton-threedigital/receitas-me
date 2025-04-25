@@ -2096,6 +2096,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                   '_model.nomeUsuarioTextController',
                                                   Duration(milliseconds: 2000),
                                                   () async {
+                                                    if (_model.formKey2
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey2
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
                                                     _model.usuarioVerificado =
                                                         await actions
                                                             .verificarDisponibilidadeUsuario(
@@ -2281,12 +2289,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                 size: 24.0,
                                               );
                                             } else {
-                                              return Icon(
-                                                FFIcons.kcancelarPreenchido,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                size: 24.0,
+                                              return Visibility(
+                                                visible:
+                                                    _model.usuarioVerificado !=
+                                                        null,
+                                                child: Icon(
+                                                  FFIcons.kcancelarPreenchido,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  size: 24.0,
+                                                ),
                                               );
                                             }
                                           },
