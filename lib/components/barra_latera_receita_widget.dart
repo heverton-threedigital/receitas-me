@@ -462,6 +462,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                     .bodyLarge
                                                     .fontStyle,
                                           ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -475,15 +477,15 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   ),
                                 ),
                                 offset: 4.0,
-                                preferredDirection: AxisDirection.down,
+                                preferredDirection: AxisDirection.up,
                                 borderRadius: BorderRadius.circular(8.0),
-                                backgroundColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
                                 elevation: 4.0,
-                                tailBaseWidth: 24.0,
-                                tailLength: 12.0,
+                                tailBaseWidth: 0.0,
+                                tailLength: 0.0,
                                 waitDuration: Duration(milliseconds: 100),
-                                showDuration: Duration(milliseconds: 1500),
+                                showDuration: Duration(milliseconds: 100),
                                 triggerMode: TooltipTriggerMode.tap,
                                 child: FlutterFlowIconButton(
                                   borderRadius: 40.0,
