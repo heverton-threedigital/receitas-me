@@ -17,14 +17,14 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
-      _fotoPerfil = prefs.getString('ff_fotoPerfil') ?? _fotoPerfil;
-    });
-    _safeInit(() {
       _categoriasReceitas =
           prefs.getStringList('ff_categoriasReceitas') ?? _categoriasReceitas;
     });
     _safeInit(() {
       _corfirmarConta = prefs.getBool('ff_corfirmarConta') ?? _corfirmarConta;
+    });
+    _safeInit(() {
+      _fotoPefil = prefs.getString('ff_fotoPefil') ?? _fotoPefil;
     });
   }
 
@@ -34,13 +34,6 @@ class FFAppState extends ChangeNotifier {
   }
 
   late SharedPreferences prefs;
-
-  String _fotoPerfil = '';
-  String get fotoPerfil => _fotoPerfil;
-  set fotoPerfil(String value) {
-    _fotoPerfil = value;
-    prefs.setString('ff_fotoPerfil', value);
-  }
 
   List<String> _categoriasReceitas = [];
   List<String> get categoriasReceitas => _categoriasReceitas;
@@ -158,6 +151,13 @@ class FFAppState extends ChangeNotifier {
   bool get ReceitaSalva => _ReceitaSalva;
   set ReceitaSalva(bool value) {
     _ReceitaSalva = value;
+  }
+
+  String _fotoPefil = '';
+  String get fotoPefil => _fotoPefil;
+  set fotoPefil(String value) {
+    _fotoPefil = value;
+    prefs.setString('ff_fotoPefil', value);
   }
 }
 

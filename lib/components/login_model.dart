@@ -8,10 +8,13 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   bool islogin = true;
 
+  FFUploadedFile? fotoPerfil;
+
   ///  State fields for stateful widgets in this component.
 
-  final formKey2 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   // State field(s) for EmailLogin widget.
   FocusNode? emailLoginFocusNode;
   TextEditingController? emailLoginTextController;
@@ -127,6 +130,40 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   bool? emailVerificado;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<PerfisRow>? perfilCriado;
+  bool isDataUploading1 = false;
+  FFUploadedFile uploadedLocalFile1 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+
+  // State field(s) for NomeUsuario widget.
+  FocusNode? nomeUsuarioFocusNode;
+  TextEditingController? nomeUsuarioTextController;
+  String? Function(BuildContext, String?)? nomeUsuarioTextControllerValidator;
+  String? _nomeUsuarioTextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Nome de usuário é obrigatório';
+    }
+
+    if (val.length < 3) {
+      return 'O nome de usuário não pode ter menos de 4 caracteres';
+    }
+
+    if (!RegExp('^[a-z0-9_]{3,30}\$').hasMatch(val)) {
+      return 'Use 3 a 30 caracteres: letras minúsculas (a-z), números (0-9) ou _';
+    }
+    return null;
+  }
+
+  // Stores action output result for [Custom Action - verificarDisponibilidadeUsuario] action in NomeUsuario widget.
+  bool? usuarioVerificado;
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl3 = '';
 
   @override
   void initState(BuildContext context) {
@@ -144,6 +181,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     confirmeSenhaCadastroTextControllerValidator =
         _confirmeSenhaCadastroTextControllerValidator;
     pinCodeController = TextEditingController();
+    nomeUsuarioTextControllerValidator = _nomeUsuarioTextControllerValidator;
   }
 
   @override
@@ -171,5 +209,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
     pinCodeFocusNode?.dispose();
     pinCodeController?.dispose();
+
+    nomeUsuarioFocusNode?.dispose();
+    nomeUsuarioTextController?.dispose();
   }
 }

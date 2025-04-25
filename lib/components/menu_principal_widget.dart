@@ -10,7 +10,6 @@ import '/index.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'menu_principal_model.dart';
@@ -45,15 +44,14 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (loggedIn) {
-        if (!(FFAppState().fotoPerfil != '')) {
+        if (!(FFAppState().fotoPefil != '')) {
           _model.perfilLogado = await PerfisTable().queryRows(
             queryFn: (q) => q.eqOrNull(
               'id',
               currentUserUid,
             ),
           );
-          FFAppState().fotoPerfil =
-              _model.perfilLogado!.firstOrNull!.avatarUrl!;
+          FFAppState().fotoPefil = _model.perfilLogado!.firstOrNull!.avatarUrl!;
           safeSetState(() {});
         }
       }
@@ -114,10 +112,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                   buttonSize: 40.0,
                                   fillColor: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  icon: FaIcon(
-                                    FontAwesomeIcons.bars,
+                                  hoverColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  icon: Icon(
+                                    FFIcons.kmenu,
                                     color: FlutterFlowTheme.of(context).primary,
-                                    size: 24.0,
+                                    size: 26.0,
                                   ),
                                   onPressed: () async {
                                     await widget.drawer?.call();
@@ -182,7 +182,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Icon(
-                                              Icons.search_rounded,
+                                              FFIcons.kpesquisa,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -291,10 +291,10 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     },
                                     text: 'Criar receita',
                                     icon: Icon(
-                                      Icons.open_in_new_rounded,
+                                      FFIcons.kadicionarCirculo,
                                       color:
                                           FlutterFlowTheme.of(context).primary,
-                                      size: 18.0,
+                                      size: 24.0,
                                     ),
                                     options: FFButtonOptions(
                                       height: 40.0,
@@ -379,13 +379,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         },
                                       );
                                     },
-                                    text: 'Login',
-                                    icon: Icon(
-                                      Icons.login_rounded,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 15.0,
-                                    ),
+                                    text: 'Entrar',
                                     options: FFButtonOptions(
                                       height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -424,7 +418,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       borderSide: BorderSide(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
-                                        width: 2.0,
+                                        width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
@@ -459,7 +453,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         builder: (dialogContext) {
                                           return Material(
                                             color: Colors.transparent,
-                                            child: DropdownUsuarioWidget(),
+                                            child: DropdownUsuarioWidget(
+                                              fotoPerfil:
+                                                  FFAppState().fotoPefil,
+                                              nomeUsuario: '',
+                                              usuario: '',
+                                            ),
                                           );
                                         },
                                       );
@@ -473,7 +472,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       ),
                                       child: Image.network(
                                         valueOrDefault<String>(
-                                          FFAppState().fotoPerfil,
+                                          FFAppState().fotoPefil,
                                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                                         ),
                                         fit: BoxFit.contain,

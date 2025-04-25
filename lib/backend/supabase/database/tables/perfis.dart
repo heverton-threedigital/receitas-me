@@ -41,4 +41,7 @@ class PerfisRow extends SupabaseDataRow {
 
   String? get sobrenome => getField<String>('sobrenome');
   set sobrenome(String? value) => setField<String>('sobrenome', value);
+
+  String? get usuario => getField<String>('usuario');
+  set usuario(String? value) => setField<String>('usuario', value);
 }

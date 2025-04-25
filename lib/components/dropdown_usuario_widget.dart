@@ -8,7 +8,16 @@ import 'dropdown_usuario_model.dart';
 export 'dropdown_usuario_model.dart';
 
 class DropdownUsuarioWidget extends StatefulWidget {
-  const DropdownUsuarioWidget({super.key});
+  const DropdownUsuarioWidget({
+    super.key,
+    required this.fotoPerfil,
+    required this.nomeUsuario,
+    required this.usuario,
+  });
+
+  final String? fotoPerfil;
+  final String? nomeUsuario;
+  final String? usuario;
 
   @override
   State<DropdownUsuarioWidget> createState() => _DropdownUsuarioWidgetState();
@@ -66,29 +75,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 0.0, 8.0),
-                child: Text(
-                  'Account Options',
-                  textAlign: TextAlign.start,
-                  style: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.workSans(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontWeight,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
-                        letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).labelMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -187,11 +174,11 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
+                              16.0, 0.0, 0.0, 0.0),
                           child: Icon(
-                            Icons.account_circle_outlined,
+                            FFIcons.kcontaCirculo,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20.0,
+                            size: 24.0,
                           ),
                         ),
                         Expanded(
@@ -252,11 +239,11 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
+                              16.0, 0.0, 0.0, 0.0),
                           child: Icon(
-                            Icons.settings_outlined,
+                            FFIcons.kconfiguraes,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20.0,
+                            size: 24.0,
                           ),
                         ),
                         Expanded(
@@ -317,11 +304,11 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
+                              16.0, 0.0, 0.0, 0.0),
                           child: Icon(
                             Icons.attach_money_rounded,
                             color: FlutterFlowTheme.of(context).primaryText,
-                            size: 20.0,
+                            size: 24.0,
                           ),
                         ),
                         Expanded(
@@ -400,11 +387,11 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
+                                16.0, 0.0, 0.0, 0.0),
                             child: Icon(
-                              Icons.login_rounded,
+                              FFIcons.ksair,
                               color: FlutterFlowTheme.of(context).primaryText,
-                              size: 20.0,
+                              size: 24.0,
                             ),
                           ),
                           Expanded(

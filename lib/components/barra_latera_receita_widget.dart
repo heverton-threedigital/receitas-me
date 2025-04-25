@@ -253,9 +253,9 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Icon(
-                                Icons.remove_red_eye_outlined,
+                                FFIcons.kvisivel,
                                 color: FlutterFlowTheme.of(context).primary,
-                                size: 18.0,
+                                size: 20.0,
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -298,12 +298,12 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     4.0, 0.0, 0.0, 0.0),
                                 child: Text(
-                                  dateTimeFormat(
+                                  'Posatado ${dateTimeFormat(
                                     "relative",
-                                    widget.informacoesReceita!.criadoEm!,
+                                    widget.informacoesReceita?.criadoEm,
                                     locale: FFLocalizations.of(context)
                                         .languageCode,
-                                  ),
+                                  )}',
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -358,7 +358,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   },
                                   text: 'Salvar receita',
                                   icon: Icon(
-                                    Icons.bookmark_border_rounded,
+                                    FFIcons.kadicionarFavorito,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -371,28 +371,22 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
+                                        .bodyLarge
                                         .override(
                                           font: GoogleFonts.workSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
+                                            fontWeight: FontWeight.w500,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .titleSmall
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
+                                          fontWeight: FontWeight.w500,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .titleSmall
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                     elevation: 0.0,
@@ -411,7 +405,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   },
                                   text: 'Editar',
                                   icon: Icon(
-                                    Icons.edit_rounded,
+                                    FFIcons.keditar,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -424,28 +418,22 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
+                                        .bodyLarge
                                         .override(
                                           font: GoogleFonts.workSans(
-                                            fontWeight:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .fontWeight,
+                                            fontWeight: FontWeight.w500,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .titleSmall
+                                                    .bodyLarge
                                                     .fontStyle,
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           letterSpacing: 0.0,
-                                          fontWeight:
-                                              FlutterFlowTheme.of(context)
-                                                  .titleSmall
-                                                  .fontWeight,
+                                          fontWeight: FontWeight.w500,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .titleSmall
+                                                  .bodyLarge
                                                   .fontStyle,
                                         ),
                                     elevation: 0.0,
@@ -502,7 +490,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   buttonSize: 40.0,
                                   fillColor: Color(0x1AD84012),
                                   icon: Icon(
-                                    Icons.ios_share_rounded,
+                                    FFIcons.kcompartilhar,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -516,7 +504,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 buttonSize: 40.0,
                                 fillColor: Color(0x1AD84012),
                                 icon: Icon(
-                                  Icons.chat_bubble_outline_outlined,
+                                  FFIcons.kcomentario,
                                   color: FlutterFlowTheme.of(context).primary,
                                   size: 24.0,
                                 ),
@@ -531,7 +519,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                             buttonSize: 40.0,
                             fillColor: Color(0x1AD84012),
                             icon: Icon(
-                              Icons.keyboard_control,
+                              FFIcons.kmaisMenuHorizontal,
                               color: FlutterFlowTheme.of(context).primary,
                               size: 24.0,
                             ),
