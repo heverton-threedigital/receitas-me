@@ -680,6 +680,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                               sobrenomeAutor:
                                                   staggeredViewReceitasResumoRow
                                                       .autorSobrenome!,
+                                              tempoPeriodo:
+                                                  staggeredViewReceitasResumoRow
+                                                      .tempoPreparoPeriodo!,
                                             );
                                           },
                                         );

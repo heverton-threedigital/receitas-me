@@ -713,7 +713,7 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                                     size: 24.0,
                                                                                   ),
                                                                                   Text(
-                                                                                    '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()}minutos',
+                                                                                    '${receitaReceitasDetalhadasRow?.tempoPreparo?.toString()} ${receitaReceitasDetalhadasRow?.tempoPreparoPeriodo}',
                                                                                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                           font: GoogleFonts.workSans(
                                                                                             fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,

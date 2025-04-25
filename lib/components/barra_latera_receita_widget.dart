@@ -76,7 +76,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  if (widget.informacoesReceita?.autorId != currentUserUid)
+                  if (widget.informacoesReceita?.autorId == currentUserUid)
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
