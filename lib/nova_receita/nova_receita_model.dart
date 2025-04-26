@@ -129,6 +129,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   // Stores action output result for [Custom Action - slugify] action in Button widget.
   String? slugRegado;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<ReceitasRow>? receitaAtualizada;
   InstantTimer? instantTimer1;
   InstantTimer? instantTimer3;
   // Model for MenuLateralE component.
