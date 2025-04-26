@@ -2728,6 +2728,26 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       ),
                                                     FFButtonWidget(
                                                       onPressed: () async {
+                                                        _model.receitaCriada1 =
+                                                            await ReceitasTable()
+                                                                .insert({
+                                                          'titulo': _model
+                                                              .tituloReceitaTextController
+                                                              .text,
+                                                          'descricao': _model
+                                                              .dscricaoReceitaTextController
+                                                              .text,
+                                                          'tempo_preparo': int
+                                                              .tryParse(_model
+                                                                  .preparacaoReceitaTextController
+                                                                  .text),
+                                                          'autor_id':
+                                                              currentUserUid,
+                                                          'publicado': false,
+                                                          'tempo_preparo_periodo':
+                                                              _model
+                                                                  .dropDownValue,
+                                                        });
                                                         if (_model.imagemReceita !=
                                                                 null &&
                                                             (_model
@@ -2795,37 +2815,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             }
                                                           }
                                                         }
-                                                        _model.receitaCriada1 =
-                                                            await ReceitasTable()
-                                                                .insert({
-                                                          'titulo': _model
-                                                              .tituloReceitaTextController
-                                                              .text,
-                                                          'descricao': _model
-                                                              .dscricaoReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo': int
-                                                              .tryParse(_model
-                                                                  .preparacaoReceitaTextController
-                                                                  .text),
-                                                          'autor_id':
-                                                              currentUserUid,
-                                                          'imagem_url': _model
-                                                                          .imagemReceita !=
-                                                                      null &&
-                                                                  (_model
-                                                                          .imagemReceita
-                                                                          ?.bytes
-                                                                          ?.isNotEmpty ??
-                                                                      false)
-                                                              ? _model
-                                                                  .uploadedFileUrl2
-                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
-                                                          'publicado': false,
-                                                          'tempo_preparo_periodo':
-                                                              _model
-                                                                  .dropDownValue,
-                                                        });
                                                         _model.slugGerado1 =
                                                             await actions
                                                                 .slugify(
@@ -2839,6 +2828,17 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           data: {
                                                             'slug': _model
                                                                 .slugGerado1,
+                                                            'imagem_url': _model
+                                                                            .imagemReceita !=
+                                                                        null &&
+                                                                    (_model
+                                                                            .imagemReceita
+                                                                            ?.bytes
+                                                                            ?.isNotEmpty ??
+                                                                        false)
+                                                                ? _model
+                                                                    .uploadedFileUrl2
+                                                                : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                           },
                                                           matchingRows:
                                                               (rows) =>
@@ -3100,6 +3100,31 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           );
                                                           return;
                                                         }
+                                                        _model.receitaCriada =
+                                                            await ReceitasTable()
+                                                                .insert({
+                                                          'titulo': _model
+                                                              .tituloReceitaTextController
+                                                              .text,
+                                                          'descricao': _model
+                                                              .dscricaoReceitaTextController
+                                                              .text,
+                                                          'tempo_preparo': int
+                                                              .tryParse(_model
+                                                                  .preparacaoReceitaTextController
+                                                                  .text),
+                                                          'autor_id':
+                                                              currentUserUid,
+                                                          'publicado': true,
+                                                          'categoria_id': _model
+                                                              .categoriaReceitaValue,
+                                                          'porcoes': _model
+                                                              .porcoesReceitaTextController
+                                                              .text,
+                                                          'tempo_preparo_periodo':
+                                                              _model
+                                                                  .dropDownValue,
+                                                        });
                                                         if (_model.imagemReceita !=
                                                                 null &&
                                                             (_model
@@ -3167,42 +3192,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             }
                                                           }
                                                         }
-                                                        _model.receitaCriada =
-                                                            await ReceitasTable()
-                                                                .insert({
-                                                          'titulo': _model
-                                                              .tituloReceitaTextController
-                                                              .text,
-                                                          'descricao': _model
-                                                              .dscricaoReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo': int
-                                                              .tryParse(_model
-                                                                  .preparacaoReceitaTextController
-                                                                  .text),
-                                                          'autor_id':
-                                                              currentUserUid,
-                                                          'imagem_url': _model
-                                                                          .imagemReceita !=
-                                                                      null &&
-                                                                  (_model
-                                                                          .imagemReceita
-                                                                          ?.bytes
-                                                                          ?.isNotEmpty ??
-                                                                      false)
-                                                              ? _model
-                                                                  .uploadedFileUrl3
-                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
-                                                          'publicado': true,
-                                                          'categoria_id': _model
-                                                              .categoriaReceitaValue,
-                                                          'porcoes': _model
-                                                              .porcoesReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo_periodo':
-                                                              _model
-                                                                  .dropDownValue,
-                                                        });
                                                         _model.slugRegado =
                                                             await actions
                                                                 .slugify(
@@ -3216,6 +3205,17 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           data: {
                                                             'slug': _model
                                                                 .slugRegado,
+                                                            'imagem_url': _model
+                                                                            .imagemReceita !=
+                                                                        null &&
+                                                                    (_model
+                                                                            .imagemReceita
+                                                                            ?.bytes
+                                                                            ?.isNotEmpty ??
+                                                                        false)
+                                                                ? _model
+                                                                    .uploadedFileUrl3
+                                                                : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                           },
                                                           matchingRows:
                                                               (rows) =>

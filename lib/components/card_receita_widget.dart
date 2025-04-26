@@ -166,7 +166,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Icon(
-                                FFIcons.ksopa,
+                                FFIcons.khamburger,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 16.0,
                               ),

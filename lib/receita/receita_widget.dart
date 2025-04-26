@@ -831,75 +831,77 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                         CrossAxisAlignment
                                                                             .start,
                                                                     children: [
-                                                                      Expanded(
-                                                                        child:
-                                                                            ClipRRect(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(16.0),
+                                                                      if (receitaReceitasDetalhadasRow?.porcoes !=
+                                                                              null &&
+                                                                          receitaReceitasDetalhadasRow?.porcoes !=
+                                                                              '')
+                                                                        Expanded(
                                                                           child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              borderRadius: BorderRadius.circular(16.0),
-                                                                            ),
+                                                                              ClipRRect(
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(16.0),
                                                                             child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
-                                                                              child: Column(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                children: [
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
-                                                                                    child: Text(
-                                                                                      'Porçoes',
-                                                                                      style: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                            font: GoogleFonts.workSans(
+                                                                                Container(
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                borderRadius: BorderRadius.circular(16.0),
+                                                                              ),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 2.0),
+                                                                                      child: Text(
+                                                                                        'Porçoes',
+                                                                                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              font: GoogleFonts.workSans(
+                                                                                                fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
+                                                                                                fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                                              ),
+                                                                                              letterSpacing: 0.0,
                                                                                               fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
                                                                                               fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
                                                                                             ),
-                                                                                            letterSpacing: 0.0,
-                                                                                            fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                            fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                          ),
+                                                                                      ),
                                                                                     ),
-                                                                                  ),
-                                                                                  Container(
-                                                                                    width: double.infinity,
-                                                                                    decoration: BoxDecoration(),
-                                                                                    child: Row(
-                                                                                      mainAxisSize: MainAxisSize.max,
-                                                                                      children: [
-                                                                                        Icon(
-                                                                                          FFIcons.ksopa,
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          size: 24.0,
-                                                                                        ),
-                                                                                        Text(
-                                                                                          valueOrDefault<String>(
-                                                                                            receitaReceitasDetalhadasRow?.porcoes,
-                                                                                            '-',
+                                                                                    Container(
+                                                                                      width: double.infinity,
+                                                                                      decoration: BoxDecoration(),
+                                                                                      child: Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Icon(
+                                                                                            FFIcons.khamburger,
+                                                                                            color: FlutterFlowTheme.of(context).primary,
+                                                                                            size: 24.0,
                                                                                           ),
-                                                                                          style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                                font: GoogleFonts.workSans(
+                                                                                          Text(
+                                                                                            valueOrDefault<String>(
+                                                                                              receitaReceitasDetalhadasRow?.porcoes,
+                                                                                              '-',
+                                                                                            ),
+                                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                                  font: GoogleFonts.workSans(
+                                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                                  ),
+                                                                                                  letterSpacing: 0.0,
                                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                                 ),
-                                                                                                letterSpacing: 0.0,
-                                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                              ),
-                                                                                        ),
-                                                                                      ].divide(SizedBox(width: 8.0)),
+                                                                                          ),
+                                                                                        ].divide(SizedBox(width: 8.0)),
+                                                                                      ),
                                                                                     ),
-                                                                                  ),
-                                                                                ],
+                                                                                  ],
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
                                                                         ),
-                                                                      ),
                                                                       Expanded(
                                                                         child:
                                                                             ClipRRect(

@@ -67,15 +67,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   TextEditingController? porcoesReceitaTextController;
   String? Function(BuildContext, String?)?
       porcoesReceitaTextControllerValidator;
-  String? _porcoesReceitaTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Digite a porção';
-    }
-
-    return null;
-  }
-
   // State field(s) for PreparacaoReceita widget.
   FocusNode? preparacaoReceitaFocusNode;
   TextEditingController? preparacaoReceitaTextController;
@@ -118,24 +109,24 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     return null;
   }
 
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ReceitasRow? receitaCriada1;
   bool isDataUploading2 = false;
   FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada1;
   // Stores action output result for [Custom Action - slugify] action in Button widget.
   String? slugGerado1;
   InstantTimer? instantTimer;
   InstantTimer? instantTimer2;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ReceitasRow? receitaCriada;
   bool isDataUploading3 = false;
   FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl3 = '';
 
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada;
   // Stores action output result for [Custom Action - slugify] action in Button widget.
   String? slugRegado;
   InstantTimer? instantTimer1;
@@ -150,8 +141,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
         _tituloReceitaTextControllerValidator;
     dscricaoReceitaTextControllerValidator =
         _dscricaoReceitaTextControllerValidator;
-    porcoesReceitaTextControllerValidator =
-        _porcoesReceitaTextControllerValidator;
     preparacaoReceitaTextControllerValidator =
         _preparacaoReceitaTextControllerValidator;
     ingredienteTextControllerValidator = _ingredienteTextControllerValidator;
