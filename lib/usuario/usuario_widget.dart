@@ -618,7 +618,8 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                 queryFn: (q) => q
                                                     .eqOrNull(
                                                       'autor_id',
-                                                      widget.usuario,
+                                                      usuarioPerfisComContagemReceitasRow
+                                                          ?.id,
                                                     )
                                                     .order('criado_em'),
                                               ),
