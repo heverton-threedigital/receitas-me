@@ -18,8 +18,14 @@ class ReceitasResumoRow extends SupabaseDataRow {
   String? get id => getField<String>('id');
   set id(String? value) => setField<String>('id', value);
 
+  String? get slug => getField<String>('slug');
+  set slug(String? value) => setField<String>('slug', value);
+
   String? get titulo => getField<String>('titulo');
   set titulo(String? value) => setField<String>('titulo', value);
+
+  bool? get publicado => getField<bool>('publicado');
+  set publicado(bool? value) => setField<bool>('publicado', value);
 
   String? get imagemUrl => getField<String>('imagem_url');
   set imagemUrl(String? value) => setField<String>('imagem_url', value);
@@ -39,9 +45,6 @@ class ReceitasResumoRow extends SupabaseDataRow {
 
   String? get autorId => getField<String>('autor_id');
   set autorId(String? value) => setField<String>('autor_id', value);
-
-  bool? get publicado => getField<bool>('publicado');
-  set publicado(bool? value) => setField<bool>('publicado', value);
 
   String? get autorNome => getField<String>('autor_nome');
   set autorNome(String? value) => setField<String>('autor_nome', value);

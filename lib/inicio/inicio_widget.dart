@@ -76,15 +76,12 @@ class _InicioWidgetState extends State<InicioWidget> {
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            drawer: Container(
-              width: 220.0,
-              child: Drawer(
-                elevation: 16.0,
-                child: wrapWithModel(
-                  model: _model.menuLateralEModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: MenuLateralEWidget(),
-                ),
+            drawer: Drawer(
+              elevation: 16.0,
+              child: wrapWithModel(
+                model: _model.menuLateralEModel,
+                updateCallback: () => safeSetState(() {}),
+                child: MenuLateralEWidget(),
               ),
             ),
             body: SafeArea(
