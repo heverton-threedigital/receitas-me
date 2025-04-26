@@ -421,8 +421,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
 
                   FFAppState().fotoPefil = '';
                   safeSetState(() {});
-
-                  context.goNamedAuth(InicioWidget.routeName, context.mounted);
+                  Navigator.pop(context);
                 },
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 150),
