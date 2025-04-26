@@ -724,30 +724,71 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                '${novaReceitaPerfisRow?.nome} ${novaReceitaPerfisRow?.sobrenome}',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .workSans(
-                                                                        fontWeight:
-                                                                            FontWeight.bold,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      novaReceitaPerfisRow
+                                                                          ?.nome,
+                                                                      '-',
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.workSans(
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  if (novaReceitaPerfisRow
+                                                                              ?.sobrenome !=
+                                                                          null &&
+                                                                      novaReceitaPerfisRow
+                                                                              ?.sobrenome !=
+                                                                          '')
+                                                                    Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        novaReceitaPerfisRow
+                                                                            ?.sobrenome,
+                                                                        '-',
                                                                       ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                      style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
-                                                                          .fontStyle,
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.workSans(
+                                                                              fontWeight: FontWeight.bold,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
                                                                     ),
+                                                                ].divide(SizedBox(
+                                                                    width:
+                                                                        6.0)),
                                                               ),
                                                               Text(
                                                                 valueOrDefault<

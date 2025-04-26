@@ -149,35 +149,70 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        valueOrDefault<String>(
-                                          '${widget.informacoesReceita?.autorNome} ${widget.informacoesReceita?.autorSobrenome}',
-                                          '-',
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .titleSmall
-                                            .override(
-                                              font: GoogleFonts.workSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .fontStyle,
-                                              lineHeight: 1.2,
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            valueOrDefault<String>(
+                                              widget.informacoesReceita
+                                                  ?.autorNome,
+                                              '-',
                                             ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  font: GoogleFonts.workSans(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
+                                                ),
+                                          ),
+                                          if (widget.informacoesReceita
+                                                      ?.autorSobrenome !=
+                                                  null &&
+                                              widget.informacoesReceita
+                                                      ?.autorSobrenome !=
+                                                  '')
+                                            Text(
+                                              valueOrDefault<String>(
+                                                widget.informacoesReceita
+                                                    ?.autorSobrenome,
+                                                '-',
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    font: GoogleFonts.workSans(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
+                                            ),
+                                        ].divide(SizedBox(width: 4.0)),
                                       ),
                                       FFButtonWidget(
                                         onPressed: () {
@@ -770,44 +805,75 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                valueOrDefault<
-                                                                    String>(
-                                                                  '${valueOrDefault<String>(
-                                                                    staggeredViewReceitasResumoRow
-                                                                        .autorNome,
-                                                                    '-',
-                                                                  )} ${valueOrDefault<String>(
-                                                                    staggeredViewReceitasResumoRow
-                                                                        .autorSobrenome,
-                                                                    '-',
-                                                                  )}',
-                                                                  '-',
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .workSans(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .fontStyle,
-                                                                      ),
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                children: [
+                                                                  Text(
+                                                                    valueOrDefault<
+                                                                        String>(
+                                                                      staggeredViewReceitasResumoRow
+                                                                          .autorNome,
+                                                                      '-',
                                                                     ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          font:
+                                                                              GoogleFonts.workSans(
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                          fontSize:
+                                                                              12.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.bold,
+                                                                          fontStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .fontStyle,
+                                                                        ),
+                                                                  ),
+                                                                  if (staggeredViewReceitasResumoRow
+                                                                              .autorSobrenome !=
+                                                                          null &&
+                                                                      staggeredViewReceitasResumoRow
+                                                                              .autorSobrenome !=
+                                                                          '')
+                                                                    Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        staggeredViewReceitasResumoRow
+                                                                            .autorSobrenome,
+                                                                        '-',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            font:
+                                                                                GoogleFonts.workSans(
+                                                                              fontWeight: FontWeight.bold,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                            ),
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                            fontStyle:
+                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                          ),
+                                                                    ),
+                                                                ].divide(SizedBox(
+                                                                    width:
+                                                                        4.0)),
                                                               ),
                                                             ],
                                                           ),

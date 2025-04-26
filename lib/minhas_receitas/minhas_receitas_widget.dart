@@ -178,8 +178,8 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                           }
                                         }(),
                                       ),
-                                      crossAxisSpacing: 16.0,
-                                      mainAxisSpacing: 16.0,
+                                      crossAxisSpacing: 24.0,
+                                      mainAxisSpacing: 24.0,
                                       itemCount:
                                           staggeredViewReceitasResumoRowList
                                               .length,
@@ -431,7 +431,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                           context)
                                                                       .primary,
                                                               borderRadius: 8.0,
-                                                              buttonSize: 40.0,
+                                                              buttonSize: 32.0,
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
@@ -441,7 +441,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                size: 24.0,
+                                                                size: 16.0,
                                                               ),
                                                               onPressed: () {
                                                                 print(
@@ -515,7 +515,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                           context)
                                                                       .primary,
                                                               borderRadius: 8.0,
-                                                              buttonSize: 40.0,
+                                                              buttonSize: 32.0,
                                                               fillColor: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryBackground,
@@ -525,7 +525,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                size: 24.0,
+                                                                size: 16.0,
                                                               ),
                                                               onPressed:
                                                                   () async {

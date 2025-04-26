@@ -101,13 +101,17 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          valueOrDefault<String>(
-                            '${widget.nomeUsuario} ${widget.sobrenomeUsuario}',
-                            '-',
-                          ),
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Text(
+                              valueOrDefault<String>(
+                                widget.nomeUsuario,
+                                '-',
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
                                     font: GoogleFonts.workSans(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
@@ -120,6 +124,31 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                            ),
+                            if (widget.sobrenomeUsuario != null &&
+                                widget.sobrenomeUsuario != '')
+                              Text(
+                                valueOrDefault<String>(
+                                  widget.sobrenomeUsuario,
+                                  '-',
+                                ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      font: GoogleFonts.workSans(
+                                        fontWeight: FontWeight.bold,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                      ),
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                              ),
+                          ].divide(SizedBox(width: 6.0)),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(

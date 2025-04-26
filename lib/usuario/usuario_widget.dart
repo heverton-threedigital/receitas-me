@@ -181,11 +181,19 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      Text(
-                                                        '${usuarioPerfisComContagemReceitasRow?.nome} ${usuarioPerfisComContagemReceitasRow?.sobrenome}',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              usuarioPerfisComContagemReceitasRow
+                                                                  ?.nome,
+                                                              '-',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .titleMedium
                                                                 .override(
                                                                   font: GoogleFonts
@@ -210,6 +218,49 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                       .titleMedium
                                                                       .fontStyle,
                                                                 ),
+                                                          ),
+                                                          if (usuarioPerfisComContagemReceitasRow
+                                                                      ?.sobrenome !=
+                                                                  null &&
+                                                              usuarioPerfisComContagemReceitasRow
+                                                                      ?.sobrenome !=
+                                                                  '')
+                                                            Text(
+                                                              valueOrDefault<
+                                                                  String>(
+                                                                usuarioPerfisComContagemReceitasRow
+                                                                    ?.sobrenome,
+                                                                '-',
+                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .titleMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .workSans(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .titleMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .titleMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                            ),
+                                                        ].divide(SizedBox(
+                                                            width: 6.0)),
                                                       ),
                                                       Text(
                                                         '@${usuarioPerfisComContagemReceitasRow?.usuario}',
@@ -672,8 +723,8 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                       }
                                                     }(),
                                                   ),
-                                                  crossAxisSpacing: 16.0,
-                                                  mainAxisSpacing: 16.0,
+                                                  crossAxisSpacing: 24.0,
+                                                  mainAxisSpacing: 24.0,
                                                   itemCount:
                                                       staggeredViewReceitasResumoRowList
                                                           .length,
@@ -931,22 +982,22 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                     )}',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium
+                                                                        .bodySmall
                                                                         .override(
                                                                           font:
                                                                               GoogleFonts.workSans(
                                                                             fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontWeight,
                                                                             fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                                FlutterFlowTheme.of(context).bodySmall.fontStyle,
                                                                           ),
                                                                           letterSpacing:
                                                                               0.0,
                                                                           fontWeight: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
+                                                                              .bodySmall
                                                                               .fontWeight,
                                                                           fontStyle: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
+                                                                              .bodySmall
                                                                               .fontStyle,
                                                                         ),
                                                                   ),
@@ -1004,14 +1055,14 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                             borderRadius:
                                                                                 8.0,
                                                                             buttonSize:
-                                                                                40.0,
+                                                                                32.0,
                                                                             fillColor:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             icon:
                                                                                 Icon(
                                                                               FFIcons.keditarQuadrado,
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 24.0,
+                                                                              size: 16.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () {
@@ -1069,14 +1120,14 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                             borderRadius:
                                                                                 8.0,
                                                                             buttonSize:
-                                                                                40.0,
+                                                                                32.0,
                                                                             fillColor:
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             icon:
                                                                                 Icon(
                                                                               FFIcons.kexcluir,
                                                                               color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 24.0,
+                                                                              size: 16.0,
                                                                             ),
                                                                             onPressed:
                                                                                 () async {
