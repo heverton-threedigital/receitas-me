@@ -2,10 +2,11 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -106,21 +107,26 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                       Text(
                                         'Minhas receitas',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
+                                            .titleLarge
                                             .override(
                                               font: GoogleFonts.workSans(
-                                                fontWeight: FontWeight.bold,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .titleLarge
+                                                        .fontWeight,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium
+                                                        .titleLarge
                                                         .fontStyle,
                                               ),
-                                              fontSize: 20.0,
                                               letterSpacing: 0.0,
-                                              fontWeight: FontWeight.bold,
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleLarge
+                                                      .fontWeight,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium
+                                                      .titleLarge
                                                       .fontStyle,
                                             ),
                                       ),
@@ -189,7 +195,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                   context)
                                                               .width <
                                                           kBreakpointSmall) {
-                                                        return 1;
+                                                        return 2;
                                                       } else if (MediaQuery
                                                                   .sizeOf(
                                                                       context)
@@ -201,9 +207,9 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                       context)
                                                               .width <
                                                           kBreakpointLarge) {
-                                                        return 3;
+                                                        return 4;
                                                       } else {
-                                                        return 3;
+                                                        return 4;
                                                       }
                                                     }(),
                                                   ),
@@ -395,11 +401,11 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                             children:
                                                                                 [
                                                                               Text(
-                                                                                'Criado há: ${valueOrDefault<String>(
+                                                                                'Criado ${valueOrDefault<String>(
                                                                                   dateTimeFormat(
                                                                                     "relative",
                                                                                     staggeredViewReceitasResumoRow.criadoEm,
-                                                                                    locale: FFLocalizations.of(context).languageShortCode ?? FFLocalizations.of(context).languageCode,
+                                                                                    locale: FFLocalizations.of(context).languageCode,
                                                                                   ),
                                                                                   '-',
                                                                                 )}',
@@ -415,38 +421,70 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                               ),
                                                                             ].divide(SizedBox(width: 8.0)),
                                                                           ),
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () {
-                                                                              print('Button pressed ...');
-                                                                            },
-                                                                            text:
-                                                                                'Editar',
-                                                                            icon:
-                                                                                Icon(
-                                                                              Icons.edit_note,
-                                                                              color: FlutterFlowTheme.of(context).primaryBackground,
-                                                                              size: 24.0,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 36.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    font: GoogleFonts.workSans(
-                                                                                      fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                      fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
-                                                                                    ),
-                                                                                    color: Colors.white,
-                                                                                    letterSpacing: 0.0,
-                                                                                    fontWeight: FlutterFlowTheme.of(context).titleSmall.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).titleSmall.fontStyle,
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children:
+                                                                                [
+                                                                              AlignedTooltip(
+                                                                                content: Padding(
+                                                                                  padding: EdgeInsets.all(4.0),
+                                                                                  child: Text(
+                                                                                    'Editar receita',
+                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                          font: GoogleFonts.workSans(
+                                                                                            fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                            fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                          ),
+                                                                                          fontSize: 14.0,
+                                                                                          letterSpacing: 0.0,
+                                                                                          fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                          fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                                        ),
                                                                                   ),
-                                                                              elevation: 0.0,
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
+                                                                                ),
+                                                                                offset: 4.0,
+                                                                                preferredDirection: AxisDirection.up,
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                elevation: 4.0,
+                                                                                tailBaseWidth: 0.0,
+                                                                                tailLength: 0.0,
+                                                                                waitDuration: Duration(milliseconds: 100),
+                                                                                showDuration: Duration(milliseconds: 100),
+                                                                                triggerMode: TooltipTriggerMode.tap,
+                                                                                child: FlutterFlowIconButton(
+                                                                                  borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                  borderRadius: 8.0,
+                                                                                  borderWidth: 1.0,
+                                                                                  buttonSize: 40.0,
+                                                                                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  icon: Icon(
+                                                                                    FFIcons.keditarQuadrado,
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    size: 24.0,
+                                                                                  ),
+                                                                                  onPressed: () {
+                                                                                    print('IconButton pressed ...');
+                                                                                  },
+                                                                                ),
+                                                                              ),
+                                                                              FlutterFlowIconButton(
+                                                                                borderColor: FlutterFlowTheme.of(context).primary,
+                                                                                borderRadius: 8.0,
+                                                                                borderWidth: 1.0,
+                                                                                buttonSize: 36.0,
+                                                                                fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                icon: Icon(
+                                                                                  FFIcons.kexcluir,
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  size: 20.0,
+                                                                                ),
+                                                                                onPressed: () {
+                                                                                  print('IconButton pressed ...');
+                                                                                },
+                                                                              ),
+                                                                            ].divide(SizedBox(width: 8.0)),
                                                                           ),
                                                                         ].divide(SizedBox(width: 8.0)),
                                                                       ),

@@ -548,7 +548,12 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   builder: (dialogContext) {
                                     return Material(
                                       color: Colors.transparent,
-                                      child: OpcoesReceitaWidget(),
+                                      child: OpcoesReceitaWidget(
+                                        idReceita:
+                                            widget.informacoesReceita!.id!,
+                                        imagemReceita: widget
+                                            .informacoesReceita!.imagemUrl!,
+                                      ),
                                     );
                                   },
                                 );
