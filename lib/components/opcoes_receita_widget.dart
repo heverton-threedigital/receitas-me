@@ -47,7 +47,8 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 243.31,
+      width: 243.3,
+      height: 275.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
         borderRadius: BorderRadius.circular(16.0),

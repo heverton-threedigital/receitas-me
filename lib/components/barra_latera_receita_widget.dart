@@ -575,8 +575,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 await showAlignedDialog(
                                   context: context,
                                   isGlobal: false,
-                                  avoidOverflow: false,
-                                  targetAnchor: AlignmentDirectional(1.0, 1.0)
+                                  avoidOverflow: true,
+                                  targetAnchor: AlignmentDirectional(1.0, -1.0)
                                       .resolve(Directionality.of(context)),
                                   followerAnchor: AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),

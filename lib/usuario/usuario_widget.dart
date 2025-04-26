@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/login_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -872,96 +871,137 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                 ),
                                                               ),
                                                             ),
-                                                            Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              children: [
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Icon(
-                                                                      FFIcons
-                                                                          .ksopa,
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          4.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    children: [
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children:
+                                                                            [
+                                                                          Icon(
+                                                                            FFIcons.ksopa,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                16.0,
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              staggeredViewReceitasResumoRow.porcoes,
+                                                                              '-',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                  font: GoogleFonts.workSans(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                                ),
+                                                                          ),
+                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children:
+                                                                            [
+                                                                          Icon(
+                                                                            FFIcons.kalarme,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                            size:
+                                                                                16.0,
+                                                                          ),
+                                                                          Text(
+                                                                            valueOrDefault<String>(
+                                                                              '${staggeredViewReceitasResumoRow.tempoPreparo?.toString()} ${staggeredViewReceitasResumoRow.tempoPreparoPeriodo}',
+                                                                              '-',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                  font: GoogleFonts.workSans(
+                                                                                    fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                    fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                                  ),
+                                                                                  letterSpacing: 0.0,
+                                                                                  fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
+                                                                                  fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                                ),
+                                                                          ),
+                                                                        ].divide(SizedBox(width: 4.0)),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                  Container(
+                                                                    decoration:
+                                                                        BoxDecoration(
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .primary,
-                                                                      size:
-                                                                          16.0,
-                                                                    ),
-                                                                    Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        staggeredViewReceitasResumoRow
-                                                                            .porcoes,
-                                                                        '-',
+                                                                          .secondaryBackground,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              24.0),
+                                                                      border:
+                                                                          Border
+                                                                              .all(
+                                                                        color: staggeredViewReceitasResumoRow.publicado ==
+                                                                                true
+                                                                            ? FlutterFlowTheme.of(context).success
+                                                                            : FlutterFlowTheme.of(context).alternate,
                                                                       ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.workSans(
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
+                                                                    ),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          8.0,
+                                                                          4.0,
+                                                                          8.0,
+                                                                          4.0),
+                                                                      child:
+                                                                          Text(
+                                                                        staggeredViewReceitasResumoRow.publicado ==
+                                                                                true
+                                                                            ? 'Publicado'
+                                                                            : 'Rascunho',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              font: GoogleFonts.workSans(
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                                                                              ),
+                                                                              fontSize: 12.0,
+                                                                              letterSpacing: 0.0,
+                                                                              fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
+                                                                              fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                                                                             ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodySmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodySmall.fontStyle,
-                                                                          ),
-                                                                    ),
-                                                                  ].divide(SizedBox(
-                                                                      width:
-                                                                          4.0)),
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Icon(
-                                                                      FFIcons
-                                                                          .kalarme,
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      size:
-                                                                          16.0,
-                                                                    ),
-                                                                    Text(
-                                                                      valueOrDefault<
-                                                                          String>(
-                                                                        '${staggeredViewReceitasResumoRow.tempoPreparo?.toString()} ${staggeredViewReceitasResumoRow.tempoPreparoPeriodo}',
-                                                                        '-',
                                                                       ),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall
-                                                                          .override(
-                                                                            font:
-                                                                                GoogleFonts.workSans(
-                                                                              fontWeight: FlutterFlowTheme.of(context).bodySmall.fontWeight,
-                                                                              fontStyle: FlutterFlowTheme.of(context).bodySmall.fontStyle,
-                                                                            ),
-                                                                            letterSpacing:
-                                                                                0.0,
-                                                                            fontWeight:
-                                                                                FlutterFlowTheme.of(context).bodySmall.fontWeight,
-                                                                            fontStyle:
-                                                                                FlutterFlowTheme.of(context).bodySmall.fontStyle,
-                                                                          ),
                                                                     ),
-                                                                  ].divide(SizedBox(
-                                                                      width:
-                                                                          4.0)),
-                                                                ),
-                                                              ].divide(SizedBox(
-                                                                  width: 8.0)),
+                                                                  ),
+                                                                ].divide(SizedBox(
+                                                                    width:
+                                                                        8.0)),
+                                                              ),
                                                             ),
                                                             Row(
                                                               mainAxisSize:
@@ -1008,75 +1048,79 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    if (widget
-                                                                            .usuario ==
-                                                                        currentUserUid)
-                                                                      AlignedTooltip(
-                                                                        content:
-                                                                            Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(4.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Editar receita',
-                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  font: GoogleFonts.workSans(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
+                                                                    AlignedTooltip(
+                                                                      content:
+                                                                          Padding(
+                                                                        padding:
+                                                                            EdgeInsets.all(4.0),
+                                                                        child:
+                                                                            Text(
+                                                                          'Editar receita',
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                font: GoogleFonts.workSans(
                                                                                   fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
                                                                                   fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
                                                                                 ),
-                                                                          ),
-                                                                        ),
-                                                                        offset:
-                                                                            4.0,
-                                                                        preferredDirection:
-                                                                            AxisDirection.up,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        backgroundColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        tailBaseWidth:
-                                                                            0.0,
-                                                                        tailLength:
-                                                                            0.0,
-                                                                        waitDuration:
-                                                                            Duration(milliseconds: 100),
-                                                                        showDuration:
-                                                                            Duration(milliseconds: 100),
-                                                                        triggerMode:
-                                                                            TooltipTriggerMode.tap,
-                                                                        child:
-                                                                            Visibility(
-                                                                          visible:
-                                                                              staggeredViewReceitasResumoRow.autorId == currentUserUid,
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                32.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            icon:
-                                                                                Icon(
-                                                                              FFIcons.keditarQuadrado,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 16.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () {
-                                                                              print('IconButton pressed ...');
-                                                                            },
-                                                                          ),
+                                                                                letterSpacing: 0.0,
+                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
+                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
+                                                                              ),
                                                                         ),
                                                                       ),
+                                                                      offset:
+                                                                          4.0,
+                                                                      preferredDirection:
+                                                                          AxisDirection
+                                                                              .up,
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              8.0),
+                                                                      backgroundColor:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .secondaryBackground,
+                                                                      elevation:
+                                                                          4.0,
+                                                                      tailBaseWidth:
+                                                                          0.0,
+                                                                      tailLength:
+                                                                          0.0,
+                                                                      waitDuration:
+                                                                          Duration(
+                                                                              milliseconds: 100),
+                                                                      showDuration:
+                                                                          Duration(
+                                                                              milliseconds: 100),
+                                                                      triggerMode:
+                                                                          TooltipTriggerMode
+                                                                              .tap,
+                                                                      child:
+                                                                          FlutterFlowIconButton(
+                                                                        borderColor:
+                                                                            FlutterFlowTheme.of(context).primary,
+                                                                        borderRadius:
+                                                                            8.0,
+                                                                        buttonSize:
+                                                                            32.0,
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).primaryBackground,
+                                                                        icon:
+                                                                            Icon(
+                                                                          FFIcons
+                                                                              .keditarQuadrado,
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primary,
+                                                                          size:
+                                                                              16.0,
+                                                                        ),
+                                                                        onPressed:
+                                                                            () {
+                                                                          print(
+                                                                              'IconButton pressed ...');
+                                                                        },
+                                                                      ),
+                                                                    ),
                                                                     AlignedTooltip(
                                                                       content:
                                                                           Padding(
@@ -1125,111 +1169,41 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                           TooltipTriggerMode
                                                                               .tap,
                                                                       child:
-                                                                          Visibility(
-                                                                        visible:
-                                                                            staggeredViewReceitasResumoRow.autorId ==
-                                                                                currentUserUid,
-                                                                        child:
-                                                                            FlutterFlowIconButton(
-                                                                          borderColor:
+                                                                          FlutterFlowIconButton(
+                                                                        borderColor:
+                                                                            FlutterFlowTheme.of(context).primary,
+                                                                        borderRadius:
+                                                                            8.0,
+                                                                        buttonSize:
+                                                                            32.0,
+                                                                        fillColor:
+                                                                            FlutterFlowTheme.of(context).primaryBackground,
+                                                                        icon:
+                                                                            Icon(
+                                                                          FFIcons
+                                                                              .kexcluir,
+                                                                          color:
                                                                               FlutterFlowTheme.of(context).primary,
-                                                                          borderRadius:
-                                                                              8.0,
-                                                                          buttonSize:
-                                                                              32.0,
-                                                                          fillColor:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          icon:
-                                                                              Icon(
-                                                                            FFIcons.kexcluir,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                16.0,
-                                                                          ),
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await ReceitasTable().delete(
-                                                                              matchingRows: (rows) => rows.eqOrNull(
-                                                                                'id',
-                                                                                staggeredViewReceitasResumoRow.id,
-                                                                              ),
-                                                                            );
-                                                                            await deleteSupabaseFileFromPublicUrl(staggeredViewReceitasResumoRow.imagemUrl!);
-                                                                            Navigator.pop(context);
-                                                                          },
+                                                                          size:
+                                                                              16.0,
                                                                         ),
+                                                                        onPressed:
+                                                                            () async {
+                                                                          await ReceitasTable()
+                                                                              .delete(
+                                                                            matchingRows: (rows) =>
+                                                                                rows.eqOrNull(
+                                                                              'id',
+                                                                              staggeredViewReceitasResumoRow.id,
+                                                                            ),
+                                                                          );
+                                                                          await deleteSupabaseFileFromPublicUrl(
+                                                                              staggeredViewReceitasResumoRow.imagemUrl!);
+                                                                          Navigator.pop(
+                                                                              context);
+                                                                        },
                                                                       ),
                                                                     ),
-                                                                    if (staggeredViewReceitasResumoRow
-                                                                            .autorId !=
-                                                                        currentUserUid)
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            if (loggedIn) {
-                                                                              await ReceitasSalvasTable().insert({
-                                                                                'usuario_id': currentUserUid,
-                                                                                'receita_id': staggeredViewReceitasResumoRow.id,
-                                                                              });
-                                                                              FFAppState().receitaSalva = true;
-                                                                              safeSetState(() {});
-                                                                            } else {
-                                                                              await showDialog(
-                                                                                barrierColor: Color(0x80000000),
-                                                                                context: context,
-                                                                                builder: (dialogContext) {
-                                                                                  return Dialog(
-                                                                                    elevation: 0,
-                                                                                    insetPadding: EdgeInsets.zero,
-                                                                                    backgroundColor: Colors.transparent,
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                    child: GestureDetector(
-                                                                                      onTap: () {
-                                                                                        FocusScope.of(dialogContext).unfocus();
-                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: MediaQuery.sizeOf(context).width * 0.9,
-                                                                                        child: LoginWidget(
-                                                                                          redirecionar: () async {
-                                                                                            await ReceitasSalvasTable().insert({
-                                                                                              'usuario_id': currentUserUid,
-                                                                                              'receita_id': staggeredViewReceitasResumoRow.id,
-                                                                                            });
-                                                                                            FFAppState().receitaSalva = true;
-                                                                                            safeSetState(() {});
-                                                                                            Navigator.pop(context);
-                                                                                          },
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              );
-                                                                            }
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            FFIcons.kfavorito,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                      ),
                                                                   ].divide(SizedBox(
                                                                       width:
                                                                           8.0)),
@@ -1547,50 +1521,6 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                       ),
                                                                     ],
                                                                   ),
-                                                                  if (staggeredViewReceitasResumoRow
-                                                                          .autorId ==
-                                                                      currentUserUid)
-                                                                    Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(24.0),
-                                                                        border:
-                                                                            Border.all(
-                                                                          color: staggeredViewReceitasResumoRow.publicado == true
-                                                                              ? FlutterFlowTheme.of(context).success
-                                                                              : FlutterFlowTheme.of(context).alternate,
-                                                                        ),
-                                                                      ),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            8.0,
-                                                                            4.0,
-                                                                            8.0,
-                                                                            4.0),
-                                                                        child:
-                                                                            Text(
-                                                                          staggeredViewReceitasResumoRow.publicado == true
-                                                                              ? 'Publicado'
-                                                                              : 'Rascunho',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                font: GoogleFonts.workSans(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                                ),
-                                                                                fontSize: 12.0,
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                    ),
                                                                 ].divide(SizedBox(
                                                                     width:
                                                                         8.0)),
@@ -1636,236 +1566,13 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                             .fontStyle,
                                                                       ),
                                                                 ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    if (widget
-                                                                            .usuario ==
-                                                                        currentUserUid)
-                                                                      AlignedTooltip(
-                                                                        content:
-                                                                            Padding(
-                                                                          padding:
-                                                                              EdgeInsets.all(4.0),
-                                                                          child:
-                                                                              Text(
-                                                                            'Editar receita',
-                                                                            style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                  font: GoogleFonts.workSans(
-                                                                                    fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                    fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                  ),
-                                                                                  letterSpacing: 0.0,
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                        offset:
-                                                                            4.0,
-                                                                        preferredDirection:
-                                                                            AxisDirection.up,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        backgroundColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        elevation:
-                                                                            4.0,
-                                                                        tailBaseWidth:
-                                                                            0.0,
-                                                                        tailLength:
-                                                                            0.0,
-                                                                        waitDuration:
-                                                                            Duration(milliseconds: 100),
-                                                                        showDuration:
-                                                                            Duration(milliseconds: 100),
-                                                                        triggerMode:
-                                                                            TooltipTriggerMode.tap,
-                                                                        child:
-                                                                            Visibility(
-                                                                          visible:
-                                                                              staggeredViewReceitasResumoRow.autorId == currentUserUid,
-                                                                          child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                32.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            icon:
-                                                                                Icon(
-                                                                              FFIcons.keditarQuadrado,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 16.0,
-                                                                            ),
-                                                                            onPressed:
-                                                                                () {
-                                                                              print('IconButton pressed ...');
-                                                                            },
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    AlignedTooltip(
-                                                                      content:
-                                                                          Padding(
-                                                                        padding:
-                                                                            EdgeInsets.all(4.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Excluir receita',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyLarge
-                                                                              .override(
-                                                                                font: GoogleFonts.workSans(
-                                                                                  fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                  fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                                ),
-                                                                                letterSpacing: 0.0,
-                                                                                fontWeight: FlutterFlowTheme.of(context).bodyLarge.fontWeight,
-                                                                                fontStyle: FlutterFlowTheme.of(context).bodyLarge.fontStyle,
-                                                                              ),
-                                                                        ),
-                                                                      ),
-                                                                      offset:
-                                                                          4.0,
-                                                                      preferredDirection:
-                                                                          AxisDirection
-                                                                              .up,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      backgroundColor:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .secondaryBackground,
-                                                                      elevation:
-                                                                          4.0,
-                                                                      tailBaseWidth:
-                                                                          0.0,
-                                                                      tailLength:
-                                                                          0.0,
-                                                                      waitDuration:
-                                                                          Duration(
-                                                                              milliseconds: 100),
-                                                                      showDuration:
-                                                                          Duration(
-                                                                              milliseconds: 100),
-                                                                      triggerMode:
-                                                                          TooltipTriggerMode
-                                                                              .tap,
-                                                                      child:
-                                                                          Visibility(
-                                                                        visible:
-                                                                            staggeredViewReceitasResumoRow.autorId ==
-                                                                                currentUserUid,
-                                                                        child:
-                                                                            FlutterFlowIconButton(
-                                                                          borderColor:
-                                                                              FlutterFlowTheme.of(context).primary,
-                                                                          borderRadius:
-                                                                              8.0,
-                                                                          buttonSize:
-                                                                              32.0,
-                                                                          fillColor:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
-                                                                          icon:
-                                                                              Icon(
-                                                                            FFIcons.kexcluir,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                16.0,
-                                                                          ),
-                                                                          onPressed:
-                                                                              () async {
-                                                                            await ReceitasTable().delete(
-                                                                              matchingRows: (rows) => rows.eqOrNull(
-                                                                                'id',
-                                                                                staggeredViewReceitasResumoRow.id,
-                                                                              ),
-                                                                            );
-                                                                            await deleteSupabaseFileFromPublicUrl(staggeredViewReceitasResumoRow.imagemUrl!);
-                                                                            Navigator.pop(context);
-                                                                          },
-                                                                        ),
-                                                                      ),
-                                                                    ),
-                                                                    if (staggeredViewReceitasResumoRow
-                                                                            .autorId !=
-                                                                        currentUserUid)
-                                                                      Builder(
-                                                                        builder:
-                                                                            (context) =>
-                                                                                InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            if (loggedIn) {
-                                                                              await ReceitasSalvasTable().insert({
-                                                                                'usuario_id': currentUserUid,
-                                                                                'receita_id': staggeredViewReceitasResumoRow.id,
-                                                                              });
-                                                                              FFAppState().receitaSalva = true;
-                                                                              safeSetState(() {});
-                                                                            } else {
-                                                                              await showDialog(
-                                                                                barrierColor: Color(0x80000000),
-                                                                                context: context,
-                                                                                builder: (dialogContext) {
-                                                                                  return Dialog(
-                                                                                    elevation: 0,
-                                                                                    insetPadding: EdgeInsets.zero,
-                                                                                    backgroundColor: Colors.transparent,
-                                                                                    alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                    child: GestureDetector(
-                                                                                      onTap: () {
-                                                                                        FocusScope.of(dialogContext).unfocus();
-                                                                                        FocusManager.instance.primaryFocus?.unfocus();
-                                                                                      },
-                                                                                      child: Container(
-                                                                                        width: MediaQuery.sizeOf(context).width * 0.9,
-                                                                                        child: LoginWidget(
-                                                                                          redirecionar: () async {
-                                                                                            await ReceitasSalvasTable().insert({
-                                                                                              'usuario_id': currentUserUid,
-                                                                                              'receita_id': staggeredViewReceitasResumoRow.id,
-                                                                                            });
-                                                                                            FFAppState().receitaSalva = true;
-                                                                                            safeSetState(() {});
-                                                                                            Navigator.pop(context);
-                                                                                          },
-                                                                                        ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  );
-                                                                                },
-                                                                              );
-                                                                            }
-                                                                          },
-                                                                          child:
-                                                                              Icon(
-                                                                            FFIcons.kfavorito,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            size:
-                                                                                24.0,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                  ].divide(SizedBox(
-                                                                      width:
-                                                                          8.0)),
+                                                                Icon(
+                                                                  FFIcons
+                                                                      .kfavorito,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 24.0,
                                                                 ),
                                                               ],
                                                             ),
