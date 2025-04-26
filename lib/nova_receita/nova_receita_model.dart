@@ -124,9 +124,9 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   String uploadedFileUrl2 = '';
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada2;
+  ReceitasRow? receitaCriada1;
   // Stores action output result for [Custom Action - slugify] action in Button widget.
-  String? slugGerado2;
+  String? slugGerado1;
   InstantTimer? instantTimer;
   InstantTimer? instantTimer2;
   bool isDataUploading3 = false;

@@ -85,7 +85,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                   context.pushNamed(
                     ReceitaWidget.routeName,
                     pathParameters: {
-                      'receitaid': serializeParam(
+                      'slug': serializeParam(
                         widget.idReceita,
                         ParamType.String,
                       ),
@@ -116,7 +116,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                     context.pushNamed(
                       ReceitaWidget.routeName,
                       pathParameters: {
-                        'receitaid': serializeParam(
+                        'slug': serializeParam(
                           widget.idReceita,
                           ParamType.String,
                         ),
@@ -162,7 +162,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Icon(
-                                FFIcons.khamburger,
+                                FFIcons.ksopa,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 16.0,
                               ),
@@ -330,7 +330,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                 }
                               },
                               child: Icon(
-                                FFIcons.kadicionarFavorito,
+                                FFIcons.kfavorito,
                                 color: FlutterFlowTheme.of(context).primary,
                                 size: 24.0,
                               ),

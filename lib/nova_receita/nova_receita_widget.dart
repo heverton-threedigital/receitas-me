@@ -187,7 +187,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                               final selectedMedia =
                                                   await selectMedia(
                                                 maxWidth: 1080.00,
-                                                imageQuality: 80,
+                                                imageQuality: 90,
                                                 mediaSource:
                                                     MediaSource.photoGallery,
                                                 multiImage: false,
@@ -256,19 +256,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   if (MediaQuery.sizeOf(context)
                                                           .width <
                                                       kBreakpointSmall) {
-                                                    return 384.0;
+                                                    return 280.0;
                                                   } else if (MediaQuery.sizeOf(
                                                               context)
                                                           .width <
                                                       kBreakpointMedium) {
-                                                    return 432.0;
+                                                    return 400.0;
                                                   } else if (MediaQuery.sizeOf(
                                                               context)
                                                           .width <
                                                       kBreakpointLarge) {
-                                                    return 432.0;
+                                                    return 400.0;
                                                   } else {
-                                                    return 432.0;
+                                                    return 400.0;
                                                   }
                                                 }(),
                                                 constraints: BoxConstraints(
@@ -749,6 +749,39 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           .fontStyle,
                                                                     ),
                                                               ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  '@${novaReceitaPerfisRow?.usuario}',
+                                                                  '-',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      font: GoogleFonts
+                                                                          .workSans(
+                                                                        fontWeight: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontWeight,
+                                                                        fontStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .fontStyle,
+                                                                      ),
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                              ),
                                                             ],
                                                           ),
                                                         ].divide(SizedBox(
@@ -943,7 +976,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   0.0,
                                                                   4.0),
                                                       child: Text(
-                                                        'Categorias',
+                                                        'Categoria',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -1336,6 +1369,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   mainAxisSize:
                                                                       MainAxisSize
                                                                           .max,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
                                                                   children: [
                                                                     Expanded(
                                                                       child:
@@ -1459,7 +1495,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       width:
                                                                           200.0,
                                                                       height:
-                                                                          40.0,
+                                                                          37.0,
                                                                       textStyle: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -1639,7 +1675,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                           Form(
                                             key: _model.formKey2,
                                             autovalidateMode:
-                                                AutovalidateMode.always,
+                                                AutovalidateMode.disabled,
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -2071,7 +2107,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                             child: Form(
                                               key: _model.formKey3,
                                               autovalidateMode:
-                                                  AutovalidateMode.always,
+                                                  AutovalidateMode.disabled,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -2651,66 +2687,74 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       ),
                                                     FFButtonWidget(
                                                       onPressed: () async {
-                                                        {
-                                                          safeSetState(() =>
+                                                        if (_model.imagemReceita !=
+                                                                null &&
+                                                            (_model
+                                                                    .imagemReceita
+                                                                    ?.bytes
+                                                                    ?.isNotEmpty ??
+                                                                false)) {
+                                                          {
+                                                            safeSetState(() =>
+                                                                _model.isDataUploading2 =
+                                                                    true);
+                                                            var selectedUploadedFiles =
+                                                                <FFUploadedFile>[];
+                                                            var selectedMedia =
+                                                                <SelectedFile>[];
+                                                            var downloadUrls =
+                                                                <String>[];
+                                                            try {
+                                                              selectedUploadedFiles = _model
+                                                                      .uploadedLocalFile1
+                                                                      .bytes!
+                                                                      .isNotEmpty
+                                                                  ? [
+                                                                      _model
+                                                                          .uploadedLocalFile1
+                                                                    ]
+                                                                  : <FFUploadedFile>[];
+                                                              selectedMedia =
+                                                                  selectedFilesFromUploadedFiles(
+                                                                selectedUploadedFiles,
+                                                                storageFolderPath:
+                                                                    'receitas',
+                                                              );
+                                                              downloadUrls =
+                                                                  await uploadSupabaseStorageFiles(
+                                                                bucketName:
+                                                                    'imagens',
+                                                                selectedFiles:
+                                                                    selectedMedia,
+                                                              );
+                                                            } finally {
                                                               _model.isDataUploading2 =
-                                                                  true);
-                                                          var selectedUploadedFiles =
-                                                              <FFUploadedFile>[];
-                                                          var selectedMedia =
-                                                              <SelectedFile>[];
-                                                          var downloadUrls =
-                                                              <String>[];
-                                                          try {
-                                                            selectedUploadedFiles = _model
-                                                                    .uploadedLocalFile1
-                                                                    .bytes!
-                                                                    .isNotEmpty
-                                                                ? [
-                                                                    _model
-                                                                        .uploadedLocalFile1
-                                                                  ]
-                                                                : <FFUploadedFile>[];
-                                                            selectedMedia =
-                                                                selectedFilesFromUploadedFiles(
-                                                              selectedUploadedFiles,
-                                                              storageFolderPath:
-                                                                  'receitas',
-                                                            );
-                                                            downloadUrls =
-                                                                await uploadSupabaseStorageFiles(
-                                                              bucketName:
-                                                                  'imagens',
-                                                              selectedFiles:
-                                                                  selectedMedia,
-                                                            );
-                                                          } finally {
-                                                            _model.isDataUploading2 =
-                                                                false;
-                                                          }
-                                                          if (selectedUploadedFiles
-                                                                      .length ==
-                                                                  selectedMedia
-                                                                      .length &&
-                                                              downloadUrls
-                                                                      .length ==
-                                                                  selectedMedia
-                                                                      .length) {
-                                                            safeSetState(() {
-                                                              _model.uploadedLocalFile2 =
-                                                                  selectedUploadedFiles
-                                                                      .first;
-                                                              _model.uploadedFileUrl2 =
-                                                                  downloadUrls
-                                                                      .first;
-                                                            });
-                                                          } else {
-                                                            safeSetState(() {});
-                                                            return;
+                                                                  false;
+                                                            }
+                                                            if (selectedUploadedFiles
+                                                                        .length ==
+                                                                    selectedMedia
+                                                                        .length &&
+                                                                downloadUrls
+                                                                        .length ==
+                                                                    selectedMedia
+                                                                        .length) {
+                                                              safeSetState(() {
+                                                                _model.uploadedLocalFile2 =
+                                                                    selectedUploadedFiles
+                                                                        .first;
+                                                                _model.uploadedFileUrl2 =
+                                                                    downloadUrls
+                                                                        .first;
+                                                              });
+                                                            } else {
+                                                              safeSetState(
+                                                                  () {});
+                                                              return;
+                                                            }
                                                           }
                                                         }
-
-                                                        _model.receitaCriada2 =
+                                                        _model.receitaCriada1 =
                                                             await ReceitasTable()
                                                                 .insert({
                                                           'titulo': _model
@@ -2726,32 +2770,41 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           'autor_id':
                                                               currentUserUid,
                                                           'imagem_url': _model
-                                                              .uploadedFileUrl3,
+                                                                          .imagemReceita !=
+                                                                      null &&
+                                                                  (_model
+                                                                          .imagemReceita
+                                                                          ?.bytes
+                                                                          ?.isNotEmpty ??
+                                                                      false)
+                                                              ? _model
+                                                                  .uploadedFileUrl2
+                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                           'publicado': false,
                                                           'tempo_preparo_periodo':
                                                               _model
                                                                   .dropDownValue,
                                                         });
-                                                        _model.slugGerado2 =
+                                                        _model.slugGerado1 =
                                                             await actions
                                                                 .slugify(
-                                                          _model.receitaCriada2!
+                                                          _model.receitaCriada1!
                                                               .titulo,
-                                                          _model.receitaCriada2!
+                                                          _model.receitaCriada1!
                                                               .id,
                                                         );
                                                         await ReceitasTable()
                                                             .update(
                                                           data: {
                                                             'slug': _model
-                                                                .slugGerado2,
+                                                                .slugGerado1,
                                                           },
                                                           matchingRows:
                                                               (rows) =>
                                                                   rows.eqOrNull(
                                                             'id',
                                                             _model
-                                                                .receitaCriada2
+                                                                .receitaCriada1
                                                                 ?.id,
                                                           ),
                                                         );
@@ -2760,23 +2813,50 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         safeSetState(() {});
                                                         ScaffoldMessenger.of(
                                                                 context)
+                                                            .clearSnackBars();
+                                                        ScaffoldMessenger.of(
+                                                                context)
                                                             .showSnackBar(
                                                           SnackBar(
                                                             content: Text(
                                                               'Salvando receita como rascunho',
-                                                              style: TextStyle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .workSans(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                             ),
                                                             duration: Duration(
                                                                 milliseconds:
-                                                                    4000),
+                                                                    5000),
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .primary,
                                                           ),
                                                         );
                                                         _model.instantTimer =
@@ -2802,7 +2882,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               await IngredientesTable()
                                                                   .insert({
                                                                 'receita_id': _model
-                                                                    .receitaCriada2
+                                                                    .receitaCriada1
                                                                     ?.id,
                                                                 'ingrediente': FFAppState()
                                                                     .ingredientes
@@ -2840,7 +2920,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .insert({
                                                                     'receita_id':
                                                                         _model
-                                                                            .receitaCriada2
+                                                                            .receitaCriada1
                                                                             ?.id,
                                                                     'descricao': FFAppState()
                                                                         .passos
@@ -2877,8 +2957,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       },
                                                       text: 'Rascunho',
                                                       icon: Icon(
-                                                        FFIcons
-                                                            .ksairDoAplicativo,
+                                                        FFIcons.knotas,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -2946,65 +3025,107 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     ),
                                                     FFButtonWidget(
                                                       onPressed: () async {
-                                                        {
-                                                          safeSetState(() =>
+                                                        if (_model.formKey1
+                                                                    .currentState ==
+                                                                null ||
+                                                            !_model.formKey1
+                                                                .currentState!
+                                                                .validate()) {
+                                                          return;
+                                                        }
+                                                        if (_model
+                                                                .categoriaReceitaValue ==
+                                                            null) {
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (alertDialogContext) {
+                                                              return AlertDialog(
+                                                                title: Text(
+                                                                    'Atenção'),
+                                                                content: Text(
+                                                                    'Você precisa selecionar uma categoria'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                    onPressed: () =>
+                                                                        Navigator.pop(
+                                                                            alertDialogContext),
+                                                                    child: Text(
+                                                                        'Ok'),
+                                                                  ),
+                                                                ],
+                                                              );
+                                                            },
+                                                          );
+                                                          return;
+                                                        }
+                                                        if (_model.imagemReceita !=
+                                                                null &&
+                                                            (_model
+                                                                    .imagemReceita
+                                                                    ?.bytes
+                                                                    ?.isNotEmpty ??
+                                                                false)) {
+                                                          {
+                                                            safeSetState(() =>
+                                                                _model.isDataUploading3 =
+                                                                    true);
+                                                            var selectedUploadedFiles =
+                                                                <FFUploadedFile>[];
+                                                            var selectedMedia =
+                                                                <SelectedFile>[];
+                                                            var downloadUrls =
+                                                                <String>[];
+                                                            try {
+                                                              selectedUploadedFiles = _model
+                                                                      .uploadedLocalFile1
+                                                                      .bytes!
+                                                                      .isNotEmpty
+                                                                  ? [
+                                                                      _model
+                                                                          .uploadedLocalFile1
+                                                                    ]
+                                                                  : <FFUploadedFile>[];
+                                                              selectedMedia =
+                                                                  selectedFilesFromUploadedFiles(
+                                                                selectedUploadedFiles,
+                                                                storageFolderPath:
+                                                                    'receitas',
+                                                              );
+                                                              downloadUrls =
+                                                                  await uploadSupabaseStorageFiles(
+                                                                bucketName:
+                                                                    'imagens',
+                                                                selectedFiles:
+                                                                    selectedMedia,
+                                                              );
+                                                            } finally {
                                                               _model.isDataUploading3 =
-                                                                  true);
-                                                          var selectedUploadedFiles =
-                                                              <FFUploadedFile>[];
-                                                          var selectedMedia =
-                                                              <SelectedFile>[];
-                                                          var downloadUrls =
-                                                              <String>[];
-                                                          try {
-                                                            selectedUploadedFiles = _model
-                                                                    .uploadedLocalFile1
-                                                                    .bytes!
-                                                                    .isNotEmpty
-                                                                ? [
-                                                                    _model
-                                                                        .uploadedLocalFile1
-                                                                  ]
-                                                                : <FFUploadedFile>[];
-                                                            selectedMedia =
-                                                                selectedFilesFromUploadedFiles(
-                                                              selectedUploadedFiles,
-                                                              storageFolderPath:
-                                                                  'receitas',
-                                                            );
-                                                            downloadUrls =
-                                                                await uploadSupabaseStorageFiles(
-                                                              bucketName:
-                                                                  'imagens',
-                                                              selectedFiles:
-                                                                  selectedMedia,
-                                                            );
-                                                          } finally {
-                                                            _model.isDataUploading3 =
-                                                                false;
-                                                          }
-                                                          if (selectedUploadedFiles
-                                                                      .length ==
-                                                                  selectedMedia
-                                                                      .length &&
-                                                              downloadUrls
-                                                                      .length ==
-                                                                  selectedMedia
-                                                                      .length) {
-                                                            safeSetState(() {
-                                                              _model.uploadedLocalFile3 =
-                                                                  selectedUploadedFiles
-                                                                      .first;
-                                                              _model.uploadedFileUrl3 =
-                                                                  downloadUrls
-                                                                      .first;
-                                                            });
-                                                          } else {
-                                                            safeSetState(() {});
-                                                            return;
+                                                                  false;
+                                                            }
+                                                            if (selectedUploadedFiles
+                                                                        .length ==
+                                                                    selectedMedia
+                                                                        .length &&
+                                                                downloadUrls
+                                                                        .length ==
+                                                                    selectedMedia
+                                                                        .length) {
+                                                              safeSetState(() {
+                                                                _model.uploadedLocalFile3 =
+                                                                    selectedUploadedFiles
+                                                                        .first;
+                                                                _model.uploadedFileUrl3 =
+                                                                    downloadUrls
+                                                                        .first;
+                                                              });
+                                                            } else {
+                                                              safeSetState(
+                                                                  () {});
+                                                              return;
+                                                            }
                                                           }
                                                         }
-
                                                         _model.receitaCriada =
                                                             await ReceitasTable()
                                                                 .insert({
@@ -3021,7 +3142,16 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           'autor_id':
                                                               currentUserUid,
                                                           'imagem_url': _model
-                                                              .uploadedFileUrl3,
+                                                                          .imagemReceita !=
+                                                                      null &&
+                                                                  (_model
+                                                                          .imagemReceita
+                                                                          ?.bytes
+                                                                          ?.isNotEmpty ??
+                                                                      false)
+                                                              ? _model
+                                                                  .uploadedFileUrl3
+                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                           'publicado': true,
                                                           'categoria_id': _model
                                                               .categoriaReceitaValue,
@@ -3059,23 +3189,50 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         safeSetState(() {});
                                                         ScaffoldMessenger.of(
                                                                 context)
+                                                            .clearSnackBars();
+                                                        ScaffoldMessenger.of(
+                                                                context)
                                                             .showSnackBar(
                                                           SnackBar(
                                                             content: Text(
-                                                              'Publicando receita',
-                                                              style: TextStyle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                              ),
+                                                              'Publicando receita, por favor aguarde',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .workSans(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyLarge
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryBackground,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
                                                             ),
                                                             duration: Duration(
                                                                 milliseconds:
-                                                                    4000),
+                                                                    5000),
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .primary,
                                                           ),
                                                         );
                                                         _model.instantTimer1 =
@@ -3166,7 +3323,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .routeName,
                                                                   pathParameters:
                                                                       {
-                                                                    'receitaid':
+                                                                    'slug':
                                                                         serializeParam(
                                                                       _model
                                                                           .receitaCriada

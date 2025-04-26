@@ -858,6 +858,9 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                       ?.toString(),
                                                   '0',
                                                 ),
+                                                usuario:
+                                                    staggeredViewPerfisComContagemReceitasRow
+                                                        .usuario!,
                                               ),
                                             );
                                           },

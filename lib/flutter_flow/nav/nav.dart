@@ -123,8 +123,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: ReceitaWidget.routeName,
               path: ReceitaWidget.routePath,
               builder: (context, params) => ReceitaWidget(
-                receitaid: params.getParam(
-                  'receitaid',
+                slug: params.getParam(
+                  'slug',
                   ParamType.String,
                 ),
               ),

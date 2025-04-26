@@ -18,6 +18,9 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   String? get id => getField<String>('id');
   set id(String? value) => setField<String>('id', value);
 
+  String? get slug => getField<String>('slug');
+  set slug(String? value) => setField<String>('slug', value);
+
   String? get titulo => getField<String>('titulo');
   set titulo(String? value) => setField<String>('titulo', value);
 
@@ -57,6 +60,9 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   String? get autorSobrenome => getField<String>('autor_sobrenome');
   set autorSobrenome(String? value) =>
       setField<String>('autor_sobrenome', value);
+
+  String? get autorUsuario => getField<String>('autor_usuario');
+  set autorUsuario(String? value) => setField<String>('autor_usuario', value);
 
   String? get autorAvatarUrl => getField<String>('autor_avatar_url');
   set autorAvatarUrl(String? value) =>

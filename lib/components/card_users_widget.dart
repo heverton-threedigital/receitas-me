@@ -14,6 +14,7 @@ class CardUsersWidget extends StatefulWidget {
     required this.nomeUsuario,
     required this.sobrenomeUsuario,
     required this.quantidadeReceitas,
+    required this.usuario,
   });
 
   final String? idUsuario;
@@ -21,6 +22,7 @@ class CardUsersWidget extends StatefulWidget {
   final String? nomeUsuario;
   final String? sobrenomeUsuario;
   final String? quantidadeReceitas;
+  final String? usuario;
 
   @override
   State<CardUsersWidget> createState() => _CardUsersWidgetState();
@@ -114,6 +116,27 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
+                        Text(
+                          '@${widget.usuario}',
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.workSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                        ),
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -140,52 +163,6 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
                             ),
                             Text(
                               'Receitas',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.workSans(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    fontSize: 12.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                          ].divide(SizedBox(width: 2.0)),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Text(
-                              '0',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    font: GoogleFonts.workSans(
-                                      fontWeight: FontWeight.bold,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .fontStyle,
-                                    ),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                            ),
-                            Text(
-                              'Seguidores',
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

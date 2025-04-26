@@ -274,7 +274,7 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                           .routeName,
                                                                       pathParameters:
                                                                           {
-                                                                        'receitaid':
+                                                                        'slug':
                                                                             serializeParam(
                                                                           staggeredViewReceitasResumoRow
                                                                               .id,

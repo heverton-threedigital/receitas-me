@@ -1,10 +1,12 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/opcoes_receita_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -405,7 +407,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   },
                                   text: 'Editar',
                                   icon: Icon(
-                                    FFIcons.keditar,
+                                    FFIcons.keditarQuadrado,
                                     color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
@@ -488,7 +490,10 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 showDuration: Duration(milliseconds: 100),
                                 triggerMode: TooltipTriggerMode.tap,
                                 child: FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).primary,
                                   borderRadius: 40.0,
+                                  borderWidth: 1.0,
                                   buttonSize: 40.0,
                                   fillColor: Color(0x1AD84012),
                                   icon: Icon(
@@ -502,7 +507,10 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 ),
                               ),
                               FlutterFlowIconButton(
+                                borderColor:
+                                    FlutterFlowTheme.of(context).primary,
                                 borderRadius: 40.0,
+                                borderWidth: 1.0,
                                 buttonSize: 40.0,
                                 fillColor: Color(0x1AD84012),
                                 icon: Icon(
@@ -516,18 +524,36 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                               ),
                             ].divide(SizedBox(width: 8.0)),
                           ),
-                          FlutterFlowIconButton(
-                            borderRadius: 40.0,
-                            buttonSize: 40.0,
-                            fillColor: Color(0x1AD84012),
-                            icon: Icon(
-                              FFIcons.kmaisMenuHorizontal,
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 24.0,
+                          Builder(
+                            builder: (context) => FlutterFlowIconButton(
+                              borderColor: FlutterFlowTheme.of(context).primary,
+                              borderRadius: 40.0,
+                              borderWidth: 1.0,
+                              buttonSize: 40.0,
+                              fillColor: Color(0x1AD84012),
+                              icon: Icon(
+                                FFIcons.kmaisMenuVertical,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
+                              onPressed: () async {
+                                await showAlignedDialog(
+                                  context: context,
+                                  isGlobal: false,
+                                  avoidOverflow: false,
+                                  targetAnchor: AlignmentDirectional(1.0, 1.0)
+                                      .resolve(Directionality.of(context)),
+                                  followerAnchor: AlignmentDirectional(0.0, 0.0)
+                                      .resolve(Directionality.of(context)),
+                                  builder: (dialogContext) {
+                                    return Material(
+                                      color: Colors.transparent,
+                                      child: OpcoesReceitaWidget(),
+                                    );
+                                  },
+                                );
+                              },
                             ),
-                            onPressed: () {
-                              print('IconButton pressed ...');
-                            },
                           ),
                         ].divide(SizedBox(width: 16.0)),
                       ),
