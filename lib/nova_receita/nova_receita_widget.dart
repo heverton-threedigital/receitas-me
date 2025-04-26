@@ -3368,7 +3368,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         serializeParam(
                                                                       _model
                                                                           .receitaCriada
-                                                                          ?.id,
+                                                                          ?.slug,
                                                                       ParamType
                                                                           .String,
                                                                     ),
