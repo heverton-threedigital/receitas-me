@@ -494,10 +494,9 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                               .override(
                                                                 font: GoogleFonts
                                                                     .workSans(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium
@@ -505,10 +504,9 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                 ),
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .fontWeight,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
@@ -563,10 +561,9 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                               .override(
                                                                 font: GoogleFonts
                                                                     .workSans(
-                                                                  fontWeight: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleMedium
-                                                                      .fontWeight,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
                                                                   fontStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleMedium
@@ -574,10 +571,9 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                 ),
                                                                 letterSpacing:
                                                                     0.0,
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMedium
-                                                                    .fontWeight,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
                                                                 fontStyle: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleMedium
