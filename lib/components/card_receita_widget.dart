@@ -19,8 +19,10 @@ class CardReceitaWidget extends StatefulWidget {
     this.tempo,
     this.fotoAutor,
     this.nomeAutor,
-    required this.sobrenomeAutor,
+    this.sobrenomeAutor,
     required this.tempoPeriodo,
+    required this.slug,
+    required this.usuario,
   });
 
   final String? imagemReceita;
@@ -32,6 +34,8 @@ class CardReceitaWidget extends StatefulWidget {
   final String? nomeAutor;
   final String? sobrenomeAutor;
   final String? tempoPeriodo;
+  final String? slug;
+  final String? usuario;
 
   @override
   State<CardReceitaWidget> createState() => _CardReceitaWidgetState();
@@ -86,7 +90,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                     ReceitaWidget.routeName,
                     pathParameters: {
                       'slug': serializeParam(
-                        widget.idReceita,
+                        widget.slug,
                         ParamType.String,
                       ),
                     }.withoutNulls,
@@ -234,55 +238,46 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: 24.0,
-                                height: 24.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  valueOrDefault<String>(
-                                    widget.fotoAutor,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed(
+                                UsuarioWidget.routeName,
+                                pathParameters: {
+                                  'usuario': serializeParam(
+                                    widget.usuario,
+                                    ParamType.String,
                                   ),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
+                                }.withoutNulls,
+                              );
+                            },
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  width: 24.0,
+                                  height: 24.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.network(
                                     valueOrDefault<String>(
-                                      widget.nomeAutor,
-                                      '-',
+                                      widget.fotoAutor,
+                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/mex7u89o6ebl/user-receita.me.png',
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          font: GoogleFonts.workSans(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMedium
-                                                    .fontStyle,
-                                          ),
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.bold,
-                                          fontStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .bodyMedium
-                                                  .fontStyle,
-                                        ),
+                                    fit: BoxFit.cover,
                                   ),
-                                  if (widget.sobrenomeAutor != null &&
-                                      widget.sobrenomeAutor != '')
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
                                     Text(
                                       valueOrDefault<String>(
-                                        widget.sobrenomeAutor,
+                                        widget.nomeAutor,
                                         '-',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -303,9 +298,35 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                                                     .fontStyle,
                                           ),
                                     ),
-                                ].divide(SizedBox(width: 4.0)),
-                              ),
-                            ].divide(SizedBox(width: 4.0)),
+                                    if (widget.sobrenomeAutor != null &&
+                                        widget.sobrenomeAutor != '')
+                                      Text(
+                                        valueOrDefault<String>(
+                                          widget.sobrenomeAutor,
+                                          '-',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              font: GoogleFonts.workSans(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .fontStyle,
+                                              ),
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                      ),
+                                  ].divide(SizedBox(width: 4.0)),
+                                ),
+                              ].divide(SizedBox(width: 4.0)),
+                            ),
                           ),
                           Builder(
                             builder: (context) => InkWell(

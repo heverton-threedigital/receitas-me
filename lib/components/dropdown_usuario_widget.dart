@@ -420,6 +420,9 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                   GoRouter.of(context).clearRedirectLocation();
 
                   FFAppState().fotoPefil = '';
+                  FFAppState().usuario = '';
+                  FFAppState().nomeUsuario = '';
+                  FFAppState().sobrenomeUsuario = '';
                   safeSetState(() {});
                   Navigator.pop(context);
                 },

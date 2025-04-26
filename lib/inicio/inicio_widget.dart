@@ -694,17 +694,18 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                 '-',
                                               ),
                                               sobrenomeAutor:
-                                                  valueOrDefault<String>(
-                                                staggeredViewReceitasResumoRow
-                                                    .autorSobrenome,
-                                                '-',
-                                              ),
+                                                  staggeredViewReceitasResumoRow
+                                                      .autorSobrenome,
                                               tempoPeriodo:
                                                   valueOrDefault<String>(
                                                 staggeredViewReceitasResumoRow
                                                     .tempoPreparoPeriodo,
                                                 '-',
                                               ),
+                                              slug:
+                                                  staggeredViewReceitasResumoRow
+                                                      .slug!,
+                                              usuario: FFAppState().usuario,
                                             );
                                           },
                                         );
@@ -846,8 +847,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     staggeredViewPerfisComContagemReceitasRow
                                                         .nome!,
                                                 sobrenomeUsuario:
-                                                    staggeredViewPerfisComContagemReceitasRow
-                                                        .sobrenome!,
+                                                    valueOrDefault<String>(
+                                                  staggeredViewPerfisComContagemReceitasRow
+                                                      .sobrenome,
+                                                  '-',
+                                                ),
                                                 quantidadeReceitas:
                                                     valueOrDefault<String>(
                                                   staggeredViewPerfisComContagemReceitasRow
