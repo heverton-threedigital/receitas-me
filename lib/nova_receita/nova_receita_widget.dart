@@ -465,7 +465,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                             child: Form(
                                               key: _model.formKey1,
                                               autovalidateMode:
-                                                  AutovalidateMode.always,
+                                                  AutovalidateMode.disabled,
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
