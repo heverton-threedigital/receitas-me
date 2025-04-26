@@ -193,39 +193,63 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
             MouseRegion(
               opaque: false,
               cursor: MouseCursor.defer ?? MouseCursor.defer,
-              child: AnimatedContainer(
-                duration: Duration(milliseconds: 150),
-                curve: Curves.easeInOut,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: _model.mouseRegionHovered1
-                      ? FlutterFlowTheme.of(context).primaryBackground
-                      : FlutterFlowTheme.of(context).secondaryBackground,
-                ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                        child: Icon(
-                          FFIcons.kcontaCirculo,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 24.0,
-                        ),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(
+                    UsuarioWidget.routeName,
+                    pathParameters: {
+                      'usuario': serializeParam(
+                        widget.usuario,
+                        ParamType.String,
                       ),
-                      Expanded(
-                        child: Padding(
+                    }.withoutNulls,
+                  );
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 150),
+                  curve: Curves.easeInOut,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: _model.mouseRegionHovered1
+                        ? FlutterFlowTheme.of(context).primaryBackground
+                        : FlutterFlowTheme.of(context).secondaryBackground,
+                  ),
+                  child: Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Minha conta',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.workSans(
+                              16.0, 0.0, 0.0, 0.0),
+                          child: Icon(
+                            FFIcons.kcontaCirculo,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 24.0,
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              'Minha conta',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    font: GoogleFonts.workSans(
+                                      fontWeight: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontWeight,
+                                      fontStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .fontStyle,
+                                    ),
+                                    letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -233,18 +257,11 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -401,6 +418,9 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                   GoRouter.of(context).prepareAuthEvent();
                   await authManager.signOut();
                   GoRouter.of(context).clearRedirectLocation();
+
+                  FFAppState().fotoPefil = '';
+                  safeSetState(() {});
 
                   context.goNamedAuth(InicioWidget.routeName, context.mounted);
                 },
