@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -464,7 +465,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                             child: Form(
                                               key: _model.formKey1,
                                               autovalidateMode:
-                                                  AutovalidateMode.disabled,
+                                                  AutovalidateMode.always,
                                               child: Container(
                                                 width:
                                                     MediaQuery.sizeOf(context)
@@ -1638,7 +1639,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                           Form(
                                             key: _model.formKey2,
                                             autovalidateMode:
-                                                AutovalidateMode.disabled,
+                                                AutovalidateMode.always,
                                             child: Container(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -2070,7 +2071,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                             child: Form(
                                               key: _model.formKey3,
                                               autovalidateMode:
-                                                  AutovalidateMode.disabled,
+                                                  AutovalidateMode.always,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -2731,6 +2732,29 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               _model
                                                                   .dropDownValue,
                                                         });
+                                                        _model.slugGerado2 =
+                                                            await actions
+                                                                .slugify(
+                                                          _model.receitaCriada2!
+                                                              .titulo,
+                                                          _model.receitaCriada2!
+                                                              .id,
+                                                        );
+                                                        await ReceitasTable()
+                                                            .update(
+                                                          data: {
+                                                            'slug': _model
+                                                                .slugGerado2,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            _model
+                                                                .receitaCriada2
+                                                                ?.id,
+                                                          ),
+                                                        );
                                                         FFAppState().contador =
                                                             -1;
                                                         safeSetState(() {});
@@ -2922,14 +2946,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                     ),
                                                     FFButtonWidget(
                                                       onPressed: () async {
-                                                        if (_model.formKey1
-                                                                    .currentState ==
-                                                                null ||
-                                                            !_model.formKey1
-                                                                .currentState!
-                                                                .validate()) {
-                                                          return;
-                                                        }
                                                         {
                                                           safeSetState(() =>
                                                               _model.isDataUploading3 =
@@ -3016,6 +3032,28 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               _model
                                                                   .dropDownValue,
                                                         });
+                                                        _model.slugRegado =
+                                                            await actions
+                                                                .slugify(
+                                                          _model.receitaCriada!
+                                                              .titulo,
+                                                          _model.receitaCriada!
+                                                              .id,
+                                                        );
+                                                        await ReceitasTable()
+                                                            .update(
+                                                          data: {
+                                                            'slug': _model
+                                                                .slugRegado,
+                                                          },
+                                                          matchingRows:
+                                                              (rows) =>
+                                                                  rows.eqOrNull(
+                                                            'id',
+                                                            _model.receitaCriada
+                                                                ?.id,
+                                                          ),
+                                                        );
                                                         FFAppState().contador =
                                                             -1;
                                                         safeSetState(() {});

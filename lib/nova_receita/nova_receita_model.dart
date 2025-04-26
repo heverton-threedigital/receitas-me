@@ -125,6 +125,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ReceitasRow? receitaCriada2;
+  // Stores action output result for [Custom Action - slugify] action in Button widget.
+  String? slugGerado2;
   InstantTimer? instantTimer;
   InstantTimer? instantTimer2;
   bool isDataUploading3 = false;
@@ -134,6 +136,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   ReceitasRow? receitaCriada;
+  // Stores action output result for [Custom Action - slugify] action in Button widget.
+  String? slugRegado;
   InstantTimer? instantTimer1;
   InstantTimer? instantTimer3;
   // Model for MenuLateralE component.
