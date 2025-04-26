@@ -1045,25 +1045,24 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                           triggerMode:
                                                                               TooltipTriggerMode.tap,
                                                                           child:
-                                                                              FlutterFlowIconButton(
-                                                                            borderColor:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            borderRadius:
-                                                                                8.0,
-                                                                            buttonSize:
-                                                                                32.0,
-                                                                            fillColor:
-                                                                                FlutterFlowTheme.of(context).primaryBackground,
-                                                                            icon:
-                                                                                Icon(
-                                                                              FFIcons.keditarQuadrado,
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              size: 16.0,
+                                                                              Visibility(
+                                                                            visible:
+                                                                                staggeredViewReceitasResumoRow.autorId == currentUserUid,
+                                                                            child:
+                                                                                FlutterFlowIconButton(
+                                                                              borderColor: FlutterFlowTheme.of(context).primary,
+                                                                              borderRadius: 8.0,
+                                                                              buttonSize: 32.0,
+                                                                              fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                                                                              icon: Icon(
+                                                                                FFIcons.keditarQuadrado,
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                size: 16.0,
+                                                                              ),
+                                                                              onPressed: () {
+                                                                                print('IconButton pressed ...');
+                                                                              },
                                                                             ),
-                                                                            onPressed:
-                                                                                () {
-                                                                              print('IconButton pressed ...');
-                                                                            },
                                                                           ),
                                                                         ),
                                                                       AlignedTooltip(
@@ -1108,7 +1107,7 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                         child:
                                                                             Visibility(
                                                                           visible:
-                                                                              widget.usuario == currentUserUid,
+                                                                              staggeredViewReceitasResumoRow.autorId == currentUserUid,
                                                                           child:
                                                                               FlutterFlowIconButton(
                                                                             borderColor:
@@ -1139,8 +1138,8 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      if (widget
-                                                                              .usuario !=
+                                                                      if (staggeredViewReceitasResumoRow
+                                                                              .autorId !=
                                                                           currentUserUid)
                                                                         Builder(
                                                                           builder: (context) =>

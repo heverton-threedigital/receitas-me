@@ -424,7 +424,8 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                   FFAppState().nomeUsuario = '';
                   FFAppState().sobrenomeUsuario = '';
                   safeSetState(() {});
-                  Navigator.pop(context);
+
+                  context.goNamedAuth(InicioWidget.routeName, context.mounted);
                 },
                 child: AnimatedContainer(
                   duration: Duration(milliseconds: 150),
