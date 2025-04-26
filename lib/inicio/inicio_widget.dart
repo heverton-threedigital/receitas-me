@@ -847,11 +847,8 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                     staggeredViewPerfisComContagemReceitasRow
                                                         .nome!,
                                                 sobrenomeUsuario:
-                                                    valueOrDefault<String>(
-                                                  staggeredViewPerfisComContagemReceitasRow
-                                                      .sobrenome,
-                                                  '-',
-                                                ),
+                                                    staggeredViewPerfisComContagemReceitasRow
+                                                        .sobrenome!,
                                                 quantidadeReceitas:
                                                     valueOrDefault<String>(
                                                   staggeredViewPerfisComContagemReceitasRow
