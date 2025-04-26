@@ -12,7 +12,7 @@ class CardUsersWidget extends StatefulWidget {
     required this.idUsuario,
     required this.fotoUsuario,
     required this.nomeUsuario,
-    required this.sobrenomeUsuario,
+    this.sobrenomeUsuario,
     required this.quantidadeReceitas,
     required this.usuario,
   });
