@@ -143,7 +143,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               constraints: BoxConstraints(
-                                maxWidth: 1200.0,
+                                maxWidth: 1000.0,
                               ),
                               decoration: BoxDecoration(),
                               child: Padding(
