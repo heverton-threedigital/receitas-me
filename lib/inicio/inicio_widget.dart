@@ -3,13 +3,11 @@ import '/components/card_receita_widget.dart';
 import '/components/card_users_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,13 +25,10 @@ class InicioWidget extends StatefulWidget {
   State<InicioWidget> createState() => _InicioWidgetState();
 }
 
-class _InicioWidgetState extends State<InicioWidget>
-    with TickerProviderStateMixin {
+class _InicioWidgetState extends State<InicioWidget> {
   late InicioModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -53,21 +48,6 @@ class _InicioWidgetState extends State<InicioWidget>
             .cast<String>();
         safeSetState(() {});
       }
-    });
-
-    animationsMap.addAll({
-      'containerOnPageLoadAnimation': AnimationInfo(
-        trigger: AnimationTrigger.onPageLoad,
-        effectsBuilder: () => [
-          MoveEffect(
-            curve: Curves.easeIn,
-            delay: 0.0.ms,
-            duration: 200.0.ms,
-            begin: Offset(-100.0, 0.0),
-            end: Offset(0.0, 0.0),
-          ),
-        ],
-      ),
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -167,8 +147,7 @@ class _InicioWidgetState extends State<InicioWidget>
                                     ),
                                   ],
                                 ),
-                              ).animateOnPageLoad(animationsMap[
-                                  'containerOnPageLoadAnimation']!),
+                              ),
                             ),
                           Flexible(
                             child: Align(
