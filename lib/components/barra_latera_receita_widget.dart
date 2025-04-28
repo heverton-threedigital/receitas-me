@@ -419,6 +419,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                           fontStyle:
@@ -466,6 +467,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                           fontStyle:
@@ -483,7 +485,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                 ),
                               AlignedTooltip(
                                 content: Padding(
-                                  padding: EdgeInsets.all(4.0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 4.0, 8.0, 4.0),
                                   child: Text(
                                     'Compatilhar',
                                     style: FlutterFlowTheme.of(context)
@@ -501,6 +504,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                           ),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryBackground,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -541,21 +545,67 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   },
                                 ),
                               ),
-                              FlutterFlowIconButton(
-                                borderColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                borderRadius: 40.0,
-                                borderWidth: 1.0,
-                                buttonSize: 40.0,
-                                fillColor: Color(0x1AD84012),
-                                icon: Icon(
-                                  FFIcons.kcomentario,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
+                              AlignedTooltip(
+                                content: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 4.0, 8.0, 4.0),
+                                  child: Text(
+                                    'Comentar',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          font: GoogleFonts.workSans(
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .fontStyle,
+                                          ),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: 14.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontWeight,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .fontStyle,
+                                        ),
+                                  ),
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
-                                },
+                                offset: 4.0,
+                                preferredDirection: AxisDirection.up,
+                                borderRadius: BorderRadius.circular(8.0),
+                                backgroundColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                elevation: 4.0,
+                                tailBaseWidth: 0.0,
+                                tailLength: 0.0,
+                                waitDuration: Duration(milliseconds: 100),
+                                showDuration: Duration(milliseconds: 100),
+                                triggerMode: TooltipTriggerMode.tap,
+                                child: FlutterFlowIconButton(
+                                  borderColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  borderRadius: 40.0,
+                                  borderWidth: 1.0,
+                                  buttonSize: 40.0,
+                                  fillColor: Color(0x1AD84012),
+                                  icon: Icon(
+                                    FFIcons.kcomentario,
+                                    color: FlutterFlowTheme.of(context).primary,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () {
+                                    print('IconButton pressed ...');
+                                  },
+                                ),
                               ),
                             ].divide(SizedBox(width: 8.0)),
                           ),
