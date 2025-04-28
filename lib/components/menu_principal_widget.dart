@@ -127,6 +127,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         ),
                                         onPressed: () async {
                                           FFAppState().barraLateral = true;
+                                          _model.updatePage(() {});
                                         },
                                       ),
                                     );
@@ -142,6 +143,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       ),
                                       onPressed: () async {
                                         FFAppState().barraLateral = false;
+                                        _model.updatePage(() {});
                                       },
                                     );
                                   }
