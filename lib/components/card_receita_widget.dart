@@ -121,7 +121,7 @@ class _CardReceitaWidgetState extends State<CardReceitaWidget> {
                       ReceitaWidget.routeName,
                       pathParameters: {
                         'slug': serializeParam(
-                          widget.idReceita,
+                          widget.slug,
                           ParamType.String,
                         ),
                       }.withoutNulls,
