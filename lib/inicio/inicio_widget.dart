@@ -60,9 +60,9 @@ class _InicioWidgetState extends State<InicioWidget>
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
-            curve: Curves.elasticOut,
+            curve: Curves.linear,
             delay: 0.0.ms,
-            duration: 1140.0.ms,
+            duration: 290.0.ms,
             begin: Offset(-100.0, 0.0),
             end: Offset(0.0, 0.0),
           ),
