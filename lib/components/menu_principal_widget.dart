@@ -107,23 +107,46 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              if (loggedIn)
-                                FlutterFlowIconButton(
-                                  borderRadius: 40.0,
-                                  buttonSize: 40.0,
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                  hoverColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  icon: Icon(
-                                    FFIcons.kmenu,
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    size: 26.0,
-                                  ),
-                                  onPressed: () async {
-                                    await widget.drawer?.call();
-                                  },
-                                ),
+                              Builder(
+                                builder: (context) {
+                                  if (!FFAppState().barraLateral) {
+                                    return Visibility(
+                                      visible: loggedIn,
+                                      child: FlutterFlowIconButton(
+                                        borderRadius: 40.0,
+                                        buttonSize: 40.0,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        hoverColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                        icon: Icon(
+                                          FFIcons.kmenu,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          size: 26.0,
+                                        ),
+                                        onPressed: () async {
+                                          FFAppState().barraLateral = true;
+                                        },
+                                      ),
+                                    );
+                                  } else {
+                                    return FlutterFlowIconButton(
+                                      borderRadius: 8.0,
+                                      buttonSize: 40.0,
+                                      icon: Icon(
+                                        FFIcons.kfechar,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 26.0,
+                                      ),
+                                      onPressed: () async {
+                                        FFAppState().barraLateral = false;
+                                      },
+                                    );
+                                  }
+                                },
+                              ),
                               InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,

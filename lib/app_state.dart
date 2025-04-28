@@ -36,6 +36,9 @@ class FFAppState extends ChangeNotifier {
       _sobrenomeUsuario =
           prefs.getString('ff_sobrenomeUsuario') ?? _sobrenomeUsuario;
     });
+    _safeInit(() {
+      _barraLateral = prefs.getBool('ff_barraLateral') ?? _barraLateral;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -189,6 +192,13 @@ class FFAppState extends ChangeNotifier {
   set sobrenomeUsuario(String value) {
     _sobrenomeUsuario = value;
     prefs.setString('ff_sobrenomeUsuario', value);
+  }
+
+  bool _barraLateral = false;
+  bool get barraLateral => _barraLateral;
+  set barraLateral(bool value) {
+    _barraLateral = value;
+    prefs.setBool('ff_barraLateral', value);
   }
 }
 

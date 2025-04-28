@@ -121,10 +121,22 @@ class _InicioWidgetState extends State<InicioWidget> {
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                wrapWithModel(
-                                  model: _model.menuLateralEModel1,
-                                  updateCallback: () => safeSetState(() {}),
-                                  child: MenuLateralEWidget(),
+                                if (FFAppState().barraLateral == true)
+                                  Flexible(
+                                    child: wrapWithModel(
+                                      model: _model.menuLateralEModel1,
+                                      updateCallback: () => safeSetState(() {}),
+                                      child: MenuLateralEWidget(),
+                                    ),
+                                  ),
+                                Container(
+                                  width: 1.0,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 1.0,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                  ),
                                 ),
                               ],
                             ),
