@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -44,8 +43,14 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.incrementarVisualizacao(
-        widget.slug!,
+      await ReceitasTable().update(
+        data: {
+          'visualizacoes': 1,
+        },
+        matchingRows: (rows) => rows.eqOrNull(
+          'slug',
+          widget.slug,
+        ),
       );
     });
 
