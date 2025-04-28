@@ -117,7 +117,7 @@ class _MyAppState extends State<MyApp> {
           thumbVisibility: WidgetStateProperty.all(false),
           trackVisibility: WidgetStateProperty.all(true),
           interactive: true,
-          thickness: WidgetStateProperty.all(6.0),
+          thickness: WidgetStateProperty.all(4.0),
           thumbColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.dragged)) {
               return Color(4292362258);
@@ -127,7 +127,7 @@ class _MyAppState extends State<MyApp> {
             }
             return Color(3017293842);
           }),
-          crossAxisMargin: 4.0,
+          crossAxisMargin: 0.0,
         ),
       ),
       themeMode: _themeMode,
