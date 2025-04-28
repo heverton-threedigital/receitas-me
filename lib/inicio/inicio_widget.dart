@@ -60,9 +60,9 @@ class _InicioWidgetState extends State<InicioWidget>
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
-            curve: Curves.linear,
+            curve: Curves.easeIn,
             delay: 0.0.ms,
-            duration: 290.0.ms,
+            duration: 200.0.ms,
             begin: Offset(-100.0, 0.0),
             end: Offset(0.0, 0.0),
           ),
@@ -143,10 +143,15 @@ class _InicioWidgetState extends State<InicioWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Flexible(
-                                    child: wrapWithModel(
-                                      model: _model.menuLateralEModel1,
-                                      updateCallback: () => safeSetState(() {}),
-                                      child: MenuLateralEWidget(),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 8.0, 0.0),
+                                      child: wrapWithModel(
+                                        model: _model.menuLateralEModel1,
+                                        updateCallback: () =>
+                                            safeSetState(() {}),
+                                        child: MenuLateralEWidget(),
+                                      ),
                                     ),
                                   ),
                                   Container(
