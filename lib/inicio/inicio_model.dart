@@ -15,9 +15,11 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   List<CategoriasRow>? categoriasQuery;
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel1;
   Stream<List<CategoriasRow>>? rowSupabaseStream;
   // Model for MenuLateralE component.
-  late MenuLateralEModel menuLateralEModel;
+  late MenuLateralEModel menuLateralEModel2;
 
   /// Query cache managers for this widget.
 
@@ -39,13 +41,15 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
-    menuLateralEModel = createModel(context, () => MenuLateralEModel());
+    menuLateralEModel1 = createModel(context, () => MenuLateralEModel());
+    menuLateralEModel2 = createModel(context, () => MenuLateralEModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    menuLateralEModel.dispose();
+    menuLateralEModel1.dispose();
+    menuLateralEModel2.dispose();
 
     /// Dispose query cache managers for this widget.
 

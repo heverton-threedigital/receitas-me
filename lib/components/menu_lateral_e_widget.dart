@@ -47,7 +47,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
         color: FlutterFlowTheme.of(context).primaryBackground,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(32.0, 24.0, 32.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
         child: SingleChildScrollView(
           primary: false,
           child: Column(
