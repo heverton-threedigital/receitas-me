@@ -649,10 +649,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               _model
                                                                   .instantTimer3
                                                                   ?.cancel();
-                                                              FFAppState()
-                                                                  .passos = [];
-                                                              safeSetState(
-                                                                  () {});
 
                                                               context.pushNamed(
                                                                 ReceitaWidget
@@ -662,9 +658,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   'slug':
                                                                       serializeParam(
                                                                     _model
-                                                                        .receitaAtualizada
-                                                                        ?.firstOrNull
-                                                                        ?.slug,
+                                                                        .slugRegado,
                                                                     ParamType
                                                                         .String,
                                                                   ),
