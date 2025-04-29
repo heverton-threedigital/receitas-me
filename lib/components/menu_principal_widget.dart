@@ -58,7 +58,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
           FFAppState().sobrenomeUsuario =
               _model.perfilLogado!.firstOrNull!.sobrenome!;
           FFAppState().usuario = _model.perfilLogado!.firstOrNull!.usuario!;
-          safeSetState(() {});
+          _model.updatePage(() {});
         }
       }
     });
@@ -254,7 +254,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
+                                          .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
