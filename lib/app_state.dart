@@ -200,6 +200,35 @@ class FFAppState extends ChangeNotifier {
     _barraLateral = value;
     prefs.setBool('ff_barraLateral', value);
   }
+
+  List<String> _fotosPassoAPasso = [];
+  List<String> get fotosPassoAPasso => _fotosPassoAPasso;
+  set fotosPassoAPasso(List<String> value) {
+    _fotosPassoAPasso = value;
+  }
+
+  void addToFotosPassoAPasso(String value) {
+    fotosPassoAPasso.add(value);
+  }
+
+  void removeFromFotosPassoAPasso(String value) {
+    fotosPassoAPasso.remove(value);
+  }
+
+  void removeAtIndexFromFotosPassoAPasso(int index) {
+    fotosPassoAPasso.removeAt(index);
+  }
+
+  void updateFotosPassoAPassoAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    fotosPassoAPasso[index] = updateFn(_fotosPassoAPasso[index]);
+  }
+
+  void insertAtIndexInFotosPassoAPasso(int index, String value) {
+    fotosPassoAPasso.insert(index, value);
+  }
 }
 
 void _safeInit(Function() initializeField) {

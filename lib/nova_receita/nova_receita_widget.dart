@@ -1,6 +1,5 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
-import '/components/ingrediente_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/components/passos_widget.dart';
@@ -2674,43 +2673,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .fontStyle,
                                                         ),
                                                   ),
-                                                  Builder(
-                                                    builder: (context) {
-                                                      final ingredientesLocal =
-                                                          FFAppState()
-                                                              .ingredientes
-                                                              .toList();
-
-                                                      return ListView.separated(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        primary: false,
-                                                        shrinkWrap: true,
-                                                        scrollDirection:
-                                                            Axis.vertical,
-                                                        itemCount:
-                                                            ingredientesLocal
-                                                                .length,
-                                                        separatorBuilder:
-                                                            (_, __) => SizedBox(
-                                                                height: 8.0),
-                                                        itemBuilder: (context,
-                                                            ingredientesLocalIndex) {
-                                                          final ingredientesLocalItem =
-                                                              ingredientesLocal[
-                                                                  ingredientesLocalIndex];
-                                                          return IngredienteWidget(
-                                                            key: Key(
-                                                                'Keys3z_${ingredientesLocalIndex}_of_${ingredientesLocal.length}'),
-                                                            ingrediente:
-                                                                ingredientesLocalItem,
-                                                            indexIngrediente:
-                                                                ingredientesLocalIndex,
-                                                          );
-                                                        },
-                                                      );
-                                                    },
-                                                  ),
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
@@ -2923,102 +2885,87 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                        FFButtonWidget(
-                                                          onPressed: () async {
-                                                            if (_model.formKey2
-                                                                        .currentState ==
-                                                                    null ||
-                                                                !_model.formKey2
-                                                                    .currentState!
-                                                                    .validate()) {
-                                                              return;
-                                                            }
-                                                            FFAppState()
-                                                                .addToIngredientes(
-                                                                    _model
-                                                                        .ingredienteTextController
-                                                                        .text);
-                                                            FFAppState()
-                                                                .update(() {});
-                                                            safeSetState(() {
-                                                              _model
-                                                                  .ingredienteTextController
-                                                                  ?.clear();
-                                                            });
-                                                          },
-                                                          text: 'Salvar',
-                                                          options:
-                                                              FFButtonOptions(
-                                                            height: 36.0,
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8.0,
-                                                                        0.0,
-                                                                        8.0,
-                                                                        0.0),
-                                                            iconPadding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0),
+                                                        FlutterFlowIconButton(
+                                                          borderColor:
+                                                              Color(0x33D84012),
+                                                          borderRadius: 8.0,
+                                                          buttonSize: 36.0,
+                                                          icon: Icon(
+                                                            FFIcons
+                                                                .kmaisMenuVertical,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primaryBackground,
-                                                            textStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      font: GoogleFonts
-                                                                          .workSans(
-                                                                        fontWeight: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontWeight,
-                                                                        fontStyle: FlutterFlowTheme.of(context)
-                                                                            .titleSmall
-                                                                            .fontStyle,
-                                                                      ),
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      letterSpacing:
-                                                                          0.0,
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleSmall
-                                                                          .fontStyle,
-                                                                    ),
-                                                            elevation: 0.0,
-                                                            borderSide:
-                                                                BorderSide(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                            ),
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            hoverColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                            hoverTextColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryBackground,
-                                                            hoverElevation: 2.0,
+                                                                .secondaryText,
+                                                            size: 20.0,
                                                           ),
+                                                          onPressed: () {
+                                                            print(
+                                                                'IconButton pressed ...');
+                                                          },
                                                         ),
                                                       ].divide(
                                                           SizedBox(width: 8.0)),
+                                                    ),
+                                                  ),
+                                                  FFButtonWidget(
+                                                    onPressed: () {
+                                                      print(
+                                                          'Button pressed ...');
+                                                    },
+                                                    text: 'Button',
+                                                    options: FFButtonOptions(
+                                                      height: 40.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .titleSmall
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .workSans(
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontWeight,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .fontStyle,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
                                                     ),
                                                   ),
                                                 ].divide(SizedBox(height: 8.0)),

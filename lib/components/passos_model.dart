@@ -23,6 +23,9 @@ class PassosModel extends FlutterFlowModel<PassosWidget> {
     return null;
   }
 
+  bool isDataUploading = false;
+  List<FFUploadedFile> uploadedLocalFiles = [];
+
   @override
   void initState(BuildContext context) {
     editarpassoTextControllerValidator = _editarpassoTextControllerValidator;
