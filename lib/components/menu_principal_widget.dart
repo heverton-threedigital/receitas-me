@@ -116,8 +116,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       return Visibility(
                                         visible: loggedIn,
                                         child: FlutterFlowIconButton(
-                                          borderColor: Color(0x66D84012),
-                                          borderRadius: 40.0,
+                                          borderColor: Color(0x4ED84012),
+                                          borderRadius: 8.0,
                                           borderWidth: 1.0,
                                           buttonSize: 40.0,
                                           fillColor:
@@ -140,7 +140,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       );
                                     } else {
                                       return FlutterFlowIconButton(
-                                        borderColor: Color(0x65D84012),
+                                        borderColor: Color(0x4CD84012),
                                         borderRadius: 8.0,
                                         borderWidth: 1.0,
                                         buttonSize: 40.0,
