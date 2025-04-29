@@ -405,7 +405,7 @@ class _MenuLateralEWidgetState extends State<MenuLateralEWidget> {
                         width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 40.0,
                         decoration: BoxDecoration(
-                          color: _model.mouseRegionHovered1
+                          color: _model.mouseRegionHovered5
                               ? FlutterFlowTheme.of(context).secondaryBackground
                               : Color(0x00000000),
                           borderRadius: BorderRadius.circular(12.0),

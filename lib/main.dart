@@ -115,14 +115,14 @@ class _MyAppState extends State<MyApp> {
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
           thumbVisibility: WidgetStateProperty.all(true),
-          trackVisibility: WidgetStateProperty.all(true),
+          trackVisibility: WidgetStateProperty.all(false),
           interactive: true,
           thickness: WidgetStateProperty.all(4.0),
           trackColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
-              return Color(4282657280);
+              return Color(4279506971);
             }
-            return Color(4282657280);
+            return Color(4279506971);
           }),
           trackBorderColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
@@ -132,12 +132,12 @@ class _MyAppState extends State<MyApp> {
           }),
           thumbColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.dragged)) {
-              return Color(3017293842);
+              return Color(502461942);
             }
             if (states.contains(WidgetState.hovered)) {
               return Color(3436724242);
             }
-            return Color(3017293842);
+            return Color(502461942);
           }),
           crossAxisMargin: 0.0,
           mainAxisMargin: 4.0,

@@ -19,9 +19,11 @@ class MenuPrincipalWidget extends StatefulWidget {
   const MenuPrincipalWidget({
     super.key,
     this.drawer,
+    this.pagina,
   });
 
   final Future Function()? drawer;
+  final String? pagina;
 
   @override
   State<MenuPrincipalWidget> createState() => _MenuPrincipalWidgetState();
@@ -107,58 +109,60 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 8.0, 0.0),
-                                child: Builder(
-                                  builder: (context) {
-                                    if (!FFAppState().barraLateral) {
-                                      return Visibility(
-                                        visible: loggedIn,
-                                        child: FlutterFlowIconButton(
-                                          borderColor: Color(0x4ED84012),
+                              if (widget.pagina != 'receita')
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 8.0, 0.0),
+                                  child: Builder(
+                                    builder: (context) {
+                                      if (!FFAppState().barraLateral) {
+                                        return Visibility(
+                                          visible: loggedIn,
+                                          child: FlutterFlowIconButton(
+                                            borderColor: Color(0x4ED84012),
+                                            borderRadius: 8.0,
+                                            borderWidth: 1.0,
+                                            buttonSize: 40.0,
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            icon: Icon(
+                                              FFIcons.kmenu,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 26.0,
+                                            ),
+                                            onPressed: () async {
+                                              FFAppState().barraLateral = true;
+                                              _model.updatePage(() {});
+                                            },
+                                          ),
+                                        );
+                                      } else {
+                                        return FlutterFlowIconButton(
+                                          borderColor: Color(0x4CD84012),
                                           borderRadius: 8.0,
                                           borderWidth: 1.0,
                                           buttonSize: 40.0,
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBackground,
-                                          hoverColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
                                           icon: Icon(
-                                            FFIcons.kmenu,
+                                            FFIcons.kfechar,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 26.0,
                                           ),
                                           onPressed: () async {
-                                            FFAppState().barraLateral = true;
+                                            FFAppState().barraLateral = false;
                                             _model.updatePage(() {});
                                           },
-                                        ),
-                                      );
-                                    } else {
-                                      return FlutterFlowIconButton(
-                                        borderColor: Color(0x4CD84012),
-                                        borderRadius: 8.0,
-                                        borderWidth: 1.0,
-                                        buttonSize: 40.0,
-                                        icon: Icon(
-                                          FFIcons.kfechar,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          size: 26.0,
-                                        ),
-                                        onPressed: () async {
-                                          FFAppState().barraLateral = false;
-                                          _model.updatePage(() {});
-                                        },
-                                      );
-                                    }
-                                  },
+                                        );
+                                      }
+                                    },
+                                  ),
                                 ),
-                              ),
                               InkWell(
                                 splashColor: Colors.transparent,
                                 focusColor: Colors.transparent,

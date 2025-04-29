@@ -152,6 +152,7 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -178,6 +179,7 @@ class _CardUsersWidgetState extends State<CardUsersWidget> {
                                           .bodyMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 12.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)

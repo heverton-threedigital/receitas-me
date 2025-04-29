@@ -11,17 +11,21 @@ class MinhasReceitasModel extends FlutterFlowModel<MinhasReceitasWidget> {
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
   // Model for MenuLateralE component.
-  late MenuLateralEModel menuLateralEModel;
+  late MenuLateralEModel menuLateralEModel1;
+  // Model for MenuLateralE component.
+  late MenuLateralEModel menuLateralEModel2;
 
   @override
   void initState(BuildContext context) {
     menuPrincipalModel = createModel(context, () => MenuPrincipalModel());
-    menuLateralEModel = createModel(context, () => MenuLateralEModel());
+    menuLateralEModel1 = createModel(context, () => MenuLateralEModel());
+    menuLateralEModel2 = createModel(context, () => MenuLateralEModel());
   }
 
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    menuLateralEModel.dispose();
+    menuLateralEModel1.dispose();
+    menuLateralEModel2.dispose();
   }
 }
