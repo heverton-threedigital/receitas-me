@@ -83,35 +83,6 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList('ff_categoriasReceitas', _categoriasReceitas);
   }
 
-  List<String> _ingredientes = [];
-  List<String> get ingredientes => _ingredientes;
-  set ingredientes(List<String> value) {
-    _ingredientes = value;
-  }
-
-  void addToIngredientes(String value) {
-    ingredientes.add(value);
-  }
-
-  void removeFromIngredientes(String value) {
-    ingredientes.remove(value);
-  }
-
-  void removeAtIndexFromIngredientes(int index) {
-    ingredientes.removeAt(index);
-  }
-
-  void updateIngredientesAtIndex(
-    int index,
-    String Function(String) updateFn,
-  ) {
-    ingredientes[index] = updateFn(_ingredientes[index]);
-  }
-
-  void insertAtIndexInIngredientes(int index, String value) {
-    ingredientes.insert(index, value);
-  }
-
   List<String> _passos = [];
   List<String> get passos => _passos;
   set passos(List<String> value) {
@@ -201,33 +172,10 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_barraLateral', value);
   }
 
-  List<String> _fotosPassoAPasso = [];
-  List<String> get fotosPassoAPasso => _fotosPassoAPasso;
-  set fotosPassoAPasso(List<String> value) {
-    _fotosPassoAPasso = value;
-  }
-
-  void addToFotosPassoAPasso(String value) {
-    fotosPassoAPasso.add(value);
-  }
-
-  void removeFromFotosPassoAPasso(String value) {
-    fotosPassoAPasso.remove(value);
-  }
-
-  void removeAtIndexFromFotosPassoAPasso(int index) {
-    fotosPassoAPasso.removeAt(index);
-  }
-
-  void updateFotosPassoAPassoAtIndex(
-    int index,
-    String Function(String) updateFn,
-  ) {
-    fotosPassoAPasso[index] = updateFn(_fotosPassoAPasso[index]);
-  }
-
-  void insertAtIndexInFotosPassoAPasso(int index, String value) {
-    fotosPassoAPasso.insert(index, value);
+  int _ingredientes = 0;
+  int get ingredientes => _ingredientes;
+  set ingredientes(int value) {
+    _ingredientes = value;
   }
 }
 

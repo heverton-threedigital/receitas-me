@@ -21,6 +21,19 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   String? tempoPreparo;
 
+  List<String> listaIngredientesTextos = [];
+  void addToListaIngredientesTextos(String item) =>
+      listaIngredientesTextos.add(item);
+  void removeFromListaIngredientesTextos(String item) =>
+      listaIngredientesTextos.remove(item);
+  void removeAtIndexFromListaIngredientesTextos(int index) =>
+      listaIngredientesTextos.removeAt(index);
+  void insertAtIndexInListaIngredientesTextos(int index, String item) =>
+      listaIngredientesTextos.insert(index, item);
+  void updateListaIngredientesTextosAtIndex(
+          int index, Function(String) updateFn) =>
+      listaIngredientesTextos[index] = updateFn(listaIngredientesTextos[index]);
+
   ///  State fields for stateful widgets in this page.
 
   final formKey1 = GlobalKey<FormState>();
@@ -29,22 +42,11 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada1;
+  ReceitasRow? receitaCriada;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
-
-  // Stores action output result for [Custom Action - slugify] action in Button widget.
-  String? slugGerado1;
-  InstantTimer? instantTimer;
-  InstantTimer? instantTimer2;
-  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
 
   // Stores action output result for [Custom Action - slugify] action in Button widget.
   String? slugRegado;
@@ -52,8 +54,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   List<ReceitasRow>? receitaAtualizada;
   InstantTimer? instantTimer1;
   InstantTimer? instantTimer3;
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for TituloReceita widget.
@@ -112,15 +114,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   FocusNode? ingredienteFocusNode;
   TextEditingController? ingredienteTextController;
   String? Function(BuildContext, String?)? ingredienteTextControllerValidator;
-  String? _ingredienteTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Este campo não pode ficar vazio';
-    }
-
-    return null;
-  }
-
   // State field(s) for passo widget.
   FocusNode? passoFocusNode;
   TextEditingController? passoTextController;
@@ -145,7 +138,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
         _dscricaoReceitaTextControllerValidator;
     preparacaoReceitaTextControllerValidator =
         _preparacaoReceitaTextControllerValidator;
-    ingredienteTextControllerValidator = _ingredienteTextControllerValidator;
     passoTextControllerValidator = _passoTextControllerValidator;
     menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }
@@ -153,8 +145,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   @override
   void dispose() {
     menuPrincipalModel.dispose();
-    instantTimer?.cancel();
-    instantTimer2?.cancel();
     instantTimer1?.cancel();
     instantTimer3?.cancel();
     tituloReceitaFocusNode?.dispose();
