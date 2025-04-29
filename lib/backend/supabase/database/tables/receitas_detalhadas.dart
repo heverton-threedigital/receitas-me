@@ -24,6 +24,9 @@ class ReceitasDetalhadasRow extends SupabaseDataRow {
   String? get titulo => getField<String>('titulo');
   set titulo(String? value) => setField<String>('titulo', value);
 
+  bool? get publicado => getField<bool>('publicado');
+  set publicado(bool? value) => setField<bool>('publicado', value);
+
   String? get receitaDescricao => getField<String>('receita_descricao');
   set receitaDescricao(String? value) =>
       setField<String>('receita_descricao', value);

@@ -6,6 +6,10 @@ import 'receita_widget.dart' show ReceitaWidget;
 import 'package:flutter/material.dart';
 
 class ReceitaModel extends FlutterFlowModel<ReceitaWidget> {
+  ///  Local state fields for this page.
+
+  int? visualizacoes;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey = GlobalKey<FormState>();

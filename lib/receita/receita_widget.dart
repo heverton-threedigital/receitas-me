@@ -42,15 +42,8 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await ReceitasTable().update(
-        data: {
-          'visualizacoes': 1,
-        },
-        matchingRows: (rows) => rows.eqOrNull(
-          'slug',
-          widget.slug,
-        ),
-      );
+      _model.visualizacoes = FFAppState().visualizacoesReceita + 1;
+      safeSetState(() {});
     });
 
     _model.textController ??= TextEditingController();

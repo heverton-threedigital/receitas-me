@@ -8,3 +8,4 @@ export '/receitas_salvas/receitas_salvas_widget.dart' show ReceitasSalvasWidget;
 export '/receita/receita_widget.dart' show ReceitaWidget;
 export '/pesquisar/pesquisar_widget.dart' show PesquisarWidget;
 export '/usuario/usuario_widget.dart' show UsuarioWidget;
+export '/editar_receita/editar_receita_widget.dart' show EditarReceitaWidget;

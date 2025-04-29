@@ -9,31 +9,17 @@ class PassosModel extends FlutterFlowModel<PassosWidget> {
 
   ///  State fields for stateful widgets in this component.
 
-  final formKey = GlobalKey<FormState>();
-  // State field(s) for editarpasso widget.
-  FocusNode? editarpassoFocusNode;
-  TextEditingController? editarpassoTextController;
-  String? Function(BuildContext, String?)? editarpassoTextControllerValidator;
-  String? _editarpassoTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Este campo não pode ficar vazio';
-    }
-
-    return null;
-  }
-
-  bool isDataUploading = false;
-  List<FFUploadedFile> uploadedLocalFiles = [];
+  // State field(s) for ingrediente widget.
+  FocusNode? ingredienteFocusNode;
+  TextEditingController? ingredienteTextController;
+  String? Function(BuildContext, String?)? ingredienteTextControllerValidator;
 
   @override
-  void initState(BuildContext context) {
-    editarpassoTextControllerValidator = _editarpassoTextControllerValidator;
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    editarpassoFocusNode?.dispose();
-    editarpassoTextController?.dispose();
+    ingredienteFocusNode?.dispose();
+    ingredienteTextController?.dispose();
   }
 }

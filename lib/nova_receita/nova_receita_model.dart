@@ -13,14 +13,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   FFUploadedFile? imagemReceita;
 
-  String? titulo;
-
-  String? descricao;
-
-  String? porcoes;
-
-  String? tempoPreparo;
-
   List<String> listaIngredientesTextos = [];
   void addToListaIngredientesTextos(String item) =>
       listaIngredientesTextos.add(item);
@@ -34,6 +26,15 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
           int index, Function(String) updateFn) =>
       listaIngredientesTextos[index] = updateFn(listaIngredientesTextos[index]);
 
+  List<String> passoaPasso = [];
+  void addToPassoaPasso(String item) => passoaPasso.add(item);
+  void removeFromPassoaPasso(String item) => passoaPasso.remove(item);
+  void removeAtIndexFromPassoaPasso(int index) => passoaPasso.removeAt(index);
+  void insertAtIndexInPassoaPasso(int index, String item) =>
+      passoaPasso.insert(index, item);
+  void updatePassoaPassoAtIndex(int index, Function(String) updateFn) =>
+      passoaPasso[index] = updateFn(passoaPasso[index]);
+
   ///  State fields for stateful widgets in this page.
 
   final formKey1 = GlobalKey<FormState>();
@@ -42,20 +43,33 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   // Model for MenuPrincipal component.
   late MenuPrincipalModel menuPrincipalModel;
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
-  ReceitasRow? receitaCriada;
+  ReceitasRow? receitaCriada1;
   bool isDataUploading1 = false;
   FFUploadedFile uploadedLocalFile1 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl1 = '';
 
   // Stores action output result for [Custom Action - slugify] action in Button widget.
+  String? slugRegado1;
+  // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
+  List<ReceitasRow>? receitaAtualizada1;
+  InstantTimer? instantTimer1;
+  InstantTimer? instantTimer3;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ReceitasRow? receitaCriada2;
+  bool isDataUploading2 = false;
+  FFUploadedFile uploadedLocalFile2 =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl2 = '';
+
+  // Stores action output result for [Custom Action - slugify] action in Button widget.
   String? slugRegado;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ReceitasRow>? receitaAtualizada;
-  InstantTimer? instantTimer1;
-  InstantTimer? instantTimer3;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  InstantTimer? instantTimer4;
+  InstantTimer? instantTimer5;
+  bool isDataUploading3 = false;
+  FFUploadedFile uploadedLocalFile3 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for TituloReceita widget.
@@ -147,6 +161,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     menuPrincipalModel.dispose();
     instantTimer1?.cancel();
     instantTimer3?.cancel();
+    instantTimer4?.cancel();
+    instantTimer5?.cancel();
     tituloReceitaFocusNode?.dispose();
     tituloReceitaTextController?.dispose();
 

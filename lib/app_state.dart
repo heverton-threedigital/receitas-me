@@ -177,6 +177,12 @@ class FFAppState extends ChangeNotifier {
   set ingredientes(int value) {
     _ingredientes = value;
   }
+
+  int _visualizacoesReceita = 0;
+  int get visualizacoesReceita => _visualizacoesReceita;
+  set visualizacoesReceita(int value) {
+    _visualizacoesReceita = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:flutter/material.dart';
@@ -438,8 +439,16 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                               if (widget.informacoesReceita?.autorId ==
                                   currentUserUid)
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('EditarReceita pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      EditarReceitaWidget.routeName,
+                                      queryParameters: {
+                                        'receita': serializeParam(
+                                          widget.informacoesReceita,
+                                          ParamType.SupabaseRow,
+                                        ),
+                                      }.withoutNulls,
+                                    );
                                   },
                                   text: 'Editar',
                                   icon: Icon(
