@@ -134,6 +134,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                           model: _model.menuPrincipalModel,
                           updateCallback: () => safeSetState(() {}),
                           child: MenuPrincipalWidget(
+                            pagina: 'novareceita',
                             drawer: () async {},
                           ),
                         ),
