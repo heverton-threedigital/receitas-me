@@ -109,7 +109,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              if ((widget.pagina != 'receita') ||
+                              if ((widget.pagina != 'receita') &&
                                   (widget.pagina != 'novareceita'))
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
