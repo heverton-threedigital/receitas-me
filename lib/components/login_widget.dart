@@ -10,7 +10,6 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
@@ -2230,10 +2229,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           validator: _model
                                               .nomeUsuarioTextControllerValidator
                                               .asValidator(context),
-                                          inputFormatters: [
-                                            FilteringTextInputFormatter.allow(
-                                                RegExp('^[a-z0-9_.]{3,30}\$'))
-                                          ],
                                         ),
                                       ),
                                     ),
