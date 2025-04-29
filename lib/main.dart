@@ -114,10 +114,9 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         brightness: Brightness.light,
         scrollbarTheme: ScrollbarThemeData(
-          thumbVisibility: WidgetStateProperty.all(true),
+          thumbVisibility: WidgetStateProperty.all(false),
           trackVisibility: WidgetStateProperty.all(false),
           interactive: true,
-          thickness: WidgetStateProperty.all(4.0),
           trackColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
               return Color(4279506971);
@@ -130,17 +129,6 @@ class _MyAppState extends State<MyApp> {
             }
             return Color(0);
           }),
-          thumbColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.dragged)) {
-              return Color(502461942);
-            }
-            if (states.contains(WidgetState.hovered)) {
-              return Color(3436724242);
-            }
-            return Color(502461942);
-          }),
-          crossAxisMargin: 0.0,
-          mainAxisMargin: 4.0,
         ),
       ),
       themeMode: _themeMode,

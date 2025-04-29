@@ -125,483 +125,107 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                 ),
                 body: SafeArea(
                   top: true,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      wrapWithModel(
-                        model: _model.menuPrincipalModel,
-                        updateCallback: () => safeSetState(() {}),
-                        child: MenuPrincipalWidget(
-                          drawer: () async {},
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        wrapWithModel(
+                          model: _model.menuPrincipalModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: MenuPrincipalWidget(
+                            drawer: () async {},
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: Align(
-                          alignment: AlignmentDirectional(0.0, -1.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.9,
-                            constraints: BoxConstraints(
-                              maxWidth: 1000.0,
-                            ),
-                            decoration: BoxDecoration(),
-                            child: SingleChildScrollView(
+                        Expanded(
+                          child: Align(
+                            alignment: AlignmentDirectional(0.0, -1.0),
+                            child: Container(
+                              width: MediaQuery.sizeOf(context).width * 0.9,
+                              constraints: BoxConstraints(
+                                maxWidth: 1000.0,
+                              ),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 8.0, 0.0),
-                                    child: SafeArea(
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(16.0),
-                                        child: Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: Color(0x80FFFFFF),
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
+                                  SafeArea(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(16.0),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                1.0,
+                                        decoration: BoxDecoration(
+                                          color: Color(0x80FFFFFF),
+                                          borderRadius:
+                                              BorderRadius.circular(16.0),
+                                          border: Border.all(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
                                           ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 8.0, 16.0, 8.0),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                FFButtonWidget(
-                                                  onPressed: () async {
-                                                    context.safePop();
-                                                  },
-                                                  text: 'Voltar',
-                                                  icon: Icon(
-                                                    FFIcons.ksetaEsquerda,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 24.0,
-                                                  ),
-                                                  options: FFButtonOptions(
-                                                    height: 40.0,
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                16.0, 0.0),
-                                                    iconPadding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryBackground,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              font: GoogleFonts
-                                                                  .workSans(
-                                                                fontWeight: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontWeight,
-                                                                fontStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .fontStyle,
-                                                              ),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontWeight,
-                                                              fontStyle:
-                                                                  FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .titleSmall
-                                                                      .fontStyle,
-                                                            ),
-                                                    elevation: 0.0,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  showLoadingIndicator: false,
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: [
-                                                    if (responsiveVisibility(
-                                                      context: context,
-                                                      phone: false,
-                                                    ))
-                                                      FFButtonWidget(
-                                                        onPressed: () async {
-                                                          Navigator.pop(
-                                                              context);
-                                                        },
-                                                        text: 'Cancelar',
-                                                        icon: Icon(
-                                                          FFIcons.kcancelar,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 24.0,
-                                                        ),
-                                                        options:
-                                                            FFButtonOptions(
-                                                          height: 36.0,
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      16.0,
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0),
-                                                          iconPadding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryBackground,
-                                                          textStyle:
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 16.0, 16.0, 16.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              if (responsiveVisibility(
+                                                context: context,
+                                                phone: false,
+                                              ))
+                                                Text(
+                                                  'Criar nova receita',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts
+                                                            .workSans(
+                                                          fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .workSans(
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
-                                                          elevation: 0.0,
-                                                          borderSide:
-                                                              BorderSide(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primary,
-                                                            width: 1.0,
-                                                          ),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
+                                                                  .titleMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
                                                         ),
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
                                                       ),
+                                                ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  if (responsiveVisibility(
+                                                    context: context,
+                                                    phone: false,
+                                                  ))
                                                     FFButtonWidget(
                                                       onPressed: () async {
-                                                        _model.receitaCriada1 =
-                                                            await ReceitasTable()
-                                                                .insert({
-                                                          'titulo': _model
-                                                              .tituloReceitaTextController
-                                                              .text,
-                                                          'descricao': _model
-                                                              .dscricaoReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo': int
-                                                              .tryParse(_model
-                                                                  .preparacaoReceitaTextController
-                                                                  .text),
-                                                          'autor_id':
-                                                              currentUserUid,
-                                                          'publicado': false,
-                                                          'tempo_preparo_periodo':
-                                                              _model
-                                                                  .dropDownValue,
-                                                        });
-                                                        if (_model.imagemReceita !=
-                                                                null &&
-                                                            (_model
-                                                                    .imagemReceita
-                                                                    ?.bytes
-                                                                    ?.isNotEmpty ??
-                                                                false)) {
-                                                          {
-                                                            safeSetState(() =>
-                                                                _model.isDataUploading1 =
-                                                                    true);
-                                                            var selectedUploadedFiles =
-                                                                <FFUploadedFile>[];
-                                                            var selectedMedia =
-                                                                <SelectedFile>[];
-                                                            var downloadUrls =
-                                                                <String>[];
-                                                            try {
-                                                              selectedUploadedFiles = _model
-                                                                      .uploadedLocalFile3
-                                                                      .bytes!
-                                                                      .isNotEmpty
-                                                                  ? [
-                                                                      _model
-                                                                          .uploadedLocalFile3
-                                                                    ]
-                                                                  : <FFUploadedFile>[];
-                                                              selectedMedia =
-                                                                  selectedFilesFromUploadedFiles(
-                                                                selectedUploadedFiles,
-                                                                storageFolderPath:
-                                                                    'receitas',
-                                                              );
-                                                              downloadUrls =
-                                                                  await uploadSupabaseStorageFiles(
-                                                                bucketName:
-                                                                    'imagens',
-                                                                selectedFiles:
-                                                                    selectedMedia,
-                                                              );
-                                                            } finally {
-                                                              _model.isDataUploading1 =
-                                                                  false;
-                                                            }
-                                                            if (selectedUploadedFiles
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length &&
-                                                                downloadUrls
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length) {
-                                                              safeSetState(() {
-                                                                _model.uploadedLocalFile1 =
-                                                                    selectedUploadedFiles
-                                                                        .first;
-                                                                _model.uploadedFileUrl1 =
-                                                                    downloadUrls
-                                                                        .first;
-                                                              });
-                                                            } else {
-                                                              safeSetState(
-                                                                  () {});
-                                                              return;
-                                                            }
-                                                          }
-                                                        }
-                                                        _model.slugGerado1 =
-                                                            await actions
-                                                                .slugify(
-                                                          _model.receitaCriada1!
-                                                              .titulo,
-                                                          _model.receitaCriada1!
-                                                              .id,
-                                                        );
-                                                        await ReceitasTable()
-                                                            .update(
-                                                          data: {
-                                                            'slug': _model
-                                                                .slugGerado1,
-                                                            'imagem_url': _model
-                                                                            .imagemReceita !=
-                                                                        null &&
-                                                                    (_model
-                                                                            .imagemReceita
-                                                                            ?.bytes
-                                                                            ?.isNotEmpty ??
-                                                                        false)
-                                                                ? _model
-                                                                    .uploadedFileUrl1
-                                                                : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
-                                                          },
-                                                          matchingRows:
-                                                              (rows) =>
-                                                                  rows.eqOrNull(
-                                                            'id',
-                                                            _model
-                                                                .receitaCriada1
-                                                                ?.id,
-                                                          ),
-                                                        );
-                                                        FFAppState().contador =
-                                                            -1;
-                                                        safeSetState(() {});
-                                                        ScaffoldMessenger.of(
-                                                                context)
-                                                            .clearSnackBars();
-                                                        ScaffoldMessenger.of(
-                                                                context)
-                                                            .showSnackBar(
-                                                          SnackBar(
-                                                            content: Text(
-                                                              'Salvando receita como rascunho',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .workSans(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    letterSpacing:
-                                                                        0.0,
-                                                                    fontWeight: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontWeight,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyLarge
-                                                                        .fontStyle,
-                                                                  ),
-                                                            ),
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    5000),
-                                                            backgroundColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                          ),
-                                                        );
-                                                        _model.instantTimer =
-                                                            InstantTimer
-                                                                .periodic(
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  1000),
-                                                          callback:
-                                                              (timer) async {
-                                                            while (FFAppState()
-                                                                    .contador <=
-                                                                FFAppState()
-                                                                    .ingredientes
-                                                                    .length) {
-                                                              FFAppState()
-                                                                      .contador =
-                                                                  FFAppState()
-                                                                          .contador +
-                                                                      1;
-                                                              safeSetState(
-                                                                  () {});
-                                                              await IngredientesTable()
-                                                                  .insert({
-                                                                'receita_id': _model
-                                                                    .receitaCriada1
-                                                                    ?.id,
-                                                                'ingrediente': FFAppState()
-                                                                    .ingredientes
-                                                                    .elementAtOrNull(
-                                                                        FFAppState()
-                                                                            .contador),
-                                                              });
-                                                            }
-                                                            _model.instantTimer
-                                                                ?.cancel();
-                                                            FFAppState()
-                                                                .contador = -1;
-                                                            safeSetState(() {});
-                                                            _model.instantTimer2 =
-                                                                InstantTimer
-                                                                    .periodic(
-                                                              duration: Duration(
-                                                                  milliseconds:
-                                                                      1000),
-                                                              callback:
-                                                                  (timer) async {
-                                                                while (FFAppState()
-                                                                        .contador <=
-                                                                    FFAppState()
-                                                                        .passos
-                                                                        .length) {
-                                                                  FFAppState()
-                                                                          .contador =
-                                                                      FFAppState()
-                                                                              .contador +
-                                                                          1;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  await InstrucoesTable()
-                                                                      .insert({
-                                                                    'receita_id':
-                                                                        _model
-                                                                            .receitaCriada1
-                                                                            ?.id,
-                                                                    'descricao': FFAppState()
-                                                                        .passos
-                                                                        .elementAtOrNull(
-                                                                            FFAppState().contador),
-                                                                    'numero_passo':
-                                                                        FFAppState().contador +
-                                                                            1,
-                                                                  });
-                                                                }
-                                                                _model
-                                                                    .instantTimer2
-                                                                    ?.cancel();
-                                                                FFAppState()
-                                                                    .ingredientes = [];
-                                                                FFAppState()
-                                                                    .passos = [];
-                                                                safeSetState(
-                                                                    () {});
-
-                                                                context.pushNamed(
-                                                                    MinhasReceitasWidget
-                                                                        .routeName);
-                                                              },
-                                                              startImmediately:
-                                                                  true,
-                                                            );
-                                                          },
-                                                          startImmediately:
-                                                              true,
-                                                        );
-
-                                                        safeSetState(() {});
+                                                        Navigator.pop(context);
                                                       },
-                                                      text: 'Rascunho',
+                                                      text: 'Cancelar',
                                                       icon: Icon(
-                                                        FFIcons.knotas,
+                                                        FFIcons.kcancelar,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -667,199 +291,143 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 .circular(8.0),
                                                       ),
                                                     ),
-                                                    FFButtonWidget(
-                                                      onPressed: () async {
-                                                        if (_model.formKey1
-                                                                    .currentState ==
-                                                                null ||
-                                                            !_model.formKey1
-                                                                .currentState!
-                                                                .validate()) {
-                                                          return;
-                                                        }
-                                                        if (_model
-                                                                .categoriaReceitaValue ==
-                                                            null) {
-                                                          await showDialog(
-                                                            context: context,
-                                                            builder:
-                                                                (alertDialogContext) {
-                                                              return AlertDialog(
-                                                                title: Text(
-                                                                    'Atenção'),
-                                                                content: Text(
-                                                                    'Você precisa selecionar uma categoria'),
-                                                                actions: [
-                                                                  TextButton(
-                                                                    onPressed: () =>
-                                                                        Navigator.pop(
-                                                                            alertDialogContext),
-                                                                    child: Text(
-                                                                        'Ok'),
-                                                                  ),
-                                                                ],
-                                                              );
-                                                            },
-                                                          );
-                                                          return;
-                                                        }
-                                                        _model.receitaCriada =
-                                                            await ReceitasTable()
-                                                                .insert({
-                                                          'titulo': _model
-                                                              .tituloReceitaTextController
-                                                              .text,
-                                                          'descricao': _model
-                                                              .dscricaoReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo': int
-                                                              .tryParse(_model
-                                                                  .preparacaoReceitaTextController
-                                                                  .text),
-                                                          'autor_id':
-                                                              currentUserUid,
-                                                          'publicado': true,
-                                                          'categoria_id': _model
-                                                              .categoriaReceitaValue,
-                                                          'porcoes': _model
-                                                              .porcoesReceitaTextController
-                                                              .text,
-                                                          'tempo_preparo_periodo':
-                                                              _model
-                                                                  .dropDownValue,
-                                                        });
-                                                        if (_model.imagemReceita !=
-                                                                null &&
-                                                            (_model
-                                                                    .imagemReceita
-                                                                    ?.bytes
-                                                                    ?.isNotEmpty ??
-                                                                false)) {
-                                                          {
-                                                            safeSetState(() =>
-                                                                _model.isDataUploading2 =
-                                                                    true);
-                                                            var selectedUploadedFiles =
-                                                                <FFUploadedFile>[];
-                                                            var selectedMedia =
-                                                                <SelectedFile>[];
-                                                            var downloadUrls =
-                                                                <String>[];
-                                                            try {
-                                                              selectedUploadedFiles = _model
-                                                                      .uploadedLocalFile3
-                                                                      .bytes!
-                                                                      .isNotEmpty
-                                                                  ? [
-                                                                      _model
-                                                                          .uploadedLocalFile3
-                                                                    ]
-                                                                  : <FFUploadedFile>[];
-                                                              selectedMedia =
-                                                                  selectedFilesFromUploadedFiles(
-                                                                selectedUploadedFiles,
-                                                                storageFolderPath:
-                                                                    'receitas',
-                                                              );
-                                                              downloadUrls =
-                                                                  await uploadSupabaseStorageFiles(
-                                                                bucketName:
-                                                                    'imagens',
-                                                                selectedFiles:
-                                                                    selectedMedia,
-                                                              );
-                                                            } finally {
-                                                              _model.isDataUploading2 =
-                                                                  false;
-                                                            }
-                                                            if (selectedUploadedFiles
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length &&
-                                                                downloadUrls
-                                                                        .length ==
-                                                                    selectedMedia
-                                                                        .length) {
-                                                              safeSetState(() {
-                                                                _model.uploadedLocalFile2 =
-                                                                    selectedUploadedFiles
-                                                                        .first;
-                                                                _model.uploadedFileUrl2 =
-                                                                    downloadUrls
-                                                                        .first;
-                                                              });
-                                                            } else {
-                                                              safeSetState(
-                                                                  () {});
-                                                              return;
-                                                            }
+                                                  FFButtonWidget(
+                                                    onPressed: () async {
+                                                      _model.receitaCriada1 =
+                                                          await ReceitasTable()
+                                                              .insert({
+                                                        'titulo': _model
+                                                            .tituloReceitaTextController
+                                                            .text,
+                                                        'descricao': _model
+                                                            .dscricaoReceitaTextController
+                                                            .text,
+                                                        'tempo_preparo':
+                                                            int.tryParse(_model
+                                                                .preparacaoReceitaTextController
+                                                                .text),
+                                                        'autor_id':
+                                                            currentUserUid,
+                                                        'publicado': false,
+                                                        'tempo_preparo_periodo':
+                                                            _model
+                                                                .dropDownValue,
+                                                      });
+                                                      if (_model.imagemReceita !=
+                                                              null &&
+                                                          (_model
+                                                                  .imagemReceita
+                                                                  ?.bytes
+                                                                  ?.isNotEmpty ??
+                                                              false)) {
+                                                        {
+                                                          safeSetState(() =>
+                                                              _model.isDataUploading1 =
+                                                                  true);
+                                                          var selectedUploadedFiles =
+                                                              <FFUploadedFile>[];
+                                                          var selectedMedia =
+                                                              <SelectedFile>[];
+                                                          var downloadUrls =
+                                                              <String>[];
+                                                          try {
+                                                            selectedUploadedFiles = _model
+                                                                    .uploadedLocalFile3
+                                                                    .bytes!
+                                                                    .isNotEmpty
+                                                                ? [
+                                                                    _model
+                                                                        .uploadedLocalFile3
+                                                                  ]
+                                                                : <FFUploadedFile>[];
+                                                            selectedMedia =
+                                                                selectedFilesFromUploadedFiles(
+                                                              selectedUploadedFiles,
+                                                              storageFolderPath:
+                                                                  'receitas',
+                                                            );
+                                                            downloadUrls =
+                                                                await uploadSupabaseStorageFiles(
+                                                              bucketName:
+                                                                  'imagens',
+                                                              selectedFiles:
+                                                                  selectedMedia,
+                                                            );
+                                                          } finally {
+                                                            _model.isDataUploading1 =
+                                                                false;
+                                                          }
+                                                          if (selectedUploadedFiles
+                                                                      .length ==
+                                                                  selectedMedia
+                                                                      .length &&
+                                                              downloadUrls
+                                                                      .length ==
+                                                                  selectedMedia
+                                                                      .length) {
+                                                            safeSetState(() {
+                                                              _model.uploadedLocalFile1 =
+                                                                  selectedUploadedFiles
+                                                                      .first;
+                                                              _model.uploadedFileUrl1 =
+                                                                  downloadUrls
+                                                                      .first;
+                                                            });
+                                                          } else {
+                                                            safeSetState(() {});
+                                                            return;
                                                           }
                                                         }
-                                                        _model.slugRegado =
-                                                            await actions
-                                                                .slugify(
-                                                          _model.receitaCriada!
-                                                              .titulo,
-                                                          _model.receitaCriada!
-                                                              .id,
-                                                        );
-                                                        await ReceitasTable()
-                                                            .update(
-                                                          data: {
-                                                            'slug': _model
-                                                                .slugRegado,
-                                                            'imagem_url': _model
-                                                                            .imagemReceita !=
-                                                                        null &&
-                                                                    (_model
-                                                                            .imagemReceita
-                                                                            ?.bytes
-                                                                            ?.isNotEmpty ??
-                                                                        false)
-                                                                ? _model
-                                                                    .uploadedFileUrl2
-                                                                : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
-                                                          },
-                                                          matchingRows:
-                                                              (rows) =>
-                                                                  rows.eqOrNull(
-                                                            'id',
-                                                            _model.receitaCriada
-                                                                ?.id,
-                                                          ),
-                                                        );
-                                                        FFAppState().contador =
-                                                            -1;
-                                                        safeSetState(() {});
-                                                        ScaffoldMessenger.of(
-                                                                context)
-                                                            .clearSnackBars();
-                                                        ScaffoldMessenger.of(
-                                                                context)
-                                                            .showSnackBar(
-                                                          SnackBar(
-                                                            content: Text(
-                                                              'Publicando receita, por favor aguarde',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    font: GoogleFonts
-                                                                        .workSans(
-                                                                      fontWeight: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontWeight,
-                                                                      fontStyle: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .fontStyle,
-                                                                    ),
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    letterSpacing:
-                                                                        0.0,
+                                                      }
+                                                      _model.slugGerado1 =
+                                                          await actions.slugify(
+                                                        _model.receitaCriada1!
+                                                            .titulo,
+                                                        _model
+                                                            .receitaCriada1!.id,
+                                                      );
+                                                      await ReceitasTable()
+                                                          .update(
+                                                        data: {
+                                                          'slug': _model
+                                                              .slugGerado1,
+                                                          'imagem_url': _model
+                                                                          .imagemReceita !=
+                                                                      null &&
+                                                                  (_model
+                                                                          .imagemReceita
+                                                                          ?.bytes
+                                                                          ?.isNotEmpty ??
+                                                                      false)
+                                                              ? _model
+                                                                  .uploadedFileUrl1
+                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.receitaCriada1
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      FFAppState().contador =
+                                                          -1;
+                                                      safeSetState(() {});
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .clearSnackBars();
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Salvando receita como rascunho',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .workSans(
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyLarge
@@ -869,176 +437,159 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         .bodyLarge
                                                                         .fontStyle,
                                                                   ),
-                                                            ),
-                                                            duration: Duration(
-                                                                milliseconds:
-                                                                    5000),
-                                                            backgroundColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                          ),
-                                                        );
-                                                        _model.instantTimer1 =
-                                                            InstantTimer
-                                                                .periodic(
-                                                          duration: Duration(
-                                                              milliseconds:
-                                                                  1000),
-                                                          callback:
-                                                              (timer) async {
-                                                            while (FFAppState()
-                                                                    .contador <=
-                                                                FFAppState()
-                                                                    .ingredientes
-                                                                    .length) {
-                                                              FFAppState()
-                                                                      .contador =
-                                                                  FFAppState()
-                                                                          .contador +
-                                                                      1;
-                                                              safeSetState(
-                                                                  () {});
-                                                              await IngredientesTable()
-                                                                  .insert({
-                                                                'receita_id': _model
-                                                                    .receitaCriada
-                                                                    ?.id,
-                                                                'ingrediente': FFAppState()
-                                                                    .ingredientes
-                                                                    .elementAtOrNull(
-                                                                        FFAppState()
-                                                                            .contador),
-                                                              });
-                                                            }
-                                                            _model.instantTimer1
-                                                                ?.cancel();
-                                                            FFAppState()
-                                                                .contador = -1;
-                                                            safeSetState(() {});
-                                                            _model.instantTimer3 =
-                                                                InstantTimer
-                                                                    .periodic(
-                                                              duration: Duration(
-                                                                  milliseconds:
-                                                                      1000),
-                                                              callback:
-                                                                  (timer) async {
-                                                                while (FFAppState()
-                                                                        .contador <=
-                                                                    FFAppState()
-                                                                        .passos
-                                                                        .length) {
-                                                                  FFAppState()
-                                                                          .contador =
-                                                                      FFAppState()
-                                                                              .contador +
-                                                                          1;
-                                                                  safeSetState(
-                                                                      () {});
-                                                                  await InstrucoesTable()
-                                                                      .insert({
-                                                                    'receita_id':
-                                                                        _model
-                                                                            .receitaCriada
-                                                                            ?.id,
-                                                                    'descricao': FFAppState()
-                                                                        .passos
-                                                                        .elementAtOrNull(
-                                                                            FFAppState().contador),
-                                                                    'numero_passo':
-                                                                        FFAppState().contador +
-                                                                            1,
-                                                                  });
-                                                                }
-                                                                _model
-                                                                    .instantTimer3
-                                                                    ?.cancel();
-                                                                FFAppState()
-                                                                    .ingredientes = [];
-                                                                FFAppState()
-                                                                    .passos = [];
-                                                                safeSetState(
-                                                                    () {});
-
-                                                                context
-                                                                    .pushNamed(
-                                                                  ReceitaWidget
-                                                                      .routeName,
-                                                                  pathParameters:
-                                                                      {
-                                                                    'slug':
-                                                                        serializeParam(
-                                                                      _model
-                                                                          .receitaAtualizada
-                                                                          ?.firstOrNull
-                                                                          ?.slug,
-                                                                      ParamType
-                                                                          .String,
-                                                                    ),
-                                                                  }.withoutNulls,
-                                                                );
-                                                              },
-                                                              startImmediately:
-                                                                  true,
-                                                            );
-                                                          },
-                                                          startImmediately:
-                                                              true,
-                                                        );
-
-                                                        safeSetState(() {});
-                                                      },
-                                                      text: 'Pubicar',
-                                                      icon: Icon(
-                                                        FFIcons.kpublicar,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        size: 24.0,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        height: 38.0,
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    16.0,
-                                                                    0.0,
-                                                                    16.0,
-                                                                    0.0),
-                                                        iconAlignment:
-                                                            IconAlignment.start,
-                                                        iconPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  font: GoogleFonts
-                                                                      .workSans(
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontStyle: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .fontStyle,
-                                                                  ),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
                                                                   letterSpacing:
                                                                       0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  5000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                        ),
+                                                      );
+                                                      _model.instantTimer =
+                                                          InstantTimer.periodic(
+                                                        duration: Duration(
+                                                            milliseconds: 1000),
+                                                        callback:
+                                                            (timer) async {
+                                                          while (FFAppState()
+                                                                  .contador <=
+                                                              FFAppState()
+                                                                  .ingredientes
+                                                                  .length) {
+                                                            FFAppState()
+                                                                    .contador =
+                                                                FFAppState()
+                                                                        .contador +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            await IngredientesTable()
+                                                                .insert({
+                                                              'receita_id': _model
+                                                                  .receitaCriada1
+                                                                  ?.id,
+                                                              'ingrediente': FFAppState()
+                                                                  .ingredientes
+                                                                  .elementAtOrNull(
+                                                                      FFAppState()
+                                                                          .contador),
+                                                            });
+                                                          }
+                                                          _model.instantTimer
+                                                              ?.cancel();
+                                                          FFAppState()
+                                                              .contador = -1;
+                                                          safeSetState(() {});
+                                                          _model.instantTimer2 =
+                                                              InstantTimer
+                                                                  .periodic(
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    1000),
+                                                            callback:
+                                                                (timer) async {
+                                                              while (FFAppState()
+                                                                      .contador <=
+                                                                  FFAppState()
+                                                                      .passos
+                                                                      .length) {
+                                                                FFAppState()
+                                                                        .contador =
+                                                                    FFAppState()
+                                                                            .contador +
+                                                                        1;
+                                                                safeSetState(
+                                                                    () {});
+                                                                await InstrucoesTable()
+                                                                    .insert({
+                                                                  'receita_id':
+                                                                      _model
+                                                                          .receitaCriada1
+                                                                          ?.id,
+                                                                  'descricao': FFAppState()
+                                                                      .passos
+                                                                      .elementAtOrNull(
+                                                                          FFAppState()
+                                                                              .contador),
+                                                                  'numero_passo':
+                                                                      FFAppState()
+                                                                              .contador +
+                                                                          1,
+                                                                });
+                                                              }
+                                                              _model
+                                                                  .instantTimer2
+                                                                  ?.cancel();
+                                                              FFAppState()
+                                                                  .ingredientes = [];
+                                                              FFAppState()
+                                                                  .passos = [];
+                                                              safeSetState(
+                                                                  () {});
+
+                                                              context.pushNamed(
+                                                                  MinhasReceitasWidget
+                                                                      .routeName);
+                                                            },
+                                                            startImmediately:
+                                                                true,
+                                                          );
+                                                        },
+                                                        startImmediately: true,
+                                                      );
+
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: 'Rascunho',
+                                                    icon: Icon(
+                                                      FFIcons.knotas,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 24.0,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 36.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .workSans(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -1047,17 +598,415 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       .bodyMedium
                                                                       .fontStyle,
                                                                 ),
-                                                        elevation: 0.0,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 1.0,
                                                       ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
                                                     ),
-                                                  ].divide(
-                                                      SizedBox(width: 8.0)),
-                                                ),
-                                              ].divide(SizedBox(width: 8.0)),
-                                            ),
+                                                  ),
+                                                  FFButtonWidget(
+                                                    onPressed: () async {
+                                                      if (_model.formKey1
+                                                                  .currentState ==
+                                                              null ||
+                                                          !_model.formKey1
+                                                              .currentState!
+                                                              .validate()) {
+                                                        return;
+                                                      }
+                                                      if (_model
+                                                              .categoriaReceitaValue ==
+                                                          null) {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (alertDialogContext) {
+                                                            return AlertDialog(
+                                                              title: Text(
+                                                                  'Atenção'),
+                                                              content: Text(
+                                                                  'Você precisa selecionar uma categoria'),
+                                                              actions: [
+                                                                TextButton(
+                                                                  onPressed: () =>
+                                                                      Navigator.pop(
+                                                                          alertDialogContext),
+                                                                  child: Text(
+                                                                      'Ok'),
+                                                                ),
+                                                              ],
+                                                            );
+                                                          },
+                                                        );
+                                                        return;
+                                                      }
+                                                      _model.receitaCriada =
+                                                          await ReceitasTable()
+                                                              .insert({
+                                                        'titulo': _model
+                                                            .tituloReceitaTextController
+                                                            .text,
+                                                        'descricao': _model
+                                                            .dscricaoReceitaTextController
+                                                            .text,
+                                                        'tempo_preparo':
+                                                            int.tryParse(_model
+                                                                .preparacaoReceitaTextController
+                                                                .text),
+                                                        'autor_id':
+                                                            currentUserUid,
+                                                        'publicado': true,
+                                                        'categoria_id': _model
+                                                            .categoriaReceitaValue,
+                                                        'porcoes': _model
+                                                            .porcoesReceitaTextController
+                                                            .text,
+                                                        'tempo_preparo_periodo':
+                                                            _model
+                                                                .dropDownValue,
+                                                      });
+                                                      if (_model.imagemReceita !=
+                                                              null &&
+                                                          (_model
+                                                                  .imagemReceita
+                                                                  ?.bytes
+                                                                  ?.isNotEmpty ??
+                                                              false)) {
+                                                        {
+                                                          safeSetState(() =>
+                                                              _model.isDataUploading2 =
+                                                                  true);
+                                                          var selectedUploadedFiles =
+                                                              <FFUploadedFile>[];
+                                                          var selectedMedia =
+                                                              <SelectedFile>[];
+                                                          var downloadUrls =
+                                                              <String>[];
+                                                          try {
+                                                            selectedUploadedFiles = _model
+                                                                    .uploadedLocalFile3
+                                                                    .bytes!
+                                                                    .isNotEmpty
+                                                                ? [
+                                                                    _model
+                                                                        .uploadedLocalFile3
+                                                                  ]
+                                                                : <FFUploadedFile>[];
+                                                            selectedMedia =
+                                                                selectedFilesFromUploadedFiles(
+                                                              selectedUploadedFiles,
+                                                              storageFolderPath:
+                                                                  'receitas',
+                                                            );
+                                                            downloadUrls =
+                                                                await uploadSupabaseStorageFiles(
+                                                              bucketName:
+                                                                  'imagens',
+                                                              selectedFiles:
+                                                                  selectedMedia,
+                                                            );
+                                                          } finally {
+                                                            _model.isDataUploading2 =
+                                                                false;
+                                                          }
+                                                          if (selectedUploadedFiles
+                                                                      .length ==
+                                                                  selectedMedia
+                                                                      .length &&
+                                                              downloadUrls
+                                                                      .length ==
+                                                                  selectedMedia
+                                                                      .length) {
+                                                            safeSetState(() {
+                                                              _model.uploadedLocalFile2 =
+                                                                  selectedUploadedFiles
+                                                                      .first;
+                                                              _model.uploadedFileUrl2 =
+                                                                  downloadUrls
+                                                                      .first;
+                                                            });
+                                                          } else {
+                                                            safeSetState(() {});
+                                                            return;
+                                                          }
+                                                        }
+                                                      }
+                                                      _model.slugRegado =
+                                                          await actions.slugify(
+                                                        _model.receitaCriada!
+                                                            .titulo,
+                                                        _model
+                                                            .receitaCriada!.id,
+                                                      );
+                                                      await ReceitasTable()
+                                                          .update(
+                                                        data: {
+                                                          'slug':
+                                                              _model.slugRegado,
+                                                          'imagem_url': _model
+                                                                          .imagemReceita !=
+                                                                      null &&
+                                                                  (_model
+                                                                          .imagemReceita
+                                                                          ?.bytes
+                                                                          ?.isNotEmpty ??
+                                                                      false)
+                                                              ? _model
+                                                                  .uploadedFileUrl2
+                                                              : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
+                                                        },
+                                                        matchingRows: (rows) =>
+                                                            rows.eqOrNull(
+                                                          'id',
+                                                          _model.receitaCriada
+                                                              ?.id,
+                                                        ),
+                                                      );
+                                                      FFAppState().contador =
+                                                          -1;
+                                                      safeSetState(() {});
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .clearSnackBars();
+                                                      ScaffoldMessenger.of(
+                                                              context)
+                                                          .showSnackBar(
+                                                        SnackBar(
+                                                          content: Text(
+                                                            'Publicando receita, por favor aguarde',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyLarge
+                                                                .override(
+                                                                  font: GoogleFonts
+                                                                      .workSans(
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyLarge
+                                                                        .fontStyle,
+                                                                  ),
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontWeight,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .fontStyle,
+                                                                ),
+                                                          ),
+                                                          duration: Duration(
+                                                              milliseconds:
+                                                                  5000),
+                                                          backgroundColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                        ),
+                                                      );
+                                                      _model.instantTimer1 =
+                                                          InstantTimer.periodic(
+                                                        duration: Duration(
+                                                            milliseconds: 1000),
+                                                        callback:
+                                                            (timer) async {
+                                                          while (FFAppState()
+                                                                  .contador <=
+                                                              FFAppState()
+                                                                  .ingredientes
+                                                                  .length) {
+                                                            FFAppState()
+                                                                    .contador =
+                                                                FFAppState()
+                                                                        .contador +
+                                                                    1;
+                                                            safeSetState(() {});
+                                                            await IngredientesTable()
+                                                                .insert({
+                                                              'receita_id': _model
+                                                                  .receitaCriada
+                                                                  ?.id,
+                                                              'ingrediente': FFAppState()
+                                                                  .ingredientes
+                                                                  .elementAtOrNull(
+                                                                      FFAppState()
+                                                                          .contador),
+                                                            });
+                                                          }
+                                                          _model.instantTimer1
+                                                              ?.cancel();
+                                                          FFAppState()
+                                                              .contador = -1;
+                                                          safeSetState(() {});
+                                                          _model.instantTimer3 =
+                                                              InstantTimer
+                                                                  .periodic(
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    1000),
+                                                            callback:
+                                                                (timer) async {
+                                                              while (FFAppState()
+                                                                      .contador <=
+                                                                  FFAppState()
+                                                                      .passos
+                                                                      .length) {
+                                                                FFAppState()
+                                                                        .contador =
+                                                                    FFAppState()
+                                                                            .contador +
+                                                                        1;
+                                                                safeSetState(
+                                                                    () {});
+                                                                await InstrucoesTable()
+                                                                    .insert({
+                                                                  'receita_id':
+                                                                      _model
+                                                                          .receitaCriada
+                                                                          ?.id,
+                                                                  'descricao': FFAppState()
+                                                                      .passos
+                                                                      .elementAtOrNull(
+                                                                          FFAppState()
+                                                                              .contador),
+                                                                  'numero_passo':
+                                                                      FFAppState()
+                                                                              .contador +
+                                                                          1,
+                                                                });
+                                                              }
+                                                              _model
+                                                                  .instantTimer3
+                                                                  ?.cancel();
+                                                              FFAppState()
+                                                                  .ingredientes = [];
+                                                              FFAppState()
+                                                                  .passos = [];
+                                                              safeSetState(
+                                                                  () {});
+
+                                                              context.pushNamed(
+                                                                ReceitaWidget
+                                                                    .routeName,
+                                                                pathParameters:
+                                                                    {
+                                                                  'slug':
+                                                                      serializeParam(
+                                                                    _model
+                                                                        .receitaAtualizada
+                                                                        ?.firstOrNull
+                                                                        ?.slug,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            startImmediately:
+                                                                true,
+                                                          );
+                                                        },
+                                                        startImmediately: true,
+                                                      );
+
+                                                      safeSetState(() {});
+                                                    },
+                                                    text: 'Pubicar',
+                                                    icon: Icon(
+                                                      FFIcons.kpublicar,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .primaryBackground,
+                                                      size: 24.0,
+                                                    ),
+                                                    options: FFButtonOptions(
+                                                      height: 38.0,
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      iconAlignment:
+                                                          IconAlignment.start,
+                                                      iconPadding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      textStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                font: GoogleFonts
+                                                                    .workSans(
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .bold,
+                                                                  fontStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .fontStyle,
+                                                                ),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold,
+                                                                fontStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                              ),
+                                                      elevation: 0.0,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                  ),
+                                                ].divide(SizedBox(width: 8.0)),
+                                              ),
+                                            ].divide(SizedBox(width: 8.0)),
                                           ),
                                         ),
                                       ),
@@ -1065,7 +1014,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 8.0, 24.0),
+                                        0.0, 0.0, 0.0, 24.0),
                                     child: Flex(
                                       direction: () {
                                         if (MediaQuery.sizeOf(context).width <
@@ -2620,7 +2569,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 8.0, 24.0),
+                                        0.0, 0.0, 0.0, 24.0),
                                     child: Flex(
                                       direction: () {
                                         if (MediaQuery.sizeOf(context).width <
@@ -3530,8 +3479,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

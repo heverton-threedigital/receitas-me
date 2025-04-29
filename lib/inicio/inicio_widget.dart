@@ -113,7 +113,13 @@ class _InicioWidgetState extends State<InicioWidget> {
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (FFAppState().barraLateral == true)
+                          if ((FFAppState().barraLateral == true) &&
+                              responsiveVisibility(
+                                context: context,
+                                phone: false,
+                                tablet: false,
+                                tabletLandscape: false,
+                              ))
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 24.0, 0.0),
