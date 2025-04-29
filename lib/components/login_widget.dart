@@ -2232,7 +2232,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               .asValidator(context),
                                           inputFormatters: [
                                             FilteringTextInputFormatter.allow(
-                                                RegExp('^[a-z0-9_]{3,30}\$'))
+                                                RegExp('^[a-z0-9_.]{3,30}\$'))
                                           ],
                                         ),
                                       ),

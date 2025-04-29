@@ -148,7 +148,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     if (val.length > 30) {
       return 'Maximum 30 characters allowed, currently ${val.length}.';
     }
-    if (!RegExp('^[a-z0-9_]{3,30}\$').hasMatch(val)) {
+    if (!RegExp('^[a-z0-9_.]{3,30}\$').hasMatch(val)) {
       return 'Somente letras minúsculas, números (0-9) e _';
     }
     return null;
