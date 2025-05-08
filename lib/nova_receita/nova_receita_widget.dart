@@ -2763,6 +2763,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 FormIngredientesWidget(
                                                               key: Key(
                                                                   'Keyhxh_${listaIngredientesIndex}_of_${listaIngredientes.length}'),
+                                                              valorInicial:
+                                                                  listaIngredientesItem,
                                                             ),
                                                           );
                                                         },
@@ -2955,7 +2957,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               .ingredienteTextController
                                                               .text
                                                           : '');
-                                                      safeSetState(() {});
                                                     },
                                                     text: 'Ingrediente',
                                                     icon: Icon(
@@ -3074,10 +3075,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                 ),
                                                 Builder(
                                                   builder: (context) {
-                                                    final passoLocal =
-                                                        FFAppState()
-                                                            .passos
-                                                            .toList();
+                                                    final passoLocal = _model
+                                                        .passoaPasso
+                                                        .toList();
 
                                                     return ListView.separated(
                                                       padding: EdgeInsets.zero,
@@ -3360,7 +3360,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             .passoTextController
                                                             .text
                                                         : '');
-                                                    safeSetState(() {});
                                                   },
                                                   text: 'Novo passo',
                                                   icon: Icon(
