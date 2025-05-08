@@ -52,7 +52,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300.0,
+      width: 248.8,
       height: 280.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -155,7 +155,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
                               0.0, 4.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
-                              widget.usuario,
+                              '@${widget.usuario}',
                               '-',
                             ),
                             style: FlutterFlowTheme.of(context)
