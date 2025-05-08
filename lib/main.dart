@@ -117,6 +117,7 @@ class _MyAppState extends State<MyApp> {
           thumbVisibility: WidgetStateProperty.all(false),
           trackVisibility: WidgetStateProperty.all(false),
           interactive: true,
+          thickness: WidgetStateProperty.all(4.0),
           trackColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
               return Color(4279506971);

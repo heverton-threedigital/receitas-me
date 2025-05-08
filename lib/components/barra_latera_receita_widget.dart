@@ -647,6 +647,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                             widget.informacoesReceita!.id!,
                                         imagemReceita: widget
                                             .informacoesReceita!.imagemUrl!,
+                                        idAutor: widget
+                                            .informacoesReceita!.autorId!,
                                       ),
                                     );
                                   },
