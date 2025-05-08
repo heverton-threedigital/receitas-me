@@ -194,12 +194,13 @@ class _PassosWidgetState extends State<PassosWidget> {
             borderRadius: 8.0,
             buttonSize: 36.0,
             icon: Icon(
-              FFIcons.kmaisMenuVertical,
+              FFIcons.kexcluir,
               color: FlutterFlowTheme.of(context).secondaryText,
               size: 20.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
+              safeSetState(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),
