@@ -102,6 +102,13 @@ class _PassosWidgetState extends State<PassosWidget> {
               child: TextFormField(
                 controller: _model.ingredienteTextController,
                 focusNode: _model.ingredienteFocusNode,
+                onFieldSubmitted: (_) async {
+                  FFAppState().updatePassosAtIndex(
+                    widget.indexPasso!,
+                    (_) => _model.ingredienteTextController.text,
+                  );
+                  _model.updatePage(() {});
+                },
                 autofocus: true,
                 textInputAction: TextInputAction.send,
                 obscureText: false,
@@ -200,7 +207,7 @@ class _PassosWidgetState extends State<PassosWidget> {
             ),
             onPressed: () async {
               FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
-              safeSetState(() {});
+              _model.updatePage(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),
