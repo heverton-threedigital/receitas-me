@@ -2472,6 +2472,8 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                           valorInicial:
                                                               listViewIngredientesRow
                                                                   .ingrediente,
+                                                          indexIngrediente:
+                                                              listViewIndex,
                                                         ),
                                                       );
                                                     },

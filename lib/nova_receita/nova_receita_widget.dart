@@ -2733,8 +2733,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   Builder(
                                                     builder: (context) {
                                                       final listaIngredientes =
-                                                          _model
-                                                              .listaIngredientesTextos
+                                                          FFAppState()
+                                                              .ingredientes
                                                               .toList();
 
                                                       return ListView.builder(
@@ -2765,6 +2765,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   'Keyhxh_${listaIngredientesIndex}_of_${listaIngredientes.length}'),
                                                               valorInicial:
                                                                   listaIngredientesItem,
+                                                              indexIngrediente:
+                                                                  listaIngredientesIndex,
                                                             ),
                                                           );
                                                         },
@@ -2950,7 +2952,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                   ),
                                                   FFButtonWidget(
                                                     onPressed: () async {
-                                                      _model.addToListaIngredientesTextos(_model.ingredienteTextController
+                                                      FFAppState().addToIngredientes(_model.ingredienteTextController
                                                                       .text !=
                                                                   ''
                                                           ? _model
@@ -2958,6 +2960,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               .text
                                                           : '');
                                                       safeSetState(() {});
+                                                      safeSetState(() {
+                                                        _model
+                                                            .ingredienteTextController
+                                                            ?.clear();
+                                                      });
                                                     },
                                                     text: 'Ingrediente',
                                                     icon: Icon(

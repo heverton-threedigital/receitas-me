@@ -10,9 +10,11 @@ class FormIngredientesWidget extends StatefulWidget {
   const FormIngredientesWidget({
     super.key,
     this.valorInicial,
+    required this.indexIngrediente,
   });
 
   final String? valorInicial;
+  final int? indexIngrediente;
 
   @override
   State<FormIngredientesWidget> createState() => _FormIngredientesWidgetState();
@@ -62,6 +64,13 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
               child: TextFormField(
                 controller: _model.ingredienteTextController,
                 focusNode: _model.ingredienteFocusNode,
+                onFieldSubmitted: (_) async {
+                  FFAppState().updateIngredientesAtIndex(
+                    widget.indexIngrediente!,
+                    (_) => _model.ingredienteTextController.text,
+                  );
+                  safeSetState(() {});
+                },
                 autofocus: false,
                 textInputAction: TextInputAction.send,
                 obscureText: false,
@@ -154,12 +163,14 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
             borderRadius: 8.0,
             buttonSize: 36.0,
             icon: Icon(
-              FFIcons.kmaisMenuVertical,
+              FFIcons.kexcluir,
               color: FlutterFlowTheme.of(context).secondaryText,
               size: 20.0,
             ),
-            onPressed: () {
-              print('IconButton pressed ...');
+            onPressed: () async {
+              FFAppState()
+                  .removeAtIndexFromIngredientes(widget.indexIngrediente!);
+              safeSetState(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),

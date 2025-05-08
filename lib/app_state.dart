@@ -172,16 +172,39 @@ class FFAppState extends ChangeNotifier {
     prefs.setBool('ff_barraLateral', value);
   }
 
-  int _ingredientes = 0;
-  int get ingredientes => _ingredientes;
-  set ingredientes(int value) {
-    _ingredientes = value;
-  }
-
   int _visualizacoesReceita = 0;
   int get visualizacoesReceita => _visualizacoesReceita;
   set visualizacoesReceita(int value) {
     _visualizacoesReceita = value;
+  }
+
+  List<String> _ingredientes = [];
+  List<String> get ingredientes => _ingredientes;
+  set ingredientes(List<String> value) {
+    _ingredientes = value;
+  }
+
+  void addToIngredientes(String value) {
+    ingredientes.add(value);
+  }
+
+  void removeFromIngredientes(String value) {
+    ingredientes.remove(value);
+  }
+
+  void removeAtIndexFromIngredientes(int index) {
+    ingredientes.removeAt(index);
+  }
+
+  void updateIngredientesAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    ingredientes[index] = updateFn(_ingredientes[index]);
+  }
+
+  void insertAtIndexInIngredientes(int index, String value) {
+    ingredientes.insert(index, value);
   }
 }
 
