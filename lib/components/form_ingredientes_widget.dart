@@ -62,7 +62,7 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
               child: TextFormField(
                 controller: _model.ingredienteTextController,
                 focusNode: _model.ingredienteFocusNode,
-                autofocus: true,
+                autofocus: false,
                 textInputAction: TextInputAction.send,
                 obscureText: false,
                 decoration: InputDecoration(
@@ -81,7 +81,6 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   alignLabelWithHint: false,
-                  hintText: '250g de farinha de trigo',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.workSans(
                           fontWeight: FlutterFlowTheme.of(context)

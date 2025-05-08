@@ -2957,6 +2957,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                               .ingredienteTextController
                                                               .text
                                                           : '');
+                                                      safeSetState(() {});
                                                     },
                                                     text: 'Ingrediente',
                                                     icon: Icon(
@@ -3149,9 +3150,13 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         0.0,
                                                                         0.0),
                                                                 child: Text(
-                                                                  FFAppState()
-                                                                      .passoAtual
-                                                                      .toString(),
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                    FFAppState()
+                                                                        .passoAtual
+                                                                        .toString(),
+                                                                    '1',
+                                                                  ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .headlineMedium
@@ -3353,6 +3358,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                 ),
                                                 FFButtonWidget(
                                                   onPressed: () async {
+                                                    FFAppState().passoAtual =
+                                                        FFAppState()
+                                                                .passoAtual +
+                                                            1;
+                                                    safeSetState(() {});
                                                     _model.addToPassoaPasso(_model.passoTextController
                                                                     .text !=
                                                                 ''
@@ -3360,6 +3370,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             .passoTextController
                                                             .text
                                                         : '');
+                                                    safeSetState(() {});
                                                   },
                                                   text: 'Novo passo',
                                                   icon: Icon(

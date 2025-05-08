@@ -121,7 +121,6 @@ class _PassosWidgetState extends State<PassosWidget> {
                             FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                   alignLabelWithHint: false,
-                  hintText: '250g de farinha de trigo',
                   hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
                         font: GoogleFonts.workSans(
                           fontWeight: FlutterFlowTheme.of(context)
