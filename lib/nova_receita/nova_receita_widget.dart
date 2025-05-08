@@ -2790,6 +2790,22 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           .ingredienteTextController,
                                                       focusNode: _model
                                                           .ingredienteFocusNode,
+                                                      onFieldSubmitted:
+                                                          (_) async {
+                                                        FFAppState().addToIngredientes(_model.ingredienteTextController
+                                                                        .text !=
+                                                                    ''
+                                                            ? _model
+                                                                .ingredienteTextController
+                                                                .text
+                                                            : '');
+                                                        safeSetState(() {});
+                                                        safeSetState(() {
+                                                          _model
+                                                              .ingredienteTextController
+                                                              ?.clear();
+                                                        });
+                                                      },
                                                       autofocus: false,
                                                       textInputAction:
                                                           TextInputAction.send,
@@ -3225,15 +3241,13 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       return;
                                                                     }
                                                                     FFAppState()
-                                                                        .addToPassos(_model
-                                                                            .passoTextController
-                                                                            .text);
-                                                                    safeSetState(
-                                                                        () {});
-                                                                    FFAppState()
                                                                             .passoAtual =
                                                                         FFAppState().passoAtual +
                                                                             1;
+                                                                    FFAppState()
+                                                                        .addToPassos(_model
+                                                                            .passoTextController
+                                                                            .text);
                                                                     safeSetState(
                                                                         () {});
                                                                     safeSetState(
@@ -3380,15 +3394,15 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                         FFAppState()
                                                                 .passoAtual +
                                                             1;
-                                                    safeSetState(() {});
-                                                    _model.addToPassoaPasso(_model.passoTextController
-                                                                    .text !=
-                                                                ''
-                                                        ? _model
+                                                    FFAppState().addToPassos(
+                                                        _model
                                                             .passoTextController
-                                                            .text
-                                                        : '');
+                                                            .text);
                                                     safeSetState(() {});
+                                                    safeSetState(() {
+                                                      _model.passoTextController
+                                                          ?.clear();
+                                                    });
                                                   },
                                                   text: 'Novo passo',
                                                   icon: Icon(
