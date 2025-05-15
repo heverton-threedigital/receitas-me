@@ -120,10 +120,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         return Visibility(
                                           visible: loggedIn,
                                           child: FlutterFlowIconButton(
-                                            borderColor: Color(0x4ED84012),
                                             borderRadius: 8.0,
-                                            borderWidth: 1.0,
-                                            buttonSize: 40.0,
+                                            borderWidth: 0.0,
                                             fillColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primaryBackground,
@@ -135,7 +133,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 26.0,
+                                              size: 30.0,
                                             ),
                                             onPressed: () async {
                                               FFAppState().barraLateral = true;
@@ -145,15 +143,12 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         );
                                       } else {
                                         return FlutterFlowIconButton(
-                                          borderColor: Color(0x4CD84012),
                                           borderRadius: 8.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 40.0,
                                           icon: Icon(
                                             FFIcons.kfechar,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
-                                            size: 26.0,
+                                            size: 30.0,
                                           ),
                                           onPressed: () async {
                                             FFAppState().barraLateral = false;
@@ -414,8 +409,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       );
                                     },
                                     child: Container(
-                                      width: 40.0,
-                                      height: 40.0,
+                                      width: 38.0,
+                                      height: 38.0,
                                       clipBehavior: Clip.antiAlias,
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
