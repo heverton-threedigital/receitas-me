@@ -52,22 +52,12 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 24.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 16.0, 0.0),
       child: Container(
         width: 248.8,
         height: 280.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 4.0,
-              color: Color(0x33000000),
-              offset: Offset(
-                0.0,
-                2.0,
-              ),
-            )
-          ],
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Padding(
