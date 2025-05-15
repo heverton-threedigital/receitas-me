@@ -307,6 +307,7 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
                           await deleteSupabaseFileFromPublicUrl(
                               widget.imagemReceita!);
                           Navigator.pop(context);
+                          context.safePop();
                         } else {
                           Navigator.pop(context);
                         }
