@@ -388,9 +388,9 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                         barrierColor: Color(0xCD000000),
                                         context: context,
                                         isGlobal: false,
-                                        avoidOverflow: true,
+                                        avoidOverflow: false,
                                         targetAnchor:
-                                            AlignmentDirectional(0.0, 0.0)
+                                            AlignmentDirectional(-1.0, 1.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         followerAnchor:
