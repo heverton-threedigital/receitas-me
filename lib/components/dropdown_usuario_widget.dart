@@ -77,7 +77,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
         width: 248.8,
         height: 280.0,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
+          color: FlutterFlowTheme.of(context).primaryBackground,
           boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
@@ -88,7 +88,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
               ),
             )
           ],
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(8.0),
           border: Border.all(
             color: FlutterFlowTheme.of(context).alternate,
             width: 1.0,
@@ -244,8 +244,8 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: _model.mouseRegionHovered1
-                          ? FlutterFlowTheme.of(context).primaryBackground
-                          : FlutterFlowTheme.of(context).secondaryBackground,
+                          ? FlutterFlowTheme.of(context).secondaryBackground
+                          : FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     child: Padding(
                       padding:
@@ -311,8 +311,8 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: _model.mouseRegionHovered2
-                        ? FlutterFlowTheme.of(context).primaryBackground
-                        : FlutterFlowTheme.of(context).secondaryBackground,
+                        ? FlutterFlowTheme.of(context).secondaryBackground
+                        : FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
@@ -376,8 +376,8 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: _model.mouseRegionHovered3
-                        ? FlutterFlowTheme.of(context).primaryBackground
-                        : FlutterFlowTheme.of(context).secondaryBackground,
+                        ? FlutterFlowTheme.of(context).secondaryBackground
+                        : FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
@@ -466,8 +466,8 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
                     width: double.infinity,
                     decoration: BoxDecoration(
                       color: _model.mouseRegionHovered4
-                          ? FlutterFlowTheme.of(context).primaryBackground
-                          : FlutterFlowTheme.of(context).secondaryBackground,
+                          ? FlutterFlowTheme.of(context).secondaryBackground
+                          : FlutterFlowTheme.of(context).primaryBackground,
                     ),
                     child: Padding(
                       padding:
