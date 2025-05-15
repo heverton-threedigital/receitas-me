@@ -632,10 +632,11 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                               ),
                               onPressed: () async {
                                 await showAlignedDialog(
+                                  barrierColor: Colors.transparent,
                                   context: context,
                                   isGlobal: false,
                                   avoidOverflow: true,
-                                  targetAnchor: AlignmentDirectional(1.0, -1.0)
+                                  targetAnchor: AlignmentDirectional(1.0, 1.0)
                                       .resolve(Directionality.of(context)),
                                   followerAnchor: AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),

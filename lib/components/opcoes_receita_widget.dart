@@ -53,13 +53,16 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
       color: Colors.transparent,
       elevation: 4.0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16.0),
+        borderRadius: BorderRadius.circular(8.0),
       ),
       child: Container(
         width: 243.3,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).secondaryBackground,
-          borderRadius: BorderRadius.circular(16.0),
+          color: FlutterFlowTheme.of(context).primaryBackground,
+          borderRadius: BorderRadius.circular(8.0),
+          border: Border.all(
+            color: FlutterFlowTheme.of(context).alternate,
+          ),
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 24.0),
@@ -270,15 +273,43 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        await ReceitasTable().delete(
-                          matchingRows: (rows) => rows.eqOrNull(
-                            'id',
-                            widget.idReceita,
-                          ),
-                        );
-                        await deleteSupabaseFileFromPublicUrl(
-                            widget.imagemReceita!);
-                        Navigator.pop(context);
+                        var confirmDialogResponse = await showDialog<bool>(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text(
+                                      'Tem certeza de que deseja excluir esta receita?'),
+                                  content:
+                                      Text('*Esta ação não pode ser desfeita.'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, false),
+                                      child: Text('Cancelar'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, true),
+                                      child: Text('Sim, apagar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ) ??
+                            false;
+                        if (confirmDialogResponse) {
+                          await ReceitasTable().delete(
+                            matchingRows: (rows) => rows.eqOrNull(
+                              'id',
+                              widget.idReceita,
+                            ),
+                          );
+                          await deleteSupabaseFileFromPublicUrl(
+                              widget.imagemReceita!);
+                          Navigator.pop(context);
+                        } else {
+                          Navigator.pop(context);
+                        }
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
