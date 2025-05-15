@@ -1,8 +1,10 @@
 import '/auth/supabase_auth/auth_util.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dropdown_usuario_model.dart';
 export 'dropdown_usuario_model.dart';
@@ -25,8 +27,11 @@ class DropdownUsuarioWidget extends StatefulWidget {
   State<DropdownUsuarioWidget> createState() => _DropdownUsuarioWidgetState();
 }
 
-class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
+class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
+    with TickerProviderStateMixin {
   late DropdownUsuarioModel _model;
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void setState(VoidCallback callback) {
@@ -38,6 +43,21 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DropdownUsuarioModel());
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, -100.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -493,7 +513,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
             ],
           ),
         ),
-      ),
+      ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
     );
   }
 }
