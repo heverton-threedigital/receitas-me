@@ -385,6 +385,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       await showAlignedDialog(
+                                        barrierColor: Colors.transparent,
                                         context: context,
                                         isGlobal: false,
                                         avoidOverflow: true,
