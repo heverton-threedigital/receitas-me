@@ -385,12 +385,11 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       await showAlignedDialog(
-                                        barrierColor: Color(0xCD000000),
                                         context: context,
                                         isGlobal: false,
                                         avoidOverflow: false,
                                         targetAnchor:
-                                            AlignmentDirectional(-1.0, 1.0)
+                                            AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         followerAnchor:
