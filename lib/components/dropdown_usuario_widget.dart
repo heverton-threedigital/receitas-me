@@ -52,7 +52,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, -100.0),
+            begin: Offset(0.0, -40.0),
             end: Offset(0.0, 0.0),
           ),
         ],
@@ -78,7 +78,21 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget>
         height: 280.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 4.0,
+              color: Color(0x33000000),
+              offset: Offset(
+                0.0,
+                2.0,
+              ),
+            )
+          ],
           borderRadius: BorderRadius.circular(16.0),
+          border: Border.all(
+            color: FlutterFlowTheme.of(context).alternate,
+            width: 1.0,
+          ),
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
