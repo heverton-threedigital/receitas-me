@@ -387,7 +387,7 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       await showAlignedDialog(
                                         context: context,
                                         isGlobal: false,
-                                        avoidOverflow: false,
+                                        avoidOverflow: true,
                                         targetAnchor:
                                             AlignmentDirectional(0.0, 0.0)
                                                 .resolve(

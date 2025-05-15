@@ -52,7 +52,7 @@ class _DropdownUsuarioWidgetState extends State<DropdownUsuarioWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 24.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 24.0, 0.0),
       child: Container(
         width: 248.8,
         height: 280.0,
