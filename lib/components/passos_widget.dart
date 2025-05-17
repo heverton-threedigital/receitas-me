@@ -220,6 +220,7 @@ class _PassosWidgetState extends State<PassosWidget> {
             onPressed: () async {
               FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
               FFAppState().passoAtual = FFAppState().passoAtual + -1;
+              FFAppState().update(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),

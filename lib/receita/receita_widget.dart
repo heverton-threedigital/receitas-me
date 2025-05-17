@@ -6,7 +6,9 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -356,6 +358,17 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                     .bodyMedium
                                                                     .fontStyle,
                                                               ),
+                                                          mouseCursor:
+                                                              SystemMouseCursors
+                                                                  .click,
+                                                          recognizer:
+                                                              TapGestureRecognizer()
+                                                                ..onTap =
+                                                                    () async {
+                                                                  context.pushNamed(
+                                                                      InicioWidget
+                                                                          .routeName);
+                                                                },
                                                         ),
                                                         TextSpan(
                                                           text: '/',

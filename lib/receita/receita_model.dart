@@ -2,6 +2,7 @@ import '/components/barra_latera_receita_widget.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'receita_widget.dart' show ReceitaWidget;
 import 'package:flutter/material.dart';
 
