@@ -1106,7 +1106,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                           ),
                                                           focusNode: _model
                                                               .tituloReceitaFocusNode,
-                                                          autofocus: true,
+                                                          autofocus: false,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
@@ -1452,7 +1452,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                           ),
                                                           focusNode: _model
                                                               .dscricaoReceitaFocusNode,
-                                                          autofocus: true,
+                                                          autofocus: false,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
@@ -1718,6 +1718,60 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                       val),
                                                           width: 280.0,
                                                           height: 40.0,
+                                                          searchHintTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .workSans(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .fontStyle,
+                                                                  ),
+                                                          searchTextStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    font: GoogleFonts
+                                                                        .workSans(
+                                                                      fontWeight: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontWeight,
+                                                                      fontStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .fontStyle,
+                                                                    ),
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontWeight,
+                                                                    fontStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .fontStyle,
+                                                                  ),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1747,6 +1801,8 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   ),
                                                           hintText:
                                                               'Selecione uma categoria',
+                                                          searchHintText:
+                                                              'Pesquisar...',
                                                           icon: Icon(
                                                             Icons
                                                                 .keyboard_arrow_down_rounded,
@@ -1774,7 +1830,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                       0.0),
                                                           hidesUnderline: true,
                                                           isOverButton: false,
-                                                          isSearchable: false,
+                                                          isSearchable: true,
                                                           isMultiSelect: false,
                                                         );
                                                       },
@@ -2523,7 +2579,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                           .ingredienteTextController,
                                                       focusNode: _model
                                                           .ingredienteFocusNode,
-                                                      autofocus: true,
+                                                      autofocus: false,
                                                       textInputAction:
                                                           TextInputAction.send,
                                                       obscureText: false,
@@ -2989,7 +3045,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     });
                                                                   },
                                                                   autofocus:
-                                                                      true,
+                                                                      false,
                                                                   obscureText:
                                                                       false,
                                                                   decoration:
