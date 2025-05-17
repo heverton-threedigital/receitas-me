@@ -124,15 +124,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   TextEditingController? preparacaoReceitaTextController;
   String? Function(BuildContext, String?)?
       preparacaoReceitaTextControllerValidator;
-  String? _preparacaoReceitaTextControllerValidator(
-      BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return 'Digite o tempo de preparo';
-    }
-
-    return null;
-  }
-
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -163,8 +154,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     dscricaoReceitaTextControllerValidator =
         _dscricaoReceitaTextControllerValidator;
     seletorCategoriaModel = createModel(context, () => SeletorCategoriaModel());
-    preparacaoReceitaTextControllerValidator =
-        _preparacaoReceitaTextControllerValidator;
     passoTextControllerValidator = _passoTextControllerValidator;
     menuLateralEModel = createModel(context, () => MenuLateralEModel());
   }

@@ -808,22 +808,20 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         (timer) async {
                                                                       while (FFAppState()
                                                                               .contador <=
-                                                                          _model
-                                                                              .listaIngredientesTextos
+                                                                          FFAppState()
+                                                                              .ingredientes
                                                                               .length) {
                                                                         FFAppState()
                                                                             .contador = FFAppState()
                                                                                 .contador +
                                                                             1;
-                                                                        safeSetState(
-                                                                            () {});
                                                                         await IngredientesTable()
                                                                             .insert({
                                                                           'receita_id': _model
                                                                               .receitaCriada2
                                                                               ?.id,
-                                                                          'ingrediente': _model
-                                                                              .listaIngredientesTextos
+                                                                          'ingrediente': FFAppState()
+                                                                              .ingredientes
                                                                               .elementAtOrNull(FFAppState().contador),
                                                                         });
                                                                       }
@@ -848,7 +846,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             safeSetState(() {});
                                                                             await InstrucoesTable().insert({
                                                                               'receita_id': _model.receitaCriada2?.id,
-                                                                              'descricao': _model.passoaPasso.elementAtOrNull(FFAppState().contador),
+                                                                              'descricao': FFAppState().passos.elementAtOrNull(FFAppState().contador),
                                                                               'numero_passo': FFAppState().contador + 1,
                                                                             });
                                                                           }
