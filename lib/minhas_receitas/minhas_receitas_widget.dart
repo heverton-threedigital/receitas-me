@@ -407,9 +407,10 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                     "relative",
                                                                     staggeredViewReceitasResumoRow
                                                                         .criadoEm,
-                                                                    locale: FFLocalizations.of(
-                                                                            context)
-                                                                        .languageCode,
+                                                                    locale: FFLocalizations.of(context)
+                                                                            .languageShortCode ??
+                                                                        FFLocalizations.of(context)
+                                                                            .languageCode,
                                                                   )}',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
@@ -581,13 +582,15 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                         onPressed:
                                                                             () async {
                                                                           await action_blocks
-                                                                              .excluirReceita(
+                                                                              .excluirReceita1(
                                                                             context,
                                                                             idReceita:
                                                                                 staggeredViewReceitasResumoRow.id,
                                                                             imagemReceita:
                                                                                 staggeredViewReceitasResumoRow.imagemUrl,
                                                                           );
+                                                                          safeSetState(
+                                                                              () {});
                                                                         },
                                                                       ),
                                                                     ),

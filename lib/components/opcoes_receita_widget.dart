@@ -273,7 +273,7 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        await action_blocks.excluirReceita(
+                        await action_blocks.excluirReceita1(
                           context,
                           idReceita: widget.idReceita,
                           imagemReceita: widget.imagemReceita,

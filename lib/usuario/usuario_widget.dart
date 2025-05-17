@@ -5,6 +5,7 @@ import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
@@ -1107,14 +1108,12 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                                 size: 16.0,
                                                                               ),
                                                                               onPressed: () async {
-                                                                                await ReceitasTable().delete(
-                                                                                  matchingRows: (rows) => rows.eqOrNull(
-                                                                                    'id',
-                                                                                    staggeredViewReceitasResumoRow.id,
-                                                                                  ),
+                                                                                await action_blocks.excluirReceita1(
+                                                                                  context,
+                                                                                  idReceita: staggeredViewReceitasResumoRow.id,
+                                                                                  imagemReceita: staggeredViewReceitasResumoRow.imagemUrl,
                                                                                 );
-                                                                                await deleteSupabaseFileFromPublicUrl(staggeredViewReceitasResumoRow.imagemUrl!);
-                                                                                Navigator.pop(context);
+                                                                                safeSetState(() {});
                                                                               },
                                                                             ),
                                                                           ),

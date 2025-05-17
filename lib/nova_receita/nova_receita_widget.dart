@@ -116,6 +116,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
               },
               child: Scaffold(
                 key: scaffoldKey,
+                resizeToAvoidBottomInset: false,
                 backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
                 drawer: Drawer(
                   elevation: 16.0,

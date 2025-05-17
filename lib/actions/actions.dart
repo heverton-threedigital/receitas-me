@@ -2,7 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 
-Future excluirReceita(
+Future excluirReceita1(
   BuildContext context, {
   required String? idReceita,
   required String? imagemReceita,

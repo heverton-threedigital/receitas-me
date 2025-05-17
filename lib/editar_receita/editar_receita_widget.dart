@@ -204,7 +204,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                 FFButtonWidget(
                                                   onPressed: () async {
                                                     await action_blocks
-                                                        .excluirReceita(
+                                                        .excluirReceita1(
                                                       context,
                                                       idReceita:
                                                           widget.receita?.id,
