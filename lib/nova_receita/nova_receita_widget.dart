@@ -353,7 +353,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                                 ''
                                                                         ? FFAppState()
                                                                             .categoriaSelecionada
-                                                                        : 'Sem categoria',
+                                                                        : null,
                                                                     'porcoes': _model.porcoesReceitaTextController.text !=
                                                                                 ''
                                                                         ? _model
@@ -661,9 +661,11 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         currentUserUid,
                                                                     'publicado':
                                                                         true,
-                                                                    'categoria_id':
-                                                                        FFAppState()
-                                                                            .categoriaSelecionada,
+                                                                    'categoria_id': FFAppState().categoriaSelecionada !=
+                                                                                ''
+                                                                        ? FFAppState()
+                                                                            .categoriaSelecionada
+                                                                        : null,
                                                                     'porcoes': _model
                                                                         .porcoesReceitaTextController
                                                                         .text,
