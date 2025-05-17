@@ -14,28 +14,6 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
 
   FFUploadedFile? imagemReceita;
 
-  List<String> listaIngredientesTextos = [];
-  void addToListaIngredientesTextos(String item) =>
-      listaIngredientesTextos.add(item);
-  void removeFromListaIngredientesTextos(String item) =>
-      listaIngredientesTextos.remove(item);
-  void removeAtIndexFromListaIngredientesTextos(int index) =>
-      listaIngredientesTextos.removeAt(index);
-  void insertAtIndexInListaIngredientesTextos(int index, String item) =>
-      listaIngredientesTextos.insert(index, item);
-  void updateListaIngredientesTextosAtIndex(
-          int index, Function(String) updateFn) =>
-      listaIngredientesTextos[index] = updateFn(listaIngredientesTextos[index]);
-
-  List<String> passoaPasso = [];
-  void addToPassoaPasso(String item) => passoaPasso.add(item);
-  void removeFromPassoaPasso(String item) => passoaPasso.remove(item);
-  void removeAtIndexFromPassoaPasso(int index) => passoaPasso.removeAt(index);
-  void insertAtIndexInPassoaPasso(int index, String item) =>
-      passoaPasso.insert(index, item);
-  void updatePassoaPassoAtIndex(int index, Function(String) updateFn) =>
-      passoaPasso[index] = updateFn(passoaPasso[index]);
-
   List<String> categoriaSelecionada = [];
   void addToCategoriaSelecionada(String item) => categoriaSelecionada.add(item);
   void removeFromCategoriaSelecionada(String item) =>
@@ -47,6 +25,10 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
   void updateCategoriaSelecionadaAtIndex(
           int index, Function(String) updateFn) =>
       categoriaSelecionada[index] = updateFn(categoriaSelecionada[index]);
+
+  bool ingredienteOn = true;
+
+  bool passoOn = true;
 
   ///  State fields for stateful widgets in this page.
 
