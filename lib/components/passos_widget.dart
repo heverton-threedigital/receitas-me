@@ -119,7 +119,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                     widget.indexPasso!,
                     (_) => _model.ingredienteTextController.text,
                   );
-                  safeSetState(() {});
+                  _model.updatePage(() {});
                 },
                 autofocus: false,
                 textInputAction: TextInputAction.send,
@@ -220,7 +220,7 @@ class _PassosWidgetState extends State<PassosWidget> {
             onPressed: () async {
               FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
               FFAppState().passoAtual = FFAppState().passoAtual + -1;
-              safeSetState(() {});
+              _model.updatePage(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),

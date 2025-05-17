@@ -170,7 +170,7 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
             onPressed: () async {
               FFAppState()
                   .removeAtIndexFromIngredientes(widget.indexIngrediente!);
-              safeSetState(() {});
+              _model.updatePage(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),

@@ -2890,10 +2890,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               _model.passoFocusNode,
                                                                           onFieldSubmitted:
                                                                               (_) async {
-                                                                            if (_model.formKey3.currentState == null ||
-                                                                                !_model.formKey3.currentState!.validate()) {
-                                                                              return;
-                                                                            }
                                                                             FFAppState().passoAtual =
                                                                                 FFAppState().passoAtual + 1;
                                                                             FFAppState().addToPassos(_model.passoTextController.text);
