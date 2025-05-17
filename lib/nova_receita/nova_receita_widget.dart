@@ -14,6 +14,7 @@ import '/flutter_flow/instant_timer.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -2455,6 +2456,30 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   .ingredienteTextController,
                                                               focusNode: _model
                                                                   .ingredienteFocusNode,
+                                                              onChanged: (_) =>
+                                                                  EasyDebounce
+                                                                      .debounce(
+                                                                '_model.ingredienteTextController',
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        2000),
+                                                                () async {
+                                                                  FFAppState().addToIngredientes(_model.ingredienteTextController.text !=
+                                                                              ''
+                                                                      ? _model
+                                                                          .ingredienteTextController
+                                                                          .text
+                                                                      : '');
+                                                                  safeSetState(
+                                                                      () {});
+                                                                  safeSetState(
+                                                                      () {
+                                                                    _model
+                                                                        .ingredienteTextController
+                                                                        ?.clear();
+                                                                  });
+                                                                },
+                                                              ),
                                                               onFieldSubmitted:
                                                                   (_) async {
                                                                 FFAppState().addToIngredientes(_model.ingredienteTextController.text !=
@@ -2888,16 +2913,19 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               _model.passoTextController,
                                                                           focusNode:
                                                                               _model.passoFocusNode,
-                                                                          onFieldSubmitted:
-                                                                              (_) async {
-                                                                            FFAppState().passoAtual =
-                                                                                FFAppState().passoAtual + 1;
-                                                                            FFAppState().addToPassos(_model.passoTextController.text);
-                                                                            safeSetState(() {});
-                                                                            safeSetState(() {
-                                                                              _model.passoTextController?.clear();
-                                                                            });
-                                                                          },
+                                                                          onChanged: (_) =>
+                                                                              EasyDebounce.debounce(
+                                                                            '_model.passoTextController',
+                                                                            Duration(milliseconds: 2000),
+                                                                            () async {
+                                                                              FFAppState().passoAtual = FFAppState().passoAtual + 1;
+                                                                              FFAppState().addToPassos(_model.passoTextController.text);
+                                                                              safeSetState(() {});
+                                                                              safeSetState(() {
+                                                                                _model.passoTextController?.clear();
+                                                                              });
+                                                                            },
+                                                                          ),
                                                                           autofocus:
                                                                               false,
                                                                           obscureText:

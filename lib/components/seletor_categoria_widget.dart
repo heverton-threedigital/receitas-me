@@ -116,6 +116,7 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
                           onTap: () async {
                             _model.categoriaSelecionada = null;
                             safeSetState(() {});
+                            FFAppState().categoriaSelecionada = '';
                           },
                           child: Icon(
                             FFIcons.kfechar,
@@ -144,8 +145,14 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
                         optionLabels: containerCategoriasRowList
                             .map((e) => e.nome)
                             .toList(),
-                        onChanged: (val) =>
-                            safeSetState(() => _model.dropDownValue = val),
+                        onChanged: (val) async {
+                          safeSetState(() => _model.dropDownValue = val);
+                          _model.categoriaSelecionada = _model.dropDownValue;
+                          safeSetState(() {});
+                          FFAppState().categoriaSelecionada =
+                              _model.dropDownValue!;
+                          safeSetState(() {});
+                        },
                         width: 200.0,
                         height: 40.0,
                         searchHintTextStyle:
