@@ -1,5 +1,8 @@
 import '/backend/supabase/supabase.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -28,9 +31,6 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => SeletorCategoriaModel());
-
-    _model.textController ??= TextEditingController();
-    _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -67,7 +67,7 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
         List<CategoriasRow> containerCategoriasRowList = snapshot.data!;
 
         return Container(
-          width: MediaQuery.sizeOf(context).width * 1.0,
+          width: 400.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).primaryBackground,
           ),
@@ -78,7 +78,7 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
               if (_model.categoriaSelecionada != null &&
                   _model.categoriaSelecionada != '')
                 Container(
-                  height: 38.0,
+                  height: 40.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                     borderRadius: BorderRadius.circular(8.0),
@@ -108,10 +108,20 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
                                         .fontStyle,
                                   ),
                         ),
-                        Icon(
-                          FFIcons.kfechar,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 18.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            _model.categoriaSelecionada = null;
+                            safeSetState(() {});
+                          },
+                          child: Icon(
+                            FFIcons.kfechar,
+                            color: FlutterFlowTheme.of(context).primaryText,
+                            size: 18.0,
+                          ),
                         ),
                       ].divide(SizedBox(width: 4.0)),
                     ),
@@ -119,192 +129,135 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
                 ),
               if (_model.categoriaSelecionada == null ||
                   _model.categoriaSelecionada == '')
-                TextFormField(
-                  controller: _model.textController,
-                  focusNode: _model.textFieldFocusNode,
-                  autofocus: false,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    isDense: true,
-                    labelStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              font: GoogleFonts.workSans(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
-                    hintText: 'Pesquise categorias',
-                    hintStyle:
-                        FlutterFlowTheme.of(context).labelMedium.override(
-                              font: GoogleFonts.workSans(
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .labelMedium
-                                    .fontStyle,
-                              ),
-                              letterSpacing: 0.0,
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontWeight,
-                              fontStyle: FlutterFlowTheme.of(context)
-                                  .labelMedium
-                                  .fontStyle,
-                            ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).alternate,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).primary,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    focusedErrorBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: FlutterFlowTheme.of(context).error,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    filled: true,
-                    fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                    hoverColor: FlutterFlowTheme.of(context).primaryBackground,
-                    prefixIcon: Icon(
-                      FFIcons.kpesquisa,
-                    ),
-                  ),
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.workSans(
-                          fontWeight: FlutterFlowTheme.of(context)
-                              .bodyMedium
-                              .fontWeight,
-                          fontStyle:
-                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: FlutterFlowDropDown<String>(
+                        controller: _model.dropDownValueController ??=
+                            FormFieldController<String>(
+                          _model.dropDownValue ??= '',
                         ),
-                        letterSpacing: 0.0,
-                        fontWeight:
-                            FlutterFlowTheme.of(context).bodyMedium.fontWeight,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).bodyMedium.fontStyle,
-                      ),
-                  cursorColor: FlutterFlowTheme.of(context).primaryText,
-                  validator:
-                      _model.textControllerValidator.asValidator(context),
-                ),
-              if (_model.textController.text != '')
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                  child: Container(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 300.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16.0),
-                      border: Border.all(
-                        color: FlutterFlowTheme.of(context).alternate,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(6.0),
-                      child: Builder(
-                        builder: (context) {
-                          final categoriaPequisa = containerCategoriasRowList
-                              .map((e) => e)
-                              .toList()
-                              .where(
-                                  (e) => e.nome == _model.textController.text)
-                              .toList();
-
-                          return SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: List.generate(categoriaPequisa.length,
-                                  (categoriaPequisaIndex) {
-                                final categoriaPequisaItem =
-                                    categoriaPequisa[categoriaPequisaIndex];
-                                return InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    FFAppState().categoriaSelecionada =
-                                        categoriaPequisaItem.id;
-                                    _model.categoriaSelecionada =
-                                        categoriaPequisaItem.nome;
-                                    safeSetState(() {});
-                                  },
-                                  child: Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 1.0,
-                                    height: 40.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      child: Text(
-                                        categoriaPequisaItem.nome,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              font: GoogleFonts.workSans(
-                                                fontWeight:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontWeight,
-                                                fontStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .fontStyle,
-                                              ),
-                                              letterSpacing: 0.0,
-                                              fontWeight:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontWeight,
-                                              fontStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .fontStyle,
-                                            ),
-                                      ),
-                                    ),
+                        options: List<String>.from(containerCategoriasRowList
+                            .map((e) => e.id)
+                            .toList()),
+                        optionLabels: containerCategoriasRowList
+                            .map((e) => e.nome)
+                            .toList(),
+                        onChanged: (val) =>
+                            safeSetState(() => _model.dropDownValue = val),
+                        width: 200.0,
+                        height: 40.0,
+                        searchHintTextStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  font: GoogleFonts.workSans(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .labelMedium
+                                        .fontStyle,
                                   ),
-                                );
-                              }),
-                            ),
-                          );
-                        },
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
+                        searchTextStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  font: GoogleFonts.workSans(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                        textStyle:
+                            FlutterFlowTheme.of(context).bodyMedium.override(
+                                  font: GoogleFonts.workSans(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .fontStyle,
+                                  ),
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .fontStyle,
+                                ),
+                        hintText: 'Selecione a catergoria',
+                        searchHintText: 'Pesquise...',
+                        icon: Icon(
+                          Icons.keyboard_arrow_down_rounded,
+                          size: 16.0,
+                        ),
+                        fillColor:
+                            FlutterFlowTheme.of(context).secondaryBackground,
+                        elevation: 2.0,
+                        borderColor: FlutterFlowTheme.of(context).alternate,
+                        borderWidth: 1.0,
+                        borderRadius: 8.0,
+                        margin: EdgeInsetsDirectional.fromSTEB(
+                            12.0, 0.0, 12.0, 0.0),
+                        hidesUnderline: true,
+                        isOverButton: false,
+                        isSearchable: true,
+                        isMultiSelect: false,
                       ),
                     ),
-                  ),
+                    FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: 'Nova categoria',
+                      options: FFButtonOptions(
+                        height: 40.0,
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 0.0, 16.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).primary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).titleSmall.override(
+                                  font: GoogleFonts.workSans(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .fontStyle,
+                                  ),
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontWeight,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
+                        elevation: 0.0,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                    ),
+                  ].divide(SizedBox(width: 8.0)),
                 ),
             ],
           ),
