@@ -30,7 +30,7 @@ class EditarReceitaWidget extends StatefulWidget {
   final String? idReceita;
 
   static String routeName = 'EditarReceita';
-  static String routePath = 'editar-receita';
+  static String routePath = 'editar-receita/:idReceita';
 
   @override
   State<EditarReceitaWidget> createState() => _EditarReceitaWidgetState();

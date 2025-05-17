@@ -442,7 +442,7 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   onPressed: () async {
                                     context.pushNamed(
                                       EditarReceitaWidget.routeName,
-                                      queryParameters: {
+                                      pathParameters: {
                                         'idReceita': serializeParam(
                                           widget.informacoesReceita?.id,
                                           ParamType.String,
