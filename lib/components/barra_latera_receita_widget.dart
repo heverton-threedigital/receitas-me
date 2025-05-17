@@ -443,9 +443,9 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                     context.pushNamed(
                                       EditarReceitaWidget.routeName,
                                       queryParameters: {
-                                        'receita': serializeParam(
-                                          widget.informacoesReceita,
-                                          ParamType.SupabaseRow,
+                                        'idReceita': serializeParam(
+                                          widget.informacoesReceita?.id,
+                                          ParamType.String,
                                         ),
                                       }.withoutNulls,
                                     );

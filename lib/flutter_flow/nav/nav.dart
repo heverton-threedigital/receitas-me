@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
@@ -150,9 +149,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: EditarReceitaWidget.routePath,
               requireAuth: true,
               builder: (context, params) => EditarReceitaWidget(
-                receita: params.getParam<ReceitasDetalhadasRow>(
-                  'receita',
-                  ParamType.SupabaseRow,
+                idReceita: params.getParam(
+                  'idReceita',
+                  ParamType.String,
                 ),
               ),
             )
