@@ -499,8 +499,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         (timer) async {
                                                                       while (FFAppState()
                                                                               .contador <=
-                                                                          _model
-                                                                              .listaIngredientesTextos
+                                                                          FFAppState()
+                                                                              .ingredientes
                                                                               .length) {
                                                                         FFAppState()
                                                                             .contador = FFAppState()

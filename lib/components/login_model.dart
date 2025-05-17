@@ -28,7 +28,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Has to be a valid email address.';
+      return 'Digite um email válido';
     }
     return null;
   }
@@ -82,7 +82,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Has to be a valid email address.';
+      return 'Digite um email válido';
     }
     return null;
   }
