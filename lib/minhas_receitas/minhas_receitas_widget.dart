@@ -3,10 +3,11 @@ import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/actions/actions.dart' as action_blocks;
 import '/index.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -579,18 +580,14 @@ class _MinhasReceitasWidgetState extends State<MinhasReceitasWidget> {
                                                                         ),
                                                                         onPressed:
                                                                             () async {
-                                                                          await ReceitasTable()
-                                                                              .delete(
-                                                                            matchingRows: (rows) =>
-                                                                                rows.eqOrNull(
-                                                                              'id',
-                                                                              staggeredViewReceitasResumoRow.id,
-                                                                            ),
+                                                                          await action_blocks
+                                                                              .excluirReceita(
+                                                                            context,
+                                                                            idReceita:
+                                                                                staggeredViewReceitasResumoRow.id,
+                                                                            imagemReceita:
+                                                                                staggeredViewReceitasResumoRow.imagemUrl,
                                                                           );
-                                                                          await deleteSupabaseFileFromPublicUrl(
-                                                                              staggeredViewReceitasResumoRow.imagemUrl!);
-                                                                          Navigator.pop(
-                                                                              context);
                                                                         },
                                                                       ),
                                                                     ),

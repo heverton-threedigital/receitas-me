@@ -1,7 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
-import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/actions/actions.dart' as action_blocks;
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'opcoes_receita_model.dart';
@@ -273,44 +273,11 @@ class _OpcoesReceitaWidgetState extends State<OpcoesReceitaWidget> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text(
-                                      'Tem certeza de que deseja excluir esta receita?'),
-                                  content:
-                                      Text('*Esta ação não pode ser desfeita.'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Cancelar'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Sim, apagar'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          await ReceitasTable().delete(
-                            matchingRows: (rows) => rows.eqOrNull(
-                              'id',
-                              widget.idReceita,
-                            ),
-                          );
-                          await deleteSupabaseFileFromPublicUrl(
-                              widget.imagemReceita!);
-                          Navigator.pop(context);
-                          context.safePop();
-                        } else {
-                          Navigator.pop(context);
-                        }
+                        await action_blocks.excluirReceita(
+                          context,
+                          idReceita: widget.idReceita,
+                          imagemReceita: widget.imagemReceita,
+                        );
                       },
                       child: Row(
                         mainAxisSize: MainAxisSize.max,

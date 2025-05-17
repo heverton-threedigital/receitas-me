@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/components/menu_lateral_e_widget.dart';
 import '/components/menu_principal_widget.dart';
+import '/components/seletor_categoria_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/instant_timer.dart';
@@ -34,6 +35,18 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
       passoaPasso.insert(index, item);
   void updatePassoaPassoAtIndex(int index, Function(String) updateFn) =>
       passoaPasso[index] = updateFn(passoaPasso[index]);
+
+  List<String> categoriaSelecionada = [];
+  void addToCategoriaSelecionada(String item) => categoriaSelecionada.add(item);
+  void removeFromCategoriaSelecionada(String item) =>
+      categoriaSelecionada.remove(item);
+  void removeAtIndexFromCategoriaSelecionada(int index) =>
+      categoriaSelecionada.removeAt(index);
+  void insertAtIndexInCategoriaSelecionada(int index, String item) =>
+      categoriaSelecionada.insert(index, item);
+  void updateCategoriaSelecionadaAtIndex(
+          int index, Function(String) updateFn) =>
+      categoriaSelecionada[index] = updateFn(categoriaSelecionada[index]);
 
   ///  State fields for stateful widgets in this page.
 
@@ -99,9 +112,8 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     return null;
   }
 
-  // State field(s) for CategoriaReceita widget.
-  String? categoriaReceitaValue;
-  FormFieldController<String>? categoriaReceitaValueController;
+  // Model for SeletorCategoria component.
+  late SeletorCategoriaModel seletorCategoriaModel;
   // State field(s) for PorcoesReceita widget.
   FocusNode? porcoesReceitaFocusNode;
   TextEditingController? porcoesReceitaTextController;
@@ -150,6 +162,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
         _tituloReceitaTextControllerValidator;
     dscricaoReceitaTextControllerValidator =
         _dscricaoReceitaTextControllerValidator;
+    seletorCategoriaModel = createModel(context, () => SeletorCategoriaModel());
     preparacaoReceitaTextControllerValidator =
         _preparacaoReceitaTextControllerValidator;
     passoTextControllerValidator = _passoTextControllerValidator;
@@ -169,6 +182,7 @@ class NovaReceitaModel extends FlutterFlowModel<NovaReceitaWidget> {
     dscricaoReceitaFocusNode?.dispose();
     dscricaoReceitaTextController?.dispose();
 
+    seletorCategoriaModel.dispose();
     porcoesReceitaFocusNode?.dispose();
     porcoesReceitaTextController?.dispose();
 

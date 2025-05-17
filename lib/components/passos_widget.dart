@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:easy_debounce/easy_debounce.dart';
+import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'passos_model.dart';
@@ -102,14 +103,25 @@ class _PassosWidgetState extends State<PassosWidget> {
               child: TextFormField(
                 controller: _model.ingredienteTextController,
                 focusNode: _model.ingredienteFocusNode,
+                onChanged: (_) => EasyDebounce.debounce(
+                  '_model.ingredienteTextController',
+                  Duration(milliseconds: 2000),
+                  () async {
+                    FFAppState().updatePassosAtIndex(
+                      widget.indexPasso!,
+                      (_) => _model.ingredienteTextController.text,
+                    );
+                    safeSetState(() {});
+                  },
+                ),
                 onFieldSubmitted: (_) async {
                   FFAppState().updatePassosAtIndex(
                     widget.indexPasso!,
                     (_) => _model.ingredienteTextController.text,
                   );
-                  _model.updatePage(() {});
+                  safeSetState(() {});
                 },
-                autofocus: true,
+                autofocus: false,
                 textInputAction: TextInputAction.send,
                 obscureText: false,
                 decoration: InputDecoration(
@@ -207,7 +219,8 @@ class _PassosWidgetState extends State<PassosWidget> {
             ),
             onPressed: () async {
               FFAppState().removeAtIndexFromPassos(widget.indexPasso!);
-              _model.updatePage(() {});
+              FFAppState().passoAtual = FFAppState().passoAtual + -1;
+              safeSetState(() {});
             },
           ),
         ].divide(SizedBox(width: 8.0)),

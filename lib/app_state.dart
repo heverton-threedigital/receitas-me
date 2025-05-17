@@ -206,6 +206,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInIngredientes(int index, String value) {
     ingredientes.insert(index, value);
   }
+
+  String _categoriaSelecionada = '';
+  String get categoriaSelecionada => _categoriaSelecionada;
+  set categoriaSelecionada(String value) {
+    _categoriaSelecionada = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

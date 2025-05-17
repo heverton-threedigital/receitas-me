@@ -40,6 +40,10 @@ dependencies:
   diacritic: ^0.1.6
   dropdown_button2: 2.3.9
   easy_debounce: 2.0.1
+  ff_commons:
+    path: ./dependencies/ff_commons # 1.0.0+1
+  ff_theme:
+    path: ./dependencies/ff_theme # 1.0.0+1
   file_picker: 8.1.2
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
@@ -60,6 +64,8 @@ dependencies:
   image_picker_android: 0.8.12+13
   image_picker_for_web: 3.0.5
   image_picker_ios: 0.8.12
+  image_picker_library_jttghl:
+    path: ./dependencies/image_picker_library_jttghl # 1.0.0
   image_picker_linux: 0.2.1+1
   image_picker_macos: 0.2.1+1
   image_picker_platform_interface: 2.10.0
@@ -123,8 +129,8 @@ dependencies:
 
 dependency_overrides:
   http: 1.2.2
-  rxdart: 0.27.7
   uuid: ^4.0.0
+  rxdart: 0.27.7
   win32: 5.5.1
 
 dev_dependencies:
