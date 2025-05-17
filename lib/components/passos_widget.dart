@@ -111,7 +111,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                       widget.indexPasso!,
                       (_) => _model.ingredienteTextController.text,
                     );
-                    safeSetState(() {});
+                    FFAppState().update(() {});
                   },
                 ),
                 onFieldSubmitted: (_) async {
@@ -119,7 +119,7 @@ class _PassosWidgetState extends State<PassosWidget> {
                     widget.indexPasso!,
                     (_) => _model.ingredienteTextController.text,
                   );
-                  _model.updatePage(() {});
+                  FFAppState().update(() {});
                 },
                 autofocus: false,
                 textInputAction: TextInputAction.send,

@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -64,12 +65,23 @@ class _FormIngredientesWidgetState extends State<FormIngredientesWidget> {
               child: TextFormField(
                 controller: _model.ingredienteTextController,
                 focusNode: _model.ingredienteFocusNode,
+                onChanged: (_) => EasyDebounce.debounce(
+                  '_model.ingredienteTextController',
+                  Duration(milliseconds: 2000),
+                  () async {
+                    FFAppState().updateIngredientesAtIndex(
+                      widget.indexIngrediente!,
+                      (_) => _model.ingredienteTextController.text,
+                    );
+                    FFAppState().update(() {});
+                  },
+                ),
                 onFieldSubmitted: (_) async {
                   FFAppState().updateIngredientesAtIndex(
                     widget.indexIngrediente!,
                     (_) => _model.ingredienteTextController.text,
                   );
-                  safeSetState(() {});
+                  FFAppState().update(() {});
                 },
                 autofocus: false,
                 textInputAction: TextInputAction.send,

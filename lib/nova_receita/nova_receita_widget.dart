@@ -2475,16 +2475,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         milliseconds:
                                                                             2000),
                                                                     () async {
+                                                                      _model.ingredienteOn =
+                                                                          false;
                                                                       FFAppState().addToIngredientes(_model.ingredienteTextController.text !=
                                                                                   ''
                                                                           ? _model
                                                                               .ingredienteTextController
                                                                               .text
                                                                           : '');
-                                                                      safeSetState(
-                                                                          () {});
-                                                                      _model.ingredienteOn =
-                                                                          false;
                                                                       safeSetState(
                                                                           () {});
                                                                       safeSetState(
@@ -2497,6 +2495,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   ),
                                                                   onFieldSubmitted:
                                                                       (_) async {
+                                                                    _model.ingredienteOn =
+                                                                        false;
                                                                     FFAppState().addToIngredientes(_model.ingredienteTextController.text !=
                                                                                 ''
                                                                         ? _model
@@ -2935,24 +2935,14 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               Duration(milliseconds: 2000),
                                                                               () async {
                                                                                 FFAppState().passoAtual = FFAppState().passoAtual + 1;
+                                                                                _model.passoOn = false;
                                                                                 FFAppState().addToPassos(_model.passoTextController.text);
-                                                                                safeSetState(() {});
+                                                                                FFAppState().update(() {});
                                                                                 safeSetState(() {
                                                                                   _model.passoTextController?.clear();
                                                                                 });
                                                                               },
                                                                             ),
-                                                                            onFieldSubmitted:
-                                                                                (_) async {
-                                                                              FFAppState().passoAtual = FFAppState().passoAtual + 1;
-                                                                              FFAppState().addToPassos(_model.passoTextController.text);
-                                                                              safeSetState(() {});
-                                                                              _model.passoOn = false;
-                                                                              safeSetState(() {});
-                                                                              safeSetState(() {
-                                                                                _model.passoTextController?.clear();
-                                                                              });
-                                                                            },
                                                                             autofocus:
                                                                                 false,
                                                                             obscureText:
