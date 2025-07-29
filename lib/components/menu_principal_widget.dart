@@ -236,8 +236,6 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                     text: 'Criar receita',
                                     icon: Icon(
                                       FFIcons.kadicionarCirculo,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
                                       size: 24.0,
                                     ),
                                     options: FFButtonOptions(
@@ -248,6 +246,8 @@ class _MenuPrincipalWidgetState extends State<MenuPrincipalWidget> {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
+                                      iconColor:
+                                          FlutterFlowTheme.of(context).primary,
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       textStyle: FlutterFlowTheme.of(context)

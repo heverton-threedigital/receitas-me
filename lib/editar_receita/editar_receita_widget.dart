@@ -238,10 +238,6 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                       text: 'Excluir',
                                                       icon: Icon(
                                                         FFIcons.kexcluir,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
                                                         size: 24.0,
                                                       ),
                                                       options: FFButtonOptions(
@@ -260,6 +256,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
+                                                        iconColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .primaryBackground,
@@ -351,7 +351,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   true)))) {
                                                         {
                                                           safeSetState(() =>
-                                                              _model.isDataUploading1 =
+                                                              _model.isDataUploading_uploadimagemReceita12 =
                                                                   true);
                                                           var selectedUploadedFiles =
                                                               <FFUploadedFile>[];
@@ -361,12 +361,12 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                               <String>[];
                                                           try {
                                                             selectedUploadedFiles = _model
-                                                                    .uploadedLocalFile3
+                                                                    .uploadedLocalFile_uploadImagemReceitaEditada
                                                                     .bytes!
                                                                     .isNotEmpty
                                                                 ? [
                                                                     _model
-                                                                        .uploadedLocalFile3
+                                                                        .uploadedLocalFile_uploadImagemReceitaEditada
                                                                   ]
                                                                 : <FFUploadedFile>[];
                                                             selectedMedia =
@@ -383,7 +383,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   selectedMedia,
                                                             );
                                                           } finally {
-                                                            _model.isDataUploading1 =
+                                                            _model.isDataUploading_uploadimagemReceita12 =
                                                                 false;
                                                           }
                                                           if (selectedUploadedFiles
@@ -395,10 +395,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   selectedMedia
                                                                       .length) {
                                                             safeSetState(() {
-                                                              _model.uploadedLocalFile1 =
+                                                              _model.uploadedLocalFile_uploadimagemReceita12 =
                                                                   selectedUploadedFiles
                                                                       .first;
-                                                              _model.uploadedFileUrl1 =
+                                                              _model.uploadedFileUrl_uploadimagemReceita12 =
                                                                   downloadUrls
                                                                       .first;
                                                             });
@@ -415,7 +415,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                 valueOrDefault<
                                                                     String>(
                                                               _model
-                                                                  .uploadedFileUrl2,
+                                                                  .uploadedFileUrl_uploadimagemReceita4,
                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                             ),
                                                           },
@@ -447,10 +447,6 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                     text: 'Salvar',
                                                     icon: Icon(
                                                       FFIcons.kcheckQudrado,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
                                                       size: 24.0,
                                                     ),
                                                     options: FFButtonOptions(
@@ -469,6 +465,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
+                                                      iconColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
@@ -599,7 +599,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     true)))) {
                                                           {
                                                             safeSetState(() =>
-                                                                _model.isDataUploading2 =
+                                                                _model.isDataUploading_uploadimagemReceita4 =
                                                                     true);
                                                             var selectedUploadedFiles =
                                                                 <FFUploadedFile>[];
@@ -609,12 +609,12 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                 <String>[];
                                                             try {
                                                               selectedUploadedFiles = _model
-                                                                      .uploadedLocalFile3
+                                                                      .uploadedLocalFile_uploadImagemReceitaEditada
                                                                       .bytes!
                                                                       .isNotEmpty
                                                                   ? [
                                                                       _model
-                                                                          .uploadedLocalFile3
+                                                                          .uploadedLocalFile_uploadImagemReceitaEditada
                                                                     ]
                                                                   : <FFUploadedFile>[];
                                                               selectedMedia =
@@ -631,7 +631,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     selectedMedia,
                                                               );
                                                             } finally {
-                                                              _model.isDataUploading2 =
+                                                              _model.isDataUploading_uploadimagemReceita4 =
                                                                   false;
                                                             }
                                                             if (selectedUploadedFiles
@@ -643,10 +643,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     selectedMedia
                                                                         .length) {
                                                               safeSetState(() {
-                                                                _model.uploadedLocalFile2 =
+                                                                _model.uploadedLocalFile_uploadimagemReceita4 =
                                                                     selectedUploadedFiles
                                                                         .first;
-                                                                _model.uploadedFileUrl2 =
+                                                                _model.uploadedFileUrl_uploadimagemReceita4 =
                                                                     downloadUrls
                                                                         .first;
                                                               });
@@ -664,7 +664,7 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   valueOrDefault<
                                                                       String>(
                                                                 _model
-                                                                    .uploadedFileUrl2,
+                                                                    .uploadedFileUrl_uploadimagemReceita4,
                                                                 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                               ),
                                                             },
@@ -697,9 +697,6 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                       text: 'Pubicar',
                                                       icon: Icon(
                                                         FFIcons.kpublicar,
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
                                                         size: 24.0,
                                                       ),
                                                       options: FFButtonOptions(
@@ -720,6 +717,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
+                                                        iconColor:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBackground,
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -812,7 +813,8 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                         m.storagePath,
                                                         context))) {
                                               safeSetState(() => _model
-                                                  .isDataUploading3 = true);
+                                                      .isDataUploading_uploadImagemReceitaEditada =
+                                                  true);
                                               var selectedUploadedFiles =
                                                   <FFUploadedFile>[];
 
@@ -837,13 +839,14 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                             ))
                                                         .toList();
                                               } finally {
-                                                _model.isDataUploading3 = false;
+                                                _model.isDataUploading_uploadImagemReceitaEditada =
+                                                    false;
                                               }
                                               if (selectedUploadedFiles
                                                       .length ==
                                                   selectedMedia.length) {
                                                 safeSetState(() {
-                                                  _model.uploadedLocalFile3 =
+                                                  _model.uploadedLocalFile_uploadImagemReceitaEditada =
                                                       selectedUploadedFiles
                                                           .first;
                                                 });
@@ -853,8 +856,8 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                               }
                                             }
 
-                                            _model.imagemReceita =
-                                                _model.uploadedLocalFile3;
+                                            _model.imagemReceita = _model
+                                                .uploadedLocalFile_uploadImagemReceitaEditada;
                                             safeSetState(() {});
                                           },
                                           child: ClipRRect(
@@ -2763,9 +2766,6 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                     text: 'Ingrediente',
                                                     icon: Icon(
                                                       FFIcons.kadicionarCirculo,
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .primaryBackground,
                                                       size: 18.0,
                                                     ),
                                                     options: FFButtonOptions(
@@ -2784,6 +2784,10 @@ class _EditarReceitaWidgetState extends State<EditarReceitaWidget> {
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
+                                                      iconColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBackground,
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)

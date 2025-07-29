@@ -155,6 +155,7 @@ class _SeletorCategoriaWidgetState extends State<SeletorCategoriaWidget> {
                         },
                         width: 200.0,
                         height: 40.0,
+                        menuOffset: Offset(0, 200.0),
                         searchHintTextStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
                                   font: GoogleFonts.workSans(

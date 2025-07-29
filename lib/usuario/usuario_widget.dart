@@ -346,8 +346,6 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                             Icon(
                                                                           FFIcons
                                                                               .keditarPessoa,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           size:
                                                                               24.0,
                                                                         ),
@@ -365,6 +363,8 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                               0.0,
                                                                               0.0,
                                                                               0.0),
+                                                                          iconColor:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           textStyle: FlutterFlowTheme.of(context)
@@ -398,8 +398,6 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                             Icon(
                                                                           FFIcons
                                                                               .kadicionarPessoaPreenchido,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           size:
                                                                               24.0,
                                                                         ),
@@ -417,6 +415,8 @@ class _UsuarioWidgetState extends State<UsuarioWidget> {
                                                                               0.0,
                                                                               0.0,
                                                                               0.0),
+                                                                          iconColor:
+                                                                              FlutterFlowTheme.of(context).primaryBackground,
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primary,
                                                                           textStyle: FlutterFlowTheme.of(context)

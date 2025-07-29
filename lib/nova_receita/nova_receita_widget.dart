@@ -262,9 +262,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                   icon: Icon(
                                                                     FFIcons
                                                                         .kfechar,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
                                                                     size: 24.0,
                                                                   ),
                                                                   options:
@@ -283,6 +280,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
+                                                                    iconColor: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .primaryBackground,
@@ -376,7 +376,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           false)) {
                                                                     {
                                                                       safeSetState(() =>
-                                                                          _model.isDataUploading1 =
+                                                                          _model.isDataUploading_uploadimagemReceita1 =
                                                                               true);
                                                                       var selectedUploadedFiles =
                                                                           <FFUploadedFile>[];
@@ -385,9 +385,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       var downloadUrls =
                                                                           <String>[];
                                                                       try {
-                                                                        selectedUploadedFiles = _model.uploadedLocalFile3.bytes!.isNotEmpty
+                                                                        selectedUploadedFiles = _model.uploadedLocalFile_uploadImagemReceita.bytes!.isNotEmpty
                                                                             ? [
-                                                                                _model.uploadedLocalFile3
+                                                                                _model.uploadedLocalFile_uploadImagemReceita
                                                                               ]
                                                                             : <FFUploadedFile>[];
                                                                         selectedMedia =
@@ -404,7 +404,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               selectedMedia,
                                                                         );
                                                                       } finally {
-                                                                        _model.isDataUploading1 =
+                                                                        _model.isDataUploading_uploadimagemReceita1 =
                                                                             false;
                                                                       }
                                                                       if (selectedUploadedFiles.length ==
@@ -414,9 +414,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               selectedMedia.length) {
                                                                         safeSetState(
                                                                             () {
-                                                                          _model.uploadedLocalFile1 =
+                                                                          _model.uploadedLocalFile_uploadimagemReceita1 =
                                                                               selectedUploadedFiles.first;
-                                                                          _model.uploadedFileUrl1 =
+                                                                          _model.uploadedFileUrl_uploadimagemReceita1 =
                                                                               downloadUrls.first;
                                                                         });
                                                                       } else {
@@ -445,7 +445,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               (_model.imagemReceita?.bytes?.isNotEmpty ??
                                                                                   false)
                                                                           ? _model
-                                                                              .uploadedFileUrl2
+                                                                              .uploadedFileUrl_uploadimagemReceita3
                                                                           : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                                     },
                                                                     matchingRows:
@@ -572,9 +572,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 icon: Icon(
                                                                   FFIcons
                                                                       .kcheckQudrado,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
                                                                   size: 24.0,
                                                                 ),
                                                                 options:
@@ -592,6 +589,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
+                                                                  iconColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryBackground,
@@ -683,7 +683,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           false)) {
                                                                     {
                                                                       safeSetState(() =>
-                                                                          _model.isDataUploading2 =
+                                                                          _model.isDataUploading_uploadimagemReceita3 =
                                                                               true);
                                                                       var selectedUploadedFiles =
                                                                           <FFUploadedFile>[];
@@ -692,9 +692,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                       var downloadUrls =
                                                                           <String>[];
                                                                       try {
-                                                                        selectedUploadedFiles = _model.uploadedLocalFile3.bytes!.isNotEmpty
+                                                                        selectedUploadedFiles = _model.uploadedLocalFile_uploadImagemReceita.bytes!.isNotEmpty
                                                                             ? [
-                                                                                _model.uploadedLocalFile3
+                                                                                _model.uploadedLocalFile_uploadImagemReceita
                                                                               ]
                                                                             : <FFUploadedFile>[];
                                                                         selectedMedia =
@@ -711,7 +711,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               selectedMedia,
                                                                         );
                                                                       } finally {
-                                                                        _model.isDataUploading2 =
+                                                                        _model.isDataUploading_uploadimagemReceita3 =
                                                                             false;
                                                                       }
                                                                       if (selectedUploadedFiles.length ==
@@ -721,9 +721,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               selectedMedia.length) {
                                                                         safeSetState(
                                                                             () {
-                                                                          _model.uploadedLocalFile2 =
+                                                                          _model.uploadedLocalFile_uploadimagemReceita3 =
                                                                               selectedUploadedFiles.first;
-                                                                          _model.uploadedFileUrl2 =
+                                                                          _model.uploadedFileUrl_uploadimagemReceita3 =
                                                                               downloadUrls.first;
                                                                         });
                                                                       } else {
@@ -752,7 +752,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                               (_model.imagemReceita?.bytes?.isNotEmpty ??
                                                                                   false)
                                                                           ? _model
-                                                                              .uploadedFileUrl2
+                                                                              .uploadedFileUrl_uploadimagemReceita3
                                                                           : 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/receitasme-qwpzde/assets/vv9t7qlnh72t/imagem_receita.jpg',
                                                                     },
                                                                     matchingRows:
@@ -882,9 +882,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 icon: Icon(
                                                                   FFIcons
                                                                       .kpublicar,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryBackground,
                                                                   size: 24.0,
                                                                 ),
                                                                 options:
@@ -905,6 +902,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
+                                                                  iconColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryBackground,
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
@@ -1004,7 +1004,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                 m.storagePath,
                                                                 context))) {
                                                       safeSetState(() => _model
-                                                              .isDataUploading3 =
+                                                              .isDataUploading_uploadImagemReceita =
                                                           true);
                                                       var selectedUploadedFiles =
                                                           <FFUploadedFile>[];
@@ -1032,7 +1032,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                     ))
                                                                 .toList();
                                                       } finally {
-                                                        _model.isDataUploading3 =
+                                                        _model.isDataUploading_uploadImagemReceita =
                                                             false;
                                                       }
                                                       if (selectedUploadedFiles
@@ -1040,7 +1040,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           selectedMedia
                                                               .length) {
                                                         safeSetState(() {
-                                                          _model.uploadedLocalFile3 =
+                                                          _model.uploadedLocalFile_uploadImagemReceita =
                                                               selectedUploadedFiles
                                                                   .first;
                                                         });
@@ -1050,9 +1050,8 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                       }
                                                     }
 
-                                                    _model.imagemReceita =
-                                                        _model
-                                                            .uploadedLocalFile3;
+                                                    _model.imagemReceita = _model
+                                                        .uploadedLocalFile_uploadImagemReceita;
                                                     safeSetState(() {});
                                                   },
                                                   child: ClipRRect(
@@ -1213,7 +1212,7 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.memory(
-                                                                _model.uploadedLocalFile3
+                                                                _model.uploadedLocalFile_uploadImagemReceita
                                                                         .bytes ??
                                                                     Uint8List
                                                                         .fromList(
@@ -2682,9 +2681,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                             icon: Icon(
                                                               FFIcons
                                                                   .kadicionarCirculo,
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryBackground,
                                                               size: 18.0,
                                                             ),
                                                             options:
@@ -2704,6 +2700,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
+                                                              iconColor: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryBackground,
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primary,
@@ -3034,9 +3033,6 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                           icon: Icon(
                                                             FFIcons
                                                                 .kadicionarCirculo,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryBackground,
                                                             size: 18.0,
                                                           ),
                                                           options:
@@ -3056,6 +3052,9 @@ class _NovaReceitaWidgetState extends State<NovaReceitaWidget> {
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
+                                                            iconColor: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryBackground,
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .primary,

@@ -53,24 +53,24 @@ class EditarReceitaModel extends FlutterFlowModel<EditarReceitaWidget> {
   late MenuPrincipalModel menuPrincipalModel;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ReceitasRow>? receitaEditadaSalva;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadimagemReceita12 = false;
+  FFUploadedFile uploadedLocalFile_uploadimagemReceita12 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl1 = '';
+  String uploadedFileUrl_uploadimagemReceita12 = '';
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ReceitasRow>? receitaAtualizadaSalva;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ReceitasRow>? receitaEditadaPublicada;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadimagemReceita4 = false;
+  FFUploadedFile uploadedLocalFile_uploadimagemReceita4 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadimagemReceita4 = '';
 
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<ReceitasRow>? receitaAtualizada;
-  bool isDataUploading3 = false;
-  FFUploadedFile uploadedLocalFile3 =
+  bool isDataUploading_uploadImagemReceitaEditada = false;
+  FFUploadedFile uploadedLocalFile_uploadImagemReceitaEditada =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for TituloReceita widget.

@@ -397,7 +397,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   text: 'Salvar receita',
                                   icon: Icon(
                                     FFIcons.kadicionarFavorito,
-                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                   options: FFButtonOptions(
@@ -406,6 +405,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                         8.0, 0.0, 8.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
+                                    iconColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -453,7 +454,6 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                   text: 'Editar',
                                   icon: Icon(
                                     FFIcons.keditarQuadrado,
-                                    color: FlutterFlowTheme.of(context).primary,
                                     size: 24.0,
                                   ),
                                   options: FFButtonOptions(
@@ -462,6 +462,8 @@ class _BarraLateraReceitaWidgetState extends State<BarraLateraReceitaWidget> {
                                         8.0, 0.0, 8.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
+                                    iconColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     color: FlutterFlowTheme.of(context)
                                         .primaryBackground,
                                     textStyle: FlutterFlowTheme.of(context)

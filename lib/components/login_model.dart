@@ -128,8 +128,8 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   bool? emailVerificado;
   // Stores action output result for [Backend Call - Update Row(s)] action in Button widget.
   List<PerfisRow>? perfilCriado;
-  bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
+  bool isDataUploading_uploadfotoPerfil = false;
+  FFUploadedFile uploadedLocalFile_uploadfotoPerfil =
       FFUploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for NomeUsuario widget.
@@ -156,10 +156,10 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   // Stores action output result for [Custom Action - verificarDisponibilidadeUsuario] action in NomeUsuario widget.
   bool? usuarioVerificado;
-  bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
+  bool isDataUploading_uploadDataS38 = false;
+  FFUploadedFile uploadedLocalFile_uploadDataS38 =
       FFUploadedFile(bytes: Uint8List.fromList([]));
-  String uploadedFileUrl2 = '';
+  String uploadedFileUrl_uploadDataS38 = '';
 
   @override
   void initState(BuildContext context) {

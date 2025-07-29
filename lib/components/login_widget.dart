@@ -1919,8 +1919,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       selectedMedia.every((m) =>
                                           validateFileFormat(
                                               m.storagePath, context))) {
-                                    safeSetState(
-                                        () => _model.isDataUploading1 = true);
+                                    safeSetState(() => _model
+                                            .isDataUploading_uploadfotoPerfil =
+                                        true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
 
@@ -1937,12 +1938,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                               ))
                                           .toList();
                                     } finally {
-                                      _model.isDataUploading1 = false;
+                                      _model.isDataUploading_uploadfotoPerfil =
+                                          false;
                                     }
                                     if (selectedUploadedFiles.length ==
                                         selectedMedia.length) {
                                       safeSetState(() {
-                                        _model.uploadedLocalFile1 =
+                                        _model.uploadedLocalFile_uploadfotoPerfil =
                                             selectedUploadedFiles.first;
                                       });
                                     } else {
@@ -1951,13 +1953,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     }
                                   }
 
-                                  _model.fotoPerfil = _model.uploadedLocalFile1;
+                                  _model.fotoPerfil =
+                                      _model.uploadedLocalFile_uploadfotoPerfil;
                                   safeSetState(() {});
                                 },
                                 text: 'Adicionar foto',
                                 icon: Icon(
                                   FFIcons.kadicionarFotoAlternativa,
-                                  color: FlutterFlowTheme.of(context).primary,
                                   size: 24.0,
                                 ),
                                 options: FFButtonOptions(
@@ -1966,6 +1968,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
+                                  iconColor:
+                                      FlutterFlowTheme.of(context).primary,
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -2265,18 +2269,21 @@ class _LoginWidgetState extends State<LoginWidget> {
                               child: FFButtonWidget(
                                 onPressed: () async {
                                   {
-                                    safeSetState(
-                                        () => _model.isDataUploading2 = true);
+                                    safeSetState(() => _model
+                                        .isDataUploading_uploadDataS38 = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
                                     var selectedMedia = <SelectedFile>[];
                                     var downloadUrls = <String>[];
                                     try {
                                       selectedUploadedFiles = _model
-                                              .uploadedLocalFile1
+                                              .uploadedLocalFile_uploadfotoPerfil
                                               .bytes!
                                               .isNotEmpty
-                                          ? [_model.uploadedLocalFile1]
+                                          ? [
+                                              _model
+                                                  .uploadedLocalFile_uploadfotoPerfil
+                                            ]
                                           : <FFUploadedFile>[];
                                       selectedMedia =
                                           selectedFilesFromUploadedFiles(
@@ -2289,16 +2296,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         selectedFiles: selectedMedia,
                                       );
                                     } finally {
-                                      _model.isDataUploading2 = false;
+                                      _model.isDataUploading_uploadDataS38 =
+                                          false;
                                     }
                                     if (selectedUploadedFiles.length ==
                                             selectedMedia.length &&
                                         downloadUrls.length ==
                                             selectedMedia.length) {
                                       safeSetState(() {
-                                        _model.uploadedLocalFile2 =
+                                        _model.uploadedLocalFile_uploadDataS38 =
                                             selectedUploadedFiles.first;
-                                        _model.uploadedFileUrl2 =
+                                        _model.uploadedFileUrl_uploadDataS38 =
                                             downloadUrls.first;
                                       });
                                     } else {
@@ -2311,7 +2319,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     data: {
                                       'usuario':
                                           _model.nomeUsuarioTextController.text,
-                                      'avatar_url': _model.uploadedFileUrl2,
+                                      'avatar_url':
+                                          _model.uploadedFileUrl_uploadDataS38,
                                     },
                                     matchingRows: (rows) => rows.eqOrNull(
                                       'id',

@@ -10,6 +10,8 @@ import 'package:ff_theme/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 import '/index.dart';
+import 'package:image_picker_library_jttghl/index.dart'
+    as $image_picker_library_jttghl;
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -71,94 +73,106 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
-GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
-      initialLocation: '/',
-      debugLogDiagnostics: true,
-      refreshListenable: appStateNotifier,
-      navigatorKey: appNavigatorKey,
-      errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
-      routes: [
-        FFRoute(
-          name: '_initialize',
-          path: '/',
-          builder: (context, _) =>
-              appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
-          routes: [
-            FFRoute(
-              name: InicioWidget.routeName,
-              path: InicioWidget.routePath,
-              builder: (context, params) => InicioWidget(),
-            ),
-            FFRoute(
-              name: PainelWidget.routeName,
-              path: PainelWidget.routePath,
-              requireAuth: true,
-              builder: (context, params) => PainelWidget(),
-            ),
-            FFRoute(
-              name: NovaReceitaWidget.routeName,
-              path: NovaReceitaWidget.routePath,
-              requireAuth: true,
-              builder: (context, params) => NovaReceitaWidget(),
-            ),
-            FFRoute(
-              name: NoticacoesWidget.routeName,
-              path: NoticacoesWidget.routePath,
-              builder: (context, params) => NoticacoesWidget(),
-            ),
-            FFRoute(
-              name: MinhasReceitasWidget.routeName,
-              path: MinhasReceitasWidget.routePath,
-              requireAuth: true,
-              builder: (context, params) => MinhasReceitasWidget(),
-            ),
-            FFRoute(
-              name: ReceitasSalvasWidget.routeName,
-              path: ReceitasSalvasWidget.routePath,
-              requireAuth: true,
-              builder: (context, params) => ReceitasSalvasWidget(),
-            ),
-            FFRoute(
-              name: ReceitaWidget.routeName,
-              path: ReceitaWidget.routePath,
-              builder: (context, params) => ReceitaWidget(
-                slug: params.getParam(
-                  'slug',
-                  ParamType.String,
-                ),
+GoRouter createRouter(AppStateNotifier appStateNotifier) {
+  $image_picker_library_jttghl.initializeRoutes(
+    homePageWidgetName: 'image_picker_library_jttghl.HomePage',
+  );
+
+  return GoRouter(
+    initialLocation: '/',
+    debugLogDiagnostics: true,
+    refreshListenable: appStateNotifier,
+    navigatorKey: appNavigatorKey,
+    errorBuilder: (context, state) =>
+        appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
+    routes: [
+      FFRoute(
+        name: '_initialize',
+        path: '/',
+        builder: (context, _) =>
+            appStateNotifier.loggedIn ? InicioWidget() : InicioWidget(),
+        routes: [
+          FFRoute(
+            name: InicioWidget.routeName,
+            path: InicioWidget.routePath,
+            builder: (context, params) => InicioWidget(),
+          ),
+          FFRoute(
+            name: PainelWidget.routeName,
+            path: PainelWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => PainelWidget(),
+          ),
+          FFRoute(
+            name: NovaReceitaWidget.routeName,
+            path: NovaReceitaWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => NovaReceitaWidget(),
+          ),
+          FFRoute(
+            name: NoticacoesWidget.routeName,
+            path: NoticacoesWidget.routePath,
+            builder: (context, params) => NoticacoesWidget(),
+          ),
+          FFRoute(
+            name: MinhasReceitasWidget.routeName,
+            path: MinhasReceitasWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => MinhasReceitasWidget(),
+          ),
+          FFRoute(
+            name: ReceitasSalvasWidget.routeName,
+            path: ReceitasSalvasWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => ReceitasSalvasWidget(),
+          ),
+          FFRoute(
+            name: ReceitaWidget.routeName,
+            path: ReceitaWidget.routePath,
+            builder: (context, params) => ReceitaWidget(
+              slug: params.getParam(
+                'slug',
+                ParamType.String,
               ),
             ),
-            FFRoute(
-              name: PesquisarWidget.routeName,
-              path: PesquisarWidget.routePath,
-              builder: (context, params) => PesquisarWidget(),
-            ),
-            FFRoute(
-              name: UsuarioWidget.routeName,
-              path: UsuarioWidget.routePath,
-              builder: (context, params) => UsuarioWidget(
-                usuario: params.getParam(
-                  'usuario',
-                  ParamType.String,
-                ),
+          ),
+          FFRoute(
+            name: PesquisarWidget.routeName,
+            path: PesquisarWidget.routePath,
+            builder: (context, params) => PesquisarWidget(),
+          ),
+          FFRoute(
+            name: UsuarioWidget.routeName,
+            path: UsuarioWidget.routePath,
+            builder: (context, params) => UsuarioWidget(
+              usuario: params.getParam(
+                'usuario',
+                ParamType.String,
               ),
             ),
-            FFRoute(
-              name: EditarReceitaWidget.routeName,
-              path: EditarReceitaWidget.routePath,
-              requireAuth: true,
-              builder: (context, params) => EditarReceitaWidget(
-                idReceita: params.getParam(
-                  'idReceita',
-                  ParamType.String,
-                ),
+          ),
+          FFRoute(
+            name: EditarReceitaWidget.routeName,
+            path: EditarReceitaWidget.routePath,
+            requireAuth: true,
+            builder: (context, params) => EditarReceitaWidget(
+              idReceita: params.getParam(
+                'idReceita',
+                ParamType.String,
               ),
-            )
-          ].map((r) => r.toRoute(appStateNotifier)).toList(),
-        ),
-      ].map((r) => r.toRoute(appStateNotifier)).toList(),
-    );
+            ),
+          ),
+          FFRoute(
+            name: $image_picker_library_jttghl.HomePageWidget.routeName,
+            path: $image_picker_library_jttghl.HomePageWidget.routePath,
+            builder: (context, params) =>
+                $image_picker_library_jttghl.HomePageWidget(),
+          )
+        ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      ),
+    ].map((r) => r.toRoute(appStateNotifier)).toList(),
+  );
+}
 
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(

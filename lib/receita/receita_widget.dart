@@ -262,10 +262,6 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                     text: 'Voltar',
                                                     icon: Icon(
                                                       FFIcons.ksetaEsquerda,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
                                                       size: 24.0,
                                                     ),
                                                     options: FFButtonOptions(
@@ -284,6 +280,10 @@ class _ReceitaWidgetState extends State<ReceitaWidget> {
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
+                                                      iconColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .primaryBackground,
